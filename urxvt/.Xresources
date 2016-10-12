@@ -31,6 +31,7 @@ rofi.color-active: darkest, blue,   darker, blue, lightest
 rofi.color-urgent: darkest, urgent, darker, blue, urgent
 rofi.opacity: 70
 rofi.font: xft:Fantasque Sans Mono 11
+rofi.dpi: 144
 
 ! ---------------------------- URXVT --------------------------------
 

@@ -197,7 +197,7 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% #decrease sound vo
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
 
 exec sh -c 'cd /home/duncan/.custom/autoredshift.sh &'
-exec compton -o 0 --blur-background --blur-background-fixed --blur-kern $(python /home/duncan/.custom/compton-convgen.py --dump-compton -f=sigma=5 gaussian 15) --menu-opacity=0.7 
+# exec compton -o 0 --blur-background --blur-background-fixed --blur-kern $(python /home/duncan/.custom/compton-convgen.py --dump-compton -f=sigma=5 gaussian 15) --menu-opacity=0.7 
 exec sh -c 'cd /home/duncan/.custom/lemonbar/; sh runbar.sh'
 exec discord-canary
-
+exec xrandr --dpi 144
