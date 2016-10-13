@@ -34,44 +34,36 @@ rofi.font: xft:Fantasque Sans Mono 11
 rofi.dpi: 144
 
 ! ---------------------------- URXVT --------------------------------
-*.foreground:   #a39f87
-*.background:   #2a2923
-*.cursorColor:  #a39f87
 
+URxvt*background: darkest
+URxvt*foreground: lightest
 ! black
-*.color0:       #20201d
-*.color8:       #7d7a68
-
+URxvt.color0  : darkest
+URxvt.color8  : darker
 ! red
-*.color1:       #b64d3a
-*.color9:       #f5684e
-
+URxvt.color1  : bad
+URxvt.color9  : urgent
 ! green
-*.color2:       #7c9d3d
-*.color10:      #b1e158
-
+URxvt.color2  : ok
+URxvt.color10 : good
 ! yellow
-*.color3:       #b7a756
-*.color11:      #e5d16c
-
+URxvt.color3  : warning
+URxvt.color11 : urgent
 ! blue
-*.color4:       #7382a3
-*.color12:      #b3cbff
-
+URxvt.color4  : blue
+URxvt.color12 : lightblue
 ! magenta
-*.color5:       #366539
-*.color13:      #56a25b
-
+URxvt.color5  : magenta
+URxvt.color13 : limagenta
 ! cyan
-*.color6:       #198968
-*.color14:      #1fad83
-
+URxvt.color6  : cyan
+URxvt.color14 : lightcyan
 ! white
-*.color7:       #a6a28c
-*.color15:      #fefbec
+URxvt.color7  : light
+URxvt.color15 : lightest
 
 URxvt.font: xft:Fantasque Sans Mono
 URxvt*scrollBar:  false
 urxvt*depth: 32
-urxvt*background: rgba:2a00/2900/2300/8800
+urxvt*background: rgba:0000/0000/0000/3300
 

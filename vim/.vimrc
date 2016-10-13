@@ -31,6 +31,7 @@ set pumheight=20
 
 " Airline options
 filetype plugin on
+let g:airline_theme='base16_default'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 

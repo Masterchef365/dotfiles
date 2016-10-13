@@ -13,12 +13,19 @@ alias cd..='cd ..'
 alias v='vim -S vimsession.vim'
 export INPUTRC=~/.inputrc
 
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-. /usr/lib/python3.5/site-packages/powerline/bindings/bash/powerline.sh
-figlet $(cat /etc/hostname) | lolcat
+# Poweline (Depreciated)
+# powerline-daemon -q
+# POWERLINE_BASH_CONTINUATION=1
+# POWERLINE_BASH_SELECT=1
+# . /usr/lib/python3.5/site-packages/powerline/bindings/bash/powerline.sh
+
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
 	    . /usr/share/bash-completion/bash_completion
 
+# Terminal Title
+figlet $(cat /etc/hostname) 
+
+
+# Promptline
+source /home/duncan/.shell_prompt.sh
