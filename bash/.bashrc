@@ -11,6 +11,10 @@ alias pacman="sudo pacman"
 alias 'll'='ls -l --block-size=MB'
 alias cd..='cd ..'
 alias v='vim -S vimsession.vim'
+function cs () {
+	cd "$@" && ls
+}
+alias cd='cs'
 export INPUTRC=~/.inputrc
 
 # Poweline (Depreciated)
@@ -21,11 +25,10 @@ export INPUTRC=~/.inputrc
 
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
-	    . /usr/share/bash-completion/bash_completion
+	. /usr/share/bash-completion/bash_completion
 
 # Terminal Title
 figlet $(cat /etc/hostname) 
 
-
 # Promptline
-source /home/duncan/.shell_prompt.sh
+source ~/.shell_prompt.sh
