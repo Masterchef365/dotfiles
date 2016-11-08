@@ -1,0 +1,3 @@
+[submodule "vim/.vim/bundle/syntax"]
+	path = vim/.vim/bundle/syntax
+	url = https://github.com/octol/vim-cpp-enhanced-highlight.git

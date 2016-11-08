@@ -1,55 +1,96 @@
-Xft.dpi: 144
+Xft.dpi: 160
 ! ---------------------------- ROFI --------------------------------
 
 rofi.color-enabled: true
 ! State:		bg	fg		bgalt		hlbg		hlfg
 rofi.color-window:  #20201d,	#20201d
-rofi.color-normal:  #20201d, 	#fefbec,	#20201d,	#b64d3a,	#fefbec
-rofi.color-active:  #20201d, 	#fefbec,	#20201d,	#b64d3a,	#fefbec
-rofi.color-urgent:  #20201d, 	#fefbec,	#20201d,	#b64d3a,	#a6a28c
+rofi.color-normal:  #20201d, 	#fefbec,	#20201d,	#698d23,	#fefbec
+rofi.color-active:  #20201d, 	#fefbec,	#20201d,	#698d23,	#fefbec
+rofi.color-urgent:  #20201d, 	#fefbec,	#20201d,	#698d23,	#a6a28c
 rofi.opacity: 87.5
 rofi.font: xft:Fantasque Sans Mono 11
 rofi.dpi: 170
 
 ! ---------------------------- URXVT -------------------------------
-*.foreground:   #a39f87
-*.background:   #2a2923
-*.cursorColor:  #a39f87
+! special
+*.foreground:   #a2a1a1
+*.background:   #2d2d2d
+*.cursorColor:  #a2a1a1
 
 ! black
-*.color0:       #20201d
-*.color8:       #7d7a68
+*.color0:       #383838
+*.color8:       #4a7000
 
 ! red
-*.color1:       #b64d3a
-*.color9:       #f5684e
+*.color1:       #7b7b7b
+*.color9:       #999771
 
 ! green
-*.color2:       #7c9d3d
-*.color10:      #b1e158
+*.color2:       #748352
+*.color10:      #698d23
 
 ! yellow
-*.color3:       #b7a756
-*.color11:      #e5d16c
+*.color3:       #797f5c
+*.color11:      #809707
 
 ! blue
-*.color4:       #7382a3
-*.color12:      #b3cbff
+*.color4:       #707d2c
+*.color12:      #71a60d
 
 ! magenta
-*.color5:       #366539
-*.color13:      #56a25b
+*.color5:       #858c61
+*.color13:      #819341
 
 ! cyan
-*.color6:       #198968
-*.color14:      #1fad83
+*.color6:       #5c7927
+*.color14:      #8ca525
 
 ! white
-*.color7:	#fefbec
-*.color15:      #a6a28c
+*.color7:       #214c12
+*.color15:      #676529
+
+
+!! special
+!*.foreground:   #a2a1a1
+!*.background:   #2d2d2d
+!*.cursorColor:  #a2a1a1
+!
+!! black
+!*.color0:       #383838
+!*.color8:       #4a7000
+!
+!! red
+!*.color1:       #7b7b7b
+!*.color9:       #71705e
+!
+!! green
+!*.color2:       #748352
+!*.color10:      #698d23
+!
+!! yellow
+!*.color3:       #797f5c
+!*.color11:      #809707
+!
+!! blue
+!*.color4:       #707d2c
+!*.color12:      #71a60d
+!
+!! magenta
+!*.color5:       #858c61
+!*.color13:      #819341
+!
+!! cyan
+!*.color6:       #5c7927
+!*.color14:      #8ca525
+!
+!! white
+!*.color7:       #214c12
+!*.color15:      #84836b
+
 
 URxvt.font: xft:Fantasque Sans Mono
 URxvt*scrollBar:  false
 urxvt*depth: 32
 urxvt*background: rgba:2a00/2900/2300/dd00
+
 

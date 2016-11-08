@@ -1,11 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/etc/modules-load.d'
-let g:netrw_dirhist_2='/home/duncan/ConfigSym'
-let g:netrw_dirhist_3='/home/duncan/Repos/Infinivox/InfiniMath/bin'
-let g:netrw_dirhist_4='/home/duncan/Repos/arc-theme'
-let g:netrw_dirhist_5='/etc/sane.d/dll.d'
-let g:netrw_dirhist_6='/home/duncan/Projects/librealsense'
-let g:netrw_dirhist_7='/home/duncan/Projects/librealsense/CMake'
-let g:netrw_dirhist_8='/home/duncan/Projects/BroccoliVision/Revision1/src'
-let g:netrw_dirhist_9='/home/duncan/Projects/Infinivox/.git'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/home/duncan/Projects/BroccoliVision/Revision1'
+let g:netrw_dirhist_2='/home/duncan/Projects/VulkanTutorial/code'

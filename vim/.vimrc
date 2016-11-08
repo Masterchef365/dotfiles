@@ -1,3 +1,4 @@
+
 " Pathogen
 execute pathogen#infect()
 
@@ -9,29 +10,22 @@ set autoindent
 set nu
 syntax on
 set laststatus=2
-set wildmenu
-
-" Supertab
-let g:SuperTabDefaultCompletionType = 'context'
-let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
-let g:SuperTabDefaultCompletionTypeDiscovery = ["&omnifunc:<c-x><c-o>","&completefunc:<c-x><c-n>"]
-let g:SuperTabClosePreviewOnPopupClose = 1
-
-" Completion Functions
-set completeopt=longest,menuone,preview
-set conceallevel=2
-set concealcursor=vin
-let g:clang_snippets=1
-let g:clang_conceal_snippets=1
-let g:clang_snippets_engine='clang_complete'
-let g:clang_user_options='|| exit 0'
-let g:clang_complete_auto = 0
-let g:clang_complete_copen = 1
-set pumheight=20
+"set wildmenu
+set nohlsearch
 
 " Airline options
 filetype plugin on
-let g:airline_theme='base16_default'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
+" Neovim options
+tnoremap <Esc> <C-\><C-n>
+
+" Vim-cpp
+let g:cpp_experimental_template_highlight = 1
+let g:cpp_concepts_highlight = 1
+let g:cpp_class_scope_highlight = 1
+
+" Colorscheme
+colorscheme noctu
+let g:airline_theme = "base16color"

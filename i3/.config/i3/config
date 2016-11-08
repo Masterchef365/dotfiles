@@ -1,4 +1,7 @@
 #vim:filetype=i3
+
+exec xrdb -merge ~/.Xresources
+
 # ----------------------- Defines/Variables -----------------------  
 
 # Set the modifier key, set floating modifier to the same
@@ -11,36 +14,36 @@ set $editor urxvt
 # Stolen from Airblader: https://github.com/Airblader/dotfiles-manjaro/blob/master/.i3/config
 # Don't judge pls, loads colors from .Xresources
 exec xrdb ~/.Xresources
-set_from_resource $darkred     color1  #000000
-set_from_resource $red         color9  #000000
-set_from_resource $darkgreen   color2  #000000
-set_from_resource $green       color10 #000000
-set_from_resource $darkyellow  color3  #000000
-set_from_resource $yellow      color11 #000000
-set_from_resource $darkblue    color4  #000000
-set_from_resource $blue        color12 #000000
-set_from_resource $darkmagenta color5  #000000
-set_from_resource $magenta     color13 #000000
-set_from_resource $darkcyan    color6  #000000
-set_from_resource $cyan        color14 #000000
-set_from_resource $darkwhite   color7  #000000
-set_from_resource $white       color15 #000000
+set_from_resource $ color   #000000
+set_from_resource $ color   #000000
+set_from_resource $ color   #000000
+set_from_resource $ color   #000000
+set_from_resource $ color   #000000
+set_from_resource $ color   #000000
+set_from_resource $ color   #000000
+set_from_resource $ color   #000000
+set_from_resource $ color   #000000
+set_from_resource $ color   #000000
+set_from_resource $ color   #000000
+set_from_resource $ color   #000000
+set_from_resource $ color   #000000
+set_from_resource $ color   #000000
 
 # ----------------------- Style options -----------------------  
 
-#Window colors		border  backgr. text    indicator
-client.focused          #b7a756 #b7a756 #b7a756 #b7a756
-client.focused_inactive #333333 #5f676a #ffffff #484e50
-client.unfocused        #333333 #222222 #888888 #292d2e
-client.urgent           #2f343a #900000 #ffffff #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000
-
-#Window colors		border  backgr. text    indicator
-#client.focused          $yellow $yellow $yellow $yellow
+##Window colors		border  backgr. text    indicator
+#client.focused          #b7a756 #b7a756 #b7a756 #b7a756
 #client.focused_inactive #333333 #5f676a #ffffff #484e50
 #client.unfocused        #333333 #222222 #888888 #292d2e
 #client.urgent           #2f343a #900000 #ffffff #900000
 #client.placeholder      #000000 #0c0c0c #ffffff #000000
+
+#Window colors		border  backgr. text    indicator
+client.focused          #698d23 #698d23 #698d23	#698d23
+client.focused_inactive #333333 #698d23 #ffffff #484e50
+client.unfocused        #333333 #222222 #888888 #292d2e
+client.urgent           #2f343a #900000 #ffffff #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000
 
 # Font config
 font pango:monospace 10
@@ -134,4 +137,5 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You sure, fam?' -b 'Ya boi' 
 exec ~/.fehbg
 exec sh -c 'sh /home/duncan/.custom/autoredshift.sh &'
 # exec compton -o 0 --blur-background --blur-background-fixed --blur-kern $(python /home/duncan/.custom/compton-convgen.py --dump-compton -f=sigma=5 gaussian 15) --menu-opacity=0.7 
-exec xrandr --dpi 144
+exec xrandr --dpi 160
+# exec compton
