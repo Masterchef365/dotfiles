@@ -27,6 +27,7 @@ function cs () {
 }
 alias cd='cs'
 alias rs='reset'
+alias tty-clock='tty-clock -C 6'
 
 # Use .inputrc (Use CTRL+Arrow to move over words)
 export INPUTRC=~/.inputrc

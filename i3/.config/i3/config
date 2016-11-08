@@ -11,24 +11,6 @@ floating_modifier $mod
 # Set the editor
 set $editor urxvt
 
-# Stolen from Airblader: https://github.com/Airblader/dotfiles-manjaro/blob/master/.i3/config
-# Don't judge pls, loads colors from .Xresources
-exec xrdb ~/.Xresources
-set_from_resource $ color   #000000
-set_from_resource $ color   #000000
-set_from_resource $ color   #000000
-set_from_resource $ color   #000000
-set_from_resource $ color   #000000
-set_from_resource $ color   #000000
-set_from_resource $ color   #000000
-set_from_resource $ color   #000000
-set_from_resource $ color   #000000
-set_from_resource $ color   #000000
-set_from_resource $ color   #000000
-set_from_resource $ color   #000000
-set_from_resource $ color   #000000
-set_from_resource $ color   #000000
-
 # ----------------------- Style options -----------------------  
 
 ##Window colors		border  backgr. text    indicator
@@ -57,7 +39,8 @@ for_window [class="^.*"] border pixel 1
 
 # Rofi 
 bindsym $mod+z exec rofi -show window
-bindsym $mod+d exec rofi -show run
+# TODO: Add to .Xresources instead
+bindsym $mod+d exec rofi -show run -width 30 -xoffset -1003 -yoffset 10 -lines 52
 
 # Terminal
 bindsym $mod+Return exec urxvt
