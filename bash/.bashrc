@@ -28,9 +28,13 @@ function cs () {
 alias cd='cs'
 alias rs='reset'
 alias tty-clock='tty-clock -C 6'
+alias thinkofthe='pacaur -Rns $(pacaur -Qtdq)'
+alias spotify='spotify --force-device-scale-factor=1.5'
+alias setbg='. ~/.custom/background_switch.sh' 
 
 # Use .inputrc (Use CTRL+Arrow to move over words)
 export INPUTRC=~/.inputrc
+export EDITOR="nvim"
 
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \

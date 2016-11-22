@@ -13,41 +13,41 @@ rofi.dpi: 170
 
 ! ---------------------------- URXVT -------------------------------
 ! special
-*.foreground:   #bcbcbc
-*.background:   #2d2d2d
-*.cursorColor:  #bcbcbc
+*foreground:   #bcbcbc
+*background:   #2d2d2d
+*cursorColor:  #bcbcbc
 
 ! black
-*.color0:       #383838
-*.color8:       #4a7000
+*color0:       #383838
+*color8:       #4a7000
 
 ! red
-*.color1:       #7b7b7b
-*.color9:       #999771
+*color1:       #7b7b7b
+*color9:       #999771
 
 ! green
-*.color2:       #84955d
-*.color10:      #698d23
+*color2:       #84955d
+*color10:      #698d23
 
 ! yellow
-*.color3:       #899068
-*.color11:      #809707
+*color3:       #899068
+*color11:      #809707
 
 ! blue
-*.color4:       #78862f
-*.color12:      #71a60d
+*color4:       #78862f
+*color12:      #71a60d
 
 ! magenta
-*.color5:       #969a82
-*.color13:      #819341
+*color5:       #969a82
+*color13:      #819341
 
 ! cyan
-*.color6:       #64832a
-*.color14:      #8ca525
+*color6:       #64832a
+*color14:      #8ca525
 
 ! white
-*.color7:       #31711b
-*.color15:      #676529
+*color7:       #31711b
+*color15:      #676529
 
 URxvt.font: xft:Fantasque Sans Mono
 URxvt*scrollBar:  false
