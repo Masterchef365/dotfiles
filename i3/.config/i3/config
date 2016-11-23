@@ -32,15 +32,16 @@ font pango:monospace 10
 
 # Border options
 new_window none
-gaps inner 10
-for_window [class="^.*"] border pixel 1
+gaps inner 0
+smart_gaps on
+for_window [class="^.*"] border pixel 2
 
 # ----------------------- Program shortcut options -----------------------  
 
 # Rofi 
 bindsym $mod+z exec rofi -show window
 # TODO: Add to .Xresources instead
-bindsym $mod+d exec rofi -show run -width 30 -xoffset -1003 -yoffset 10 -lines 52
+bindsym $mod+d exec rofi -show run -width 30 -xoffset -1005 -yoffset 12 -lines 52
 
 # Terminal
 bindsym $mod+Return exec urxvt
