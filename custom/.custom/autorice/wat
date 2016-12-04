@@ -1,0 +1,57 @@
+Xft.dpi: 160
+! ---------------------------- ROFI --------------------------------
+
+rofi.color-enabled: true
+! State:		bg	fg		bgalt		hlbg		hlfg
+rofi.color-window:  #20201d,	#20201d
+rofi.color-normal:  #20201d, 	#fefbec,	#20201d,	#698d23,	#fefbec
+rofi.color-active:  #20201d, 	#fefbec,	#20201d,	#698d23,	#fefbec
+rofi.color-urgent:  #20201d, 	#fefbec,	#20201d,	#698d23,	#a6a28c
+rofi.opacity: 87.5
+rofi.font: xft:Fantasque Sans Mono 11
+rofi.dpi: 170
+
+! ---------------------------- URXVT -------------------------------
+
+! special
+*.foreground:   #d3d1bf
+*.background:   #1d1d1c
+*.cursorColor:  #d3d1bf
+
+! black
+*.color0:       #0d0f00
+*.color8:       #5f874b
+
+! red
+*.color1:       #005b00
+*.color9:       #496300
+
+! green
+*.color2:       #30420e
+*.color10:      #6a4567
+
+! yellow
+*.color3:       #3c4f2f
+*.color11:      #693b54
+
+! blue
+*.color4:       #324c57
+*.color12:      #752453
+
+! magenta
+*.color5:       #215c3e
+*.color13:      #415832
+
+! cyan
+*.color6:       #1c5900
+*.color14:      #436f58
+
+! white
+*.color7:       #537833
+*.color15:      #296b17
+
+URxvt.font: xft:Fantasque Sans Mono
+URxvt*scrollBar:  false
+urxvt*depth: 32
+urxvt*background: rgba:2a00/2900/2300/dd00
+

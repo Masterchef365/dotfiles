@@ -120,6 +120,5 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You sure, fam?' -b 'Ya boi' 
 # ----------------------- Post-WM commands -----------------------  
 exec ~/.fehbg
 exec sh -c 'sh /home/duncan/.custom/autoredshift.sh &'
-# exec compton -o 0 --blur-background --blur-background-fixed --blur-kern $(python /home/duncan/.custom/compton-convgen.py --dump-compton -f=sigma=5 gaussian 15) --menu-opacity=0.7 
 exec xrandr --dpi 160
-exec compton -b --dbe
+# exec compton -b --dbe
