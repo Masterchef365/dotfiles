@@ -11,21 +11,39 @@ floating_modifier $mod
 # Set the editor
 set $editor urxvt
 
+# Xresources
+set_from_resource $color0  i3wm.color0   #ff00ff
+set_from_resource $color1  i3wm.color1   #ff00ff
+set_from_resource $color2  i3wm.color2   #ff00ff
+set_from_resource $color3  i3wm.color3   #ff00ff
+set_from_resource $color4  i3wm.color4   #ff00ff
+set_from_resource $color5  i3wm.color5   #ff00ff
+set_from_resource $color6  i3wm.color6   #ff00ff
+set_from_resource $color7  i3wm.color7   #ff00ff
+set_from_resource $color8  i3wm.color8   #ff00ff
+set_from_resource $color9  i3wm.color9   #ff00ff
+set_from_resource $color10 i3wm.color10  #ff00ff
+set_from_resource $color11 i3wm.color11  #ff00ff
+set_from_resource $color12 i3wm.color12  #ff00ff
+set_from_resource $color13 i3wm.color13  #ff00ff
+set_from_resource $color14 i3wm.color14  #ff00ff
+set_from_resource $color15 i3wm.color15  #ff00ff
+
 # ----------------------- Style options -----------------------  
 
-##Window colors		border  backgr. text    indicator
-#client.focused          #b7a756 #b7a756 #b7a756 #b7a756
-#client.focused_inactive #333333 #5f676a #ffffff #484e50
+##Window colors			 border  backgr. text    indicator
+#client.focused          #698d23 #698d23 #698d23	#698d23
+#client.focused_inactive #333333 #698d23 #ffffff #484e50
 #client.unfocused        #333333 #222222 #888888 #292d2e
 #client.urgent           #2f343a #900000 #ffffff #900000
 #client.placeholder      #000000 #0c0c0c #ffffff #000000
 
-#Window colors		border  backgr. text    indicator
-client.focused          #698d23 #698d23 #698d23	#698d23
-client.focused_inactive #333333 #698d23 #ffffff #484e50
-client.unfocused        #333333 #222222 #888888 #292d2e
-client.urgent           #2f343a #900000 #ffffff #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000
+#Window colors				border  backgr. text    indicator
+client.focused          $color9 $color9 $color5	$color2
+client.focused_inactive $color9 $color0 $color5 $color2
+client.unfocused        $color9 $color0 $color5 $color2
+client.urgent           $color9 $color9 $color5 $color2
+client.placeholder      $color9 $color9 $color5 $color2
 
 # Font config
 font pango:monospace 10

@@ -31,6 +31,7 @@ alias tty-clock='tty-clock -C 6'
 alias thinkofthe='pacaur -Rns $(pacaur -Qtdq)'
 alias spotify='spotify --force-device-scale-factor=1.5'
 alias setbg='. ~/.custom/background_switch.sh' 
+alias goodnight='sudo shutdown now'
 
 # Use .inputrc (Use CTRL+Arrow to move over words)
 export INPUTRC=~/.inputrc
