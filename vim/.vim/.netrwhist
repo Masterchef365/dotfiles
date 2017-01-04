@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/home/duncan/Projects/BroccoliVision/Revision1'
 let g:netrw_dirhist_2='/home/duncan/Projects/VulkanTutorial/code'
 let g:netrw_dirhist_3='/opt/oomox/gui'
+let g:netrw_dirhist_4='/home/duncan/dotfiles/vim/.vim/vim-pathogen'
+let g:netrw_dirhist_5='/home/duncan/dotfiles/vim/.vim/autoload'

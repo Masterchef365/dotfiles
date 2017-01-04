@@ -32,6 +32,8 @@ alias thinkofthe='pacaur -Rns $(pacaur -Qtdq)'
 alias spotify='spotify --force-device-scale-factor=1.5'
 alias setbg='. ~/.custom/background_switch.sh' 
 alias goodnight='sudo shutdown now'
+alias noice='echo I know right!'
+alias fuck='echo -e "Well, \e[3msorrryy\e[0m. ERROR: Problem exists between chair and keyboard."'
 
 # Use .inputrc (Use CTRL+Arrow to move over words)
 export INPUTRC=~/.inputrc

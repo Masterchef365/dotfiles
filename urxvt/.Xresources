@@ -12,6 +12,7 @@ rofi.font: xft:Fantasque Sans Mono 11
 rofi.dpi: 170
 
 ! ---------------------------- URXVT -------------------------------
+
 ! special
 *foreground:   #f5eae4
 *background:   #27211f
