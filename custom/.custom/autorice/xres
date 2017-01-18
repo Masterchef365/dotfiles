@@ -1,0 +1,32 @@
+Xft.dpi:	160
+rofi.color-enabled:	true
+rofi.color-window:	#20201d, #20201d
+rofi.color-normal:	#20201d, #fefbec, #20201d, #698d23, #fefbec
+rofi.color-active:	#20201d, #fefbec, #20201d, #698d23, #fefbec
+rofi.color-urgent:	#20201d, #fefbec, #20201d, #698d23, #a6a28c
+rofi.opacity:	87.5
+rofi.font:	xft:Fantasque Sans Mono 11
+rofi.dpi:	170
+*.foreground:	#f5eae4
+*.background:	#27211f
+*.cursorColor:	#f5eae4
+*.color0:	#3b3433
+*.color8:	#8a5c44
+*.color1:	#7f6c5e
+*.color9:	#ac7151
+*.color2:	#835b4c
+*.color10:	#c1865c
+*.color3:	#9b8065
+*.color11:	#745b3d
+*.color4:	#97723d
+*.color12:	#776f64
+*.color5:	#c2b08c
+*.color13:	#80817c
+*.color6:	#906143
+*.color14:	#ce9f6b
+*.color7:	#885228
+*.color15:	#8b4927
+URxvt.font:	xft:Fantasque Sans Mono
+URxvt*scrollBar:	false
+urxvt*depth:	32
+urxvt*background:	rgba:2a00/2900/2300/dd00

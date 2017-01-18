@@ -1,0 +1,33 @@
+[submodule "vim/.vim/bundle/syntax"]
+	path = vim/.vim/bundle/syntax
+	url = https://github.com/octol/vim-cpp-enhanced-highlight.git
+[submodule "nvim/.config/nvim/bundle/lldb.nvim"]
+	path = nvim/.config/nvim/bundle/lldb.nvim
+	url = https://github.com/critiqjo/lldb.nvim.git
+[submodule "nvim/.config/nvim/bundle/nerdtree-git-plugin"]
+	path = nvim/.config/nvim/bundle/nerdtree-git-plugin
+	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
+[submodule "nvim/.config/nvim/bundle/nerdtree"]
+	path = nvim/.config/nvim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "nvim/.config/nvim/bundle/vim-noctu"]
+	path = nvim/.config/nvim/bundle/vim-noctu
+	url = https://github.com/noahfrederick/vim-noctu.git
+[submodule "nvim/.config/nvim/bundle/promptline.vim"]
+	path = nvim/.config/nvim/bundle/promptline.vim
+	url = https://github.com/edkolev/promptline.vim.git
+[submodule "nvim/.config/nvim/bundle/python-client"]
+	path = nvim/.config/nvim/bundle/python-client
+	url = https://github.com/neovim/python-client.git
+[submodule "nvim/.config/nvim/bundle/vim-airline"]
+	path = nvim/.config/nvim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "nvim/.config/nvim/bundle/vim-airline-themes"]
+	path = nvim/.config/nvim/bundle/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "nvim/.config/nvim/bundle/vim-dispatch"]
+	path = nvim/.config/nvim/bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git
+[submodule "nvim/.config/nvim/bundle/YouCompleteMe"]
+	path = nvim/.config/nvim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
