@@ -12,7 +12,6 @@ function __promptline_host {
 
 
 
-
 function __promptline_last_exit_code {
 
 	[[ $last_exit_code -gt 0 ]] || return 1;
@@ -87,9 +86,8 @@ function __promptline_cwd {
 	local first_char
 	local part_count=0
 	local formatted_cwd=""
-	local dir_sep="  "
+	local dir_sep="  "
 	local tilde="~"
-
 	local cwd="${PWD/#$HOME/$tilde}"
 
 	# get first char of the path, i.e. tilde or slash
@@ -209,10 +207,10 @@ function __promptline {
 	fi
 	local wrap="$noprint$esc" end_wrap="$end_esc$end_noprint"
 	local space=" "
-	local sep=""
-	local rsep=""
-	local alt_sep=""
-	local alt_rsep=""
+	local sep=""
+	local rsep=""
+	local alt_sep=""
+	local alt_rsep=""
 	local reset="${wrap}0${end_wrap}"
 	local reset_bg="${wrap}49${end_wrap}"
 	local a_fg="${wrap}38;5;11${end_wrap}"

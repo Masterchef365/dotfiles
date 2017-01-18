@@ -29,6 +29,8 @@ set shiftwidth=3
 filetype plugin on
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_left_sep = "\ue0b8"
+let g:airline_right_sep = "\ue0ba"
 
 " Vim-cpp
 let g:cpp_experimental_template_highlight = 1

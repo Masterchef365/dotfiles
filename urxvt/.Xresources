@@ -8,14 +8,15 @@ rofi.color-normal:  #27211f, 	#f5eae4,	#27211f,	#ac7151,	#f5eae4
 rofi.color-active:  #27211f, 	#f5eae4,	#27211f,	#ac7151,	#f5eae4
 rofi.color-urgent:  #27211f, 	#f5eae4,	#27211f,	#ac7151,	#f5eae4
 rofi.opacity: 87.5
-rofi.font: xft:Fantasque Sans Mono 11
+rofi.font: xft:Fantasque Sans Mono Regular Nerd Font Complete Mono 11
 rofi.dpi: 170
 
 ! ---------------------------- URXVT -------------------------------
 
 ! special
 *foreground:   #f5eae4
-*background:   #27211f
+! *background:   #27211f
+*background:   #0e0c0b
 *cursorColor:  #f5eae4
 
 !black
@@ -50,7 +51,9 @@ rofi.dpi: 170
 *color7:       #885228
 *color15:      #8b4927
 
-URxvt.font: xft:Fantasque Sans Mono
+!URxvt.font: xft:Fantasque Sans Mono
+!URxvt.font: xft:Fantasque Sans Mono Regular Nerd Font Complete Mono
+URxvt.font: xft:FantasqueSansMono Nerd Font
 URxvt*scrollBar:  false
 urxvt*depth: 32
 urxvt*background: rgba:2a00/2900/2300/dd00

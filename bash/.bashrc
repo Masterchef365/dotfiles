@@ -57,12 +57,11 @@ export EDITOR="nvim"
 	. /usr/share/bash-completion/bash_completion
 
 # Terminal Title (Only if we have sufficient width)
-tput setaf 10
-if (( $(tput cols) > 114 )); then 
-sed "s/\([a-Z]\)/\1 /g" < /etc/hostname | figlet -tf 3-d
-echo 
-echo
-fi
+#tput setaf 10
+#if (( $(tput cols) > 114 )); then 
+##sed "s/\([a-Z]\)/\1 /g" < /etc/hostname | figlet -tf 3-d
+#figlet -tf larry3d < /etc/hostname
+#fi
 
 # Promptline.vim compat
 source ~/.shell_prompt.sh
@@ -70,3 +69,7 @@ source ~/.shell_prompt.sh
 # Wtf go whyyyy
 export GOPATH=$HOME/.go
 
+# I-Beam cursor
+#echo -e "\033[5 q"
+#echo -e "\033[6 q"
+#tput reset
