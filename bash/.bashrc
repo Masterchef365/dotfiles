@@ -32,7 +32,7 @@ alias reset='tput reset'
 alias tty-clock='tty-clock -C 6'
 alias thinkofthe='pacaur -Rns $(pacaur -Qtdq)'
 alias spotify='spotify --force-device-scale-factor=1.5'
-alias setbg='. ~/.custom/background_switch.sh' 
+alias setbg='. ~/.bitsAndBobs/background_switch.sh' 
 alias goodnight='sudo shutdown now'
 alias noice='echo I know right!'
 alias fuck='echo -e "Well, \e[3msorrryy\e[0m. ERROR: Problem exists between chair and keyboard."'
@@ -56,13 +56,6 @@ export EDITOR="nvim"
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
 	. /usr/share/bash-completion/bash_completion
 
-# Terminal Title (Only if we have sufficient width)
-#tput setaf 10
-#if (( $(tput cols) > 114 )); then 
-##sed "s/\([a-Z]\)/\1 /g" < /etc/hostname | figlet -tf 3-d
-#figlet -tf larry3d < /etc/hostname
-#fi
-
 # Promptline.vim compat
 source ~/.shell_prompt.sh
 
@@ -70,6 +63,6 @@ source ~/.shell_prompt.sh
 export GOPATH=$HOME/.go
 
 # I-Beam cursor
-#echo -e "\033[5 q"
-#echo -e "\033[6 q"
+#echo -en "\033[5 q"
+#echo -en "\033[6 q"
 #tput reset

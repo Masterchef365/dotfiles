@@ -4,80 +4,12 @@ foreground = ${xrdb:foreground:#000}
 lead = ${xrdb:color8:#000}
 brighter = ${xrdb:color9:#000}
 darker = ${xrdb:color0:#000}
-[bar/BarHDMI3]
-; Use the following command to list available outputs:
-; If unspecified, the application will pick the first one it finds.
-; $ xrandr -q | grep " connected" | cut -d ' ' -f1
-monitor = HDMI3
-
-; Require the monitor to be in connected state ; XRandR sometimes report my monitor as being disconnected (when in use) monitor-strict = false
-
-; Tell the Window Manager not to configure the window.
-; Use this to detach the bar if your WM is locking its size/position.
-override-redirect = false
-
-; Put the bar at the bottom of the screen
-bottom = false
-
-; Dimensiosn defined as pixel value (e.g. 35) or percentage (e.g. 50%)
-width = 100%
-height = 30
-
-; Offset defined as pixel value (e.g. 35) or percentage (e.g. 50%)
-offset-x = 0
-offset-y = 0
-
-; Background argb color (e.g. #f00, #ff992a, #ddff1023)
-background = ${color.background}
-
-; Foreground argb color (e.g. #f00, #ff992a, #ddff1023)
-foreground = ${color.foreground}
-
-; Opacity value between 0.0 and 1.0 used on fade in/out
-dim-value = 1.0
-
-; Underline size in pixels
-underline-size = 1
-; Underline rgba color
-underline-color = #f00
-
-; Overline size in pixels
-overline-size = 1
-; Overline rgba color
-overline-color = #f00
-
-; Number of spaces to add at the beginning/end of the bar
-padding-left = 0
-padding-right = 0
-
-; Number of spaces to add before/after each module
-module-margin-left = 0
-module-margin-right = 2
-
-; Fonts are defined using <font-name>;<vertical-offset>
-; Font names can be specified using a fontconfig pattern or a XLFD string.
-;   font-0 = NotoSans-Regular:size=8;0
-;   font-1 = MaterialIcons:size=10;0
-;   font-2 = Termsynu:size=8;-1
-;   font-3 = FontAwesome:size=10;0
-;
-; See the Fonts wiki page for more details
-font-0 = Fantasque Sans Mono:size=11;0
-
-; Modules are added to one of the available blocks
-;   modules-left = cpu ram
-;   modules-center = xwindow xbacklight
-;   modules-right = ipc clock
-modules-left = i3
-modules-center = clock
-modules-right = battery
-
 
 [bar/Bar]
 ; Use the following command to list available outputs:
 ; If unspecified, the application will pick the first one it finds.
 ; $ xrandr -q | grep " connected" | cut -d ' ' -f1
-monitor = eDP1
+; monitor = eDP1
 
 ; Require the monitor to be in connected state
 ; XRandR sometimes report my monitor as being disconnected (when in use)
@@ -133,7 +65,7 @@ module-margin-right = 2
 ;   font-3 = FontAwesome:size=10;0
 ;
 ; See the Fonts wiki page for more details
-font-0 = Fantasque Sans Mono:size=11;0
+font-0 = FantasqueSansMono Nerd Font:size=18;0
 
 ; Modules are added to one of the available blocks
 ;   modules-left = cpu ram
@@ -327,12 +259,12 @@ format-full = <label-full> <bar-capacity>
 ; Available tokens:
 ;   %percentage% (default)
 ;   %time%
-label-charging = Charging %time% %percentage%
+label-charging = Charging %time% %percentage%%
 
 ; Available tokens:
 ;   %percentage% (default)
 ;   %time%
-label-discharging = Discharging %time% %percentage%
+label-discharging = Discharging %time% %percentage%%
 
 ; Available tokens:
 ;   %percentage% (default)
@@ -343,12 +275,10 @@ animation-charging-framerate = 750
 
 bar-capacity-format = %fill%%indicator%%empty%
 
-bar-capacity-width = 20
-;bar-capacity-indicator = ▌
-bar-capacity-indicator =    
+bar-capacity-width = 30
+bar-capacity-indicator = █ 
 bar-capacity-fill = █
-bar-capacity-empty = " "  
+bar-capacity-empty = "-" 
 
 bar-capacity-foreground-0 = ${color.lead}
-;bar-capacity-foreground-1 = ${color.lead}
 bar-capacity-foreground-1 = ${color.lead}

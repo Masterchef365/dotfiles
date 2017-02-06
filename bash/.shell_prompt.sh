@@ -1,4 +1,3 @@
-#
 # This shell prompt config file was created by promptline.vim
 #
 function __promptline_host {

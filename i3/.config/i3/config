@@ -50,7 +50,7 @@ font pango:monospace 10
 
 # Border options
 new_window none
-gaps inner 0
+gaps inner 15
 smart_gaps on
 for_window [class="^.*"] border pixel 2
 
@@ -138,7 +138,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You sure, fam?' -b 'Ya boi' 
 
 # ----------------------- Post-WM commands -----------------------  
 exec ~/.fehbg
-exec sh -c 'sh /home/duncan/.custom/autoredshift.sh &'
+exec sh -c 'sh /home/duncan/.bitsAndBobs/autoredshift.sh &'
 exec xrandr --dpi 160
 # exec compton -b --dbe
 exec --no-startup-id polybar Bar 
+#exec sh -c "[ ! -s ~/.config/mpd/pid ] && mpd ~/.config/mpd/mpd.conf"
+exec --no-startup-id mopidy --config ~/.config/mopidy/mopidy.conf
