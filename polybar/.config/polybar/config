@@ -1,7 +1,7 @@
 [color]
 background = ${xrdb:background:#000}
 foreground = ${xrdb:foreground:#000}
-lead = ${xrdb:color8:#000}
+lead = ${xrdb:color10:#000}
 brighter = ${xrdb:color9:#000}
 darker = ${xrdb:color0:#000}
 
@@ -276,9 +276,9 @@ animation-charging-framerate = 750
 bar-capacity-format = %fill%%indicator%%empty%
 
 bar-capacity-width = 30
-bar-capacity-indicator = █ 
-bar-capacity-fill = █
-bar-capacity-empty = "-" 
+bar-capacity-indicator = "▒" 
+bar-capacity-fill = "▓"
+bar-capacity-empty = "░" 
 
-bar-capacity-foreground-0 = ${color.lead}
-bar-capacity-foreground-1 = ${color.lead}
+;bar-capacity-foreground-0 = ${color.lead}
+;bar-capacity-foreground-1 = ${color.lead}

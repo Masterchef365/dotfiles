@@ -1,40 +1,21 @@
-!#define S_foreground   #e8e8e8
-!#define S_background   #1e1e1e
-!#define S_color0       #272d30
-!#define S_color8       #53837d
-!#define S_color1       #df9989
-!#define S_color9       #778992
-!#define S_color2       #3f704c
-!#define S_color10      #4e8b5f
-!#define S_color3       #4c849f
-!#define S_color11      #66b1d5
-!#define S_color4       #168b92
-!#define S_color12      #1cb1ba
-!#define S_color5       #baa09d
-!#define S_color13      #f6d4d0
-!#define S_color6       #92a1a5
-!#define S_color14      #b0c2c7
-!#define S_color7       #d6d6d6
-!#define S_color15      #ffffff
-
-#define S_foreground   #544532
-#define S_background   #b3a38e
-#define S_color0       #a49078
-#define S_color8       #a79c98
-#define S_color1       #7ea3ab
-#define S_color9       #cf8f2a
-#define S_color2       #caa466
-#define S_color10      #a79175
-#define S_color3       #533a32
-#define S_color11      #7ea3ab
-#define S_color4       #c04737
-#define S_color12      #caa466
-#define S_color5       #872528
-#define S_color13      #533a32
-#define S_color6       #e89413
-#define S_color14      #c04737
-#define S_color7       #b67565
-#define S_color15      #872528
+#define S_foreground 	#ffffff
+#define S_background 	#343c24
+#define S_color0 	#2e2e2e
+#define S_color8 	#4b7200
+#define S_color1 	#5d7262
+#define S_color9 	#71705e
+#define S_color2 	#717f4f
+#define S_color10 	#698d23
+#define S_color3 	#81866c
+#define S_color11 	#999c89
+#define S_color4 	#788822
+#define S_color12 	#71a60d
+#define S_color5 	#727857
+#define S_color13 	#819341
+#define S_color6 	#558400
+#define S_color14 	#8ca525
+#define S_color7 	#267c08
+#define S_color15 	#868573
 
 Xft.dpi: 160
 ! ---------------------------- ROFI --------------------------------
@@ -42,9 +23,9 @@ Xft.dpi: 160
 rofi.color-enabled: true
 ! State:				  bg					fg					bgalt				hlbg			hlfg
 rofi.color-window:  S_background,	S_background
-rofi.color-normal:  S_background, 	S_foreground,	S_background,	S_color8,	S_color13
-rofi.color-active:  S_background, 	S_foreground,	S_background,	S_color8,	S_color13
-rofi.color-urgent:  S_background, 	S_foreground,	S_background,	S_color8,	S_color13
+rofi.color-normal:  S_background, 	S_foreground,	S_background,	S_color8,	S_foreground
+rofi.color-active:  S_background, 	S_foreground,	S_background,	S_color8,	S_foreground
+rofi.color-urgent:  S_background, 	S_foreground,	S_background,	S_color8,	S_foreground
 rofi.opacity: 87.5
 rofi.font: xft:Fantasque Sans Mono Regular Nerd Font Complete Mono 11
 rofi.dpi: 170
@@ -91,7 +72,7 @@ rofi.dpi: 170
 
 URxvt.font: xft:FantasqueSansMono Nerd Font
 URxvt*scrollBar: false
-!urxvt*depth: 32
-!urxvt*transparent: true
-!urxvt*shading: 15
+urxvt*depth: 32
+urxvt*transparent: true
+urxvt*shading: 15
 

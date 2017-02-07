@@ -67,7 +67,7 @@ let g:cpp_class_scope_highlight = 1
 
 " Colorscheme
 colorscheme noctu
-let g:airline_theme = "base16color"
+let g:airline_theme = "base16"
 
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>
