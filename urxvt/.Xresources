@@ -75,4 +75,3 @@ URxvt*scrollBar: false
 urxvt*depth: 32
 urxvt*transparent: true
 urxvt*shading: 15
-

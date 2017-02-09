@@ -160,7 +160,7 @@ label-urgent-padding =
 
 [module/clock]
 type = internal/date
-date = %%{T3}%Y/%m/%d %H:%M%%{T-}
+date = %%{T3}%m/%d/%y %H:%M%%{T-}
 interval = 5
 
 [module/network]
