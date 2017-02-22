@@ -1,5 +1,5 @@
 #define S_foreground 	#ffffff
-#define S_background 	#343c24
+#define S_background 	#111111
 #define S_color0 	#2e2e2e
 #define S_color8 	#4b7200
 #define S_color1 	#5d7262
@@ -73,5 +73,6 @@ rofi.dpi: 170
 URxvt.font: xft:FantasqueSansMono Nerd Font
 URxvt*scrollBar: false
 urxvt*depth: 32
-urxvt*transparent: true
-urxvt*shading: 15
+//urxvt*transparent: true
+//urxvt*shading: 15
+urxvt*background: rgba:1111/1111/1111/cccc

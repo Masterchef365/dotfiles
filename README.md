@@ -1,5 +1,5 @@
 # Dotfiles
-Dotfiles for all of my linux machines - Feel free to use them@
+Dotfiles for all of my linux machines - Feel free to use them
 
 # Installation
 I use GNU stow to keep the dotfiles in line. Just clone the repository into your home directory, cd into it, and use `stow */`. 

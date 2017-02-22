@@ -5,8 +5,6 @@ set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#rc(s:editor_root . '/bundle')
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'floobits/floobits-neovim'
-
 Plugin 'https://github.com/critiqjo/lldb.nvim.git'
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'https://github.com/Xuyuanp/nerdtree-git-plugin.git'
@@ -18,6 +16,7 @@ Plugin 'https://github.com/tpope/vim-fugitive.git'
 Plugin 'https://github.com/noahfrederick/vim-noctu.git'
 Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 Plugin 'https://github.com/terryma/vim-multiple-cursors.git'
+Plugin 'https://github.com/lervag/vimtex.git'
 
 " More cursors
 let g:multi_cursor_use_default_mapping=1
@@ -34,6 +33,12 @@ set nowrap
 set foldmethod=syntax
 set nofoldenable
 set mouse=a
+noremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
+inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
+inoremap <expr> <tab> ((pumvisible())?("\<Cr>"):("<Cr>"))
+nnoremap H ^
+nnoremap L $
+
 
 " Use CTRL+HJKL keys to navigate buffers 
 map <C-k> <C-w><Up>
@@ -67,7 +72,7 @@ let g:cpp_class_scope_highlight = 1
 
 " Colorscheme
 colorscheme noctu
-let g:airline_theme = "base16"
+let g:airline_theme = "base16color"
 
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>
@@ -76,3 +81,20 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " ll-db.nvim
 set rtp+=/home/duncan/.config/nvim/init.vim
 nmap <M-b> <Plug>LLBreakSwitch
+
+" Latex shortcut
+" autocmd BufWrite *.tex !pdflatex *.tex
+if !exists('g:ycm_semantic_triggers')
+	let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers.tex = [
+			\ 're!\\[A-Za-z]*cite[A-Za-z]*(\[[^]]*\]){0,2}{[^}]*',
+			\ 're!\\[A-Za-z]*ref({[^}]*|range{([^,{}]*(}{)?))',
+			\ 're!\\hyperref\[[^]]*',
+			\ 're!\\includegraphics\*?(\[[^]]*\]){0,2}{[^}]*',
+			\ 're!\\(include(only)?|input){[^}]*',
+			\ 're!\\\a*(gls|Gls|GLS)(pl)?\a*(\s*\[[^]]*\]){0,2}\s*\{[^}]*',
+			\ 're!\\includepdf(\s*\[[^]]*\])?\s*\{[^}]*',
+			\ 're!\\includestandalone(\s*\[[^]]*\])?\s*\{[^}]*',
+			\ ]
+
