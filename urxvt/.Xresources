@@ -1,21 +1,21 @@
-#define S_foreground 	#ffffff
-#define S_background 	#111111
-#define S_color0 	#2e2e2e
-#define S_color8 	#4b7200
-#define S_color1 	#5d7262
-#define S_color9 	#71705e
-#define S_color2 	#717f4f
-#define S_color10 	#698d23
-#define S_color3 	#81866c
-#define S_color11 	#999c89
-#define S_color4 	#788822
-#define S_color12 	#71a60d
-#define S_color5 	#727857
-#define S_color13 	#819341
-#define S_color6 	#558400
-#define S_color14 	#8ca525
-#define S_color7 	#267c08
-#define S_color15 	#868573
+#define S_foreground #1c242e	
+#define S_background	#e8e8e8 
+#define S_color0 	#91a5b5
+#define S_color8 	#9c9887
+#define S_color1 	#aabac3
+#define S_color9 	#7f7d6d
+#define S_color2 	#6787a6
+#define S_color10 	#b7b39e
+#define S_color3 	#5e7589
+#define S_color11 	#505049
+#define S_color4 	#495e73
+#define S_color12 	#646866
+#define S_color5 	#83939b
+#define S_color13 	#2b3644
+#define S_color6 	#37485a
+#define S_color14 	#273549
+#define S_color7 	#cbcac1
+#define S_color15 	#91a5b5
 
 Xft.dpi: 160
 ! ---------------------------- ROFI --------------------------------
@@ -75,4 +75,4 @@ URxvt*scrollBar: false
 urxvt*depth: 32
 //urxvt*transparent: true
 //urxvt*shading: 15
-urxvt*background: rgba:1111/1111/1111/cccc
+//urxvt*background: rgba:1111/1111/1111/cccc
