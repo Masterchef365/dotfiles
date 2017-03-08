@@ -4,14 +4,24 @@
 cp ~/.Xresources /tmp/.Xresources
 
 # Get color by name. TODO: Use a better way lol
-GetColor() {
-	grep "\*$1\:" /tmp/.Xresources | awk '{print $2}'
+#GetColor() {
+#	grep "\*$1\:" /tmp/.Xresources | awk '{print $2}'
+#}
+
+Pad () {
+	echo -n "  "
 }
 
+GetColor() {
+	grep "\#define $1\s." /tmp/.Xresources | awk '{print $3}'
+}
 # Set frequently used colors
-main_bg=$(GetColor "background")
-main_fg=$(GetColor "foreground")
-highlight=$(GetColor "color10")
+main_bg=$(GetColor "S_background")
+main_fg=$(GetColor "S_foreground")
+highlight_main=$(GetColor "S_color10")
+highlight_sub=$(GetColor "S_color9")
+highlight_sub2=$(GetColor "S_color12")
+highlight_sub3=$(GetColor "S_color14")
 
 seperator_left=""
 seperator_right=""
@@ -26,20 +36,18 @@ GetBGLemonColor() {
 	echo %{B$1}
 }
 
-
-
 HighlightBG() {
-	echo -n $(GetBGLemonColor $highlight)
+	echo -n $(GetBGLemonColor $1)
 	echo -n $(GetFGLemonColor $main_bg)
 }
 
 HighlightFG() {
-	echo -n $(GetFGLemonColor $highlight)
+	echo -n $(GetFGLemonColor $1)
 	echo -n $(GetBGLemonColor $main_bg)
 }
 
 WMIntegration() {
-	HighlightBG
+	HighlightBG $highlight_main
 	first="true"
 	last_was_focused="false"
 	for i in $(i3-msg -t get_workspaces | jq -s -c '.[] | .[] | {focused: .focused, number: .num}'); do
@@ -48,27 +56,27 @@ WMIntegration() {
 
 		if [[ $first != "true" ]]; then
 			if [[ $last_was_focused == "true" && $focused == "false" ]]; then
-				HighlightBG
-				echo -n $seperator_left
-				HighlightBG
+				HighlightFG $highlight_main 
+				#echo -n $seperator_left
+				HighlightFG $highlight_main
 			fi
 
 			if [[ $last_was_focused == "false" && $focused == "false" ]]; then
-				HighlightBG
-				echo -n $divider_left
+				HighlightFG $highlight_main
+				#echo -n $divider_left
 			fi
 
 			if [[ $last_was_focused == "false" && $focused == "true" ]]; then
-				HighlightFG
-				echo -n $seperator_left
-				HighlightFG
+				HighlightBG $highlight_main
+				#echo -n $seperator_left
+				HighlightBG $highlight_main
 			fi
 
 		else 
 			if [[ $focused == "true" ]]; then
-				HighlightFG
+				HighlightBG $highlight_main
 			else
-				HighlightBG
+				HighlightFG $highlight_main
 			fi
 		fi
 
@@ -79,14 +87,50 @@ WMIntegration() {
 	done
 
 	if [[ $last_was_focused == "false" ]]; then
-		HighlightBG
-		echo -n %{R}$seperator_left 
+		HighlightBG $highlight_main
+		#echo -n %{R}$seperator_left 
 	fi
-	HighlightFG	
+	HighlightFG	$highlight_main
 }
 
 Clock() {
-	date "+%a %D %H:%M" | tr '\n\r' ' '
+	HighlightBG $highlight_main
+	Pad
+	date "+%a %D %H:%M" | tr -d '\n\r'
+	Pad
+	HighlightFG $highlight_main
+}
+
+Battery() {
+	HighlightBG $highlight_main
+	Pad
+	acpi | awk '{print $3$4$5}' | tr ',' ' ' | tr -d '\n\r'
+	Pad
+	HighlightFG $highlight_main
+}
+
+Email () {
+	if grep -q 0 "/tmp/mailtemp.tmp"; then
+		HighlightBG $highlight_sub2
+	else 
+		HighlightBG $highlight_sub
+	fi
+	Pad
+	echo -n ""
+	Pad
+	cat /tmp/mailtemp.tmp
+	Pad
+
+	HighlightFG $highlight_main
+}
+
+MPD_Integration () {
+	HighlightBG $highlight_sub3
+	Pad
+	echo -n ""
+	Pad
+	mpc current | tr -d '\n\r'
+	Pad
 }
 
 Left() {
@@ -98,21 +142,25 @@ Center() {
 	echo -n "%{c}"
 	Clock
 }
-#
-#Right(){
-#}
 
+Right(){
+	echo -n "%{r}"
+	MPD_Integration
+	Email
+	Battery
+}
 
-
+./check_mail_loop.sh &
 while true; do
 	if [[ -f /bin/jq ]]; then
-		echo
 		Left
 		Center
+		Right
+		echo
 	else
 		echo "Bar requires jq to run!"
 	fi
-	sleep 1
+	sleep 3
 done
 
 # TODO Add for each monitor that's connected the same thing

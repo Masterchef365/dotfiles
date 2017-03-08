@@ -35,6 +35,7 @@ alias spotify='spotify --force-device-scale-factor=1.5'
 alias setbg='. ~/.bitsAndBobs/background_switch.sh' 
 alias goodnight='sudo shutdown now'
 alias noice='echo I know right!'
+alias wot='echo u fockin wot m8'
 alias fuck='echo -e "Well, \e[3msorrryy\e[0m. ERROR: Problem exists between chair and keyboard."'
 
 # Colored man pages

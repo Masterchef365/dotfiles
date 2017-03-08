@@ -9,8 +9,8 @@ Plugin 'https://github.com/critiqjo/lldb.nvim.git'
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'https://github.com/Xuyuanp/nerdtree-git-plugin.git'
 Plugin 'https://github.com/edkolev/promptline.vim.git'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plugin 'https://github.com/vim-airline/vim-airline.git'
+Plugin 'https://github.com/vim-airline/vim-airline-themes.git'
 Plugin 'https://github.com/tpope/vim-dispatch.git'
 Plugin 'https://github.com/tpope/vim-fugitive.git'
 Plugin 'https://github.com/noahfrederick/vim-noctu.git'
@@ -63,7 +63,6 @@ let g:airline_left_sep = "\ue0b8"
 let g:airline_right_sep = "\ue0ba"
 let g:airline_left_alt_sep = "\ue0b9"
 let g:airline_right_alt_sep = "\ue0bb"
-
 
 " Vim-cpp
 let g:cpp_experimental_template_highlight = 1
