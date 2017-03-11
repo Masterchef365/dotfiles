@@ -37,6 +37,7 @@ alias goodnight='sudo shutdown now'
 alias noice='echo I know right!'
 alias wot='echo u fockin wot m8'
 alias fuck='echo -e "Well, \e[3msorrryy\e[0m. ERROR: Problem exists between chair and keyboard."'
+alias macho='man'
 
 # Colored man pages
 man() {

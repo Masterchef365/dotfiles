@@ -43,8 +43,8 @@ font pango:monospace 10
 
 # Border options
 new_window none
-gaps inner 15
-smart_gaps on
+#gaps inner 15
+#smart_gaps on
 for_window [class="^.*"] border pixel 2
 
 # ----------------------- Program shortcut options -----------------------  
@@ -151,4 +151,4 @@ exec xrandr --dpi 160
 # exec compton -b --dbe
 exec --no-startup-id sh -c 'cd ~/.lemonbar && ./executebar.sh &' 
 #exec sh -c "[ ! -s ~/.config/mpd/pid ] && mpd ~/.config/mpd/mpd.conf"
-exec --no-startup-id mopidy --config ~/.config/mopidy/mopidy.conf
+#exec --no-startup-id mopidy --config ~/.config/mopidy/mopidy.conf
