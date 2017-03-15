@@ -31,11 +31,10 @@ alias rs='tput reset'
 alias reset='tput reset'
 alias tty-clock='tty-clock -C 6'
 alias thinkofthe='pacaur -Rns $(pacaur -Qtdq)'
-alias spotify='spotify --force-device-scale-factor=1.5'
-alias setbg='. ~/.bitsAndBobs/background_switch.sh' 
+
 alias goodnight='sudo shutdown now'
 alias noice='echo I know right!'
-alias wot='echo u fockin wot m8'
+alias wot='echo wot in ternation'
 alias fuck='echo -e "Well, \e[3msorrryy\e[0m. ERROR: Problem exists between chair and keyboard."'
 alias macho='man'
 
@@ -49,6 +48,11 @@ man() {
     LESS_TERMCAP_us=$'\e[01;32m' \
     command man "$@"
 }
+#man() {
+#  /usr/bin/man $* | \
+#    col -b | \
+#    vim -R -c 'set ft=man nomod nolist' -
+#}
 
 # Use .inputrc (Use CTRL+Arrow to move over words)
 export INPUTRC=~/.inputrc

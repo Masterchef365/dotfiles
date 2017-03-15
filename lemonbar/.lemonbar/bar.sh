@@ -3,15 +3,11 @@
 # Copy to dedodated wam for speed
 cp ~/.Xresources /tmp/.Xresources
 
-# Get color by name. TODO: Use a better way lol
-#GetColor() {
-#	grep "\*$1\:" /tmp/.Xresources | awk '{print $2}'
-#}
-
 Pad () {
 	echo -n "  "
 }
 
+# Get color by name. TODO: Use a better way lol
 GetColor() {
 	grep "\#define $1\s." /tmp/.Xresources | awk '{print $3}'
 }
@@ -109,6 +105,7 @@ Battery() {
 	HighlightFG $highlight_main
 }
 
+./check_mail_loop.sh &
 Email () {
 	if grep -q 0 "/tmp/mailtemp.tmp"; then
 		HighlightBG $highlight_sub2
@@ -119,6 +116,22 @@ Email () {
 	echo -n ""
 	Pad
 	cat /tmp/mailtemp.tmp
+	Pad
+
+	HighlightFG $highlight_main
+}
+
+./check_reddit_messages_loop.sh &
+Reddit () {
+	if grep -q 0 "/tmp/mailtemp.tmp"; then
+		HighlightBG $highlight_sub3
+	else 
+		HighlightBG $highlight_sub
+	fi
+	Pad
+	echo -n ""
+	Pad
+	cat /tmp/reddit_messages.tmp
 	Pad
 
 	HighlightFG $highlight_main
@@ -146,11 +159,11 @@ Center() {
 Right(){
 	echo -n "%{r}"
 	MPD_Integration
+	Reddit
 	Email
 	Battery
 }
 
-./check_mail_loop.sh &
 while true; do
 	if [[ -f /bin/jq ]]; then
 		Left

@@ -1,21 +1,21 @@
-#define S_foreground #1c242e	
-#define S_background	#e8e8e8 
-#define S_color0 		#91a5b5
-#define S_color8 		#9c9887
-#define S_color1 		#aabac3
-#define S_color9 		#7f7d6d
-#define S_color2 		#6787a6
-#define S_color10 	#b7b39e
-#define S_color3 		#5e7589
-#define S_color11 	#505049
-#define S_color4 		#495e73
-#define S_color12 	#646866
-#define S_color5 		#83939b
-#define S_color13 	#2b3644
-#define S_color6 		#37485a
-#define S_color14 	#273549
-#define S_color7 		#cbcac1
-#define S_color15 	#91a5b5
+#define S_foreground 	#ddeae0
+#define S_background 	#141815
+#define S_color0 	#3a473d
+#define S_color8 	#4a7000
+#define S_color1 	#57695b
+#define S_color9 	#71705e
+#define S_color2 	#626e45
+#define S_color10 	#698d23
+#define S_color3 	#6c705a
+#define S_color11 	#999c89
+#define S_color4 	#525d17
+#define S_color12 	#71a60d
+#define S_color5 	#6b7051
+#define S_color13 	#819341
+#define S_color6 	#355200
+#define S_color14 	#8ca525
+#define S_color7 	#206907
+#define S_color15 	#868573
 
 Xft.dpi: 160
 ! ---------------------------- ROFI --------------------------------
