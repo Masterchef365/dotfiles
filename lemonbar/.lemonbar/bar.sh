@@ -7,6 +7,10 @@ Pad () {
 	echo -n "  "
 }
 
+SmallPad () {
+	echo -n " "
+}
+
 # Get color by name. TODO: Use a better way lol
 GetColor() {
 	grep "\#define $1\s." /tmp/.Xresources | awk '{print $3}'
@@ -108,9 +112,9 @@ Battery() {
 ./check_mail_loop.sh &
 Email () {
 	if grep -q 0 "/tmp/mailtemp.tmp"; then
-		HighlightBG $highlight_sub2
+		HighlightBG $highlight_sub3
 	else 
-		HighlightBG $highlight_sub
+		HighlightBG $highlight_sub2
 	fi
 	Pad
 	echo -n ""
@@ -123,7 +127,7 @@ Email () {
 
 ./check_reddit_messages_loop.sh &
 Reddit () {
-	if grep -q 0 "/tmp/mailtemp.tmp"; then
+	if grep -q 0 "/tmp/reddit_messages.tmp"; then
 		HighlightBG $highlight_sub3
 	else 
 		HighlightBG $highlight_sub
@@ -146,6 +150,16 @@ MPD_Integration () {
 	Pad
 }
 
+Wifi () {
+	HighlightBG $highlight_sub3
+	Pad
+	echo -n ""
+	Pad
+	iwconfig 2> /dev/null | sed -n 's:.*Link Quality=\([0-9]*\/[0-9]*\).*:\1:p' | tr -d '\r\n'
+	Pad
+	HighlightFG $highlight_main
+}
+
 Left() {
 	echo -n "%{l}"
 	WMIntegration
@@ -158,10 +172,15 @@ Center() {
 
 Right(){
 	echo -n "%{r}"
-	MPD_Integration
+	#MPD_Integration
 	Reddit
+	SmallPad
 	Email
+	SmallPad
+	Wifi
+	SmallPad
 	Battery
+	SmallPad
 }
 
 while true; do

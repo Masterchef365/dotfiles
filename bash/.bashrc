@@ -37,6 +37,7 @@ alias noice='echo I know right!'
 alias wot='echo wot in ternation'
 alias fuck='echo -e "Well, \e[3msorrryy\e[0m. ERROR: Problem exists between chair and keyboard."'
 alias macho='man'
+alias bootstat='google-chrome-stable $(cp <(systemd-analyze plot) /tmp/disp.svg && echo /tmp/disp.svg)'
 
 # Colored man pages
 man() {
