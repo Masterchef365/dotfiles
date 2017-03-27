@@ -142,7 +142,7 @@ bindsym XF86AudioNext exec --no-startup-id mpc next
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You sure, fam?' -b 'Ya boi' 'i3-msg exit'"
-
+bindsym $mod+i exec i3lock-fancy -pf "Fantasque-Sans-Mono-Regular" -- scrot 
 
 # ----------------------- Post-WM commands -----------------------  
 exec ~/.fehbg

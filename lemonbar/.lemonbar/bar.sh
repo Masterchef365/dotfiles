@@ -180,7 +180,6 @@ Right(){
 	Wifi
 	SmallPad
 	Battery
-	SmallPad
 }
 
 while true; do
