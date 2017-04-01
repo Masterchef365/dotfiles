@@ -1,22 +1,41 @@
-#define S_foreground 	#e4d1bd
-#define S_background 	#1f1c1b
-#define S_color0 			#4f453e
-#define S_color8 			#5b554e
-#define S_color1 			#a0714a
-#define S_color9 			#bf8b4c
-#define S_color2 			#9c8051
-#define S_color10 		#948166
-#define S_color3 			#ae7639
-#define S_color11 		#a79c8b
-#define S_color4 			#916c34
-#define S_color12 		#9f5f20
-#define S_color5 			#9a8166
-#define S_color13 		#776f66
-#define S_color6 			#a68c61
-#define S_color14 		#6a7272
-#define S_color7 			#775c51
-#define S_color15 		#818b8c
+#define S_foreground 	#f0edf1
+#define S_background 	#241c25
+#define S_color0 	#51468b
+#define S_color8 	#624c62
+#define S_color1 	#605194
+#define S_color9 	#cfb2d4
+#define S_color2 	#514372
+#define S_color10 	#ab7e9d
+#define S_color3 	#6c5581
+#define S_color11 	#8a6c8e
+#define S_color4 	#826c9b
+#define S_color12 	#7d6595
+#define S_color5 	#845da0
+#define S_color13 	#a3687a
+#define S_color6 	#9b72b4
+#define S_color14 	#d79eb1
+#define S_color7 	#84608c
+#define S_color15 	#d7a8be
 
+!#define S_foreground 	#e4d1bd
+!#define S_background 	#1f1c1b
+!#define S_color0 			#4f453e
+!#define S_color8 			#5b554e
+!#define S_color1 			#a0714a
+!#define S_color9 			#bf8b4c
+!#define S_color2 			#9c8051
+!#define S_color10 		#948166
+!#define S_color3 			#ae7639
+!#define S_color11 		#a79c8b
+!#define S_color4 			#916c34
+!#define S_color12 		#9f5f20
+!#define S_color5 			#9a8166
+!#define S_color13 		#776f66
+!#define S_color6 			#a68c61
+!#define S_color14 		#6a7272
+!#define S_color7 			#775c51
+!#define S_color15 		#818b8c
+!
 Xft.dpi: 160
 ! ---------------------------- ROFI --------------------------------
 
@@ -75,6 +94,8 @@ URxvt*scrollBar: false
 !urxvt*depth: 32
 URxvt.internalBorder: 6
 
-!urxvt*transparent: true
-!urxvt*shading: 10
-!urxvt*background: rgba:1f00/1c00/1b00/eeee
+urxvt*transparent: true
+urxvt*shading: 10
+!urxvt*tintColor: #FFFFFF 
+!urxvt*blurRadius: 30 
+!urxvt*background: rgba:FFFF/FFFF/FFFF/AAAA
