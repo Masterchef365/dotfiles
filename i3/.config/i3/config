@@ -42,9 +42,10 @@ client.placeholder      $color10 $color10 $color5 	$color2
 font pango:monospace 10
 
 # Border options
-new_window none
-gaps inner 15
+#new_window none
+#gaps inner 15
 smart_gaps on
+smart_borders on
 for_window [class="^.*"] border pixel 2
 
 # ----------------------- Program shortcut options -----------------------  
@@ -52,8 +53,8 @@ for_window [class="^.*"] border pixel 2
 # Rofi 
 bindsym $mod+z exec rofi -show window
 # TODO: Add to .Xresources instead
-#bindsym $mod+d exec rofi -show run -width 30 -xoffset -1005 -yoffset 12 -lines 52
-bindsym $mod+d exec rofi -show run -width 30 -xoffset -1005 -yoffset 44 -lines 52
+#bindsym $mod+d exec rofi -show run -width 30 -xoffset -1005 -yoffset 44 -lines 52
+bindsym $mod+d exec rofi -show run
 
 # Terminal
 bindsym $mod+Return exec urxvt
@@ -128,11 +129,11 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id sh -c ". ~/.bitsAndBobs/audio_
 bindsym XF86AudioLowerVolume exec --no-startup-id sh -c ". ~/.bitsAndBobs/audio_setters/set_current_window_volume.sh VolDn"
 bindsym XF86AudioMute exec --no-startup-id sh -c ". ~/.bitsAndBobs/audio_setters/set_current_window_volume.sh Mute"
 
-bindsym XF86KbdBrightnessUp exec --no-startup-id kbdlight up 10
-bindsym XF86KbdBrightnessDown exec --no-startup-id kbdlight down 10
+bindsym XF86KbdBrightnessUp exec --no-startup-id kbdlight up 1
+bindsym XF86KbdBrightnessDown exec --no-startup-id kbdlight down 1
 
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 1
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 1
 
 bindsym XF86AudioPrev exec --no-startup-id mpc next
 bindsym XF86AudioPlay exec --no-startup-id mpc toggle
