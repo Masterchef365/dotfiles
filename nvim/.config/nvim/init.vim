@@ -16,6 +16,7 @@ Plugin 'https://github.com/noahfrederick/vim-noctu.git'
 Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 Plugin 'https://github.com/terryma/vim-multiple-cursors.git'
 Plugin 'https://github.com/lervag/vimtex.git'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 call vundle#end()
 
 " More cursors
@@ -67,9 +68,9 @@ let g:airline_right_alt_sep = "\ue0bb"
 "let g:cpp_concepts_highlight = 1
 "let g:cpp_class_scope_highlight = 1
 
-" Colorscheme
+" Colorschemes
 colorscheme noctu
-let g:airline_theme = "base16"
+let g:airline_theme = "base16color"
 
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>
@@ -94,3 +95,9 @@ let g:ycm_semantic_triggers.tex = [
 			\ 're!\\includepdf(\s*\[[^]]*\])?\s*\{[^}]*',
 			\ 're!\\includestandalone(\s*\[[^]]*\])?\s*\{[^}]*',
 			\ ]
+
+" Better syntax highlighting
+let g:cpp_concepts_highlight = 1
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_experimental_simple_template_highlight = 1

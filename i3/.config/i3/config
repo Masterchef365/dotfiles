@@ -147,7 +147,7 @@ bindsym $mod+i exec i3lock-fancy -pf "Fantasque-Sans-Mono-Regular" -- scrot
 
 # ----------------------- Post-WM commands -----------------------  
 exec ~/.fehbg
-exec sh -c 'sh /home/duncan/.bitsAndBobs/autoredshift.sh &'
+exec redshift -l geoclue2
 exec xrandr --dpi 160
 # exec compton -b --dbe
 exec --no-startup-id sh -c 'cd ~/.lemonbar && ./executebar.sh &' 

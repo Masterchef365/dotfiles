@@ -26,6 +26,7 @@ bzr
 cargo
 cava-git
 ccsm
+chromium
 clang
 cmake
 cmatrix
@@ -43,7 +44,6 @@ cpupower
 cryptsetup
 cups
 darktable
-deluge-git
 device-mapper
 dhcpcd
 dhex
@@ -54,6 +54,7 @@ docbook-xml
 docbook-xsl
 docky
 dosfstools
+dwarffortress
 e2fsprogs
 easy-rsa
 efibootmgr
@@ -74,6 +75,7 @@ firefox
 flattr-icon-theme
 gawk
 gconf-editor
+gconfmm
 gdb
 geoip
 geoip-database
@@ -89,7 +91,6 @@ gnome-terminal
 gnu-netcat
 gnuplot
 go
-google-chrome
 grep
 groff
 grub
@@ -99,10 +100,10 @@ gzip
 hashcat
 hplip
 htop
-hyper
 i3-gaps
 i3ipc-glib-git
 i3lock-fancy-git
+iasl
 inetutils
 inkscape
 intel-ucode
@@ -117,14 +118,15 @@ krita
 la-capitaine-icon-theme-git
 lemonbar-xft-git
 less
+lib32-libtinfo
 libcaca
 libdbusmenu-glib
 libdbusmenu-gtk2
 libdbusmenu-gtk3
+libglademm
 libmpdclient
 libmtp
 librealsense
-libtinfo
 libtool
 libusb-compat
 licenses
@@ -156,14 +158,13 @@ mpd
 mplayer
 mtpfs
 mupdf
-nano
 nautilus
 ncmpcpp
 neofetch
 neovim
 nerd-fonts-complete
-net-tools
 netctl
+net-tools
 nload
 nmap
 npm
@@ -178,6 +179,7 @@ optipng
 p7zip
 pacaur
 pacman
+paprefs
 patch
 pavucontrol
 pciutils
@@ -195,8 +197,14 @@ pugixml
 pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
+pulseaudio-gconf
 pv
 pyqt4-common
+python2-gobject
+python2-neovim
+python2-pyopenssl
+python2-pyqt4
+python2-pyqt5
 python-gobject
 python-incremental
 python-matplotlib
@@ -205,11 +213,6 @@ python-pillow
 python-pip
 python-pyqt4
 python-pyqt5
-python2-gobject
-python2-neovim
-python2-pyopenssl
-python2-pyqt4
-python2-pyqt5
 qt4
 qt5-tools
 qtcreator
@@ -221,7 +224,6 @@ rsync
 rtorrent
 rust
 rxvt-unicode
-s-nail
 sane
 screen
 scrot
@@ -230,6 +232,7 @@ shadow
 siji-git
 simple-mtpfs-git
 sind-git
+s-nail
 soundcloud-dl-git
 speedread-git
 spirv-tools
@@ -241,8 +244,8 @@ strace
 sudo
 sway
 sysfsutils
-system-san-francisco-font-git
 systemd-sysvcompat
+system-san-francisco-font-git
 tar
 terminus-font-ttf
 texinfo
@@ -263,6 +266,7 @@ texlive-pstricks
 texlive-publishers
 texlive-science
 thunar
+tmux
 tor-browser-bin
 transmission-cli
 tree
