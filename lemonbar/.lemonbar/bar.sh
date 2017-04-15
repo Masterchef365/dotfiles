@@ -58,7 +58,7 @@ WMIntegration() {
 			if [[ $last_was_focused == "true" && $focused == "false" ]]; then
 				HighlightFG $highlight_main 
 				#echo -n $seperator_left
-				HighlightFG $highlight_main
+				#HighlightFG $highlight_main
 			fi
 
 			if [[ $last_was_focused == "false" && $focused == "false" ]]; then
@@ -69,7 +69,7 @@ WMIntegration() {
 			if [[ $last_was_focused == "false" && $focused == "true" ]]; then
 				HighlightBG $highlight_main
 				#echo -n $seperator_left
-				HighlightBG $highlight_main
+				#HighlightBG $highlight_main
 			fi
 
 		else 
@@ -104,12 +104,11 @@ Clock() {
 Battery() {
 	HighlightBG $highlight_main
 	Pad
-	acpi | awk '{print $3$4$5}' | tr ',' ' ' | tr -d '\n\r'
+	cat /tmp/battery
 	Pad
 	HighlightFG $highlight_main
 }
 
-./check_mail_loop.sh &
 Email () {
 	if grep -q 0 "/tmp/mailtemp.tmp"; then
 		HighlightBG $highlight_sub3
@@ -125,7 +124,6 @@ Email () {
 	HighlightFG $highlight_main
 }
 
-./check_reddit_messages_loop.sh &
 Reddit () {
 	if grep -q 0 "/tmp/reddit_messages.tmp"; then
 		HighlightBG $highlight_sub3
@@ -170,9 +168,8 @@ Center() {
 	Clock
 }
 
-Right(){
+Right() {
 	echo -n "%{r}"
-	#MPD_Integration
 	Reddit
 	SmallPad
 	Email
@@ -182,7 +179,50 @@ Right(){
 	Battery
 }
 
-while true; do
+Check_Battery_Loop () {
+	while true; do
+		value=$(acpi | awk '{print $3$4$5}' | tr ',' ' ' | tr -d '\n\r')
+		echo -n $value > /tmp/battery
+		sleep 3
+	done
+}
+
+Check_Mail_Loop () {
+	source ~/.private.sh
+	while true; do
+		curl -u $username@gmail.com:$password --silent "https://mail.google.com/mail/feed/atom" | 
+		xmllint --format - | 
+		grep "<entry>" | 
+		wc -l | 
+		tr -d '\r\n' > /tmp/mailtemp.tmp
+		sleep 50
+	done
+}
+
+Check_Reddit_Loop () {
+	source ~/.private.sh
+	while true; do
+		access_token=`curl -s -X POST -d \
+			"grant_type=password&username=$reddit_username&password=$reddit_password" \
+			--user "$reddit_bot_client_id:$reddit_bot_secret" \
+			https://www.reddit.com/api/v1/access_token -A "$reddit_bot_name" | jq -r '.access_token'`
+		for x in {0..30}; do
+			curl -s -H \
+				"Authorization: bearer $access_token" -A \
+				"$reddit_bot_name" https://oauth.reddit.com/api/v1/me | 
+			jq -r '.inbox_count' |
+			tr -d '\r\n' > /tmp/reddit_messages.tmp
+			sleep 50
+		done
+	done
+}
+
+Check_Battery_Loop &
+Check_Mail_Loop &
+Check_Reddit_Loop &
+Redraw_Loop &
+
+Redraw () {
 	if [[ -f /bin/jq ]]; then
 		Left
 		Center
@@ -191,7 +231,16 @@ while true; do
 	else
 		echo "Bar requires jq to run!"
 	fi
-	sleep 3
-done
+}
 
-# TODO Add for each monitor that's connected the same thing
+Redraw_Loop () {
+	while true; do
+		Redraw
+		sleep 3
+	done
+}
+
+./event.pl workspace |
+while read -r x; do
+	Redraw
+done

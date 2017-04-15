@@ -129,11 +129,11 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id sh -c ". ~/.bitsAndBobs/audio_
 bindsym XF86AudioLowerVolume exec --no-startup-id sh -c ". ~/.bitsAndBobs/audio_setters/set_current_window_volume.sh VolDn"
 bindsym XF86AudioMute exec --no-startup-id sh -c ". ~/.bitsAndBobs/audio_setters/set_current_window_volume.sh Mute"
 
-bindsym XF86KbdBrightnessUp exec --no-startup-id kbdlight up 1
-bindsym XF86KbdBrightnessDown exec --no-startup-id kbdlight down 1
+bindsym XF86KbdBrightnessUp exec --no-startup-id kbdlight up 10
+bindsym XF86KbdBrightnessDown exec --no-startup-id kbdlight down 10
 
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 1
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 1
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 
 bindsym XF86AudioPrev exec --no-startup-id mpc next
 bindsym XF86AudioPlay exec --no-startup-id mpc toggle
@@ -149,7 +149,4 @@ bindsym $mod+i exec i3lock-fancy -pf "Fantasque-Sans-Mono-Regular" -- scrot
 exec ~/.fehbg
 exec redshift -l geoclue2
 exec xrandr --dpi 160
-# exec compton -b --dbe
 exec --no-startup-id sh -c 'cd ~/.lemonbar && ./executebar.sh &' 
-#exec sh -c "[ ! -s ~/.config/mpd/pid ] && mpd ~/.config/mpd/mpd.conf"
-#exec --no-startup-id mopidy --config ~/.config/mopidy/mopidy.conf

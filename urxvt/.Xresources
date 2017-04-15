@@ -98,5 +98,5 @@ URxvt.internalBorder: 6
 !urxvt*tintColor: #FFFFFF 
 !urxvt*blurRadius: 30 
 
-!urxvt*background: rgba:1b00/1b00/1c00/EEEE
+!urxvt*background: rgba:2000/1d00/1e00/EEEE
 !urxvt*depth: 32
