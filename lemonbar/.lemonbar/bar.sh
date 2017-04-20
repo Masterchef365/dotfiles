@@ -146,6 +146,7 @@ MPD_Integration () {
 	Pad
 	mpc current | tr -d '\n\r'
 	Pad
+	HighlightFG $highlight_main
 }
 
 Wifi () {
@@ -170,6 +171,8 @@ Center() {
 
 Right() {
 	echo -n "%{r}"
+	MPD_Integration
+	SmallPad
 	Reddit
 	SmallPad
 	Email
@@ -220,7 +223,6 @@ Check_Reddit_Loop () {
 Check_Battery_Loop &
 Check_Mail_Loop &
 Check_Reddit_Loop &
-Redraw_Loop &
 
 Redraw () {
 	if [[ -f /bin/jq ]]; then
@@ -240,6 +242,7 @@ Redraw_Loop () {
 	done
 }
 
+Redraw_Loop &
 ./event.pl workspace |
 while read -r x; do
 	Redraw

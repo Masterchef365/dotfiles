@@ -150,3 +150,4 @@ exec ~/.fehbg
 exec redshift -l geoclue2
 exec xrandr --dpi 160
 exec --no-startup-id sh -c 'cd ~/.lemonbar && ./executebar.sh &' 
+exec --no-startup-id mopidy

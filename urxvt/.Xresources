@@ -1,41 +1,43 @@
-#define S_foreground 	#c5c8c6
-#define S_background 	#201d1e
-#define S_color0 	#282a2e
-#define S_color8 	#373b41
-#define S_color1 	#9c4c08
-#define S_color9 	#d2670b
-#define S_color2 	#678400
-#define S_color10 	#89b000
-#define S_color3 	#de935f
-#define S_color11 	#f0c674
-#define S_color4 	#5c7478
-#define S_color12 	#7fa0a5
-#define S_color5 	#4f353c
-#define S_color13 	#8a5d69
-#define S_color6 	#24606e
-#define S_color14 	#3fa6c0
-#define S_color7 	#707880
-#define S_color15 	#c5c8c6
+#define S_foreground 	#bea492
+#define S_background 	#181512
+#define S_color0 	#332d29
+#define S_color8 	#817267
+#define S_color1 	#8c644c
+#define S_color9 	#9f7155
+#define S_color2 	#746c48
+#define S_color10 	#857b52
+#define S_color3 	#908a66
+#define S_color11 	#9c956e
+#define S_color4 	#646a6d
+#define S_color12 	#71777a
+#define S_color5 	#605655
+#define S_color13 	#656565
+#define S_color6 	#4b5c5e
+#define S_color14 	#556d70
+#define S_color7 	#504339
+#define S_color15 	#9a875f
 
-!#define S_foreground 	#dfe2de
-!#define S_background 	#1b1b1c
-!#define S_color0 	#333435
-!#define S_color8 	#70716f
-!#define S_color1 	#525456
-!#define S_color9 	#8b4859
-!#define S_color2 	#557171
-!#define S_color10 	#a53f42
-!#define S_color3 	#948973
-!#define S_color11 	#9b7939
-!#define S_color4 	#9d265d
-!#define S_color12 	#a8afb3
-!#define S_color5 	#7d7b80
-!#define S_color13 	#ad8473
-!#define S_color6 	#b0a3a9
-!#define S_color14 	#93004f
-!#define S_color7 	#853b69
-!#define S_color15 	#e4c493
-!
+
+!#define S_foreground 	#c5c8c6
+!#define S_background 	#201d1e
+!#define S_color0 	#282a2e
+!#define S_color8 	#373b41
+!#define S_color1 	#9c4c08
+!#define S_color9 	#d2670b
+!#define S_color2 	#678400
+!#define S_color10 	#89b000
+!#define S_color3 	#de935f
+!#define S_color11 	#f0c674
+!#define S_color4 	#5c7478
+!#define S_color12 	#7fa0a5
+!#define S_color5 	#4f353c
+!#define S_color13 	#8a5d69
+!#define S_color6 	#24606e
+!#define S_color14 	#3fa6c0
+!#define S_color7 	#707880
+!#define S_color15 	#c5c8c6
+
+! ---------------------------- ROFI -------------------------------
 rofi.color-enabled: true
 ! State:				  bg					fg					bgalt				hlbg			hlfg
 rofi.color-window:  S_background,	S_background
@@ -92,6 +94,7 @@ rofi.xoffset: 0
 URxvt.font: xft:FantasqueSansMono Nerd Font
 URxvt*scrollBar: false
 URxvt.internalBorder: 6
+Xft.dpi: 160
 
 !urxvt*transparent: true
 !urxvt*shading: 10

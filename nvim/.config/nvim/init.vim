@@ -33,6 +33,7 @@ set nowrap
 set foldmethod=syntax
 set nofoldenable
 set mouse=a
+set hidden
 "noremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
 "inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 "inoremap <expr> <tab> ((pumvisible())?("\<Cr>"):("<Cr>"))
@@ -70,7 +71,8 @@ let g:airline_right_alt_sep = "\ue0bb"
 
 " Colorschemes
 colorscheme noctu
-let g:airline_theme = "base16color"
+"let g:airline_theme = "base16color"
+let g:airline_theme = "base16"
 
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>
