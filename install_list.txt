@@ -60,6 +60,7 @@ gettext
 git
 glibc
 glm
+gnome-calculator
 gnu-netcat
 gnuplot
 go
@@ -82,6 +83,7 @@ iputils
 jq
 kbdlight
 krita
+la-capitaine-icon-theme-git
 lemonbar-xft-git
 less
 libcaca
@@ -95,6 +97,7 @@ libusb-compat
 licenses
 lightdm-webkit2-greeter
 linux-macbook
+linux-macbook-docs
 linux-macbook-headers
 lldb
 lm_sensors
@@ -103,6 +106,7 @@ lvm2
 lxappearance
 m4
 macchanger
+macfanctld
 make
 man-db
 man-pages
@@ -114,6 +118,7 @@ mpc
 mpd
 mplayer
 mtpfs
+mypaint
 ncmpcpp
 neofetch
 neovim
@@ -124,6 +129,7 @@ nmap
 nss-mdns
 ntfs-3g
 ntp
+oomox
 opencv
 openssh
 openvpn
@@ -158,7 +164,6 @@ python2-pyqt4
 python2-pyqt5
 python-gobject
 python-incremental
-python-matplotlib
 python-neovim
 python-pillow
 python-pip
@@ -180,11 +185,14 @@ sed
 shadow
 simple-mtpfs-git
 s-nail
+socat
 spirv-tools
+spotify
 sshfs
 stow
 strace
 sudo
+sway-git
 sysfsutils
 systemd-sysvcompat
 tar
@@ -206,6 +214,7 @@ texlive-pstricks
 texlive-publishers
 texlive-science
 thunar
+thunar-volman
 tmux
 tor-browser-bin
 tree
@@ -219,7 +228,6 @@ upower
 usbutils
 util-linux
 vlc
-vrms-arch
 vulkan-extra-layers
 vulkan-headers
 vulkan-intel

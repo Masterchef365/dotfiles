@@ -71,8 +71,7 @@ let g:airline_right_alt_sep = "\ue0bb"
 
 " Colorschemes
 colorscheme noctu
-"let g:airline_theme = "base16color"
-let g:airline_theme = "base16"
+let g:airline_theme = "base16color"
 
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>
