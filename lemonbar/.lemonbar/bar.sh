@@ -144,7 +144,7 @@ MPD_Integration () {
 	Pad
 	echo -n ""
 	Pad
-	mpc current | tr -d '\n\r'
+	mpc current | cut -c 1-30 | tr -d '\n\r'
 	Pad
 	HighlightFG $highlight_main
 }
