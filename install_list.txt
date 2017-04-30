@@ -8,6 +8,7 @@ autoconf
 automake
 bash
 bash-completion
+bash-pipes
 bind-tools
 binutils
 bison
@@ -40,6 +41,7 @@ discord
 dosfstools
 e2fsprogs
 easy-rsa
+ed
 efibootmgr
 exfat-utils
 expac
@@ -71,6 +73,7 @@ gvfs
 gvfs-mtp
 gzip
 hashcat
+hdparm
 hplip
 htop
 i3-gaps
@@ -78,6 +81,7 @@ i3lock-fancy-git
 inetutils
 inkscape
 intel-ucode
+iotop
 iproute2
 iputils
 jq
@@ -104,6 +108,7 @@ lm_sensors
 lsof
 lvm2
 lxappearance
+lynx
 m4
 macchanger
 macfanctld
@@ -134,6 +139,7 @@ opencv
 openssh
 openvpn
 optipng
+os-prober
 p7zip
 pacaur
 pacman
@@ -178,7 +184,10 @@ ripgrep
 rofi
 rsync
 rust
+rust-book-git
+rust-src
 rxvt-unicode
+sane
 screen
 scrot
 sed
@@ -216,17 +225,20 @@ texlive-science
 thunar
 thunar-volman
 tmux
+tmux-bash-completion
 tor-browser-bin
 tree
 ttf-fantasque-sans
 ttf-ms-fonts
 ttf-unifont
+tty-clock
 tumbler
 unrar
 unzip
 upower
 usbutils
 util-linux
+vi
 vlc
 vulkan-extra-layers
 vulkan-headers
@@ -244,6 +256,7 @@ xdotool
 xf86-input-libinput
 xf86-input-synaptics
 xf86-video-intel
+xmind
 xorg-server
 xorg-xauth
 xorg-xbacklight
@@ -253,3 +266,4 @@ xpra-winswitch
 xterm
 yajl
 youtube-dl
+zsh

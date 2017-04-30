@@ -17,7 +17,6 @@
 #define S_color7 	#6b8660
 #define S_color15 	#b2cea6
 
-
 !#define S_foreground 	#bea492
 !#define S_background 	#181512
 !#define S_color0 	#332d29
@@ -36,7 +35,6 @@
 !#define S_color14 	#556d70
 !#define S_color7 	#504339
 !#define S_color15 	#9a875f
-
 
 !#define S_foreground 	#c5c8c6
 !#define S_background 	#201d1e

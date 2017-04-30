@@ -159,6 +159,17 @@ Wifi () {
 	HighlightFG $highlight_main
 }
 
+TMUX_Integration () {
+	for x in $(tmux list-sessions 2>/dev/null | awk '{print $1}' | tr -d ':'); do 
+		HighlightBG $highlight_sub3
+		SmallPad
+		echo -n $x
+		SmallPad
+		HighlightFG $highlight_main
+		SmallPad
+	done		
+}
+
 Left() {
 	echo -n "%{l}"
 	WMIntegration
@@ -166,6 +177,8 @@ Left() {
 
 Center() {
 	echo -n "%{c}"
+	TMUX_Integration
+	Pad
 	Clock
 }
 
@@ -225,25 +238,26 @@ Check_Mail_Loop &
 Check_Reddit_Loop &
 
 Redraw () {
-	if [[ -f /bin/jq ]]; then
-		Left
-		Center
-		Right
-		echo
-	else
-		echo "Bar requires jq to run!"
-	fi
+	Left
+	cat /tmp/cached.bar
+	#echo
 }
 
 Redraw_Loop () {
 	while true; do
+		echo $(Center)$(Right) > /tmp/cached.bar
 		Redraw
 		sleep 3
 	done
 }
 
-Redraw_Loop &
-./event.pl workspace |
-while read -r x; do
-	Redraw
-done
+if [[ -f /bin/jq ]]; then
+	Redraw_Loop &
+	./event.pl workspace |
+	while read -r x; do
+		Redraw
+	done
+else
+	echo "Bar requires jq to run!"
+fi
+

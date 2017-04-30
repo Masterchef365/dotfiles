@@ -17,6 +17,9 @@ Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 Plugin 'https://github.com/terryma/vim-multiple-cursors.git'
 Plugin 'https://github.com/lervag/vimtex.git'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'rust-lang/rust.vim'
+Plugin 'racer-rust/vim-racer'
+Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()
 
 " More cursors
@@ -102,3 +105,20 @@ let g:cpp_concepts_highlight = 1
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_experimental_simple_template_highlight = 1
+
+" Rust
+set hidden
+let g:racer_cmd = "racer"
+let g:racer_experimental_completer = 1
+au FileType rust nmap gd <Plug>(rust-def)
+
+" TMUX
+"let g:tmux_navigator_no_mappings = 1
+"nnoremap <silent> {Left-Mapping} :TmuxNavigateLeft<cr>
+"nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
+"nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
+"nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
+"nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
+
+" YouCompleteMe
+let g:ycm_rust_src_path = '/usr/src/rust'

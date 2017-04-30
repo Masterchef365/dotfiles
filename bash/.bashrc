@@ -38,6 +38,7 @@ alias wot='echo wot in ternation'
 alias fuck='echo -e "Well, \e[3msorrryy\e[0m. ERROR: Problem exists between chair and keyboard."'
 alias macho='man'
 alias bootstat='chromium $(cp <(systemd-analyze plot) /tmp/disp.svg && echo /tmp/disp.svg)'
+alias kernbootstat='dmesg -td | sort'
 
 # Colored man pages
 man() {
@@ -68,7 +69,7 @@ source ~/.shell_prompt.sh
 
 # Wtf go whyyyy
 export GOPATH=$HOME/.go
-
+export PATH=$PATH:~/.cargo/bin
 # I-Beam cursor
 #echo -en "\033[5 q"
 #echo -en "\033[6 q"
