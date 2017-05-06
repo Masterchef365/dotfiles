@@ -109,7 +109,7 @@ rofi.xoffset: 0
 *color15:      S_color15
 
 
-URxvt.font: xft:FantasqueSansMono Nerd Font
+URxvt.font: xft:Fantasque Sans Mono Nerd Font
 URxvt*scrollBar: false
 URxvt.internalBorder: 6
 Xft.dpi: 160
@@ -119,5 +119,5 @@ Xft.dpi: 160
 !urxvt*tintColor: S_background
 !urxvt*blurRadius: 30 
 
-!urxvt*background: rgba:2000/1d00/1e00/EEEE
+!urxvt*background: rgba:1e00/2100/2a00/EEEE
 !urxvt*depth: 32
