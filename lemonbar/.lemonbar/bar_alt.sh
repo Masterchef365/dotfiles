@@ -29,19 +29,25 @@ divider_left=""
 divider_right=""
 
 GetFGLemonColor() {
-	echo %{F$1}
+	echo -n %{F$1}
+	echo -n %{U$1}
 }
 
 GetBGLemonColor() {
-	echo %{B$1}
+	echo -n %{B$1}
+	echo -n %{U$1}
 }
 
 HighlightBG() {
-	echo -n $(GetBGLemonColor $1)
-	echo -n $(GetFGLemonColor $main_bg)
+	#echo -n $(GetBGLemonColor $1)
+	#echo -n $(GetFGLemonColor $main_bg)
+	echo -n $(GetFGLemonColor $1)
+	echo -n $(GetBGLemonColor $main_bg)
 }
 
 HighlightFG() {
+	#echo -n $(GetFGLemonColor $1)
+	#echo -n $(GetBGLemonColor $main_bg)
 	echo -n $(GetFGLemonColor $1)
 	echo -n $(GetBGLemonColor $main_bg)
 }
@@ -67,14 +73,14 @@ WMIntegration() {
 			fi
 
 			if [[ $last_was_focused == "false" && $focused == "true" ]]; then
-				HighlightBG $highlight_main
+				HighlightBG $highlight_sub3
 				#echo -n $seperator_left
 				#HighlightBG $highlight_main
 			fi
 
 		else 
 			if [[ $focused == "true" ]]; then
-				HighlightBG $highlight_main
+				HighlightBG $highlight_sub3
 			else
 				HighlightFG $highlight_main
 			fi

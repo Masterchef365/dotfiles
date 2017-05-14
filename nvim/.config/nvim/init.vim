@@ -37,9 +37,9 @@ set foldmethod=syntax
 set nofoldenable
 set mouse=a
 set hidden
-"noremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
-"inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
-"inoremap <expr> <tab> ((pumvisible())?("\<Cr>"):("<Cr>"))
+noremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
+inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
+inoremap <expr> <tab> ((pumvisible())?("\<Cr>"):("<Cr>"))
 "nnoremap H ^
 "nnoremap L $
 
@@ -62,10 +62,10 @@ set shiftwidth=3
 filetype plugin on
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_left_sep = "\ue0b8"
-let g:airline_right_sep = "\ue0ba"
-let g:airline_left_alt_sep = "\ue0b9"
-let g:airline_right_alt_sep = "\ue0bb"
+let g:airline_left_sep = 		""
+let g:airline_right_sep = 		""
+let g:airline_left_alt_sep = 	""
+let g:airline_right_alt_sep = ""
 
 " Vim-cpp
 "let g:cpp_experimental_template_highlight = 1
@@ -108,9 +108,10 @@ let g:cpp_experimental_simple_template_highlight = 1
 
 " Rust
 set hidden
-let g:racer_cmd = "racer"
+let g:racer_cmd = "~/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
 au FileType rust nmap gd <Plug>(rust-def)
+inoremap <C-Space> <C-x><C-o>
 
 " TMUX
 "let g:tmux_navigator_no_mappings = 1

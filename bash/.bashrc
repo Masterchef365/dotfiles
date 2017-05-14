@@ -39,6 +39,9 @@ alias fuck='echo -e "Well, \e[3msorrryy\e[0m. ERROR: Problem exists between chai
 alias macho='man'
 alias bootstat='chromium $(cp <(systemd-analyze plot) /tmp/disp.svg && echo /tmp/disp.svg)'
 alias kernbootstat='dmesg -td | sort'
+bepis () { 
+	man $1 | sed -e "s/$1/bepis/ig" | less
+}
 
 # Colored man pages
 man() {

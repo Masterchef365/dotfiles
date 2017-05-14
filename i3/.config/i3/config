@@ -43,7 +43,7 @@ font pango:monospace 10
 
 # Border options
 #new_window none
-#gaps inner 15
+gaps inner 15
 smart_gaps on
 smart_borders on
 for_window [class="^.*"] border pixel 2
@@ -135,7 +135,7 @@ bindsym XF86KbdBrightnessDown exec --no-startup-id kbdlight down 5
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 
-bindsym XF86AudioPrev exec --no-startup-id mpc next
+bindsym XF86AudioPrev exec --no-startup-id mpc prev
 bindsym XF86AudioPlay exec --no-startup-id mpc toggle
 bindsym XF86AudioNext exec --no-startup-id mpc next
 
@@ -151,3 +151,5 @@ exec redshift -l geoclue2
 exec xrandr --dpi 160
 exec --no-startup-id sh -c 'cd ~/.lemonbar && ./executebar.sh &' 
 exec --no-startup-id mpd
+
+for_window [class="*mono*"] floating enable,move absolute center
