@@ -43,7 +43,7 @@ font pango:monospace 10
 
 # Border options
 #new_window none
-gaps inner 15
+#gaps inner 15
 smart_gaps on
 smart_borders on
 for_window [class="^.*"] border pixel 2
@@ -57,8 +57,8 @@ bindsym $mod+z exec rofi -show window
 bindsym $mod+d exec rofi -show run
 
 # Terminal
+#bindsym $mod+Return exec sh `~/.bitsAndBobs/urxvt_background.sh`
 bindsym $mod+Return exec urxvt
-
 # Kill focused window
 bindsym $mod+Shift+q kill
 

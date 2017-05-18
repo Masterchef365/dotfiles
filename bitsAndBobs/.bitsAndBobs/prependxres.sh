@@ -1,9 +1,9 @@
 #!/bin/bash
-cat <(sh process_resources.sh) <(echo) <(sed $1 -e 's/^#define/!#define/g') > /tmp/tempxres 
+cat <(sh process_resources.sh) <(echo) <(sed ~/.Xresources -e 's/^#define/!#define/g') > /tmp/tempxres 
 wait
-cp /tmp/tempxres $1
+cp /tmp/tempxres ~/.Xresources
 rm /tmp/tempxres
-xrdb $1
+xrdb ~/.Xresources
 i3-msg reload
 killall lemonbar
 killall bar.sh

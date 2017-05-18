@@ -42,6 +42,8 @@ alias kernbootstat='dmesg -td | sort'
 bepis () { 
 	man $1 | sed -e "s/$1/bepis/ig" | less
 }
+alias neofetch='neofetch --ascii_colors 2 --ascii /usr/share/neofetch/ascii/games/aperture'
+alias urxvt='urxvt -pixmap "/home/duncan/.backgrounds/Blur.png;style=root-tiled"'
 
 # Colored man pages
 man() {
