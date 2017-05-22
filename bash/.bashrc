@@ -75,7 +75,6 @@ source ~/.shell_prompt.sh
 # Wtf go whyyyy
 export GOPATH=$HOME/.go
 export PATH=$PATH:~/.cargo/bin
-# I-Beam cursor
-#echo -en "\033[5 q"
-#echo -en "\033[6 q"
-#tput reset
+
+# RUST!
+export RUST_SRC_PATH=~/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
