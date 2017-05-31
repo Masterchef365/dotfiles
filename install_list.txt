@@ -1,11 +1,14 @@
 accountsservice
 acpi
 aircrack-ng
+alacritty-git
 alsa-tools
 alsa-utils
 arandr-git
+audacity
 autoconf
 automake
+baobab
 bash
 bash-completion
 bash-pipes
@@ -19,7 +22,7 @@ bluez-utils
 boost
 bzip2
 bzr
-cargo
+cava
 chromium
 clang
 cmake
@@ -38,7 +41,9 @@ dhcpcd
 dialog
 diffutils
 discord
+docky
 dosfstools
+dwarffortress
 e2fsprogs
 easy-rsa
 ed
@@ -71,6 +76,7 @@ groff
 grub
 gvfs
 gvfs-mtp
+gvim
 gzip
 hashcat
 hdparm
@@ -116,9 +122,9 @@ make
 man-db
 man-pages
 mdadm
+minecraft
 minicom
 mono
-mopidy
 mpc
 mpd
 mplayer
@@ -153,6 +159,7 @@ perl-anyevent-i3
 perl-json-xs
 pinta
 pkg-config
+powder-toy
 powertop
 procps-ng
 psmisc
@@ -161,15 +168,19 @@ pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
 pulseaudio-gconf
+pulsemixer
 pv
 pyqt4-common
 python2-gobject
 python2-neovim
+python2-pip
 python2-pyopenssl
 python2-pyqt4
 python2-pyqt5
+python-docopt
 python-gobject
 python-incremental
+python-mutagen
 python-neovim
 python-pillow
 python-pip
@@ -183,10 +194,8 @@ rfkill
 ripgrep
 rofi
 rsync
-rust
 rust-book-git
-rust-src
-rxvt-unicode
+rxvt-unicode-pixbuf
 sane
 screen
 scrot
@@ -195,6 +204,7 @@ shadow
 simple-mtpfs-git
 s-nail
 socat
+soundcloud-dl-git
 spirv-tools
 spotify
 sshfs
@@ -239,6 +249,7 @@ upower
 usbutils
 util-linux
 vi
+visual-studio-code
 vlc
 vulkan-extra-layers
 vulkan-headers
@@ -256,6 +267,7 @@ xdotool
 xf86-input-libinput
 xf86-input-synaptics
 xf86-video-intel
+xfce4-settings
 xmind
 xorg-server
 xorg-xauth

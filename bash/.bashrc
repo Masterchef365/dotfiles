@@ -39,11 +39,13 @@ alias fuck='echo -e "Well, \e[3msorrryy\e[0m. ERROR: Problem exists between chai
 alias macho='man'
 alias bootstat='chromium $(cp <(systemd-analyze plot) /tmp/disp.svg && echo /tmp/disp.svg)'
 alias kernbootstat='dmesg -td | sort'
+alias copydir='pwd | xclip -selection c'
 bepis () { 
 	man $1 | sed -e "s/$1/bepis/ig" | less
 }
 alias neofetch='neofetch --ascii_colors 2 --ascii /usr/share/neofetch/ascii/games/aperture'
 alias urxvt='urxvt -pixmap "/home/duncan/.backgrounds/Blur.png;style=root-tiled"'
+alias homevpn='cd /home/duncan/Projects/Home/VPNSANDSTUFF/personal_accounts/Duncan/ && sudo openvpn client.ovpn'
 
 # Colored man pages
 man() {

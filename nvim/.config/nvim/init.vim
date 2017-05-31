@@ -25,6 +25,7 @@ Plugin 'https://github.com/terryma/vim-multiple-cursors.git'
 Plugin 'autozimu/LanguageClient-neovim'
 Plugin 'git://github.com/roxma/nvim-completion-manager.git'
 Plugin 'rust-lang/rust.vim'
+Plugin 'git://github.com/nathanaelkane/vim-indent-guides.git'
 call vundle#end()
 
 " More cursors
@@ -107,15 +108,6 @@ let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_experimental_simple_template_highlight = 1
 
-" vim-racer
-"set hidden
-"let g:racer_cmd = "~/.cargo/bin/racer"
-"let g:racer_experimental_completer = 1
-"au FileType rust nmap gd <Plug>(rust-def)
-"inoremap <C-Space> <C-x><C-o>
-"inoremap <Tab> <C-N>
-"inoremap <S-Tab> <C-P>
-
 " TMUX
 "let g:tmux_navigator_no_mappings = 1
 "nnoremap <silent> {Left-Mapping} :TmuxNavigateLeft<cr>
@@ -124,18 +116,11 @@ let g:cpp_experimental_simple_template_highlight = 1
 "nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
 "nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
-" YouCompleteMe
-" let g:ycm_rust_src_path = '/usr/src/rust/src'
-
 " NCM and RLS
-" Required for operations modifying multiple buffers like rename.
 set hidden
-
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ }
-
-" Automatically start language servers.
 let g:LanguageClient_autoStart = 1
 
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
@@ -144,3 +129,10 @@ nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Indent guides
+"let g:indent_guides_enable_on_vim_startup = 1
+"let g:indent_guides_guide_size = 4 
+"let g:indent_guides_auto_colors = 0
+"hi IndentGuidesEven ctermbg=255 guibg=15
+"hi IndentGuidesOdd ctermbg=NONE guibg=15

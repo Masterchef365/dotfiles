@@ -18,6 +18,7 @@ GetColor() {
 # Set frequently used colors
 main_bg=$(GetColor "S_background")
 main_fg=$(GetColor "S_foreground")
+text_bg=$(GetColor "S_color15")
 highlight_main=$(GetColor "S_color10")
 highlight_sub=$(GetColor "S_color9")
 highlight_sub2=$(GetColor "S_color12")
@@ -144,7 +145,7 @@ MPD_Integration () {
 	Pad
 	echo -n ""
 	Pad
-	basename "$(mpc current)" | sed -e 's/\(.*\)\..*$/\1/g' |  tr -d '\n\r'
+	mpc current | sed -e 's/\(.*\)\..*$/\1/g' |  tr -d '\n\r'
 	Pad
 	HighlightFG $highlight_main
 }
