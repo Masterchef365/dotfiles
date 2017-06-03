@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/duncan/.config/nvim'
 let g:netrw_dirhist_2='/home/duncan/Projects/Robotics/RS_Vision'
 let g:netrw_dirhist_3='/home/duncan/Projects/Robotics/RS_Vision/include'
+let g:netrw_dirhist_4='/home/duncan/Projects/Home/Rust/Messing_Around/FRAME_lab/test_client'

@@ -47,6 +47,7 @@ noremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
 inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 inoremap <expr> <tab> ((pumvisible())?("\<Cr>"):("<Cr>"))
 tnoremap <Esc> <C-\><C-n>
+set clipboard=unnamed
 "nnoremap H ^
 "nnoremap L $
 

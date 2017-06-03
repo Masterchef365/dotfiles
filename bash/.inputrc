@@ -1,6 +1,7 @@
 "\eOc": forward-word
 "\eOd": backward-word
 "\C-h": backward-kill-word
+"\e[9;3~": backward-kill-word
 
 #set editing-mode vi
 #set show-mode-in-prompt on

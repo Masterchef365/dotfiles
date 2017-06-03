@@ -55,6 +55,7 @@ fakeroot
 feh
 file
 filesystem
+filmic-blender-git
 findutils
 firefox
 gawk
@@ -105,7 +106,6 @@ librealsense
 libtool
 libusb-compat
 licenses
-lightdm-webkit2-greeter
 linux-macbook
 linux-macbook-docs
 linux-macbook-headers
@@ -133,7 +133,6 @@ mypaint
 ncmpcpp
 neofetch
 neovim
-nerd-fonts-complete
 net-tools
 nload
 nmap
@@ -236,7 +235,7 @@ thunar
 thunar-volman
 tmux
 tmux-bash-completion
-tor-browser-bin
+tor-browser
 tree
 ttf-fantasque-sans
 ttf-ms-fonts
