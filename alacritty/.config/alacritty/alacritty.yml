@@ -1,5 +1,33 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator
 
+colors:
+  # Default colors
+  primary:
+    background: '0x1f1f1f'
+    foreground: '0xc0b18b'
+
+  # Normal colors
+  normal:
+    black:   '0x4a3637'
+    red:     '0xd17b49'
+    green:   '0x7b8748'
+    yellow:  '0xaf865a'
+    blue:    '0x535c5c'
+    magenta: '0x775759'
+    cyan:    '0x6d715e'
+    white:   '0xc0b18b'
+
+  # Bright colors
+  bright:
+    black:   '0x765657'
+    red:     '0xd17b49'
+    green:   '0x7b8748'
+    yellow:  '0xaf865a'
+    blue:    '0x535c5c'
+    magenta: '0x775759'
+    cyan:    '0x6d715e'
+    white:   '0xc0b18b'
+
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -70,35 +98,6 @@ render_timer: false
 # and cursor.background colors, otherwise invert the colors of the cursor.
 custom_cursor_colors: false
 
-# Colors (Tomorrow Night Bright)
-
-colors:
-  # Default colors
-  primary:
-    background: '0x2b0e16'
-    foreground: '0xfbf4c9'
-
-  # Normal colors
-  normal:
-    black:   '0x2b0e16'
-    red:     '0xe34350'
-    green:   '0xf27f50'
-    yellow:  '0xf2c850'
-    blue:    '0x9464a0'
-    magenta: '0xf27f50'
-    cyan:    '0xad3658'
-    white:   '0xe5e5e5'
-
-  # Bright colors
-  bright:
-    black:   '0x633c6e'
-    red:     '0xe34350'
-    green:   '0xf27f50'
-    yellow:  '0xf2c850'
-    blue:    '0x9466a0'
-    magenta: '0xf27f50'
-    cyan:    '0xad3658'
-    white:   '0xffffff'
 
 # Visual Bell
 #

@@ -1,7 +1,9 @@
 "\eOc": forward-word
 "\eOd": backward-word
 "\C-h": backward-kill-word
-"\e[9;3~": backward-kill-word
+"\C-_": unix-word-rubout
+"\e[1;5C": forward-word   # ctrl + right
+"\e[1;5D": backward-word  # ctrl + left 
 
 #set editing-mode vi
 #set show-mode-in-prompt on

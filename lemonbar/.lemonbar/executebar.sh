@@ -1,1 +1,1 @@
-./bar.sh ~/.Xresources | lemonbar -p -f "FantasqueSansMono Nerd Font" -g x40++
+./bar.sh ~/.Xresources | lemonbar -p -f "Fantasque Sans Mono" -g x40++
