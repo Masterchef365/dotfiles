@@ -132,8 +132,8 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Indent guides
-"let g:indent_guides_enable_on_vim_startup = 1
-"let g:indent_guides_guide_size = 4 
-"let g:indent_guides_auto_colors = 0
-"hi IndentGuidesEven ctermbg=255 guibg=15
-"hi IndentGuidesOdd ctermbg=NONE guibg=15
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size = 1 
+let g:indent_guides_auto_colors = 0
+hi IndentGuidesEven ctermbg=0 guibg=0
+hi IndentGuidesOdd ctermbg=0 guibg=8

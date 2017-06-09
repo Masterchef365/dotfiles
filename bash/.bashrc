@@ -41,7 +41,8 @@ alias bootstat='chromium $(cp <(systemd-analyze plot) /tmp/disp.svg && echo /tmp
 alias kernbootstat='dmesg -td | sort'
 alias copydir='pwd | xclip -selection c'
 bepis () { 
-	man $1 | sed -e "s/$1/bepis/ig" | less
+	replace="bepis"
+	man $1 | sed -e "s/$1/$replace/ig" | less
 }
 alias neofetch='neofetch --ascii_colors 2 --ascii /usr/share/neofetch/ascii/games/aperture'
 alias urxvt='urxvt -pixmap "/home/duncan/.backgrounds/Blur.png;style=root-tiled"'

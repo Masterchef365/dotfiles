@@ -52,9 +52,8 @@ for_window [class="^.*"] border pixel 2
 
 # Rofi 
 bindsym $mod+z exec rofi -show window
-# TODO: Add to .Xresources instead
-#bindsym $mod+d exec rofi -show run -width 30 -xoffset -1005 -yoffset 44 -lines 52
 bindsym $mod+d exec rofi -show run
+bindsym $mod+c exec bash ~/.bitsAndBobs/rofidim.sh
 
 # Terminal
 bindsym $mod+Return exec urxvt
