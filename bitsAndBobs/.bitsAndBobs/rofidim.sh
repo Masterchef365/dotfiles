@@ -3,7 +3,7 @@ interface_dir="/home/duncan/Projects/Home/Rust/FRAME/interface_prototype/"
 cli=$interface_dir"target/debug/interface_prototype"
 cd $interface_dir
 
-dmenu_cmd="dmenu -l 300"
+dmenu_cmd="dmenu -l 61"
 #dmenu_cmd="rofi -dmenu"
 
 get_date () {
@@ -72,3 +72,4 @@ case $operation in
 esac
 
 #TODO: Add a 'concrete' function somehow
+#TODO: Nested event repeaters (endpoint of one is an enum, either another repeater or and event which ends it)

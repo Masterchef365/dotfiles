@@ -15,6 +15,10 @@ Plugin 'https://github.com/tpope/vim-fugitive.git'
 Plugin 'https://github.com/noahfrederick/vim-noctu.git'
 Plugin 'https://github.com/terryma/vim-multiple-cursors.git'
 
+"lugin 'https://github.com/Valloric/YouCompleteMe.git'
+
+"lugin 'https://github.com/Rip-Rip/clang_complete.git'
+
 "lugin 'https://github.com/critiqjo/lldb.nvim.git'
 "lugin 'https://github.com/tpope/vim-dispatch.git'
 "lugin 'https://github.com/lervag/vimtex.git'
@@ -135,5 +139,10 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1 
 let g:indent_guides_auto_colors = 0
+let g:indent_guides_start_level = 2
 hi IndentGuidesEven ctermbg=0 guibg=0
 hi IndentGuidesOdd ctermbg=0 guibg=8
+let g:indent_guides_tab_guides = 0
+
+" Clang complete
+let g:ycm_filetype_whitelist = { '.cpp': 1 }

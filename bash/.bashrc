@@ -73,7 +73,7 @@ export EDITOR="nvim"
 	. /usr/share/bash-completion/bash_completion
 
 # Promptline.vim compat
-source ~/.shell_prompt.sh
+#source ~/.shell_prompt.sh
 
 # Wtf go whyyyy
 export GOPATH=$HOME/.go
@@ -81,3 +81,8 @@ export PATH=$PATH:~/.cargo/bin
 
 # RUST!
 export RUST_SRC_PATH=~/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
+
+
+#echo -e -n "\x1b[\x36 q" # changes to steady bar
+#export PS1='\e[0;33m \w \e[0m> '
+export PS1='\w > '

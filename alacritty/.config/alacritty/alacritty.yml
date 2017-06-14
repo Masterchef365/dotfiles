@@ -1,32 +1,33 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator
 
+
 colors:
   # Default colors
   primary:
-    background: '0x1f1f1f'
-    foreground: '0xc0b18b'
+    background: '0x141312'
+    foreground: '0xbdbdbd'
 
   # Normal colors
   normal:
-    black:   '0x4a3637'
-    red:     '0xd17b49'
-    green:   '0x7b8748'
-    yellow:  '0xaf865a'
-    blue:    '0x535c5c'
-    magenta: '0x775759'
-    cyan:    '0x6d715e'
-    white:   '0xc0b18b'
+    black:   '0x141312'
+    red:     '0xc0552a'
+    green:   '0x76bb20'
+    yellow:  '0x9cb73a'
+    blue:    '0x33786e'
+    magenta: '0x675388'
+    cyan:    '0x618bb2'
+    white:   '0xbdbdbd'
 
   # Bright colors
   bright:
-    black:   '0x765657'
-    red:     '0xd17b49'
-    green:   '0x7b8748'
-    yellow:  '0xaf865a'
-    blue:    '0x535c5c'
-    magenta: '0x775759'
-    cyan:    '0x6d715e'
-    white:   '0xc0b18b'
+    black:   '0x7d7d7d'
+    red:     '0xc0552a'
+    green:   '0x76bb20'
+    yellow:  '0x9cb73a'
+    blue:    '0x33786e'
+    magenta: '0x675388'
+    cyan:    '0x618bb2'
+    white:   '0xbdbdbd'
 
 
 # Any items in the `env` entry below will be added as
@@ -84,7 +85,7 @@ font:
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
   offset:
     x: 0.0
-    y: -2.0
+    y: 0.0
 
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
