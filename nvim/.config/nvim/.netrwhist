@@ -1,6 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/duncan/Projects/Home/Rust/Messing_Around/socket_server/src'
 let g:netrw_dirhist_2='/home/duncan/Projects/Home/Rust/FRAME/interface_prototype'
 let g:netrw_dirhist_3='/home/duncan/Projects/Home/Rust/FRAME/backend/src'
 let g:netrw_dirhist_4='/home/duncan/dotfiles-i3wm/nvim/.config/nvim'
+let g:netrw_dirhist_5='/home/duncan/.lemonbar'
+let g:netrw_dirhist_6='/home/duncan/Projects/Home/Rust/Messing_Around/imagehist'

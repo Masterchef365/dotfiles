@@ -18,28 +18,37 @@ GetColor() {
 # Set frequently used colors
 main_bg=$(GetColor "S_background")
 main_fg=$(GetColor "S_foreground")
-text_bg=$(GetColor "S_color15")
-highlight_main=$(GetColor "S_color10")
-highlight_sub=$(GetColor "S_color9")
-highlight_sub2=$(GetColor "S_color12")
-highlight_sub3=$(GetColor "S_color14")
+text_bg=$(GetColor "S_foreground")
+text_alt=$(GetColor "S_color8")
+highlight_main=$(GetColor "S_background")
+highlight_sub=$(GetColor "S_background")
+highlight_sub2=$(GetColor "S_background")
+highlight_sub3=$(GetColor "S_background")
 
 seperator_left=""
 seperator_right=""
 divider_left=""
 divider_right=""
 
+StartUnderline () {
+	echo -n %{U$text_bg}
+}
+
+StopUnderline () {
+	echo -n %{U-}
+}
+
 GetFGLemonColor() {
-	echo %{F$1}
+	echo -n %{F$1}
 }
 
 GetBGLemonColor() {
-	echo %{B$1}
+	echo -n %{B$1}
 }
 
 HighlightBG() {
 	echo -n $(GetBGLemonColor $1)
-	echo -n $(GetFGLemonColor $main_bg)
+	echo -n $(GetFGLemonColor $text_bg)
 }
 
 HighlightFG() {
@@ -55,43 +64,19 @@ WMIntegration() {
 		focused=$(echo $i | jq '.focused')
 		number=$(echo $i | jq '.number')
 
-		if [[ $first != "true" ]]; then
-			if [[ $last_was_focused == "true" && $focused == "false" ]]; then
-				HighlightFG $highlight_main 
-				#echo -n $seperator_left
-				#HighlightFG $highlight_main
-			fi
-
-			if [[ $last_was_focused == "false" && $focused == "false" ]]; then
-				HighlightFG $highlight_main
-				#echo -n $divider_left
-			fi
-
-			if [[ $last_was_focused == "false" && $focused == "true" ]]; then
-				HighlightBG $highlight_main
-				#echo -n $seperator_left
-				#HighlightBG $highlight_main
-			fi
-
-		else 
-			if [[ $focused == "true" ]]; then
-				HighlightBG $highlight_main
-			else
-				HighlightFG $highlight_main
-			fi
+		if [[ $focused == "true" ]]; then
+			HighlightFG $main_fg
+		else
+			HighlightFG $text_alt
 		fi
+	echo -n " $number "
+done
 
-		echo -n " $number "
-
-		first="false"
-		last_was_focused=$focused
-	done
-
-	if [[ $last_was_focused == "false" ]]; then
-		HighlightBG $highlight_main
-		#echo -n %{R}$seperator_left 
-	fi
-	HighlightFG	$highlight_main
+if [[ $last_was_focused == "false" ]]; then
+	HighlightBG $highlight_main
+	#echo -n %{R}$seperator_left 
+fi
+HighlightFG	$highlight_main
 }
 
 Clock() {
@@ -105,6 +90,7 @@ Clock() {
 Battery() {
 	HighlightBG $highlight_main
 	Pad
+	echo -n " "
 	cat /tmp/battery
 	Pad
 	HighlightFG $highlight_main
@@ -174,6 +160,7 @@ TMUX_Integration () {
 Check_Calendar () {
 	HighlightBG $highlight_main
 	SmallPad
+	echo -n " "
 	cat /tmp/calendar
 	SmallPad
 	HighlightFG $highlight_main
@@ -186,23 +173,30 @@ Left() {
 
 Center() {
 	echo -n "%{c}"
-	}
+}
 
 Right() {
 	echo -n "%{r}"
 	TMUX_Integration
 	SmallPad
+
 	Clock
+
 	SmallPad
 	MPD_Integration
-	SmallPad
-	Check_Calendar
+
+	#SmallPad
+	#Check_Calendar
+
 	SmallPad
 	Reddit
+
 	SmallPad
 	Email
+
 	SmallPad
 	Wifi
+
 	SmallPad
 	Battery
 }
@@ -247,7 +241,7 @@ Check_Reddit_Loop () {
 
 Check_Calendar_Loop () {
 	while true; do
-		value=$(gcalcli agenda --tsv -w 0 | sed -r "s:.*\t$(date +%G)-(.*)\t.*\t(.*):\1\: \2:g" | tr '\r\n' ' ')
+		value=$(gcalcli agenda --tsv -w 0 | grep -v "Makeup" | sed -r "s:.*\t$(date +%G)-(.*)\t.*\t(.*):\1\: \2:g" | tr '\r\n' ' ')
 		echo -n $value > /tmp/calendar
 		sleep 50
 	done

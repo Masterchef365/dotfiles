@@ -7,7 +7,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 "lugin 'https://github.com/scrooloose/nerdtree.git'
 "lugin 'https://github.com/Xuyuanp/nerdtree-git-plugin.git'
-Plugin 'https://github.com/edkolev/promptline.vim.git'
+"lugin 'https://github.com/edkolev/promptline.vim.git'
 Plugin 'https://github.com/vim-airline/vim-airline.git'
 Plugin 'https://github.com/vim-airline/vim-airline-themes.git'
 
@@ -56,7 +56,7 @@ set clipboard=unnamed
 "nnoremap L $
 
 
-" Use CTRL+HJKL keys to navigate buffers 
+" Use CTRL+HJKL keys to navigate buffers
 map <C-k> <C-w><Up>
 map <C-j> <C-w><Down>
 map <C-l> <C-w><Right>
@@ -73,7 +73,7 @@ set shiftwidth=3
 " Airline options
 filetype plugin on
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 let g:airline_left_sep = 		""
 let g:airline_right_sep = 		""
 let g:airline_left_alt_sep = 	""
@@ -137,7 +137,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Indent guides
 let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_guide_size = 1 
+let g:indent_guides_guide_size = 1
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_start_level = 2
 hi IndentGuidesEven ctermbg=0 guibg=0

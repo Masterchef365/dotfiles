@@ -2,7 +2,7 @@
 
 exec xrdb -merge ~/.Xresources
 
-# ----------------------- Defines/Variables -----------------------  
+# ----------------------- Defines/Variables -----------------------
 
 # Set the modifier key, set floating modifier to the same
 set $mod Mod4
@@ -29,7 +29,7 @@ set_from_resource $color13 i3wm.color13  #ff00ff
 set_from_resource $color14 i3wm.color14  #ff00ff
 set_from_resource $color15 i3wm.color15  #ff00ff
 
-# ----------------------- Style options -----------------------  
+# ----------------------- Style options -----------------------
 
 #Window colors				border  	backgr. 	text    	indicator
 client.focused          $color10 $color10 $color5	$color2
@@ -42,15 +42,15 @@ client.placeholder      $color10 $color10 $color5 	$color2
 font pango:monospace 10
 
 # Border options
-#new_window none
-#gaps inner 15
+new_window none
+gaps inner 15
 smart_gaps on
 smart_borders on
 for_window [class="^.*"] border pixel 2
 
-# ----------------------- Program shortcut options -----------------------  
+# ----------------------- Program shortcut options -----------------------
 
-# Rofi 
+# Rofi
 bindsym $mod+z exec rofi -show window
 bindsym $mod+d exec rofi -show run
 bindsym $mod+c exec bash ~/.bitsAndBobs/rofidim.sh
@@ -62,7 +62,7 @@ bindsym $mod+Return exec urxvt
 # Kill focused window
 bindsym $mod+Shift+q kill
 
-# ----------------------- Window movement/Workspace switching -----------------------  
+# ----------------------- Window movement/Workspace switching -----------------------
 
 # change focus
 bindsym $mod+h focus left
@@ -77,8 +77,8 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # Split windows
-bindsym $mod+t split horizontal 
-bindsym $mod+q split vertical 
+bindsym $mod+t split horizontal
+bindsym $mod+q split vertical
 
 # Misc. window options
 bindsym $mod+f fullscreen toggle
@@ -124,7 +124,7 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# ----------------------- Multimedia Keys -----------------------  
+# ----------------------- Multimedia Keys -----------------------
 bindsym XF86AudioRaiseVolume exec --no-startup-id sh -c ". ~/.bitsAndBobs/audio_setters/set_current_window_volume.sh VolUp"
 bindsym XF86AudioLowerVolume exec --no-startup-id sh -c ". ~/.bitsAndBobs/audio_setters/set_current_window_volume.sh VolDn"
 bindsym XF86AudioMute exec --no-startup-id sh -c ". ~/.bitsAndBobs/audio_setters/set_current_window_volume.sh Mute"
@@ -139,17 +139,17 @@ bindsym XF86AudioPrev exec --no-startup-id mpc prev
 bindsym XF86AudioPlay exec --no-startup-id mpc toggle
 bindsym XF86AudioNext exec --no-startup-id mpc next
 
-# ----------------------- i3-Specific commands -----------------------  
+# ----------------------- i3-Specific commands -----------------------
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You sure, fam?' -b 'Ya boi' 'i3-msg exit'"
-bindsym $mod+i exec i3lock-fancy -pf "Fantasque-Sans-Mono-Regular" -- scrot 
+bindsym $mod+i exec i3lock-fancy -pf "Fantasque-Sans-Mono-Regular" -- scrot
 
-# ----------------------- Post-WM commands -----------------------  
+# ----------------------- Post-WM commands -----------------------
 exec ~/.fehbg
 exec redshift -l geoclue2
 exec xrandr --dpi 160
-exec --no-startup-id sh -c 'cd ~/.lemonbar && ./executebar.sh &' 
+exec --no-startup-id sh -c 'cd ~/.lemonbar && ./executebar.sh &'
 exec --no-startup-id mpd
 
 for_window [class="*mono*"] floating enable,move absolute center

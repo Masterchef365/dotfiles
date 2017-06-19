@@ -1,1 +1,4 @@
-comm -23 <(pacaur -Qqe | sort) <(echo $(pacaur -Qqs base && pacaur -Qqs base-devel) | sort) > install_list.txt
+pacaur -Qqe | sort > /tmp/installed
+pacaur -Qqg base base-devel | sort > /tmp/base
+comm -13 /tmp/base /tmp/installed > install_list.txt
+rm /tmp/installed /tmp/base
