@@ -15,7 +15,10 @@ Plugin 'https://github.com/tpope/vim-fugitive.git'
 Plugin 'https://github.com/noahfrederick/vim-noctu.git'
 Plugin 'https://github.com/terryma/vim-multiple-cursors.git'
 
-"lugin 'https://github.com/Valloric/YouCompleteMe.git'
+" You're gonna need libtinfo from the AUR, and you'll need to run
+" sudo ln -s /usr/lib/libtinfo.so.6 /usr/lib/libtinfo.so.5 so that YCM doesn't
+" have a panic attack. What a baby.
+Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 
 "lugin 'https://github.com/Rip-Rip/clang_complete.git'
 
@@ -51,7 +54,7 @@ noremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
 inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 inoremap <expr> <tab> ((pumvisible())?("\<Cr>"):("<Cr>"))
 tnoremap <Esc> <C-\><C-n>
-set clipboard=unnamed
+set clipboard=unnamedplus
 "nnoremap H ^
 "nnoremap L $
 
@@ -145,4 +148,4 @@ hi IndentGuidesOdd ctermbg=0 guibg=8
 let g:indent_guides_tab_guides = 0
 
 " Clang complete
-let g:ycm_filetype_whitelist = { '.cpp': 1 }
+let g:ycm_filetype_whitelist = { 'cpp': 1 }
