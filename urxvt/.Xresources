@@ -1,21 +1,249 @@
-#define S_foreground 	#2a2a2a
-#define S_background 	#ffffff
-#define S_color0 	#676767
-#define S_color8 	#656565
-#define S_color1 	#e95225
-#define S_color9 	#e95225
-#define S_color2 	#ff9200
-#define S_color10 	#ff9200
-#define S_color3 	#ff9200
-#define S_color11 	#ff9200
-#define S_color4 	#45c7f7
-#define S_color12 	#45c7f7
-#define S_color5 	#ff9200
-#define S_color13 	#ff9200
-#define S_color6 	#45c7f7
-#define S_color14 	#45c7f7
-#define S_color7 	#707880
-#define S_color15 	#494949
+#define S_foreground 	#e2ecf4
+#define S_background 	#2d85c5
+#define S_color0 	#2d85c5
+#define S_color8 	#abbfcf
+#define S_color1 	#ffffff
+#define S_color9 	#ffffff
+#define S_color2 	#afd7f8
+#define S_color10 	#afd7f8
+#define S_color3 	#bec2c5
+#define S_color11 	#bec2c5
+#define S_color4 	#ffffff
+#define S_color12 	#ffffff
+#define S_color5 	#b2cee5
+#define S_color13 	#b2cee5
+#define S_color6 	#bdcfdd
+#define S_color14 	#bdcfdd
+#define S_color7 	#e2ecf4
+#define S_color15 	#e2ecf4
+
+!#define S_foreground 	#e2ecf4
+!#define S_background 	#2d85c5
+!#define S_color0 	#2d85c5
+!#define S_color8 	#abbfcf
+!#define S_color1 	#ffffff
+!#define S_color9 	#ffffff
+!#define S_color2 	#afd7f8
+!#define S_color10 	#afd7f8
+!#define S_color3 	#bec2c5
+!#define S_color11 	#bec2c5
+!#define S_color4 	#ffffff
+!#define S_color12 	#ffffff
+!#define S_color5 	#b2cee5
+!#define S_color13 	#b2cee5
+!#define S_color6 	#bdcfdd
+!#define S_color14 	#bdcfdd
+!#define S_color7 	#e2ecf4
+!#define S_color15 	#e2ecf4
+
+!#define S_foreground 	#e2ecf4
+!#define S_background 	#2d85c5
+!#define S_color0 	#e2ecf4
+!#define S_color8 	#abbfcf
+!#define S_color1 	#ffffff
+!#define S_color9 	#ffffff
+!#define S_color2 	#afd7f8
+!#define S_color10 	#afd7f8
+!#define S_color3 	#bec2c5
+!#define S_color11 	#bec2c5
+!#define S_color4 	#ffffff
+!#define S_color12 	#ffffff
+!#define S_color5 	#b2cee5
+!#define S_color13 	#b2cee5
+!#define S_color6 	#bdcfdd
+!#define S_color14 	#bdcfdd
+!#define S_color7 	#e2ecf4
+!#define S_color15 	#e2ecf4
+
+!#define S_foreground 	#ffffff
+!#define S_background 	#1e1d1e
+!#define S_color0 	#1e1d1e
+!#define S_color8 	#5f5f5f
+!#define S_color1 	#ff00aa
+!#define S_color9 	#ff00aa
+!#define S_color2 	#aaff00
+!#define S_color10 	#aaff00
+!#define S_color3 	#ffaa00
+!#define S_color11 	#ffaa00
+!#define S_color4 	#00aaff
+!#define S_color12 	#00aaff
+!#define S_color5 	#aa00ff
+!#define S_color13 	#aa00ff
+!#define S_color6 	#ff0000
+!#define S_color14 	#ff0000
+!#define S_color7 	#aaaaaa
+!#define S_color15 	#ffffff
+
+!#define S_foreground 	#ffffff
+!#define S_background 	#1e1d1e
+!#define S_color0 	#1e1d1e
+!#define S_color8 	#aaaaaa
+!#define S_color1 	#ff00aa
+!#define S_color9 	#ff00aa
+!#define S_color2 	#aaff00
+!#define S_color10 	#aaff00
+!#define S_color3 	#ffaa00
+!#define S_color11 	#ffaa00
+!#define S_color4 	#00aaff
+!#define S_color12 	#00aaff
+!#define S_color5 	#aa00ff
+!#define S_color13 	#aa00ff
+!#define S_color6 	#ff0000
+!#define S_color14 	#ff0000
+!#define S_color7 	#aaaaaa
+!#define S_color15 	#ffffff
+
+!#define S_foreground 	#ffffff
+!#define S_background 	#1e1d1e
+!#define S_color0 	#1e1d1e
+!#define S_color8 	#4e344e
+!#define S_color1 	#ff00aa
+!#define S_color9 	#ff00aa
+!#define S_color2 	#aaff00
+!#define S_color10 	#aaff00
+!#define S_color3 	#ffaa00
+!#define S_color11 	#ffaa00
+!#define S_color4 	#00aaff
+!#define S_color12 	#00aaff
+!#define S_color5 	#aa00ff
+!#define S_color13 	#aa00ff
+!#define S_color6 	#ff0000
+!#define S_color14 	#ff0000
+!#define S_color7 	#aaaaaa
+!#define S_color15 	#ffffff
+
+!#define S_foreground 	#cacaca
+!#define S_background 	#1e242a
+!#define S_color0 	#1e242a
+!#define S_color8 	#8c8c8c
+!#define S_color1 	#ca4742
+!#define S_color9 	#ca4742
+!#define S_color2 	#a5ca42
+!#define S_color10 	#a5ca42
+!#define S_color3 	#cab542
+!#define S_color11 	#cab542
+!#define S_color4 	#4285ca
+!#define S_color12 	#4285ca
+!#define S_color5 	#9242ca
+!#define S_color13 	#9242ca
+!#define S_color6 	#42cac9
+!#define S_color14 	#42cac9
+!#define S_color7 	#576879
+!#define S_color15 	#cacaca
+
+!#define S_foreground 	#cacaca
+!#define S_background 	#1e242a
+!#define S_color0 	#1e242a
+!#define S_color8 	#cacaca
+!#define S_color1 	#ca4742
+!#define S_color9 	#ca4742
+!#define S_color2 	#a5ca42
+!#define S_color10 	#a5ca42
+!#define S_color3 	#cab542
+!#define S_color11 	#cab542
+!#define S_color4 	#4285ca
+!#define S_color12 	#4285ca
+!#define S_color5 	#9242ca
+!#define S_color13 	#9242ca
+!#define S_color6 	#42cac9
+!#define S_color14 	#42cac9
+!#define S_color7 	#576879
+!#define S_color15 	#cacaca
+
+!#define S_foreground 	#cacaca
+!#define S_background 	#1e242a
+!#define S_color0 	#1e242a
+!#define S_color8 	#4285ca
+!#define S_color1 	#ca4742
+!#define S_color9 	#ca4742
+!#define S_color2 	#a5ca42
+!#define S_color10 	#a5ca42
+!#define S_color3 	#cab542
+!#define S_color11 	#cab542
+!#define S_color4 	#4285ca
+!#define S_color12 	#4285ca
+!#define S_color5 	#9242ca
+!#define S_color13 	#9242ca
+!#define S_color6 	#42cac9
+!#define S_color14 	#42cac9
+!#define S_color7 	#576879
+!#define S_color15 	#cacaca
+
+!#define S_foreground 	#c5c8c6
+!#define S_background 	#1d1f21
+!#define S_color0 	#282a2e
+!#define S_color8 	#373b41
+!#define S_color1 	#a54242
+!#define S_color9 	#cc6666
+!#define S_color2 	#8c9440
+!#define S_color10 	#b5bd68
+!#define S_color3 	#de935f
+!#define S_color11 	#f0c674
+!#define S_color4 	#5f819d
+!#define S_color12 	#81a2be
+!#define S_color5 	#85678f
+!#define S_color13 	#b294bb
+!#define S_color6 	#5e8d87
+!#define S_color14 	#8abeb7
+!#define S_color7 	#707880
+!#define S_color15 	#c5c8c6
+
+!#define S_foreground 	#b9b9b9
+!#define S_background 	#101010
+!#define S_color0 	#101010
+!#define S_color8 	#525252
+!#define S_color1 	#7c7c7c
+!#define S_color9 	#7c7c7c
+!#define S_color2 	#8e8e8e
+!#define S_color10 	#8e8e8e
+!#define S_color3 	#a0a0a0
+!#define S_color11 	#a0a0a0
+!#define S_color4 	#686868
+!#define S_color12 	#686868
+!#define S_color5 	#747474
+!#define S_color13 	#747474
+!#define S_color6 	#868686
+!#define S_color14 	#868686
+!#define S_color7 	#b9b9b9
+!#define S_color15 	#f7f7f7
+
+!#define S_foreground 	#b9b9b9
+!#define S_background 	#101010
+!#define S_color0 	#101010
+!#define S_color8 	#525252
+!#define S_color1 	#7c7c7c
+!#define S_color9 	#7c7c7c
+!#define S_color2 	#8e8e8e
+!#define S_color10 	#8e8e8e
+!#define S_color3 	#a0a0a0
+!#define S_color11 	#a0a0a0
+!#define S_color4 	#686868
+!#define S_color12 	#686868
+!#define S_color5 	#747474
+!#define S_color13 	#747474
+!#define S_color6 	#868686
+!#define S_color14 	#868686
+!#define S_color7 	#b9b9b9
+!#define S_color15 	#f7f7f7
+
+!#define S_foreground 	#bdbdbd
+!#define S_background 	#141312
+!#define S_color0 	#141312
+!#define S_color8 	#7d7d7d
+!#define S_color1 	#c0552a
+!#define S_color9 	#c0552a
+!#define S_color2 	#76bb20
+!#define S_color10 	#76bb20
+!#define S_color3 	#9cb73a
+!#define S_color11 	#9cb73a
+!#define S_color4 	#33786e
+!#define S_color12 	#33786e
+!#define S_color5 	#675388
+!#define S_color13 	#675388
+!#define S_color6 	#618bb2
+!#define S_color14 	#618bb2
+!#define S_color7 	#bdbdbd
+!#define S_color15 	#bdbdbd
 
 ! ---------------------------- ROFI -------------------------------
 rofi.color-enabled: true
@@ -25,11 +253,12 @@ rofi.color-normal:  S_background, 	S_foreground,	S_background,	S_color8,	S_foreg
 rofi.color-active:  S_background, 	S_foreground,	S_background,	S_color8,	S_foreground
 rofi.color-urgent:  S_background, 	S_foreground,	S_background,	S_color8,	S_foreground
 rofi.opacity: 87.5
-rofi.font: xft:Fantasque Sans Mono Regular Nerd Font Complete Mono 11
+rofi.font: Fantasque Sans Mono 13
 rofi.dpi: 170
-rofi.location: 1
+rofi.location: 2
 rofi.yoffset: 40
 rofi.xoffset: 0
+rofi.width: 2880
 
 ! ---------------------------- URXVT -------------------------------
 
@@ -71,15 +300,15 @@ rofi.xoffset: 0
 *color15:      S_color15
 
 
-URxvt.font: xft:Fantasque Sans Mono Nerd Font
+URxvt.font: xft:FantasqueSansMono Nerd Font
 URxvt*scrollBar: false
 URxvt.internalBorder: 6
 Xft.dpi: 160
 
 !urxvt*transparent: true
-!urxvt*shading: 30
-!urxvt*tintColor: #aaaaaa
-!urxvt*blurRadius: 30 
+!urxvt*shading: 10
+!urxvt*tintColor: #FFFFFFFF
+!urxvt*blurRadius: 30
 
-!urxvt*background: rgba:1e00/2100/2a00/EEEE
+!urxvt*background: rgba:2828/2828/2828/EEEE
 !urxvt*depth: 32
