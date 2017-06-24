@@ -31,19 +31,19 @@ set_from_resource $color15 i3wm.color15  #ff00ff
 
 # ----------------------- Style options -----------------------
 
-#Window colors				border  	backgr. 	text    	indicator
-client.focused          $color10 $color10 $color5	$color2
-client.focused_inactive $color10 $color0 	$color5 	$color2
-client.unfocused        $color10 $color0 	$color5 	$color2
-client.urgent           $color10 $color10 $color5 	$color2
-client.placeholder      $color10 $color10 $color5 	$color2
+#Window colors				border  	backgr. text  indicator
+client.focused          $color8 $color8 $color5 $color8
+client.focused_inactive $color8 $color0 $color5 $color8
+client.unfocused        $color8 $color0 $color5 $color8
+client.urgent           $color8 $color8 $color5 $color8
+client.placeholder      $color8 $color8 $color5 $color8
 
 # Font config
 font pango:monospace 10
 
 # Border options
 new_window none
-gaps inner 15
+gaps inner 0
 smart_gaps on
 smart_borders on
 for_window [class="^.*"] border pixel 2

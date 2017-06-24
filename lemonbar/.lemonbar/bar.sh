@@ -74,7 +74,7 @@ done
 
 if [[ $last_was_focused == "false" ]]; then
 	HighlightBG $highlight_main
-	#echo -n %{R}$seperator_left 
+	#echo -n %{R}$seperator_left
 fi
 HighlightFG	$highlight_main
 }
@@ -99,7 +99,7 @@ Battery() {
 Email () {
 	if grep -q 0 "/tmp/mailtemp.tmp"; then
 		HighlightBG $highlight_sub3
-	else 
+	else
 		HighlightBG $highlight_sub2
 	fi
 	Pad
@@ -114,7 +114,7 @@ Email () {
 Reddit () {
 	if grep -q 0 "/tmp/reddit_messages.tmp"; then
 		HighlightBG $highlight_sub3
-	else 
+	else
 		HighlightBG $highlight_sub
 	fi
 	Pad
@@ -147,14 +147,14 @@ Wifi () {
 }
 
 TMUX_Integration () {
-	for x in $(tmux list-sessions 2>/dev/null | awk '{print $1}' | tr -d ':'); do 
+	for x in $(tmux list-sessions 2>/dev/null | awk '{print $1}' | tr -d ':'); do
 		HighlightBG $highlight_sub3
 		SmallPad
 		echo -n $x
 		SmallPad
 		HighlightFG $highlight_main
 		SmallPad
-	done		
+	done
 }
 
 Check_Calendar () {
@@ -212,10 +212,10 @@ Check_Battery_Loop () {
 Check_Mail_Loop () {
 	source ~/.private.sh
 	while true; do
-		curl -u $username@gmail.com:$password --silent "https://mail.google.com/mail/feed/atom" | 
-		xmllint --format - | 
-		grep "<entry>" | 
-		wc -l | 
+		curl -u $username@gmail.com:$password --silent "https://mail.google.com/mail/feed/atom" |
+		xmllint --format - |
+		grep "<entry>" |
+		wc -l |
 		tr -d '\r\n' > /tmp/mailtemp.tmp
 		sleep 50
 	done
@@ -231,7 +231,7 @@ Check_Reddit_Loop () {
 		for x in {0..30}; do
 			curl -s -H \
 				"Authorization: bearer $access_token" -A \
-				"$reddit_bot_name" https://oauth.reddit.com/api/v1/me | 
+				"$reddit_bot_name" https://oauth.reddit.com/api/v1/me |
 			jq -r '.inbox_count' |
 			tr -d '\r\n' > /tmp/reddit_messages.tmp
 			sleep 50
