@@ -46,6 +46,7 @@ bepis () {
 alias neofetch='neofetch --ascii_colors 2 --ascii /usr/share/neofetch/ascii/games/aperture'
 alias urxvt='urxvt -pixmap "/home/duncan/.backgrounds/Blur.png;style=root-tiled"'
 alias homevpn='cd /home/duncan/Projects/Home/VPNSANDSTUFF/personal_accounts/Duncan/ && sudo openvpn client.ovpn'
+alias weather='curl wttr.in'
 
 # Colored man pages
 man() {
