@@ -20,8 +20,6 @@ Plugin 'https://github.com/terryma/vim-multiple-cursors.git'
 " have a panic attack. What a baby.
 Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 
-"lugin 'https://github.com/Rip-Rip/clang_complete.git'
-
 "lugin 'https://github.com/critiqjo/lldb.nvim.git'
 "lugin 'https://github.com/tpope/vim-dispatch.git'
 "lugin 'https://github.com/lervag/vimtex.git'
@@ -50,9 +48,9 @@ set foldmethod=syntax
 set nofoldenable
 set mouse=a
 set hidden
-noremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
-inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
-inoremap <expr> <tab> ((pumvisible())?("\<Cr>"):("<Cr>"))
+"noremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
+"inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
+"inoremap <expr> <tab> ((pumvisible())?("\<Cr>"):("<Cr>"))
 tnoremap <Esc> <C-\><C-n>
 set clipboard=unnamedplus
 "nnoremap H ^
@@ -134,9 +132,9 @@ let g:LanguageClient_autoStart = 1
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
-inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+"inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+"inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Indent guides
 let g:indent_guides_enable_on_vim_startup = 1

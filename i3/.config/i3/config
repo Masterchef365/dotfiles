@@ -6,6 +6,7 @@ exec xrdb -merge ~/.Xresources
 
 # Set the modifier key, set floating modifier to the same
 set $mod Mod4
+
 floating_modifier $mod
 
 # Set the editor
@@ -31,12 +32,12 @@ set_from_resource $color15 i3wm.color15  #ff00ff
 
 # ----------------------- Style options -----------------------
 
-#Window colors				border  	backgr. text  indicator
-client.focused          $color8 $color8 $color5 $color8
-client.focused_inactive $color8 $color0 $color5 $color8
-client.unfocused        $color8 $color0 $color5 $color8
-client.urgent           $color8 $color8 $color5 $color8
-client.placeholder      $color8 $color8 $color5 $color8
+#Window colors				border  	backgr.  text    indicator
+client.focused          $color10 $color10 $color5 $color8
+client.focused_inactive $color10 $color0  $color5 $color8
+client.unfocused        $color10 $color0  $color5 $color8
+client.urgent           $color10 $color10 $color5 $color8
+client.placeholder      $color10 $color10 $color5 $color8
 
 # Font config
 font pango:monospace 10
@@ -125,9 +126,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # ----------------------- Multimedia Keys -----------------------
-bindsym XF86AudioRaiseVolume exec --no-startup-id sh -c ". ~/.bitsAndBobs/audio_setters/set_current_window_volume.sh VolUp"
-bindsym XF86AudioLowerVolume exec --no-startup-id sh -c ". ~/.bitsAndBobs/audio_setters/set_current_window_volume.sh VolDn"
-bindsym XF86AudioMute exec --no-startup-id sh -c ". ~/.bitsAndBobs/audio_setters/set_current_window_volume.sh Mute"
+bindsym XF86AudioRaiseVolume exec mpc volume +5
+bindsym XF86AudioLowerVolume exec mpc volume -5
+bindsym XF86AudioMute exec sh -c 'play ~/.bitsAndBobs/cassette-player-button-1.wav && mpc toggle'
 
 bindsym XF86KbdBrightnessUp exec --no-startup-id kbdlight up 5
 bindsym XF86KbdBrightnessDown exec --no-startup-id kbdlight down 5
@@ -135,9 +136,9 @@ bindsym XF86KbdBrightnessDown exec --no-startup-id kbdlight down 5
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 
-bindsym XF86AudioPrev exec --no-startup-id mpc prev
-bindsym XF86AudioPlay exec --no-startup-id mpc toggle
-bindsym XF86AudioNext exec --no-startup-id mpc next
+bindsym XF86AudioPrev exec sh -c 'play ~/.bitsAndBobs/cassette-player-button-1.wav && mpc prev'
+bindsym XF86AudioPlay exec sh -c 'play ~/.bitsAndBobs/cassette-player-button-1.wav && mpc toggle'
+bindsym XF86AudioNext exec sh -c 'play ~/.bitsAndBobs/cassette-player-button-1.wav && mpc next'
 
 # ----------------------- i3-Specific commands -----------------------
 bindsym $mod+Shift+c reload

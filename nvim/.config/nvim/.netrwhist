@@ -1,8 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/duncan/Projects/Home/Rust/Messing_Around/socket_server/src'
-let g:netrw_dirhist_2='/home/duncan/Projects/Home/Rust/FRAME/interface_prototype'
-let g:netrw_dirhist_3='/home/duncan/Projects/Home/Rust/FRAME/backend/src'
-let g:netrw_dirhist_4='/home/duncan/dotfiles-i3wm/nvim/.config/nvim'
-let g:netrw_dirhist_5='/home/duncan/.lemonbar'
-let g:netrw_dirhist_6='/home/duncan/Projects/Home/Rust/Messing_Around/imagehist'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/duncan/Downloads/JPEGImages/2002/07/19/big'
+let g:netrw_dirhist_2='/home/duncan/Projects/Nova/cornea_comms/build/CMakeFiles/CMakeTmp'
+let g:netrw_dirhist_3='/home/duncan/Projects/Nova/mountpoint/Cauldron'
