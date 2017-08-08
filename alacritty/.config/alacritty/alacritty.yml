@@ -1,34 +1,32 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator
 
-
 colors:
   # Default colors
   primary:
-    background: '0x141312'
-    foreground: '0xbdbdbd'
+    background: '0x1a1918'
+    foreground: '0xeae6dd'
 
   # Normal colors
   normal:
-    black:   '0x141312'
-    red:     '0xc0552a'
-    green:   '0x76bb20'
-    yellow:  '0x9cb73a'
-    blue:    '0x33786e'
-    magenta: '0x675388'
-    cyan:    '0x618bb2'
-    white:   '0xbdbdbd'
+    black:   '0x1a1918'
+    red:     '0xd4702f'
+    green:   '0xa4d42f'
+    yellow:  '0xced42f'
+    blue:    '0x2fb7d4'
+    magenta: '0xd42fc4'
+    cyan:    '0xd42f70'
+    white:   '0xd42f70'
 
   # Bright colors
   bright:
-    black:   '0x7d7d7d'
-    red:     '0xc0552a'
-    green:   '0x76bb20'
-    yellow:  '0x9cb73a'
-    blue:    '0x33786e'
-    magenta: '0x675388'
-    cyan:    '0x618bb2'
-    white:   '0xbdbdbd'
-
+    black:   '0x555a62'
+    red:     '0xd4702f'
+    green:   '0xa4d42f'
+    yellow:  '0xced42f'
+    blue:    '0x2fb7d4'
+    magenta: '0xd42fc4'
+    cyan:    '0xd42f70'
+    white:   '0xeae9dd'
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -50,8 +48,8 @@ dimensions:
 # The FreeType rasterizer needs to know the device DPI for best results
 # (changes require restart)
 dpi:
-  x: 160.0
-  y: 160.0
+  x: 100.0
+  y: 100.0
 
 # Display tabs using this many cells (changes require restart)
 tabspaces: 2

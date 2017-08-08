@@ -1,29 +1,29 @@
-#define S_foreground 	#ffffff
-#define S_background 	#000000
-#define S_color0 	#000000
-#define S_color8 	#aaaaaa
-#define S_color1 	#ff00aa
-#define S_color9 	#ff0055
-#define S_color2 	#00aaff
-#define S_color10 	#ff00aa
-#define S_color3 	#ff0055
-#define S_color11 	#aa00ff
-#define S_color4 	#00aaff
-#define S_color12 	#ff00aa
-#define S_color5 	#aa00ff
-#define S_color13 	#00aaff
-#define S_color6 	#00aaff
-#define S_color14 	#aa00ff
-#define S_color7 	#aaaaaa
-#define S_color15 	#ffffff
+#define  S_foreground  #eae6dd
+#define  S_background  #1a1918
+#define  S_color0      #1a1918
+#define  S_color8      #555a62
+#define  S_color1      #d4702f
+#define  S_color9      #d4702f
+#define  S_color2      #a4d42f
+#define  S_color10     #a4d42f
+#define  S_color3      #ced42f
+#define  S_color11     #ced42f
+#define  S_color4      #2fb7d4
+#define  S_color12     #2fb7d4
+#define  S_color5      #d42fc4
+#define  S_color13     #d42fc4
+#define  S_color6      #d42f70
+#define  S_color14     #d42f70
+#define  S_color7      #d42f70
+#define  S_color15     #eae9dd
 
 ! ---------------------------- ROFI -------------------------------
 rofi.color-enabled: true
-! State:				  bg					fg					bgalt				hlbg			hlfg
-rofi.color-window:  S_background,	S_background
-rofi.color-normal:  S_background, 	S_foreground,	S_background,	S_color10,	S_foreground
-rofi.color-active:  S_background, 	S_foreground,	S_background,	S_color10,	S_foreground
-rofi.color-urgent:  S_background, 	S_foreground,	S_background,	S_color10,	S_foreground
+!State:             bg             fg             bgalt          hlbg        hlfg
+rofi.color-window:  S_background,  S_background
+rofi.color-normal:  S_background,  S_foreground,  S_background,  S_color10,  S_color0
+rofi.color-active:  S_background,  S_foreground,  S_background,  S_color10,  S_color0
+rofi.color-urgent:  S_background,  S_foreground,  S_background,  S_color10,  S_color0
 rofi.opacity: 87.5
 rofi.font: Fantasque Sans Mono 13
 rofi.dpi: 170
@@ -76,7 +76,7 @@ URxvt.font: xft:FantasqueSansMono Nerd Font
 !URxvt.font: xft:terminus-12:encoding=combined
 URxvt*scrollBar: false
 URxvt.internalBorder: 6
-Xft.dpi: 160
+Xft.dpi: 175
 
 !urxvt*transparent: true
 !urxvt*shading: 10

@@ -1,5 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/duncan/Downloads/JPEGImages/2002/07/19/big'
-let g:netrw_dirhist_2='/home/duncan/Projects/Nova/cornea_comms/build/CMakeFiles/CMakeTmp'
-let g:netrw_dirhist_3='/home/duncan/Projects/Nova/mountpoint/Cauldron'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/home/duncan/Projects/Nova/mountpoint/StereoSettings'
+let g:netrw_dirhist_2='/home/duncan/Projects/Nova/mountpoint/StereoSettings/src'

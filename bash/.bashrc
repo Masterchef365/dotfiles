@@ -18,7 +18,7 @@
 alias ls='ls --color=auto'
 alias la='ls -a --color=auto'
 alias pacman="sudo pacman"
-alias 'll'='ls -l --block-size=MB'
+alias 'll'='ls -lh'
 alias cd..='cd ..'
 alias cd...='cd ..'
 alias vim='nvim'
@@ -28,25 +28,28 @@ function cs () {
 }
 alias cd='cs'
 alias rs='tput reset'
-alias reset='tput reset'
-alias tty-clock='tty-clock -C 6'
+
+#Useful stuff
 alias thinkofthe='pacaur -Rns $(pacaur -Qtdq)'
+alias tty-clock='tty-clock -C 6'
+alias copydir='pwd | xclip -selection c'
 alias goodnight='sudo shutdown now'
+alias bootstat='chromium $(cp <(systemd-analyze plot) /tmp/disp.svg && echo /tmp/disp.svg)'
+alias kernbootstat='dmesg -td | sort'
+alias weather='curl wttr.in'
+alias ds='for x in *; do du -sh "$x"; done'
+
+# Jokes
 alias noice='echo I know right!'
 alias wot='echo wot in ternation'
 alias fuck='echo -e "Well, \e[3msorrryy\e[0m. ERROR: Problem exists between chair and keyboard."'
 alias macho='man'
-alias bootstat='chromium $(cp <(systemd-analyze plot) /tmp/disp.svg && echo /tmp/disp.svg)'
-alias kernbootstat='dmesg -td | sort'
-alias copydir='pwd | xclip -selection c'
 bepis () {
 	replace="bepis"
 	man $1 | sed -e "s/$1/$replace/ig" | less
 }
 alias neofetch='neofetch --ascii_colors 2 --ascii /usr/share/neofetch/ascii/games/aperture'
 #alias urxvt='urxvt -pixmap "/home/duncan/.backgrounds/Blur.png;style=root-tiled"'
-alias homevpn='cd /home/duncan/Projects/Home/VPNSANDSTUFF/personal_accounts/Duncan/ && sudo openvpn client.ovpn'
-alias weather='curl wttr.in'
 
 # Colored man pages
 man() {
