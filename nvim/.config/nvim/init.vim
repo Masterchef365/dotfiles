@@ -4,40 +4,40 @@ let s:editor_root=expand("~/.config/nvim")
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#rc(s:editor_root . '/bundle')
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
 Plugin 'noahfrederick/vim-noctu'
 Plugin 'tpope/vim-fugitive'
 Plugin 'terryma/vim-multiple-cursors'
 " You're gonna need libtinfo from the AUR, and you'll need to run
 " sudo ln -s /usr/lib/libtinfo.so.6 /usr/lib/libtinfo.so.5 so that YCM doesn't
 " have a panic attack. What a baby.
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'autozimu/LanguageClient-neovim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'roxma/nvim-completion-manager'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'lilydjwg/colorizer'
+"Plugin 'lilydjwg/colorizer'
 Plugin 'ervandew/supertab'
 call vundle#end()
 
 " Misc
 filetype plugin indent on
 set nocompatible
-set nu
+set rnu
 syntax on
 set laststatus=2
 set nohlsearch
 set nowrap
 set foldmethod=syntax
-"set nofoldenable
+set nofoldenable
 set mouse=a
 set hidden
 tnoremap <Esc> <C-\><C-n>
 set clipboard=unnamedplus
 
 " OCD Auto-Align a block of text
-let @c = 'v}k$:�ku=G}j'
+"let @c = 'v}k$:�ku=G}j'
 
 " More cursors
 let g:multi_cursor_use_default_mapping=1
@@ -59,16 +59,16 @@ set shiftwidth=3
 
 " Airline options
 filetype plugin on
-let g:airline_powerline_fonts = 1
-"let g:airline#extensions#tabline#enabled = 1
-let g:airline_left_sep = 		""
-let g:airline_right_sep = 		""
-let g:airline_left_alt_sep = 	""
-let g:airline_right_alt_sep = ""
+"let g:airline_powerline_fonts = 1
+"let g:airline#extensions#tabline#enabled = 0
+"let g:airline_left_sep = 		""
+"let g:airline_right_sep = 		""
+"let g:airline_left_alt_sep = 	""
+"let g:airline_right_alt_sep = ""
+let g:airline_theme = "base16color"
 
 " Colorschemes
 colorscheme noctu
-let g:airline_theme = "base16color"
 
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>

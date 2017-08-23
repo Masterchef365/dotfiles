@@ -4,7 +4,7 @@
 #   /:/\:\  \     /:/\:\  \     /:/\ \  \     /:/__/        /:/\:\  \     /:/\:\  \
 #  /::\~\:\__\   /::\~\:\  \   _\:\~\ \  \   /::\  \ ___   /::\~\:\  \   /:/  \:\  \
 # /:/\:\ \:|__| /:/\:\ \:\__\ /\ \:\ \ \__\ /:/\:\  /\__\ /:/\:\ \:\__\ /:/__/ \:\__\
-	# \:\~\:\/:/  / \/__\:\/:/  / \:\ \:\ \/__/ \/__\:\/:/  / \/_|::\/:/  / \:\  \  \/__/
+# \:\~\:\/:/  / \/__\:\/:/  / \:\ \:\ \/__/ \/__\:\/:/  / \/_|::\/:/  / \:\  \  \/__/
 #  \:\ \::/  /       \::/  /   \:\ \:\__\        \::/  /     |:|::/  /   \:\  \
 #   \:\/:/  /        /:/  /     \:\/:/  /        /:/  /      |:|\/__/     \:\  \
 #    \::/__/        /:/  /       \::/  /        /:/  /       |:|  |        \:\__\
@@ -28,6 +28,7 @@ function cs () {
 }
 alias cd='cs'
 alias rs='tput reset'
+alias ran='ranger'
 
 #Useful stuff
 alias thinkofthe='pacaur -Rns $(pacaur -Qtdq)'
@@ -38,6 +39,14 @@ alias bootstat='chromium $(cp <(systemd-analyze plot) /tmp/disp.svg && echo /tmp
 alias kernbootstat='dmesg -td | sort'
 alias weather='curl wttr.in'
 alias ds='for x in *; do du -sh "$x"; done'
+function swap()         
+{
+    local TMPFILE=tmp.$$
+    mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE $2
+}
+
+# Project management stuff
+alias projdesc='for x in */; do echo "$x : $(cat $x/.desc 2>/dev/null)"; done | column -t -s ":"'
 
 # Jokes
 alias noice='echo I know right!'
@@ -49,7 +58,6 @@ bepis () {
 	man $1 | sed -e "s/$1/$replace/ig" | less
 }
 alias neofetch='neofetch --ascii_colors 2 --ascii /usr/share/neofetch/ascii/games/aperture'
-#alias urxvt='urxvt -pixmap "/home/duncan/.backgrounds/Blur.png;style=root-tiled"'
 
 # Colored man pages
 man() {
@@ -75,19 +83,14 @@ export EDITOR="nvim"
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
 	. /usr/share/bash-completion/bash_completion
 
-# Promptline.vim compat
-#source ~/.shell_prompt.sh
-
 # Wtf go whyyyy
 export GOPATH=$HOME/.go
-export PATH=$PATH:~/.cargo/bin
 
 # RUST!
+export PATH=$PATH:~/.cargo/bin
 export RUST_SRC_PATH=~/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
 
-
-#echo -e -n "\x1b[\x36 q" # changes to steady bar
-#export PS1='\e[0;33m \w \e[0m> '
+# Simple prompt
 GREEN="\[$(tput setaf 2)\]"
 RESET="\[$(tput sgr0)\]"
 export PS1="${GREEN} \w ${RESET}> "
