@@ -24,7 +24,7 @@ rofi.color-window:  S_background,  S_background
 rofi.color-normal:  S_background,  S_foreground,  S_background,  S_color10,  S_color0
 rofi.color-active:  S_background,  S_foreground,  S_background,  S_color10,  S_color0
 rofi.color-urgent:  S_background,  S_foreground,  S_background,  S_color10,  S_color0
-rofi.opacity: 87.5
+rofi.opacity: 10.0
 rofi.font: Fantasque Sans Mono 13
 rofi.dpi: 170
 rofi.location: 1

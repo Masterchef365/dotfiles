@@ -29,6 +29,12 @@ function cs () {
 alias cd='cs'
 alias rs='tput reset'
 alias ran='ranger'
+function cdf () {
+       tmpfile="/tmp/where"
+       ranger --choosedir="$tmpfile"
+       cd $(cat "$tmpfile")
+       rm $tmpfile
+}
 
 #Useful stuff
 alias thinkofthe='pacaur -Rns $(pacaur -Qtdq)'
