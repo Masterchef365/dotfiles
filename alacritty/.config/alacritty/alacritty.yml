@@ -80,33 +80,34 @@ render_timer: false
 custom_cursor_colors: false
 
 # Colors (Tomorrow Night Bright)
+
 colors:
   # Default colors
   primary:
-    background: '0x1a1918'
-    foreground: '0xeae6dd'
+    background: '0x000000'
+    foreground: '0xffffff'
 
   # Normal colors
   normal:
-    black:   '0x1a1918'
-    red:     '0xd4702f'
-    green:   '0xa4d42f'
-    yellow:  '0xced42f'
-    blue:    '0x2fb7d4'
-    magenta: '0xd42fc4'
-    cyan:    '0xd42f70'
-    white:   '0xd42f70'
+    black:   '0x000000'
+    red:     '0xff00aa'
+    green:   '0x00aaff'
+    yellow:  '0xff0055'
+    blue:    '0x00aaff'
+    magenta: '0xaa00ff'
+    cyan:    '0x00aaff'
+    white:   '0xaaaaaa'
 
   # Bright colors
   bright:
-    black:   '0x555a62'
-    red:     '0xd4702f'
-    green:   '0xa4d42f'
-    yellow:  '0xced42f'
-    blue:    '0x2fb7d4'
-    magenta: '0xd42fc4'
-    cyan:    '0xd42f70'
-    white:   '0xeae9dd'
+    black:   '0xaaaaaa'
+    red:     '0xff0055'
+    green:   '0xff00aa'
+    yellow:  '0xaa00ff'
+    blue:    '0xff00aa'
+    magenta: '0x00aaff'
+    cyan:    '0xaa00ff'
+    white:   '0xffffff'
 
 # Visual Bell
 #

@@ -5,6 +5,10 @@
 "\e[1;5C": forward-word   # ctrl + right
 "\e[1;5D": backward-word  # ctrl + left 
 
+set show-mode-in-prompt on
+set vi-ins-mode-string "\x1b[\x36 q"
+set vi-cmd-mode-string "\x1b[\x32 q"
+
 set colored-stats On
 set completion-prefix-display-length 3
 set mark-symlinked-directories On

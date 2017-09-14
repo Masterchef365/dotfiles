@@ -28,13 +28,14 @@ function cs () {
 }
 alias cd='cs'
 alias rs='tput reset'
-alias ran='ranger'
-function cdf () {
+function ran () {
        tmpfile="/tmp/where"
        ranger --choosedir="$tmpfile"
        cd $(cat "$tmpfile")
        rm $tmpfile
 }
+set -o vi
+shopt -s extglob
 
 #Useful stuff
 alias thinkofthe='pacaur -Rns $(pacaur -Qtdq)'
@@ -44,7 +45,7 @@ alias goodnight='sudo shutdown now'
 alias bootstat='chromium $(cp <(systemd-analyze plot) /tmp/disp.svg && echo /tmp/disp.svg)'
 alias kernbootstat='dmesg -td | sort'
 alias weather='curl wttr.in'
-alias ds='for x in *; do du -sh "$x"; done'
+alias ds='du -sh * | sort -hr'
 function swap()         
 {
     local TMPFILE=tmp.$$

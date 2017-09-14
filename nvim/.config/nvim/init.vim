@@ -17,7 +17,7 @@ Plugin 'autozimu/LanguageClient-neovim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'roxma/nvim-completion-manager'
 Plugin 'nathanaelkane/vim-indent-guides'
-"Plugin 'lilydjwg/colorizer'
+Plugin 'lilydjwg/colorizer'
 Plugin 'ervandew/supertab'
 call vundle#end()
 
