@@ -4,15 +4,11 @@ let s:editor_root=expand("~/.config/nvim")
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#rc(s:editor_root . '/bundle')
 Plugin 'VundleVim/Vundle.vim'
-"Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes'
+Plugin 'kshenoy/vim-signature'
 Plugin 'noahfrederick/vim-noctu'
 Plugin 'tpope/vim-fugitive'
 Plugin 'terryma/vim-multiple-cursors'
-" You're gonna need libtinfo from the AUR, and you'll need to run
-" sudo ln -s /usr/lib/libtinfo.so.6 /usr/lib/libtinfo.so.5 so that YCM doesn't
-" have a panic attack. What a baby.
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'autozimu/LanguageClient-neovim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'roxma/nvim-completion-manager'
@@ -71,8 +67,8 @@ let g:airline_theme = "base16color"
 colorscheme noctu
 
 " Nerdtree
-map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"map <C-n> :NERDTreeToggle<CR>
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " ll-db.nvim
 set rtp+=/home/duncan/.config/nvim/init.vim
