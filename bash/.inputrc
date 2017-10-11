@@ -6,8 +6,9 @@
 "\e[1;5D": backward-word  # ctrl + left 
 
 set show-mode-in-prompt on
-set vi-ins-mode-string "\x1b[\x36 q"
-set vi-cmd-mode-string "\x1b[\x32 q"
+set vi-cmd-mode-string "\1\e[2 q\2"
+set vi-ins-mode-string "\1\e[6 q\2"
+set keyseq-timeout 0
 
 set colored-stats On
 set completion-prefix-display-length 3

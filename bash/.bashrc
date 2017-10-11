@@ -100,4 +100,12 @@ export RUST_SRC_PATH=~/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib
 # Simple prompt
 GREEN="\[$(tput setaf 2)\]"
 RESET="\[$(tput sgr0)\]"
+
+#printit () {
+#	if [ "$(tput cols)" -gt "90" ]; then
+#		echo -n "${GREEN} \w ${RESET}> "
+#	else
+#		echo -n "> "
+#	fi
+#}
 export PS1="${GREEN} \w ${RESET}> "

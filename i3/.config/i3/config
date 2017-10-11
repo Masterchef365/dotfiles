@@ -128,6 +128,7 @@ bindsym $mod+r mode "resize"
 # ----------------------- Multimedia Keys -----------------------
 bindsym XF86AudioRaiseVolume exec mpc volume +5
 bindsym XF86AudioLowerVolume exec mpc volume -5
+bindsym XF86LaunchA exec systemctl suspend
 bindsym XF86AudioMute exec sh -c 'play ~/.bitsAndBobs/cassette-player-button-1.wav && mpc toggle'
 
 bindsym XF86KbdBrightnessUp exec --no-startup-id kbdlight up 5
