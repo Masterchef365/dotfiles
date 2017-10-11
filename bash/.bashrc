@@ -108,4 +108,6 @@ RESET="\[$(tput sgr0)\]"
 #		echo -n "> "
 #	fi
 #}
+
+export PROMPT_DIRTRIM=3
 export PS1="${GREEN} \w ${RESET}> "
