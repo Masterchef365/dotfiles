@@ -1,2 +1,4 @@
 nvim/.config/nvim/bundle/*/
 nvim/.config/nvim/.netrwhist
+lemonbar/.lemonbar/limebar-rs/target/
+lemonbar/.lemonbar/limebar-rs/**/*.rs.bk

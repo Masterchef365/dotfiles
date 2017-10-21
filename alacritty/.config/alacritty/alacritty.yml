@@ -85,30 +85,30 @@ custom_cursor_colors: false
 colors:
   # Default colors
   primary:
-    background: '0x1c1c1c'
-    foreground: '0xffffff'
+    background: '0x0c131a'
+    foreground: '0x9aadb0'
 
   # Normal colors
   normal:
-    black:   '0x1c1c1c'
-    red:     '0x2fff00'
-    green:   '0xa5ff00'
-    yellow:  '0xd9ff00'
-    blue:    '0x00ffa1'
-    magenta: '0x009cff'
-    cyan:    '0xa5ff00'
-    white:   '0x7a7a7a'
+    black:   '0x0c131a'
+    red:     '0x794688'
+    green:   '0x1f98a8'
+    yellow:  '0x0a86b8'
+    blue:    '0x0a86b8'
+    magenta: '0x7a4983'
+    cyan:    '0xd0469c'
+    white:   '0x416792'
 
   # Bright colors
   bright:
-    black:   '0x7a7a7a'
-    red:     '0x2fff00'
-    green:   '0xa5ff00'
-    yellow:  '0xd9ff00'
-    blue:    '0x00ffa1'
-    magenta: '0x009cff'
-    cyan:    '0xa5ff00'
-    white:   '0xffffff'
+    black:   '0x304c6c'
+    red:     '0xc84798'
+    green:   '0x1f98a8'
+    yellow:  '0x0a86b8'
+    blue:    '0x0a86b8'
+    magenta: '0x7a4983'
+    cyan:    '0xd0469c'
+    white:   '0x9aadb0'
 
 # Visual Bell
 #
@@ -137,7 +137,7 @@ visual_bell:
   duration: 0
 
 # Background opacity
-background_opacity: 0.9
+background_opacity: 0.8
 
 # Key bindings
 #

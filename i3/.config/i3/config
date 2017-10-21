@@ -33,11 +33,11 @@ set_from_resource $color15 i3wm.color15  #ff00ff
 # ----------------------- Style options -----------------------
 
 #Window colors				border  	backgr.  text    indicator
-client.focused          $color10 $color10 $color8 $color8
-client.focused_inactive $color10 $color0  $color8 $color8
-client.unfocused        $color10 $color0  $color8 $color8
-client.urgent           $color10 $color10 $color8 $color8
-client.placeholder      $color10 $color10 $color8 $color8
+client.focused          $color11 $color11 $color0 $color8
+client.focused_inactive $color11 $color0  $color8 $color8
+client.unfocused        $color11 $color0  $color8 $color8
+client.urgent           $color11 $color11 $color8 $color8
+client.placeholder      $color11 $color11 $color8 $color8
 
 # Font config
 font pango:monospace 10
@@ -57,7 +57,6 @@ bindsym $mod+d exec rofi -show run
 bindsym $mod+c exec bash ~/.bitsAndBobs/rofidim.sh
 
 # Terminal
-#bindsym $mod+Return exec urxvt
 bindsym $mod+Return exec alacritty
 
 # Kill focused window
@@ -152,7 +151,7 @@ exec ~/.fehbg
 exec redshift -l geoclue2
 exec xrandr --dpi 160
 #exec --no-startup-id sh -c 'cd ~/.lemonbar && ./executebar.sh &'
-exec --no-startup-id sh -c 'cd ~/Projects/Home/Rust/lemonbar-rs && cargo run | . ~/.lemonbar/barstyling.sh'
+exec --no-startup-id sh -c 'cd ~/.lemonbar/limebar-rs && ./barstyling.sh'
 exec --no-startup-id mpd
 exec --no-startup-id compton
 for_window [class="*mono*"] floating enable,move absolute center
