@@ -1,1 +1,1 @@
-cargo run --release ~/.config/alacritty/alacritty.yml | lemonbar -p -f "FantasqueSansMono Nerd Font" -g x28++ $@
+cargo run --release ~/.config/alacritty/alacritty.yml | lemonbar -p -f "Fantasque Sans Mono" -g x28++ $@
