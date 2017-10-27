@@ -8,7 +8,7 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'noahfrederick/vim-noctu'
 Plugin 'tpope/vim-fugitive'
 Plugin 'terryma/vim-multiple-cursors'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'autozimu/LanguageClient-neovim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'roxma/nvim-completion-manager'
@@ -109,7 +109,7 @@ hi IndentGuidesOdd ctermbg=0 guibg=8
 let g:indent_guides_tab_guides = 0
 
 " Clang complete
-let g:ycm_filetype_whitelist = { 'cpp': 1 }
+let g:ycm_filetype_whitelist = { '*.cpp': 1 }
 
 " Colorizer
 let g:colorizer_maxlines = 1000

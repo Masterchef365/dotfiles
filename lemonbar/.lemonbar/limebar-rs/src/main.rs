@@ -1,4 +1,5 @@
 extern crate i3ipc;
+extern crate mpd;
 
 #[macro_use]
 extern crate serde_derive;
@@ -22,15 +23,13 @@ use lemonbar::*;
 
 use std::sync::mpsc::*;
 
-/*
-enum Update<'a> {
-    Clock(&'a str),
-    I3(&'a str),
-}
-*/
+use mpd::{Client, Query, Idle, Subsystem, State};
+use std::net::TcpStream;
+
 enum Update {
     Clock(String),
     I3(String),
+    Mpd(String),
 }
 
 fn i3(background_high: String, background_def: String, foreground: String, tx: Sender<Update>) {
@@ -77,8 +76,43 @@ fn clock(background: String, foreground: String, tx: Sender<Update>) {
     });
 }
 
+fn mpd(background: String, foreground: String, tx: Sender<Update>) {
+    let mut c = Client::new(TcpStream::connect("127.0.0.1:6600").unwrap()).unwrap();
+    std::thread::spawn(move || loop {
+        if c.queue().is_ok() && c.status().is_ok() && c.status().unwrap().song.is_some() &&
+            c.status().unwrap().state == State::Play
+        {
+            let song = c.queue().unwrap()[c.status().unwrap().song.unwrap().pos as usize].clone();
+            tx.send(Update::Mpd(format!(
+                "{}{}{} ",
+                background,
+                foreground,
+                format!(
+                " {}{}",
+                if let Some(artist) = song.tags.get("Artist") {
+                    format!("{} - ", artist)
+                } else {
+                    format!("")
+                },
+                song.title.unwrap_or(song.name.unwrap_or(String::from(&song.file[..20]))),
+            )
+            ))).expect("Clock failed to send data!");
+        } else {
+            tx.send(Update::Mpd(format!("")));
+        }
+        c.wait(
+            &[
+                Subsystem::Player,
+                Subsystem::Output,
+                Subsystem::Queue,
+                Subsystem::Mixer,
+            ],
+        );
+    });
+}
+
 fn main() {
-    let arg = std::env::args().last().expect("Not enough args!");
+    let arg = std::env::args().last().expect("No config file input!");
     let path = Path::new(&arg);
     let palette = Config::load_file(path).colors;
     let (tx, rx) = channel();
@@ -96,17 +130,27 @@ fn main() {
         tx.clone(),
     );
 
+    mpd(
+        color_fmt('B', palette.bright.black),
+        color_fmt('F', palette.primary.foreground),
+        tx.clone(),
+    );
+
     let mut clock_string = String::new();
     let mut i3_string = String::new();
+    let mut mpd_string = String::new();
     loop {
         for update in rx.recv() {
             match update {
                 Update::Clock(out) => clock_string = out,
                 Update::I3(out) => i3_string = out,
+                Update::Mpd(out) => mpd_string = out,
             }
             println!(
-                "{}%{{r}}{}{}",
+                "{}%{{r}}{}{} {}{}",
                 i3_string,
+                mpd_string,
+                color_fmt('B', palette.primary.background),
                 clock_string,
                 color_fmt('B', palette.primary.background)
             );
