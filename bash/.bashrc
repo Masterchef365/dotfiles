@@ -30,30 +30,33 @@ function cd () {
 
 #Useful stuff
 alias thinkofthe='pacaur -Rns $(pacaur -Qtdq)'
-alias tty-clock='tty-clock -C 6'
-alias copydir='pwd | xclip -selection c'
-alias goodnight='sudo shutdown now'
-alias bootstat='chromium $(cp <(systemd-analyze plot) /tmp/disp.svg && echo /tmp/disp.svg)'
-alias kernbootstat='dmesg -td | sort'
 alias weather='curl wttr.in'
-alias ds='du -sh * | sort -hr'
-function swap()         
-{
-    local TMPFILE=tmp.$$
-    mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE $2
+alias d='pin'
+printpins() {
+	count=1
+	for pin in $(cat $1); do
+		#echo "$count $(basename "$pin") $pin"
+		echo "$count $(basename "$pin")"
+		(( count++ ))
+	done
 }
-function ran () {
-       tmpfile="/tmp/where"
-       ranger --choosedir="$tmpfile"
-       cd $(cat "$tmpfile")
-       rm $tmpfile
+pin() {
+	pindir=$HOME/.pins
+	case "$1" in 
+		"")
+			#cat -n "$pindir" ;;
+			printpins $pindir ;;
+		"p")
+			echo "$PWD" >> $pindir ;;
+		"del")
+			sed -i "$2d" "$pindir" ;;
+		"[0-9][0-9]*")
+			echo "$1" >> $pindir ;;
+		*)
+			cd "$(sed "$1q;d" "$pindir")" ;;
+	esac
 }
 alias neofetch='neofetch --ascii_colors 2 --ascii /usr/share/neofetch/ascii/games/aperture'
-function tcopy { #Open another terminal mirroring this one below it
-	i3-msg split vertical
-	alacritty -e sh -c "cd $PWD && bash" &
-	disown "%alacritty"
-}
 
 # Colored man pages
 man() {
@@ -88,3 +91,4 @@ RESET="\[$(tput sgr0)\]"
 
 export PROMPT_DIRTRIM=3
 export PS1="${GREEN} \w ${RESET}> "
+

@@ -73,7 +73,6 @@ rofi.xoffset: 0
 
 
 URxvt.font: xft:FantasqueSansMono Nerd Font
-!URxvt.font: xft:terminus-12:encoding=combined
 URxvt*scrollBar: false
 URxvt.internalBorder: 6
 Xft.dpi: 175

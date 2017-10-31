@@ -8,6 +8,7 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'noahfrederick/vim-noctu'
 Plugin 'tpope/vim-fugitive'
 Plugin 'terryma/vim-multiple-cursors'
+"Make sure to install libtinfo5
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'autozimu/LanguageClient-neovim'
 Plugin 'rust-lang/rust.vim'
@@ -21,6 +22,7 @@ call vundle#end()
 filetype plugin indent on
 set nocompatible
 set rnu
+set nu
 syntax on
 set laststatus=2
 set nohlsearch
@@ -31,9 +33,6 @@ set mouse=a
 set hidden
 tnoremap <Esc> <C-\><C-n>
 set clipboard=unnamedplus
-
-" OCD Auto-Align a block of text
-"let @c = 'v}k$:€ku=G}j'
 
 " More cursors
 let g:multi_cursor_use_default_mapping=1
@@ -109,7 +108,7 @@ hi IndentGuidesOdd ctermbg=0 guibg=8
 let g:indent_guides_tab_guides = 0
 
 " Clang complete
-let g:ycm_filetype_whitelist = { '*.cpp': 1 }
+"let g:ycm_filetype_whitelist = { 'cpp': 1 }
 
 " Colorizer
 let g:colorizer_maxlines = 1000
