@@ -23,7 +23,7 @@ use lemonbar::*;
 
 use std::sync::mpsc::*;
 
-use mpd::{Client, Query, Idle, Subsystem, State};
+use mpd::{Client, Idle, Subsystem, State};
 use std::net::TcpStream;
 
 enum Update {
@@ -76,36 +76,46 @@ fn clock(background: String, foreground: String, tx: Sender<Update>) {
     });
 }
 
-fn mpd(background: String, foreground: String, tx: Sender<Update>) {
+fn mpd(background_def: String, background_high: String, foreground: String, tx: Sender<Update>) {
     let mut c = Client::new(TcpStream::connect("127.0.0.1:6600").unwrap()).unwrap();
     std::thread::spawn(move || loop {
         if c.queue().is_ok() && c.status().is_ok() && c.status().unwrap().song.is_some() &&
             c.status().unwrap().state == State::Play
         {
             let song = c.queue().unwrap()[c.status().unwrap().song.unwrap().pos as usize].clone();
-            tx.send(Update::Mpd(format!(
-                "{}{}{} ",
-                background,
-                foreground,
+            let mut display: String =
                 format!(
-                " {}{}",
+                " {}{} ",
                 if let Some(artist) = song.tags.get("Artist") {
                     format!("{} - ", artist)
                 } else {
                     format!("")
                 },
-                song.title.unwrap_or(song.name.unwrap_or(String::from(&song.file[..20]))),
-            )
-            ))).expect("Clock failed to send data!");
+                song.title.unwrap_or(song.name.unwrap_or(song.file)),
+            );
+            let elapsed = c.status().unwrap().elapsed.unwrap().num_seconds();
+            let duration = c.status().unwrap().duration.unwrap().num_seconds();
+            let idx = (((elapsed as f32) / (duration as f32)) * (display.len() as f32)) as usize;
+            display.insert_str(idx, &background_def);
+            tx.send(Update::Mpd(
+                format!("{}{}{}", background_high, foreground, display),
+            )).expect("Clock failed to send data!");
         } else {
             tx.send(Update::Mpd(format!("")));
         }
         c.wait(
             &[
-                Subsystem::Player,
-                Subsystem::Output,
+                Subsystem::Database,
+                Subsystem::Update,
+                Subsystem::Playlist,
                 Subsystem::Queue,
+                Subsystem::Player,
                 Subsystem::Mixer,
+                Subsystem::Output,
+                Subsystem::Options,
+                Subsystem::Sticker,
+                Subsystem::Subscription,
+                Subsystem::Message,
             ],
         );
     });
@@ -132,6 +142,7 @@ fn main() {
 
     mpd(
         color_fmt('B', palette.bright.black),
+        color_fmt('B', palette.bright.blue),
         color_fmt('F', palette.primary.foreground),
         tx.clone(),
     );
