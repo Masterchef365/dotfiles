@@ -32,14 +32,15 @@ function cd () {
 alias thinkofthe='pacaur -Rns $(pacaur -Qtdq)'
 alias weather='curl wttr.in'
 alias d='pin'
+alias neofetch='neofetch --ascii_colors 2 --ascii /usr/share/neofetch/ascii/games/aperture'
 printpins() {
 	count=1
 	for pin in $(cat $1); do
-		#echo "$count $(basename "$pin") $pin"
 		echo "$count $(basename "$pin")"
 		(( count++ ))
 	done
 }
+
 pin() {
 	pindir=$HOME/.pins
 	case "$1" in 
@@ -56,7 +57,6 @@ pin() {
 			cd "$(sed "$1q;d" "$pindir")" ;;
 	esac
 }
-alias neofetch='neofetch --ascii_colors 2 --ascii /usr/share/neofetch/ascii/games/aperture'
 
 # Colored man pages
 man() {

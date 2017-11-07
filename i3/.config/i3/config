@@ -144,7 +144,7 @@ bindsym XF86AudioNext exec sh -c 'play ~/.bitsAndBobs/cassette-player-button-1.w
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You sure, fam?' -b 'Ya boi' 'i3-msg exit'"
-bindsym $mod+i exec i3lock-fancy -pf "Fantasque-Sans-Mono-Regular" -- scrot
+bindsym $mod+i exec i3lock-fancy -pf "Fantasque-Sans-Mono-Regular"
 
 # ----------------------- Post-WM commands -----------------------
 exec ~/.fehbg

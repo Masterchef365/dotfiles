@@ -140,12 +140,14 @@ fn main() {
         tx.clone(),
     );
 
+    /*
     mpd(
         color_fmt('B', palette.bright.black),
         color_fmt('B', palette.bright.blue),
         color_fmt('F', palette.primary.foreground),
         tx.clone(),
     );
+    */
 
     let mut clock_string = String::new();
     let mut i3_string = String::new();
