@@ -129,13 +129,13 @@ fn main() {
 
     i3(
         color_fmt('B', palette.bright.blue),
-        color_fmt('B', palette.bright.black),
+        color_fmt('B', palette.bright.red),
         color_fmt('F', palette.primary.foreground),
         tx.clone(),
     );
 
     clock(
-        color_fmt('B', palette.bright.black),
+        color_fmt('B', palette.bright.red),
         color_fmt('F', palette.primary.foreground),
         tx.clone(),
     );
