@@ -64,6 +64,10 @@ bindsym $mod+Shift+q kill
 
 # ----------------------- Window movement/Workspace switching -----------------------
 
+# next/prev workspaces
+bindsym $mod+Ctrl+h workspace prev
+bindsym $mod+Ctrl+l workspace next
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -88,18 +92,19 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
+bindsym $mod+g exec "sh -c ./.bitsAndBobs/rename.sh"
 
 # Switch workspaces
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace number "1"
+bindsym $mod+2 workspace number "2"
+bindsym $mod+3 workspace number "3"
+bindsym $mod+4 workspace number "4"
+bindsym $mod+5 workspace number "5"
+bindsym $mod+6 workspace number "6"
+bindsym $mod+7 workspace number "7"
+bindsym $mod+8 workspace number "8"
+bindsym $mod+9 workspace number "9"
+bindsym $mod+0 workspace number "10"
 
 # Move containers to workspaces
 bindsym $mod+Shift+1 move container to workspace 1
@@ -133,8 +138,8 @@ bindsym XF86AudioMute exec sh -c 'play ~/.bitsAndBobs/cassette-player-button-1.w
 bindsym XF86KbdBrightnessUp exec --no-startup-id kbdlight up 5
 bindsym XF86KbdBrightnessDown exec --no-startup-id kbdlight down 5
 
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 2
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 2
 
 bindsym XF86AudioPrev exec sh -c 'play ~/.bitsAndBobs/cassette-player-button-1.wav && mpc prev'
 bindsym XF86AudioPlay exec sh -c 'play ~/.bitsAndBobs/cassette-player-button-1.wav && mpc toggle'

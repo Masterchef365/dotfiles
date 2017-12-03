@@ -9,10 +9,10 @@ Plugin 'noahfrederick/vim-noctu'
 Plugin 'tpope/vim-fugitive'
 Plugin 'terryma/vim-multiple-cursors'
 "Make sure to install libtinfo5
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'autozimu/LanguageClient-neovim'
 Plugin 'rust-lang/rust.vim'
-Plugin 'roxma/nvim-completion-manager'
+"Plugin 'roxma/nvim-completion-manager'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'lilydjwg/colorizer'
 Plugin 'ervandew/supertab'
@@ -51,16 +51,6 @@ set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr
 set autoindent
 set tabstop=3
 set shiftwidth=3
-
-" Airline options
-filetype plugin on
-"let g:airline_powerline_fonts = 1
-"let g:airline#extensions#tabline#enabled = 0
-"let g:airline_left_sep = 		""
-"let g:airline_right_sep = 		""
-"let g:airline_left_alt_sep = 	""
-"let g:airline_right_alt_sep = ""
-let g:airline_theme = "base16color"
 
 " Colorschemes
 colorscheme noctu

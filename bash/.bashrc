@@ -15,7 +15,14 @@
 [[ $- != *i* ]] && return
 
 # Behold the unholy heap of bad habits
-alias rs='tput reset'
+#alias rs='tput reset'
+alias rs='clear'
+alias ls='ls --color=auto'
+alias la='ls -a --color=auto'
+alias pacman="sudo pacman"
+alias 'll'='ls -lh'
+alias cd..='cd ..'
+alias cd...='cd ..'
 alias ls='ls --color=auto'
 alias la='ls -a --color=auto'
 alias pacman="sudo pacman"
@@ -83,12 +90,8 @@ export RUST_SRC_PATH=~/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib
 # Simple, clean prompt editing options
 set -o vi
 shopt -s extglob
-
 export INPUTRC=~/.inputrc
-
 GREEN="\[$(tput setaf 2)\]"
 RESET="\[$(tput sgr0)\]"
-
 export PROMPT_DIRTRIM=3
 export PS1="${GREEN} \w ${RESET}> "
-

@@ -1,4 +1,8 @@
+extern crate systemstat;
+use systemstat::{System, Platform};
+
 extern crate i3ipc;
+
 extern crate mpd;
 
 #[macro_use]
@@ -28,6 +32,7 @@ use std::net::TcpStream;
 
 enum Update {
     Clock(String),
+    Battery(String),
     I3(String),
     Mpd(String),
 }
@@ -61,6 +66,23 @@ fn i3(background_high: String, background_def: String, foreground: String, tx: S
                 format_workspaces();
             }
         }
+    });
+}
+
+fn battery(background: String, foreground: String, tx: Sender<Update>) {
+    let sys = System::new();
+    std::thread::spawn(move || loop {
+        tx.send(Update::Battery(format!(
+            "{}{} {} ",
+            background,
+            foreground,
+            if let Ok(battery_input) = sys.battery_life() {
+                format!("{}%", (battery_input.remaining_capacity * 100.0) as i32)
+            } else {
+                format!("No battery...?")
+            }
+        ))).expect("Clock failed to send data!");
+        std::thread::sleep(std::time::Duration::from_secs(20));
     });
 }
 
@@ -139,30 +161,37 @@ fn main() {
         color_fmt('F', palette.primary.foreground),
         tx.clone(),
     );
-
-    /*
-    mpd(
-        color_fmt('B', palette.bright.black),
-        color_fmt('B', palette.bright.blue),
+    battery(
+        color_fmt('B', palette.bright.red),
         color_fmt('F', palette.primary.foreground),
         tx.clone(),
     );
-    */
+
+    /*
+       mpd(
+       color_fmt('B', palette.bright.black),
+       color_fmt('B', palette.bright.blue),
+       color_fmt('F', palette.primary.foreground),
+       tx.clone(),
+       );
+       */
 
     let mut clock_string = String::new();
     let mut i3_string = String::new();
     let mut mpd_string = String::new();
+    let mut battery_string = String::new();
     loop {
         for update in rx.recv() {
             match update {
                 Update::Clock(out) => clock_string = out,
                 Update::I3(out) => i3_string = out,
                 Update::Mpd(out) => mpd_string = out,
+                Update::Battery(out) => battery_string = out,
             }
             println!(
                 "{}%{{r}}{}{} {}{}",
                 i3_string,
-                mpd_string,
+                battery_string,
                 color_fmt('B', palette.primary.background),
                 clock_string,
                 color_fmt('B', palette.primary.background)
