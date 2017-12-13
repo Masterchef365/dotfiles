@@ -1,59 +1,21 @@
-#define S_foreground 	#ffffff
-#define S_background 	#1f1f1f
-#define S_color0 	#1f1f1f
-#define S_color8 	#9ac383
-#define S_color1 	#548538
-#define S_color9 	#548538
-#define S_color2 	#7bc352
-#define S_color10 	#7bc352
-#define S_color3 	#b5ea97
-#define S_color11 	#b5ea97
-#define S_color4 	#7bc352
-#define S_color12 	#7bc352
-#define S_color5 	#548538
-#define S_color13 	#548538
-#define S_color6 	#b5ea97
-#define S_color14 	#b5ea97
-#define S_color7 	#5f7750
-#define S_color15 	#ffffff
-
-!#define S_foreground 	#fff7f0
-!#define S_background 	#1f1a14
-!#define S_color0 	#1f1a14
-!#define S_color8 	#645441
-!#define S_color1 	#cc6666
-!#define S_color9 	#cc6666
-!#define S_color2 	#a3a67e
-!#define S_color10 	#a3a67e
-!#define S_color3 	#d3a768
-!#define S_color11 	#d3a768
-!#define S_color4 	#cae1c1
-!#define S_color12 	#cae1c1
-!#define S_color5 	#b29970
-!#define S_color13 	#babb94
-!#define S_color6 	#c09b85
-!#define S_color14 	#c29c67
-!#define S_color7 	#737373
-!#define S_color15 	#fff7f0
-
-!#define  S_foreground  #c3d9d9
-!#define  S_background  #0b171c
-!#define  S_color0      #0b171c
-!#define  S_color8      #487099
-!#define  S_color1      #a15bb5
-!#define  S_color9      #f556b5
-!#define  S_color2      #2bbfd6
-!#define  S_color10     #2bbfd6
-!#define  S_color3      #09abe6
-!#define  S_color11     #09abe6
-!#define  S_color4      #09abe6
-!#define  S_color12     #09abe6
-!#define  S_color5      #a46ab0
-!#define  S_color13     #a46ab0
-!#define  S_color6      #ff4fa7
-!#define  S_color14     #ff4fa7
-!#define  S_color7      #487099
-!#define  S_color15     #c3d9d9
+#define  S_foreground  #ffffff
+#define  S_background  #1f1f1f
+#define  S_color0      #1f1f1f
+#define  S_color8      #9ac383
+#define  S_color1      #548538
+#define  S_color9      #548538
+#define  S_color2      #7bc352
+#define  S_color10     #7bc352
+#define  S_color3      #b5ea97
+#define  S_color11     #b5ea97
+#define  S_color4      #7bc352
+#define  S_color12     #7bc352
+#define  S_color5      #548538
+#define  S_color13     #548538
+#define  S_color6      #b5ea97
+#define  S_color14     #b5ea97
+#define  S_color7      #5f7750
+#define  S_color15     #ffffff
 
 ! ---------------------------- ROFI -------------------------------
 rofi.color-enabled: true
@@ -64,7 +26,7 @@ rofi.color-active:  S_background,  S_foreground,  S_background,  S_color10,  S_c
 rofi.color-urgent:  S_background,  S_foreground,  S_background,  S_color10,  S_color0
 rofi.opacity: 10.0
 rofi.font: Fantasque Sans Mono 13
-rofi.dpi: 170
+rofi.dpi: 175
 rofi.location: 1
 !rofi.yoffset: 40
 rofi.xoffset: 0

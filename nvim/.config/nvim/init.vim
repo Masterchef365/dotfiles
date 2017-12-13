@@ -12,7 +12,7 @@ Plugin 'terryma/vim-multiple-cursors'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'autozimu/LanguageClient-neovim'
 Plugin 'rust-lang/rust.vim'
-"Plugin 'roxma/nvim-completion-manager'
+Plugin 'roxma/nvim-completion-manager'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'lilydjwg/colorizer'
 Plugin 'ervandew/supertab'
@@ -64,10 +64,10 @@ set rtp+=/home/duncan/.config/nvim/init.vim
 nmap <M-b> <Plug>LLBreakSwitch
 
 " Better syntax highlighting
-let g:cpp_concepts_highlight = 1
-let g:cpp_class_scope_highlight = 1
-let g:cpp_member_variable_highlight = 1
-let g:cpp_experimental_simple_template_highlight = 1
+"let g:cpp_concepts_highlight = 1
+"let g:cpp_class_scope_highlight = 1
+"let g:cpp_member_variable_highlight = 1
+"let g:cpp_experimental_simple_template_highlight = 1
 
 " TMUX
 let g:tmux_navigator_no_mappings = 1

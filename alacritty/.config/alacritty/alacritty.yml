@@ -30,8 +30,8 @@ padding:
 # The FreeType rasterizer needs to know the device DPI for best results
 # (changes require restart)
 dpi:
-  x: 100.0
-  y: 100.0
+  x: 175.0
+  y: 175.0
 
 # Display tabs using this many cells (changes require restart)
 tabspaces: 8
@@ -96,7 +96,7 @@ colors:
     blue:    '0x7bc352'
     magenta: '0x548538'
     cyan:    '0xb5ea97'
-    white:   '0x5f7750'
+    white:   '0xffffff'
 
   # Bright colors
   bright:
