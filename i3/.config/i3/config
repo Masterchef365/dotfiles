@@ -54,7 +54,6 @@ for_window [class="^.*"] border pixel 2
 # Rofi
 bindsym $mod+s exec rofi -show window
 bindsym $mod+d exec rofi -show run
-bindsym $mod+c exec bash ~/.bitsAndBobs/rofidim.sh
 
 # Terminal
 bindsym $mod+Return exec alacritty

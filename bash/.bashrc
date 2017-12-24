@@ -42,10 +42,10 @@ alias d='pin'
 alias neofetch='neofetch --ascii_colors 2 --ascii /usr/share/neofetch/ascii/games/aperture'
 printpins() {
 	count=1
-	for pin in $(cat $1); do
+	while read -r pin; do
 		echo "$count $(basename "$pin")"
 		(( count++ ))
-	done
+	done < $1
 }
 
 pin() {
@@ -77,6 +77,9 @@ man() {
 }
 
 # Use .inputrc (Use CTRL+Arrow to move over words)
+export INPUTRC=~/.inputrc
+
+# Use the best editor /s
 export EDITOR="nvim"
 
 # Use bash-completion, if available
@@ -86,11 +89,11 @@ export EDITOR="nvim"
 # RUST!
 export PATH=$PATH:~/.cargo/bin
 export RUST_SRC_PATH=~/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
+export LD_LIBRARY_PATH=$(rustc --print sysroot)/lib:$LD_LIBRARY_PATH
 
 # Simple, clean prompt editing options
 set -o vi
 shopt -s extglob
-export INPUTRC=~/.inputrc
 GREEN="\[$(tput setaf 2)\]"
 RESET="\[$(tput sgr0)\]"
 export PROMPT_DIRTRIM=3

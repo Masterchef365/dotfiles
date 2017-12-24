@@ -1,22 +1,15 @@
-let s:editor_root=expand("~/.config/nvim")
+" vim-plug
+call plug#begin('~/.config/nvim/bundle')
+Plug 'autozimu/LanguageClient-neovim', {
+			\ 'branch': 'next',
+			\ 'do': './install.sh'
+			\ }
 
-" Vundle
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#rc(s:editor_root . '/bundle')
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'kshenoy/vim-signature'
-Plugin 'noahfrederick/vim-noctu'
-Plugin 'tpope/vim-fugitive'
-Plugin 'terryma/vim-multiple-cursors'
-"Make sure to install libtinfo5
-"Plugin 'Valloric/YouCompleteMe'
-Plugin 'autozimu/LanguageClient-neovim'
-Plugin 'rust-lang/rust.vim'
-Plugin 'roxma/nvim-completion-manager'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'lilydjwg/colorizer'
-Plugin 'ervandew/supertab'
-call vundle#end()
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+Plug 'noahfrederick/vim-noctu'
+"Plug 'ervandew/supertab'
+call plug#end()
 
 " Misc
 filetype plugin indent on
@@ -31,11 +24,24 @@ set foldmethod=syntax
 set nofoldenable
 set mouse=a
 set hidden
-tnoremap <Esc> <C-\><C-n>
+"tnoremap <Esc> <C-\><C-n>
 set clipboard=unnamedplus
 
-" More cursors
-let g:multi_cursor_use_default_mapping=1
+" NCM and RLS
+set hidden
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rls'],
+    \ 'cpp': ['clangd'],
+    \ }
+
+" let g:LanguageClient_autoStart = 1
+
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
 
 " Use CTRL+HJKL keys to navigate buffers
 map <C-k> <C-w><Up>
@@ -54,52 +60,3 @@ set shiftwidth=3
 
 " Colorschemes
 colorscheme noctu
-
-" Nerdtree
-"map <C-n> :NERDTreeToggle<CR>
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" ll-db.nvim
-set rtp+=/home/duncan/.config/nvim/init.vim
-nmap <M-b> <Plug>LLBreakSwitch
-
-" Better syntax highlighting
-"let g:cpp_concepts_highlight = 1
-"let g:cpp_class_scope_highlight = 1
-"let g:cpp_member_variable_highlight = 1
-"let g:cpp_experimental_simple_template_highlight = 1
-
-" TMUX
-let g:tmux_navigator_no_mappings = 1
-nnoremap <silent> {Left-Mapping} :TmuxNavigateLeft<cr>
-nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
-nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
-nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
-nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
-
-" NCM and RLS
-set hidden
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ }
-let g:LanguageClient_autoStart = 1
-
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
-
-" Indent guides
-let g:indent_guides_enable_on_vim_startup = 0
-let g:indent_guides_guide_size = 1
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_start_level = 2
-hi IndentGuidesEven ctermbg=0 guibg=0
-hi IndentGuidesOdd ctermbg=0 guibg=8
-let g:indent_guides_tab_guides = 0
-
-" Clang complete
-"let g:ycm_filetype_whitelist = { 'cpp': 1 }
-
-" Colorizer
-let g:colorizer_maxlines = 1000
-
