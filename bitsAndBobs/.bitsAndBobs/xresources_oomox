@@ -11,15 +11,15 @@ color_fg () {
 	get_color "*foreground"
 }
 
-   NAME="follow xresources theme"
-  NOGUI=True
-     BG=$(color_bg)
-     FG=$(color_fg)
- SEL_BG=$(color 8)
- SEL_FG=$BG
- TXT_BG=$BG
- TXT_FG=$FG
-MENU_BG=$BG
-MENU_FG=$FG
- BTN_BG=$BG
- BTN_FG=$FG
+NAME="follow xresources theme"
+NOGUI=False                 
+BG=$(color_bg)              
+FG=$(color_fg)              
+SEL_BG=$(color  2)          
+SEL_FG=$BG                  
+TXT_BG=$BG                  
+TXT_FG=$FG                  
+MENU_BG=$BG                 
+MENU_FG=$FG                 
+BTN_BG=$BG                  
+BTN_FG=$FG                  

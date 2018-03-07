@@ -1,6 +1,5 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator
 
-
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty it self.
@@ -16,14 +15,14 @@ env:
 
 # Window dimensions in character columns and lines
 # (changes require restart)
-dimensions:
+window.dimensions:
   columns: 80
   lines: 24
 
 # Adds this many blank pixels of padding around the window
 # Units are physical pixels; this is not DPI aware.
 # (change requires restart)
-padding:
+window.padding:
   x: 2
   y: 2
 
@@ -84,30 +83,30 @@ custom_cursor_colors: false
 colors:
   # Default colors
   primary:
-    background: '0x1f1f1f'
-    foreground: '0xffffff'
+    background: '0x1f1b1a'
+    foreground: '0xcfcecc'
 
   # Normal colors
   normal:
-    black:   '0x1f1f1f'
-    red:     '0x548538'
-    green:   '0x7bc352'
-    yellow:  '0xb5ea97'
-    blue:    '0x7bc352'
-    magenta: '0x548538'
-    cyan:    '0xb5ea97'
-    white:   '0xffffff'
+    black:   '0x1f1b1a'
+    red:     '0xdc0a3f'
+    green:   '0xb68726'
+    yellow:  '0xcebb6b'
+    blue:    '0x94b626'
+    magenta: '0xb5368b'
+    cyan:    '0x8c4daf'
+    white:   '0x9d9d9b'
 
   # Bright colors
   bright:
-    black:   '0x7fa06c'
-    red:     '0x548538'
-    green:   '0x7bc352'
-    yellow:  '0xb5ea97'
-    blue:    '0x7bc352'
-    magenta: '0x548538'
-    cyan:    '0xb5ea97'
-    white:   '0xffffff'
+    black:   '0x5a5a59'
+    red:     '0xdc0a3f'
+    green:   '0xb68726'
+    yellow:  '0xcebb6b'
+    blue:    '0x94b626'
+    magenta: '0xb5368b'
+    cyan:    '0x8c4daf'
+    white:   '0xcfcecc'
 
 # Visual Bell
 #
@@ -136,7 +135,7 @@ visual_bell:
   duration: 0
 
 # Background opacity
-background_opacity: 0.9
+background_opacity: 1.0
 
 # Key bindings
 #

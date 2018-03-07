@@ -5,6 +5,7 @@ call plug#begin('~/.config/nvim/bundle')
 "			\ 'do': './install.sh'
 "			\ }
 
+Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'Valloric/YouCompleteMe'
 
 Plug 'noahfrederick/vim-noctu'
@@ -58,3 +59,11 @@ set shiftwidth=3
 
 " Colorschemes
 colorscheme noctu
+
+set makeprg=pdflatex\ %
+set autowrite
+
+" vim-cpp-enhanced-highlight
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+

@@ -1,1 +1,1 @@
-cargo run --release ~/.config/alacritty/alacritty.yml | lemonbar -p -f "Fantasque Sans Mono" -g x28++ $@
+cargo run --release ~/.config/alacritty/alacritty.yml | lemonbar -pf "Fantasque Sans Mono" -g x28++ $@

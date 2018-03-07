@@ -32,19 +32,19 @@ set_from_resource $color15 i3wm.color15  #ff00ff
 
 # ----------------------- Style options -----------------------
 
-#Window colors				border  	backgr.  text    indicator
-client.focused          $color11 $color11 $color0 $color8
-client.focused_inactive $color11 $color0  $color8 $color8
-client.unfocused        $color11 $color0  $color8 $color8
-client.urgent           $color11 $color11 $color8 $color8
-client.placeholder      $color11 $color11 $color8 $color8
+#Window_colors           border   backgr.  text     indicator
+client.focused           $color8  $color8  $color0  $color8
+client.focused_inactive  $color8  $color0  $color8  $color8
+client.unfocused         $color8  $color0  $color8  $color8
+client.urgent            $color8  $color8  $color8  $color8
+client.placeholder       $color8  $color8  $color8  $color8
 
 # Font config
 font pango:monospace 10
 
 # Border options
 new_window none
-gaps inner 0 
+#gaps inner 7 
 #smart_gaps on
 smart_borders on
 for_window [class="^.*"] border pixel 2
@@ -52,7 +52,8 @@ for_window [class="^.*"] border pixel 2
 # ----------------------- Program shortcut options -----------------------
 
 # Rofi
-bindsym $mod+s exec rofi -show window
+bindsym $mod+s exec rofi -show ssh
+bindsym $mod+a exec rofi -show window
 bindsym $mod+d exec rofi -show run
 
 # Terminal
@@ -90,20 +91,20 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
-bindsym $mod+a focus parent
-bindsym $mod+g exec "sh -c ./.bitsAndBobs/rename.sh"
+#bindsym $mod+a focus parent
+bindsym $mod+g exec i3-msg "rename workspace to `echo $(i3-msg -t get_workspaces | jq -r '.[] | select(.focused==true).num')/$(echo | dmenu) | sed -e 's:\([0-9]\)/\1:\1:g'`"
 
 # Switch workspaces
-bindsym $mod+1 workspace number "1"
-bindsym $mod+2 workspace number "2"
-bindsym $mod+3 workspace number "3"
-bindsym $mod+4 workspace number "4"
-bindsym $mod+5 workspace number "5"
-bindsym $mod+6 workspace number "6"
-bindsym $mod+7 workspace number "7"
-bindsym $mod+8 workspace number "8"
-bindsym $mod+9 workspace number "9"
-bindsym $mod+0 workspace number "10"
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
 
 # Move containers to workspaces
 bindsym $mod+Shift+1 move container to workspace 1

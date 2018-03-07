@@ -150,20 +150,20 @@ fn main() {
     let (tx, rx) = channel();
 
     i3(
-        color_fmt('B', palette.bright.blue),
-        color_fmt('B', palette.bright.red),
-        color_fmt('F', palette.primary.foreground),
+        color_fmt('F', palette.bright.white),
+        color_fmt('F', palette.bright.black),
+        color_fmt('B', palette.primary.background),
         tx.clone(),
     );
 
     clock(
-        color_fmt('B', palette.bright.red),
-        color_fmt('F', palette.primary.foreground),
+        color_fmt('F', palette.bright.white),
+        color_fmt('B', palette.primary.background),
         tx.clone(),
     );
     battery(
-        color_fmt('B', palette.bright.red),
-        color_fmt('F', palette.primary.foreground),
+        color_fmt('F', palette.bright.white),
+        color_fmt('B', palette.primary.background),
         tx.clone(),
     );
 

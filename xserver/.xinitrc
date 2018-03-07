@@ -1,3 +1,3 @@
-[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+xrdb -merge ~/.Xresources
 setxkbmap -option caps:escape
 exec i3
