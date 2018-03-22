@@ -39,7 +39,7 @@ alias neofetch='neofetch --ascii_colors 2 --ascii /usr/share/neofetch/ascii/game
 PIN_DIR=$HOME/.pins
 d() {
 	case "$1" in 
-		[0-9+])
+		[0-9])
 			line=$(sed "$1q;d" "$PIN_DIR") 
 			if [ -d "$line" ] && [ ! -f "$line" ]; then
 				cd "$line"
