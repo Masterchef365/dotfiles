@@ -28,12 +28,18 @@ alias v='nvim -S vimsession.vim'
 function cd () {
 	command cd "$@" && ls
 }
+function mkcd () {
+	mkdir $@ && cd "$1"
+}
 alias ':wqa'='exit'
 
 #Useful stuff
 alias thinkofthe='pacaur -Rns $(pacaur -Qtdq)'
 alias weather='curl wttr.in'
 alias neofetch='neofetch --ascii_colors 2 --ascii /usr/share/neofetch/ascii/games/aperture'
+function numpy() {
+	python -ic 'import numpy as np'
+}
 
 # Command pinning, todo list, etc.
 PIN_DIR=$HOME/.pins
@@ -77,6 +83,10 @@ man() {
 		command man "$@"
 }
 
+ecc() {
+	gcc -o $1 $1.c && ./$1
+}
+
 # Use .inputrc (Use CTRL+Arrow to move over words)
 export INPUTRC=~/.inputrc
 
@@ -97,5 +107,3 @@ RESET="\[$(tput sgr0)\]"
 export PROMPT_DIRTRIM=3
 export PS1="${GREEN} \w ${RESET}> "
 set -o vi
-
-alias offdep='./gradlew deploy --offline'

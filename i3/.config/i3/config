@@ -29,7 +29,6 @@ set_from_resource $color12 i3wm.color12  #ff00ff
 set_from_resource $color13 i3wm.color13  #ff00ff
 set_from_resource $color14 i3wm.color14  #ff00ff
 set_from_resource $color15 i3wm.color15  #ff00ff
-
 # ----------------------- Style options -----------------------
 
 #Window_colors           border   backgr.  text     indicator
@@ -44,7 +43,7 @@ font pango:monospace 10
 
 # Border options
 new_window none
-#gaps inner 7 
+gaps inner 12 
 #smart_gaps on
 smart_borders on
 for_window [class="^.*"] border pixel 2
@@ -129,6 +128,23 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# ----------------------- i3status -----------------------
+bar {
+	colors {
+		background $color0
+		statusline $color15
+		focused_workspace  $color8  $color8  $color0
+		active_workspace   $color8  $color8  $color15
+		inactive_workspace $color0  $color0  $color15
+		urgent_workspace   $color8  $color8  $color15
+		binding_mode       $color8  $color8  $color15
+	}
+	workspace_buttons yes
+	position top
+	status_command i3status --config ~/.config/i3/statusbar
+   font pango:Fantasque Sans Mono 12
+}
+
 # ----------------------- Multimedia Keys -----------------------
 bindsym XF86AudioRaiseVolume exec mpc volume +5
 bindsym XF86AudioLowerVolume exec mpc volume -5
@@ -155,8 +171,6 @@ bindsym $mod+i exec i3lock-fancy -pf "Fantasque-Sans-Mono-Regular"
 exec ~/.fehbg
 exec redshift -l geoclue2
 exec xrandr --dpi 160
-#exec --no-startup-id sh -c 'cd ~/.lemonbar && ./executebar.sh &'
-exec --no-startup-id sh -c 'cd ~/.lemonbar/limebar-rs && ./barstyling.sh'
 exec --no-startup-id mpd
 exec --no-startup-id compton
 for_window [class="*mono*"] floating enable,move absolute center
