@@ -1,15 +1,15 @@
 " vim-plug
 call plug#begin('~/.config/nvim/bundle')
-"Plug 'autozimu/LanguageClient-neovim', {
-"			\ 'branch': 'next',
-"			\ 'do': './install.sh'
-"			\ }
 
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'Valloric/YouCompleteMe'
 
 Plug 'noahfrederick/vim-noctu'
 Plug 'ervandew/supertab'
+
+"Plug 'easymotion/vim-easymotion'
+
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " Misc
@@ -30,18 +30,8 @@ set clipboard=unnamedplus
 " Easy search-replace under cursor
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
-" NCM and RLS
-"set hidden
-"let g:LanguageClient_serverCommands = {
-"			\ 'rust': ['rls'],
-"			\ 'cpp': ['clangd'],
-"			\ }
-"
-"let g:LanguageClient_autoStart = 1
-"
-"nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-"nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-"nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+" Easymotion
+"map ; <Plug>(easymotion-s2)
 
 " Use CTRL+HJKL keys to navigate buffers
 map <C-k> <C-w><Up>
@@ -60,10 +50,9 @@ set shiftwidth=3
 " Colorschemes
 colorscheme noctu
 
-set makeprg=pdflatex\ %
-set autowrite
-
 " vim-cpp-enhanced-highlight
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 
+" NERDTree
+map <C-l> :NERDTreeToggle<CR>

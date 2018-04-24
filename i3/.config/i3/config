@@ -32,7 +32,7 @@ set_from_resource $color15 i3wm.color15  #ff00ff
 # ----------------------- Style options -----------------------
 
 #Window_colors           border   backgr.  text     indicator
-client.focused           $color8  $color8  $color0  $color8
+client.focused           $color8  #555555  $color0  $color8
 client.focused_inactive  $color8  $color0  $color8  $color8
 client.unfocused         $color8  $color0  $color8  $color8
 client.urgent            $color8  $color8  $color8  $color8
@@ -129,21 +129,6 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # ----------------------- i3status -----------------------
-bar {
-	colors {
-		background $color0
-		statusline $color15
-		focused_workspace  $color8  $color8  $color0
-		active_workspace   $color8  $color8  $color15
-		inactive_workspace $color0  $color0  $color15
-		urgent_workspace   $color8  $color8  $color15
-		binding_mode       $color8  $color8  $color15
-	}
-	workspace_buttons yes
-	position top
-	status_command i3status --config ~/.config/i3/statusbar
-   font pango:Fantasque Sans Mono 12
-}
 
 # ----------------------- Multimedia Keys -----------------------
 bindsym XF86AudioRaiseVolume exec mpc volume +5
@@ -173,4 +158,5 @@ exec redshift -l geoclue2
 exec xrandr --dpi 160
 exec --no-startup-id mpd
 exec --no-startup-id compton
+exec --no-startup-id polybar bar &
 for_window [class="*mono*"] floating enable,move absolute center

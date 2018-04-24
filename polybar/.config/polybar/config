@@ -1,0 +1,109 @@
+[colors]
+background = ${xrdb:color0:#222}
+background-alt = ${xrdb:color8:#222}
+foreground = ${xrdb:color15:#222}
+foreground-alt = ${xrdb:color7:#222}
+
+primary = ${xrdb:color10:#222}
+secondary = ${xrdb:color11:#222}
+alert = ${xrdb:color1:#222}
+
+[bar/bar]
+width = 100%
+height = 40
+radius = 0.0
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = Fantasque Sans Mono:pixelsize=24;1
+font-1 = Fantasque Sans Mono:pixelsize=24;1
+font-2 = Fantasque Sans Mono:pixelsize=24;1
+
+modules-left = i3 xwindow 
+modules-center = calcurse
+modules-right = mpd battery date
+
+tray-position = right
+tray-padding = 1
+tray-transparent = false
+
+wm-restack = i3
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:300:...%
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+label-mode-background = ${colors.primary}
+label-mode-padding = 1
+
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 1
+
+label-unfocused = %index%
+label-unfocused-padding = 1
+
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = 1
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+[module/mpd]
+type = internal/mpd
+format-online = <label-song>
+
+label-song-maxlen = 35
+label-song-ellipsis = true
+
+[module/calcurse]
+type = custom/script
+exec = calcurse -d 2 | tail -n 1
+interval = 60
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%a %m/%d"
+date-alt = " %Y-%m-%d"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #0a6cf5
+
+label = %date% %time%
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 98
+
+format-charging = <label-charging>
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+; vim:ft=dosini

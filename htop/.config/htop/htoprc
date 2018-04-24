@@ -22,5 +22,5 @@ color_scheme=0
 delay=15
 left_meters=AllCPUs
 left_meter_modes=1
-right_meters=Hostname Clock Tasks Uptime Battery Swap CPU
-right_meter_modes=2 2 2 2 2 1 1
+right_meters=Hostname Clock Tasks Uptime Battery Swap CPU Memory
+right_meter_modes=2 2 2 2 2 1 1 1

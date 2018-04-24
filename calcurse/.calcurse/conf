@@ -1,11 +1,11 @@
 appearance.calendarview=monthly
-appearance.compactpanels=no
+appearance.compactpanels=yes
 appearance.defaultpanel=calendar
 appearance.layout=1
 appearance.notifybar=yes
 appearance.sidebarwidth=1
-appearance.theme=red on default
-appearance.todoview=show-completed
+appearance.theme=blue on default
+appearance.todoview=hide-completed
 appearance.headingpos=right-justified
 daemon.enable=no
 daemon.log=no

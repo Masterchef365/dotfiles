@@ -32,6 +32,14 @@ function mkcd () {
 	mkdir $@ && cd "$1"
 }
 alias ':wqa'='exit'
+function cl () {
+	clear
+	cal
+	calcurse -t
+	echo
+	calcurse -d7
+}
+alias clt='calcurse'
 
 #Useful stuff
 alias thinkofthe='pacaur -Rns $(pacaur -Qtdq)'
@@ -104,6 +112,6 @@ export LD_LIBRARY_PATH=$(rustc --print sysroot)/lib:$LD_LIBRARY_PATH
 GREEN="\[$(tput setaf 2)\]"
 RESET="\[$(tput sgr0)\]"
 
-export PROMPT_DIRTRIM=3
+export PROMPT_DIRTRIM=2
 export PS1="${GREEN} \w ${RESET}> "
 set -o vi
