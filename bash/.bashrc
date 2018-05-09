@@ -39,7 +39,6 @@ function cl () {
 	echo
 	calcurse -d7
 }
-alias clt='calcurse'
 
 #Useful stuff
 alias thinkofthe='pacaur -Rns $(pacaur -Qtdq)'

@@ -2,14 +2,16 @@
 call plug#begin('~/.config/nvim/bundle')
 
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'autozimu/LanguageClient-neovim', {
+			\ 'branch': 'next',
+			\ 'do': 'bash install.sh',
+			\ }
+
 Plug 'Valloric/YouCompleteMe'
 
 Plug 'noahfrederick/vim-noctu'
-Plug 'ervandew/supertab'
+"Plug 'ervandew/supertab'
 
-"Plug 'easymotion/vim-easymotion'
-
-Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " Misc
@@ -28,7 +30,10 @@ set hidden
 set clipboard=unnamedplus
 
 " Easy search-replace under cursor
-nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+nnoremap <Leader>s :%s:\<<C-r><C-w>\>:<C-r><C-w>
+
+" Pedantic format
+map <Leader>l :%!clang-format -style=WebKit<CR>gg=G:w<CR>
 
 " Easymotion
 "map ; <Plug>(easymotion-s2)
