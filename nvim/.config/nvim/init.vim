@@ -1,13 +1,13 @@
 " vim-plug
 call plug#begin('~/.config/nvim/bundle')
-
+Plug 'lervag/vimtex'
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'autozimu/LanguageClient-neovim', {
-			\ 'branch': 'next',
-			\ 'do': 'bash install.sh',
-			\ }
+"Plug 'autozimu/LanguageClient-neovim', {
+"			\ 'branch': 'next',
+"			\ 'do': 'bash install.sh',
+"			\ }
 
-Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
 
 Plug 'noahfrederick/vim-noctu'
 "Plug 'ervandew/supertab'
@@ -21,7 +21,7 @@ set rnu
 set nu
 syntax on
 set laststatus=2
-set nohlsearch
+set nohlsearch 
 set nowrap
 set foldmethod=syntax
 set nofoldenable
@@ -59,5 +59,6 @@ colorscheme noctu
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 
-" NERDTree
-map <C-l> :NERDTreeToggle<CR>
+" latexmk
+let g:vimtex_latexmk_options = '-pdf -shell-escape -verbose -file-line-error -synctex=1 -interaction=nonstopmode'
+let g:vimtex_latexmk_options = '-pdf -shell-escape -verbose -file-line-error -synctex=1 -interaction=nonstopmode'

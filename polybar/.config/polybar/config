@@ -1,5 +1,5 @@
 [colors]
-background = ${xrdb:color0:#222}
+background = #FF1A1A1A
 background-alt = ${xrdb:color8:#222}
 foreground = ${xrdb:color15:#222}
 foreground-alt = ${xrdb:color7:#222}
@@ -27,10 +27,6 @@ font-2 = Fantasque Sans Mono:pixelsize=24;1
 modules-left = i3 xwindow 
 modules-center = calcurse
 modules-right = mpd battery date
-
-tray-position = right
-tray-padding = 1
-tray-transparent = false
 
 wm-restack = i3
 
@@ -83,7 +79,7 @@ interval = 5
 date = "%a %m/%d"
 date-alt = " %Y-%m-%d"
 
-time = %H:%M
+time = "%H:%M "
 time-alt = %H:%M:%S
 
 format-prefix-foreground = ${colors.foreground-alt}

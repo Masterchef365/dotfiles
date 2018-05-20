@@ -32,6 +32,7 @@ function mkcd () {
 	mkdir $@ && cd "$1"
 }
 alias ':wqa'='exit'
+alias 'q'='exit'
 function cl () {
 	clear
 	cal
@@ -52,7 +53,7 @@ function numpy() {
 PIN_DIR=$HOME/.pins
 d() {
 	case "$1" in 
-		[0-9])
+		[0-9]*)
 			line=$(sed "$1q;d" "$PIN_DIR") 
 			if [ -d "$line" ] && [ ! -f "$line" ]; then
 				cd "$line"
@@ -91,7 +92,7 @@ man() {
 }
 
 ecc() {
-	gcc -o $1 $1.c && ./$1
+	gcc -o $1 $1.c && ./$@
 }
 
 # Use .inputrc (Use CTRL+Arrow to move over words)

@@ -24,6 +24,7 @@ connman-gtk
 cool-retro-term
 cowsay
 cpupower
+curlftpfs
 darkhttpd
 deluge
 dhcpcd
@@ -41,6 +42,7 @@ gnu-netcat
 gnuplot
 gqrx
 gradle
+grub
 hashcat
 hfsprogs
 hfsutils
@@ -54,12 +56,12 @@ ipcalc
 iputils
 jq
 kbdlight
+kdenlive
 krita
 lbzip2
 lemonbar-xft-git
 libcec
 libdbusmenu-glib
-libtinfo5
 libuvc-git
 licenses
 linux-macbook
@@ -76,6 +78,7 @@ man-pages
 mpc
 mpd
 mplayer
+mpv
 nano
 nasm
 ncmpcpp
@@ -85,6 +88,7 @@ nload
 ntp
 oomox
 pacaur
+pamixer
 paprefs
 pavucontrol
 pax-utils
@@ -94,12 +98,14 @@ polybar-git
 powder-toy
 powertop
 pugixml
+pulsemixer
 pv
 python2-gobject
 python2-pyqt4
 python2-pyqt5
+python-docopt
+python-mutagen
 qdriverstation
-qemu
 qtcreator
 ranger
 redshift
@@ -108,17 +114,13 @@ rofi
 rsync
 rust-book-git
 screen
+shadowfox-updater
 socat
-soundcloud-dl-git
-sox
 speedread-git
 spirv-tools
 spotify
 sshfs
 stow
-sublime-text2
-sublime-text-dev
-system-config-printer
 texlive-bibtexextra
 texlive-fontsextra
 texlive-formatsextra
@@ -135,7 +137,6 @@ tor-browser
 tree
 ttf-fantasque-sans-mono
 ttf-linux-libertine
-ultra-flat-icons-green
 ultra-flat-icons-orange
 unrar
 unzip
@@ -147,7 +148,6 @@ vulkan-extra-layers
 vulkan-trace
 vulscan
 which
-woeusb-git
 xbindkeys
 xf86-input-synaptics
 xf86-video-intel

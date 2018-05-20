@@ -128,8 +128,6 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# ----------------------- i3status -----------------------
-
 # ----------------------- Multimedia Keys -----------------------
 bindsym XF86AudioRaiseVolume exec mpc volume +5
 bindsym XF86AudioLowerVolume exec mpc volume -5
