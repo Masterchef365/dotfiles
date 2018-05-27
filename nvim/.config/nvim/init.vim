@@ -7,7 +7,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 "			\ 'do': 'bash install.sh',
 "			\ }
 
-"Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 
 Plug 'noahfrederick/vim-noctu'
 "Plug 'ervandew/supertab'

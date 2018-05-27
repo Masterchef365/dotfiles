@@ -1,6 +1,5 @@
 #define  S_foreground  #e3e3e3
 #define  S_background  #1a1a1a
-
 #define  S_color0      #282828
 #define  S_color1      #FF0082
 #define  S_color2      #CC199B
@@ -9,7 +8,6 @@
 #define  S_color5      #3364E6
 #define  S_color6      #007DFF
 #define  S_color7      #cecece
-
 #define  S_color8      #282828
 #define  S_color9      #FF0082
 #define  S_color10     #CC199B
@@ -19,38 +17,19 @@
 #define  S_color14     #007DFF
 #define  S_color15     #cecece
 
-!#define  S_foreground  #ffffff
-!#define  S_background  #282828
-!#define  S_color0      #282828
-!#define  S_color8      #6f6f6f
-!#define  S_color1      #ff00cc
-!#define  S_color9      #ff00cc
-!#define  S_color2      #ff28a3
-!#define  S_color10     #ff28a3
-!#define  S_color3      #ff517a
-!#define  S_color11     #ff517a
-!#define  S_color4      #ff7a51
-!#define  S_color12     #ff7a51
-!#define  S_color5      #ffa328
-!#define  S_color13     #ffa328
-!#define  S_color6      #ffcc00
-!#define  S_color14     #ffcc00
-!#define  S_color7      #aeaeae
-!#define  S_color15     #ffffff
-
 ! ---------------------------- ROFI -------------------------------
 rofi.color-enabled: true
-!State:             bg             fg             bgalt          hlbg        hlfg
-rofi.color-window:  S_background,  S_background
-rofi.color-normal:  S_background,  S_foreground,  S_background,  S_background,  S_color10
-rofi.color-active:  S_background,  S_foreground,  S_background,  S_background,  S_color10
-rofi.color-urgent:  S_background,  S_foreground,  S_background,  S_background,  S_color10
-rofi.opacity: 100
-rofi.font: Fantasque Sans Mono 13
-rofi.dpi: 175
-rofi.location: 1
-rofi.xoffset: 0
-rofi.terminal: alacritty
+!State:             bg             fg             bgalt          hlbg           hlfg
+rofi.color-window:  S_background,  S_background                                 
+rofi.color-normal:  S_color8,      S_foreground,  S_color8,      S_background,  S_foreground
+rofi.color-active:  S_color0,      S_foreground,  S_color0,      S_background,  S_foreground
+rofi.color-urgent:  S_background,  S_foreground,  S_background,  S_background,  S_foreground
+rofi.opacity:       100                                                         
+rofi.font:          Fantasque Sans Mono 13             
+rofi.dpi:           175                                                         
+rofi.location:      1                                                           
+rofi.xoffset:       0                                                           
+rofi.terminal:      alacritty                                                   
 
 ! ---------------------------- URXVT -------------------------------
 
