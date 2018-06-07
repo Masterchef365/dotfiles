@@ -2,12 +2,13 @@
 call plug#begin('~/.config/nvim/bundle')
 Plug 'lervag/vimtex'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'sheerun/vim-polyglot'
 "Plug 'autozimu/LanguageClient-neovim', {
 "			\ 'branch': 'next',
 "			\ 'do': 'bash install.sh',
 "			\ }
 
-Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
 
 Plug 'noahfrederick/vim-noctu'
 "Plug 'ervandew/supertab'
@@ -30,10 +31,10 @@ set hidden
 set clipboard=unnamedplus
 
 " Easy search-replace under cursor
-nnoremap <Leader>s :%s:\<<C-r><C-w>\>:<C-r><C-w>
+nnoremap <Leader>s :%s:\<<C-r><C-w>\>:
 
 " Pedantic format
-map <Leader>l :%!clang-format -style=WebKit<CR>gg=G:w<CR>
+"map <Leader>l :%!clang-format -style=WebKit<CR>gg=G:w<CR>
 
 " Easymotion
 "map ; <Plug>(easymotion-s2)
@@ -59,6 +60,9 @@ colorscheme noctu
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 
+" Fix latexmk
+let g:polyglot_disabled = ['latex']
+
 " latexmk
 let g:vimtex_latexmk_options = '-pdf -shell-escape -verbose -file-line-error -synctex=1 -interaction=nonstopmode'
-let g:vimtex_latexmk_options = '-pdf -shell-escape -verbose -file-line-error -synctex=1 -interaction=nonstopmode'
+

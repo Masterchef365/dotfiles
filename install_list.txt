@@ -7,6 +7,7 @@ arandr-git
 arch-install-scripts
 arduino
 arm-frc-linux-gnueabi-gcc
+audacity
 autoconf
 automake
 bandcamp-dl
@@ -31,12 +32,15 @@ dhcpcd
 discord
 dkms
 docbook-xsl
+dos2unix
 evince
 exfat-utils
 fail2ban
 fakeroot
 fdupes
 firefox-nightly
+freeimage
+git-lfs
 glm
 gnu-netcat
 gnuplot
@@ -55,6 +59,7 @@ iotop
 ipcalc
 iputils
 jq
+julius
 kbdlight
 kdenlive
 krita
@@ -62,6 +67,7 @@ lbzip2
 lemonbar-xft-git
 libcec
 libdbusmenu-glib
+libreoffice-fresh
 libuvc-git
 licenses
 linux-macbook
@@ -75,6 +81,7 @@ macchanger
 macfanctld
 man-db
 man-pages
+minecraft
 mpc
 mpd
 mplayer
@@ -137,9 +144,9 @@ tor-browser
 tree
 ttf-fantasque-sans-mono
 ttf-linux-libertine
+ultra-flat-icons-blue
 ultra-flat-icons-orange
 unrar
-unzip
 usbutils
 vcvrack
 vi
@@ -154,5 +161,6 @@ xf86-video-intel
 xmlto
 xorg-server
 xorg-xbacklight
+xorg-xdm
 xorg-xev
 xorg-xinit
