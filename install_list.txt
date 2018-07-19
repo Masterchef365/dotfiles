@@ -79,7 +79,6 @@ pamixer
 paprefs
 pavucontrol
 pax-utils
-pcmciautils
 pinta
 pkgconf
 polybar-git
@@ -103,7 +102,6 @@ scons
 screen
 shadowfox-updater
 socat
-speedread-git
 sshfs
 stow
 system-config-printer
