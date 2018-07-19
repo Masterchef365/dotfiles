@@ -1,3 +1,4 @@
 nvim/.config/nvim/bundle/*/
 nvim/.config/nvim/.netrwhist
 mpd/.config/mpd/log
+nvim/.config/nvim/autoload
