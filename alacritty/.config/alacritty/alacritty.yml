@@ -83,30 +83,30 @@ custom_cursor_colors: false
 colors:
   # Default colors
   primary:
-    background: '0x1a1a1a'
-    foreground: '0xe3e3e3'
+    background: '0x121214'
+    foreground: '0xe2e2e2'
 
   # Normal colors
   normal:
-    black:   '0x282828'
-    red:     '0xFF0082'
-    green:   '0xCC199B'
-    yellow:  '0x9932B4'
-    blue:    '0x664BCD'
-    magenta: '0x3364E6'
-    cyan:    '0x007DFF'
-    white:   '0xcecece'
+    black:   '0x121214'
+    red:     '0xcc357f'
+    green:   '0xabdc39'
+    yellow:  '0x55b8f4'
+    blue:    '0x82c9f4'
+    magenta: '0xcc0365'
+    cyan:    '0xc9dc39'
+    white:   '0xbebebe'
 
   # Bright colors
   bright:
-    black:   '0x6b6b6b'
-    red:     '0xFF0082'
-    green:   '0xCC199B'
-    yellow:  '0x9932B4'
-    blue:    '0x664BCD'
-    magenta: '0x3364E6'
-    cyan:    '0x007DFF'
-    white:   '0xcecece'
+    black:   '0x636363'
+    red:     '0xcc357f'
+    green:   '0xabdc39'
+    yellow:  '0x55b8f4'
+    blue:    '0x84caf4'
+    magenta: '0xcc0365'
+    cyan:    '0xc2dc39'
+    white:   '0xe2e2e2'
 
 # Visual Bell
 #

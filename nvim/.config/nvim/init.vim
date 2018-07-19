@@ -7,11 +7,8 @@ Plug 'sheerun/vim-polyglot'
 "			\ 'branch': 'next',
 "			\ 'do': 'bash install.sh',
 "			\ }
-
-"Plug 'Valloric/YouCompleteMe'
-
+Plug 'Valloric/YouCompleteMe'
 Plug 'noahfrederick/vim-noctu'
-"Plug 'ervandew/supertab'
 
 call plug#end()
 
@@ -32,12 +29,6 @@ set clipboard=unnamedplus
 
 " Easy search-replace under cursor
 nnoremap <Leader>s :%s:\<<C-r><C-w>\>:
-
-" Pedantic format
-"map <Leader>l :%!clang-format -style=WebKit<CR>gg=G:w<CR>
-
-" Easymotion
-"map ; <Plug>(easymotion-s2)
 
 " Use CTRL+HJKL keys to navigate buffers
 map <C-k> <C-w><Up>
@@ -65,4 +56,3 @@ let g:polyglot_disabled = ['latex']
 
 " latexmk
 let g:vimtex_latexmk_options = '-pdf -shell-escape -verbose -file-line-error -synctex=1 -interaction=nonstopmode'
-

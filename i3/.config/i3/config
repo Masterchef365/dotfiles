@@ -1,16 +1,11 @@
 #vim:filetype=i3
 
-exec xrdb -merge ~/.Xresources
-
 # ----------------------- Defines/Variables -----------------------
 
 # Set the modifier key, set floating modifier to the same
 set $mod Mod4
-
 floating_modifier $mod
-
-# Set the editor
-set $editor urxvt
+set $terminal alacritty
 
 # Xresources
 set_from_resource $color0  i3wm.color0   #ff00ff
@@ -29,6 +24,7 @@ set_from_resource $color12 i3wm.color12  #ff00ff
 set_from_resource $color13 i3wm.color13  #ff00ff
 set_from_resource $color14 i3wm.color14  #ff00ff
 set_from_resource $color15 i3wm.color15  #ff00ff
+
 # ----------------------- Style options -----------------------
 
 #Window_colors           border   backgr.  text     indicator
@@ -56,14 +52,14 @@ bindsym $mod+a exec rofi -show window
 bindsym $mod+d exec rofi -show run
 
 # Terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec $terminal
 
 # Kill focused window
 bindsym $mod+Shift+q kill
 
 # ----------------------- Window movement/Workspace switching -----------------------
 
-# next/prev workspaces
+# Next/prev workspaces
 bindsym $mod+Ctrl+h workspace prev
 bindsym $mod+Ctrl+l workspace next
 
@@ -91,7 +87,6 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 #bindsym $mod+a focus parent
-bindsym $mod+g exec i3-msg "rename workspace to `echo $(i3-msg -t get_workspaces | jq -r '.[] | select(.focused==true).num')/$(echo | dmenu) | sed -e 's:\([0-9]\)/\1:\1:g'`"
 
 # Switch workspaces
 bindsym $mod+1 workspace number 1
@@ -132,7 +127,7 @@ bindsym $mod+r mode "resize"
 bindsym XF86AudioRaiseVolume exec mpc volume +5
 bindsym XF86AudioLowerVolume exec mpc volume -5
 bindsym XF86LaunchA exec systemctl suspend
-bindsym XF86AudioMute exec sh -c 'play ~/.bitsAndBobs/cassette-player-button-1.wav && mpc toggle'
+bindsym XF86AudioMute exec mpc toggle
 
 bindsym XF86KbdBrightnessUp exec --no-startup-id kbdlight up 5
 bindsym XF86KbdBrightnessDown exec --no-startup-id kbdlight down 5
@@ -140,14 +135,14 @@ bindsym XF86KbdBrightnessDown exec --no-startup-id kbdlight down 5
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 2
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 2
 
-bindsym XF86AudioPrev exec sh -c 'play ~/.bitsAndBobs/cassette-player-button-1.wav && mpc prev'
-bindsym XF86AudioPlay exec sh -c 'play ~/.bitsAndBobs/cassette-player-button-1.wav && mpc toggle'
-bindsym XF86AudioNext exec sh -c 'play ~/.bitsAndBobs/cassette-player-button-1.wav && mpc next'
+bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioNext exec mpc next
 
 # ----------------------- i3-Specific commands -----------------------
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You sure, fam?' -b 'Ya boi' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Sure?' -b 'Do it' 'i3-msg exit'"
 bindsym $mod+i exec i3lock-fancy -pf "Fantasque-Sans-Mono-Regular"
 
 # ----------------------- Post-WM commands -----------------------
@@ -157,4 +152,3 @@ exec xrandr --dpi 160
 exec --no-startup-id mpd
 exec --no-startup-id compton
 exec --no-startup-id polybar bar
-for_window [class="*mono*"] floating enable,move absolute center

@@ -1,6 +1,6 @@
 [colors]
-background = #FF1A1A1A
-background-alt = #001A1A1A
+background = #FF1d1f21
+background-alt = #006c7582
 foreground = ${xrdb:color15:#222}
 foreground-alt = ${xrdb:color7:#222}
 
@@ -25,7 +25,6 @@ font-1 = Fantasque Sans Mono:pixelsize=24;1
 font-2 = Fantasque Sans Mono:pixelsize=24;1
 
 modules-left = i3 xwindow 
-modules-center = calcurse
 modules-right = mpd battery date
 
 wm-restack = i3
@@ -66,11 +65,6 @@ format-online = <label-song>
 
 label-song-maxlen = 35
 label-song-ellipsis = true
-
-[module/calcurse]
-type = custom/script
-exec = calcurse -d 2 | tail -n 1
-interval = 60
 
 [module/date]
 type = internal/date
