@@ -147,7 +147,7 @@ bindsym $mod+i exec i3lock-fancy -pf "Fantasque-Sans-Mono-Regular"
 
 # ----------------------- Post-WM commands -----------------------
 exec ~/.fehbg
-exec redshift -l geoclue2
+#exec redshift -l geoclue2
 exec xrandr --dpi 160
 exec --no-startup-id mpd
 exec --no-startup-id compton
