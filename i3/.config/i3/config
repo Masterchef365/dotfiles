@@ -28,11 +28,11 @@ set_from_resource $color15 i3wm.color15  #ff00ff
 # ----------------------- Style options -----------------------
 
 #Window_colors           border   backgr.  text     indicator
-client.focused           $color8  #555555  $color0  $color8
-client.focused_inactive  $color8  $color0  $color8  $color8
-client.unfocused         $color8  $color0  $color8  $color8
-client.urgent            $color8  $color8  $color8  $color8
-client.placeholder       $color8  $color8  $color8  $color8
+client.focused           $color0  $color4  $color0  $color0
+client.focused_inactive  $color0  $color0  $color0  $color0
+client.unfocused         $color0  $color0  $color0  $color0
+client.urgent            $color0  $color0  $color0  $color0
+client.placeholder       $color0  $color0  $color0  $color0
 
 # Font config
 font pango:monospace 10
@@ -146,9 +146,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Sure?' -b 'Do it' 'i3-msg ex
 bindsym $mod+i exec i3lock-fancy -pf "Fantasque-Sans-Mono-Regular"
 
 # ----------------------- Post-WM commands -----------------------
-exec ~/.fehbg
 #exec redshift -l geoclue2
 exec xrandr --dpi 160
 exec --no-startup-id mpd
 exec --no-startup-id compton
 exec --no-startup-id polybar bar
+exec hsetroot -solid "#162F58"

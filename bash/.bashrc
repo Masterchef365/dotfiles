@@ -98,3 +98,9 @@ bulkuninstall() {
 	$EDITOR /tmp/remaining
 	comm -13 /tmp/remaining /tmp/installed | pacaur -Rns -
 }
+
+# Enable power saving
+powersave() {
+	sudo sh -c 'echo 1 >> /sys/devices/system/cpu/intel_pstate/no_turbo'
+	sudo cpupower frequency-set -u 800Mhz
+}

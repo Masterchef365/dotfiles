@@ -1,23 +1,23 @@
-#define S_foreground #cdcdcd
-#define S_background #0d0d0d
+#define S_foreground #ffffff
+#define S_background #011d3b
 
-#define S_color0    #0d0d0d
-#define S_color1    #ff4466
-#define S_color2    #ddcc00
-#define S_color3    #ff8822
-#define S_color4    #ff6644
-#define S_color5    #ff2288
-#define S_color6    #44cc99
-#define S_color7    #d1d1d1
+#define S_color0    #011d3b
+#define S_color1    #dd9d23
+#define S_color2    #fcb328
+#define S_color3    #fcb328
+#define S_color4    #2781e2
+#define S_color5    #0050a5
+#define S_color6    #c0881e
+#define S_color7    #bfbfbf
 
-#define S_color8    #515151
-#define S_color9    #ff4466
-#define S_color10   #ddcc00
-#define S_color11   #ff8822
-#define S_color12   #ff6644
-#define S_color13   #ff2288
-#define S_color14   #44cc99
-#define S_color15   #cdcdcd
+#define S_color8    #004996
+#define S_color9    #dd9d23
+#define S_color10   #fcb328
+#define S_color11   #fcb328
+#define S_color12   #2882e2
+#define S_color13   #0050a5
+#define S_color14   #c0881e
+#define S_color15   #ffffff
 
 ! ---------------------------- ROFI -------------------------------
 rofi.color-enabled: true

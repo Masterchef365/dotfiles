@@ -78,35 +78,33 @@ render_timer: false
 # and cursor.background colors, otherwise invert the colors of the cursor.
 custom_cursor_colors: false
 
-# Colors (Tomorrow Night Bright)
-
 colors:
   # Default colors
   primary:
-    background: '0x0d0d0d'
-    foreground: '0xcdcdcd'
+    background: '0x011d3b'
+    foreground: '0xffffff'
 
   # Normal colors
   normal:
-    black:   '0x0d0d0d'
-    red:     '0xff4466'
-    green:   '0xddcc00'
-    yellow:  '0xff8822'
-    blue:    '0xff6644'
-    magenta: '0xff2288'
-    cyan:    '0x44cc99'
-    white:   '0xd1d1d1'
+    black:   '0x011d3b'
+    red:     '0xdd9d23'
+    green:   '0xfcb328'
+    yellow:  '0xfcb328'
+    blue:    '0x2781e2'
+    magenta: '0x0050a5'
+    cyan:    '0xc0881e'
+    white:   '0xbfbfbf'
 
   # Bright colors
   bright:
-    black:   '0x515151'
-    red:     '0xff4466'
-    green:   '0xddcc00'
-    yellow:  '0xff8822'
-    blue:    '0xff6644'
-    magenta: '0xff2288'
-    cyan:    '0x44cc99'
-    white:   '0xcdcdcd'
+    black:   '0x004996'
+    red:     '0xdd9d23'
+    green:   '0xfcb328'
+    yellow:  '0xfcb328'
+    blue:    '0x2882e2'
+    magenta: '0x0050a5'
+    cyan:    '0xc0881e'
+    white:   '0xffffff'
 
 # Visual Bell
 #

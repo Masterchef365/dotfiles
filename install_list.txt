@@ -1,5 +1,4 @@
 acpi
-alacritty-git
 alsa-tools
 alsa-utils
 arandr-git
@@ -20,6 +19,7 @@ cmatrix
 compton
 connman
 connman-gtk
+cpupower
 deluge
 dhcpcd
 discord
@@ -52,6 +52,7 @@ libglademm
 libsodium
 libuvc-git
 licenses
+linux-lts
 linux-macbook
 linux-macbook-docs
 linux-macbook-headers
@@ -81,7 +82,7 @@ pavucontrol
 pax-utils
 pinta
 pkgconf
-polybar-git
+polybar
 portaudio
 powertop
 pugixml
@@ -123,7 +124,6 @@ ultra-flat-icons-blue
 unrar
 unzip
 usbutils
-vcvrack
 vi
 vim
 vulkan-extra-layers
