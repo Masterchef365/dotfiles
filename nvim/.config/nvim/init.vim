@@ -1,4 +1,4 @@
-" vim-plug
+" Plugins
 call plug#begin('~/.config/nvim/bundle')
 Plug 'lervag/vimtex'
 Plug 'octol/vim-cpp-enhanced-highlight'
@@ -9,7 +9,6 @@ Plug 'sheerun/vim-polyglot'
 "			\ }
 Plug 'Valloric/YouCompleteMe'
 Plug 'noahfrederick/vim-noctu'
-
 call plug#end()
 
 " Misc
@@ -41,10 +40,9 @@ set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr
 
 " Tabs
 set autoindent
-set tabstop=3
-set shiftwidth=3
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 
-" Colorschemes
+" Colorscheme
 colorscheme noctu
 
 " vim-cpp-enhanced-highlight
@@ -56,3 +54,8 @@ let g:polyglot_disabled = ['latex']
 
 " latexmk
 let g:vimtex_latexmk_options = '-pdf -shell-escape -verbose -file-line-error -synctex=1 -interaction=nonstopmode'
+
+" Rust language server
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ }

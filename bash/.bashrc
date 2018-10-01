@@ -19,51 +19,41 @@ export PS1="${GREEN} \w ${RESET}> "
 # Bad habits
 alias ls='ls --color=auto'
 alias la='ls -a --color=auto'
-alias pacman="sudo pacman"
-alias 'll'='ls -lh'
+alias ll='ls -lh'
 alias cd..='cd ..'
 alias cd...='cd ..'
+alias dus='du -shc * | sort -h'
 alias vim='nvim'
-alias v='nvim -S vimsession.vim'
+alias v='vim -S vimsession.vim'
 function cd () {
 	command cd "$@" && ls
 }
 alias ':wqa'='exit'
 alias 'q'='exit'
+alias pacman="sudo pacman"
 alias thinkofthe='pacaur -Rns $(pacaur -Qtdq)'
+
 
 # Directory pinning
 PIN_DIR=$HOME/.pins
 d() {
 	case "$1" in 
+		"")
+            basename -a $(cat "$PIN_DIR") | cat -n ;;
 		[0-9]*)
-			line=$(sed "$1q;d" "$PIN_DIR") 
-			if [ -d "$line" ] && [ ! -f "$line" ]; then
-				cd "$line"
-			else
-				command $line
-			fi ;;
+			cd $(sed "$1q;d" "$PIN_DIR") ;;
 		"del")
 			sed -i "$2d" "$PIN_DIR" ;;
 		"e")
 			$EDITOR "$PIN_DIR" ;;
 		"p")
 			pwd >> $PIN_DIR ;;
-		"")
-			while read -r line; do
-				if [ -d "$line" ] && [ ! -f "$line" ]; then
-					basename -a "$line"
-				else
-					echo "$line"
-				fi
-			done < "$PIN_DIR" | cat -n 
-			;;
 		*)
 			echo "$@" >> $PIN_DIR ;;
 	esac
 }
 
-# Colored man pages
+# Colored manual pages
 man() {
 	LESS_TERMCAP_md=$'\e[01;31m' \
 	LESS_TERMCAP_me=$'\e[0m' \
