@@ -151,4 +151,4 @@ exec xrandr --dpi 160
 exec --no-startup-id mpd
 exec --no-startup-id compton
 exec --no-startup-id polybar bar
-exec hsetroot -solid "#162F58"
+exec hsetroot -solid $color0
