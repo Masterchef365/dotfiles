@@ -39,8 +39,8 @@ font pango:monospace 10
 
 # Border options
 new_window none
-gaps inner 12 
-#smart_gaps on
+gaps inner 6 
+smart_gaps on
 smart_borders on
 for_window [class="^.*"] border pixel 2
 

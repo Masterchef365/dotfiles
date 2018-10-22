@@ -7,6 +7,7 @@ Plug 'sheerun/vim-polyglot'
 "			\ 'branch': 'next',
 "			\ 'do': 'bash install.sh',
 "			\ }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Valloric/YouCompleteMe'
 Plug 'noahfrederick/vim-noctu'
 call plug#end()
@@ -25,6 +26,7 @@ set nofoldenable
 set mouse=a
 set hidden
 set clipboard=unnamedplus
+inoremap <C-n> <C-x><C-o>
 
 " Easy search-replace under cursor
 nnoremap <Leader>s :%s:\<<C-r><C-w>\>:
@@ -59,3 +61,6 @@ let g:vimtex_latexmk_options = '-pdf -shell-escape -verbose -file-line-error -sy
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
     \ }
+let g:deoplete#enable_at_startup = 1
+
+let g:vimtex_view_general_viewer = 'evince'
