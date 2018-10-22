@@ -8,8 +8,9 @@ Plug 'sheerun/vim-polyglot'
 "			\ 'do': 'bash install.sh',
 "			\ }
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
 Plug 'noahfrederick/vim-noctu'
+Plug 'davidhalter/jedi-vim'
 call plug#end()
 
 " Misc
@@ -20,13 +21,19 @@ set nu
 syntax on
 set laststatus=2
 set nohlsearch 
-set nowrap
 set foldmethod=syntax
 set nofoldenable
 set mouse=a
 set hidden
 set clipboard=unnamedplus
 inoremap <C-n> <C-x><C-o>
+
+" Wrap, but perserve indents. Move through the lines like they are not wrapped
+" but line broken instead.
+set wrap lbr
+set breakindent
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
 
 " Easy search-replace under cursor
 nnoremap <Leader>s :%s:\<<C-r><C-w>\>:

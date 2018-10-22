@@ -28,7 +28,7 @@ rofi.color-active:  S_color0,      S_foreground,  S_color0,      S_background,  
 rofi.color-urgent:  S_background,  S_foreground,  S_background,  S_background,  S_foreground
 rofi.opacity:       100                                                         
 rofi.font:          Fantasque Sans Mono 13             
-rofi.dpi:           175                                                         
+rofi.dpi:           94.34                                                         
 rofi.location:      0                                                           
 rofi.xoffset:       0                                                           
 rofi.terminal:      alacritty                                                   
@@ -72,7 +72,7 @@ rofi.terminal:      alacritty
 *color7:       S_color7
 *color15:      S_color15
 
-Xft.dpi: 175
+Xft.dpi: 94.34
 
 !urxvt*transparent: true
 !urxvt*shading: 10

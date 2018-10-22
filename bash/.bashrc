@@ -94,3 +94,6 @@ powersave() {
 	sudo sh -c 'echo 1 >> /sys/devices/system/cpu/intel_pstate/no_turbo'
 	sudo cpupower frequency-set -u 800Mhz
 }
+
+export GOPATH=/home/$USER/.go
+export PATH=$PATH:/usr/local/go/bin
