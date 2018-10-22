@@ -3,9 +3,8 @@
 # ----------------------- Defines/Variables -----------------------
 
 # Set the modifier key, set floating modifier to the same
-set $mod Mod4
+set $mod Mod1
 floating_modifier $mod
-set $terminal alacritty
 
 # Xresources
 set_from_resource $color0  i3wm.color0   #ff00ff
@@ -28,9 +27,9 @@ set_from_resource $color15 i3wm.color15  #ff00ff
 # ----------------------- Style options -----------------------
 
 #Window_colors           border   backgr.  text     indicator
-client.focused           $color0  $color4  $color0  $color0
-client.focused_inactive  $color0  $color0  $color0  $color0
-client.unfocused         $color0  $color0  $color0  $color0
+client.focused           $color0  $color1  $color0  $color0
+client.focused_inactive  $color0  $color8  $color0  $color0
+client.unfocused         $color0  $color8  $color0  $color0
 client.urgent            $color0  $color0  $color0  $color0
 client.placeholder       $color0  $color0  $color0  $color0
 
@@ -39,9 +38,9 @@ font pango:monospace 10
 
 # Border options
 new_window none
-gaps inner 12 
-#smart_gaps on
-smart_borders on
+gaps inner 6 
+smart_gaps on
+#smart_borders on
 for_window [class="^.*"] border pixel 2
 
 # ----------------------- Program shortcut options -----------------------
@@ -52,6 +51,7 @@ bindsym $mod+a exec rofi -show window
 bindsym $mod+d exec rofi -show run
 
 # Terminal
+set $terminal alacritty
 bindsym $mod+Return exec $terminal
 
 # Kill focused window
@@ -147,8 +147,9 @@ bindsym $mod+i exec i3lock-fancy -pf "Fantasque-Sans-Mono-Regular"
 
 # ----------------------- Post-WM commands -----------------------
 #exec redshift -l geoclue2
-exec xrandr --dpi 160
+exec xrandr --dpi 94.34
 exec --no-startup-id mpd
 exec --no-startup-id compton
 exec --no-startup-id polybar bar
 exec hsetroot -solid $color0
+exec nvidia-settings --assign CurrentMetaMode="DP-4:1920x1200_60 +1920+0 { ForceFullCompositionPipeline = On }, DVI-D-0:1920x1200_60 +0+0 { ForceFullCompositionPipeline = On }"

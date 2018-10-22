@@ -29,8 +29,8 @@ window.padding:
 # The FreeType rasterizer needs to know the device DPI for best results
 # (changes require restart)
 dpi:
-  x: 175.0
-  y: 175.0
+  x: 94.34
+  y: 94.34
 
 # Display tabs using this many cells (changes require restart)
 tabspaces: 8
@@ -59,7 +59,7 @@ font:
     # style: Italic
 
   # Point size of the font
-  size: 10.0
+  size: 13.0
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
   offset:
@@ -97,7 +97,7 @@ colors:
 
   # Bright colors
   bright:
-    black:   '0x004996'
+    black:   '0x3a6ea4'
     red:     '0xdd9d23'
     green:   '0xfcb328'
     yellow:  '0xfcb328'
