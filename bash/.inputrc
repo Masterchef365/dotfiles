@@ -1,9 +1,7 @@
 "\eOc": forward-word
 "\eOd": backward-word
-"\C-h": backward-kill-word
-"\C-_": unix-word-rubout
-"\e[1;5C": forward-word   # ctrl + right
-"\e[1;5D": backward-word  # ctrl + left 
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
 
 set show-mode-in-prompt on
 set vi-cmd-mode-string "\1\e[2 q\2"

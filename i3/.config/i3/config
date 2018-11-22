@@ -3,7 +3,7 @@
 # ----------------------- Defines/Variables -----------------------
 
 # Set the modifier key, set floating modifier to the same
-set $mod Mod1
+set $mod Mod4
 floating_modifier $mod
 
 # Xresources
@@ -38,7 +38,7 @@ font pango:monospace 10
 
 # Border options
 new_window none
-gaps inner 6 
+gaps inner 4 
 smart_gaps on
 #smart_borders on
 for_window [class="^.*"] border pixel 2
@@ -147,7 +147,7 @@ bindsym $mod+i exec i3lock-fancy -pf "Fantasque-Sans-Mono-Regular"
 
 # ----------------------- Post-WM commands -----------------------
 #exec redshift -l geoclue2
-exec xrandr --dpi 94.34
+exec xrandr --dpi 170
 exec --no-startup-id mpd
 exec --no-startup-id compton
 exec --no-startup-id polybar bar

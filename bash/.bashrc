@@ -3,6 +3,7 @@
 
 # Use the best editor
 export EDITOR="nvim"
+alias vim='nvim'
 
 # Use .inputrc
 export INPUTRC=~/.inputrc
@@ -18,38 +19,25 @@ export PS1="${GREEN} \w ${RESET}> "
 
 # Bad habits
 alias ls='ls --color=auto'
-alias la='ls -a --color=auto'
+alias la='ls -a'
 alias ll='ls -lh'
-alias cd..='cd ..'
-alias cd...='cd ..'
-alias dus='du -shc * | sort -h'
-alias vim='nvim'
-alias v='vim -S vimsession.vim'
+alias 'q'='exit'
 function cd () {
 	command cd "$@" && ls
 }
-alias ':wqa'='exit'
-alias 'q'='exit'
+alias cd..='cd ..'
+alias dus='du -shc * | sort -h'
 alias pacman="sudo pacman"
-alias thinkofthe='pacaur -Rns $(pacaur -Qtdq)'
-
 
 # Directory pinning
 PIN_DIR=$HOME/.pins
 d() {
 	case "$1" in 
-		"")
-            basename -a $(cat "$PIN_DIR") | cat -n ;;
-		[0-9]*)
-			cd $(sed "$1q;d" "$PIN_DIR") ;;
-		"del")
-			sed -i "$2d" "$PIN_DIR" ;;
-		"e")
-			$EDITOR "$PIN_DIR" ;;
-		"p")
-			pwd >> $PIN_DIR ;;
-		*)
-			echo "$@" >> $PIN_DIR ;;
+		"") basename -a $(cat "$PIN_DIR") | cat -n ;;
+		[0-9]*) cd $(sed "$1q;d" "$PIN_DIR") ;;
+		"del") sed -i "$2d" "$PIN_DIR" ;;
+		"p") pwd >> $PIN_DIR ;;
+		*) echo "$@" >> $PIN_DIR ;;
 	esac
 }
 
@@ -93,6 +81,22 @@ bulkuninstall() {
 powersave() {
 	sudo sh -c 'echo 1 >> /sys/devices/system/cpu/intel_pstate/no_turbo'
 	sudo cpupower frequency-set -u 800Mhz
+}
+
+# Text file to PDF
+txt2pdf() {
+    #enscript $1 -Be'%' -p - | ps2pdf - $(basename -s .txt $1).pdf
+    enscript $1 -Bp - | ps2pdf - $(basename -s .txt $1).pdf
+}
+
+# Print using JetDirect
+printto() {
+    pdf2ps "$1" - | nc $2 9100
+}
+
+# Remove orphaned packages
+remove_orphans() {
+    pacaur -Rns $(pacaur -Qtdq)
 }
 
 export GOPATH=/home/$USER/.go
