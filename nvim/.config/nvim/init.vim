@@ -3,14 +3,15 @@ call plug#begin('~/.config/nvim/bundle')
 Plug 'lervag/vimtex'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'sheerun/vim-polyglot'
-Plug 'autozimu/LanguageClient-neovim', {
-			\ 'branch': 'next',
-			\ 'do': 'bash install.sh',
-			\ }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'Valloric/YouCompleteMe'
 Plug 'noahfrederick/vim-noctu'
-Plug 'davidhalter/jedi-vim'
+Plug 'rust-lang/rust.vim'
+"Plug 'autozimu/LanguageClient-neovim', {
+"			\ 'branch': 'next',
+"			\ 'do': 'bash install.sh',
+"			\ }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'davidhalter/jedi-vim'
+"Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 " Misc
