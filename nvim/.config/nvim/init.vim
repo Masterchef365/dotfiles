@@ -1,17 +1,14 @@
 " Plugins
 call plug#begin('~/.config/nvim/bundle')
+Plug 'noahfrederick/vim-noctu'
 Plug 'lervag/vimtex'
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'sheerun/vim-polyglot'
-Plug 'noahfrederick/vim-noctu'
 Plug 'rust-lang/rust.vim'
-"Plug 'autozimu/LanguageClient-neovim', {
-"			\ 'branch': 'next',
-"			\ 'do': 'bash install.sh',
-"			\ }
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'davidhalter/jedi-vim'
-"Plug 'Valloric/YouCompleteMe'
+Plug 'autozimu/LanguageClient-neovim', {
+			\ 'branch': 'next',
+			\ 'do': 'bash install.sh',
+			\ }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 " Misc
@@ -64,11 +61,27 @@ let g:polyglot_disabled = ['latex']
 
 " latexmk
 let g:vimtex_latexmk_options = '-pdf -shell-escape -verbose -file-line-error -synctex=1 -interaction=nonstopmode'
+let g:vimtex_view_general_viewer = 'evince'
 
-" Rust language server
+" Language server
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'cpp': ['clangd'],
+    \ 'c': ['clangd'],
     \ }
 let g:deoplete#enable_at_startup = 1
 
-let g:vimtex_view_general_viewer = 'evince'
+" use <tab> for trigger completion and navigate next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif

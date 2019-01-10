@@ -146,10 +146,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Sure?' -b 'Do it' 'i3-msg ex
 bindsym $mod+i exec i3lock-fancy -pf "Fantasque-Sans-Mono-Regular"
 
 # ----------------------- Post-WM commands -----------------------
-#exec redshift -l geoclue2
+exec redshift -l geoclue2
 exec xrandr --dpi 170
 exec --no-startup-id mpd
 exec --no-startup-id compton
 exec --no-startup-id polybar bar
 exec hsetroot -solid $color0
-exec nvidia-settings --assign CurrentMetaMode="DP-4:1920x1200_60 +1920+0 { ForceFullCompositionPipeline = On }, DVI-D-0:1920x1200_60 +0+0 { ForceFullCompositionPipeline = On }"
