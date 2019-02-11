@@ -101,5 +101,4 @@ remove_orphans() {
 
 export GOPATH=/home/$USER/.go
 export PATH=$PATH:/usr/local/go/bin
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH=$PATH:/home/duncan/.gradle/toolchains/frc/2019/roborio/bin

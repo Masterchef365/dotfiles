@@ -28,8 +28,8 @@ set_from_resource $color15 i3wm.color15  #ff00ff
 
 #Window_colors           border   backgr.  text     indicator
 client.focused           $color0  $color1  $color0  $color0
-client.focused_inactive  $color0  $color8  $color0  $color0
-client.unfocused         $color0  $color8  $color0  $color0
+client.focused_inactive  $color0  $color7  $color0  $color0
+client.unfocused         $color0  $color7  $color0  $color0
 client.urgent            $color0  $color0  $color0  $color0
 client.placeholder       $color0  $color0  $color0  $color0
 
