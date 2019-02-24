@@ -1,10 +1,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Use the best editor
-export EDITOR="nvim"
-alias vim='nvim'
-
 # Use .inputrc
 export INPUTRC=~/.inputrc
 
@@ -17,6 +13,10 @@ RESET="\[$(tput sgr0)\]"
 export PROMPT_DIRTRIM=2
 export PS1="${GREEN} \w ${RESET}> "
 
+# Use the best editor
+export EDITOR="nvim"
+alias vim='nvim'
+
 # Bad habits
 alias ls='ls --color=auto'
 alias la='ls -a'
@@ -26,12 +26,10 @@ function cd () {
 	command cd "$@" && ls
 }
 alias cd..='cd ..'
-alias dus='du -shc * | sort -h'
 alias pacman="sudo pacman"
 
 # Directory pinning
-PIN_DIR=$HOME/.pins
-d() {
+pin() {
 	case "$1" in 
 		"") basename -a $(cat "$PIN_DIR") | cat -n ;;
 		[0-9]*) cd $(sed "$1q;d" "$PIN_DIR") ;;
@@ -39,6 +37,23 @@ d() {
 		"p") pwd >> $PIN_DIR ;;
 		*) echo "$@" >> $PIN_DIR ;;
 	esac
+}
+
+# Normal pinning
+d() {
+    PIN_DIR=$HOME/.pins
+    pin "$@"
+}
+
+# Pinned stuff for long term
+dl() {
+    PIN_DIR=$HOME/.longtermpins
+    pin "$@"
+}
+
+# Find largest directories or files
+dus() {
+    du -shc * | sort -h
 }
 
 # Colored manual pages
@@ -69,12 +84,13 @@ bridge() {
 	sudo iptables -A FORWARD -i $2 -o $1 -j ACCEPT
 }
 
-# Quickly uninstall many packages in Arch Linux
+# Quickly uninstall several packages at once in Arch Linux
 bulkuninstall() {
 	comm -13 <(pacaur -Qqg base base-devel | sort) <(pacaur -Qqet | sort) > /tmp/installed
 	cp /tmp/installed /tmp/remaining	
 	$EDITOR /tmp/remaining
 	comm -13 /tmp/remaining /tmp/installed | pacaur -Rns -
+    rm /tmp/installed /tmp/remaining
 }
 
 # Enable power saving
@@ -89,9 +105,9 @@ txt2pdf() {
     enscript $1 -Bp - | ps2pdf - $(basename -s .txt $1).pdf
 }
 
-# Print using JetDirect
+# Print pdfs using JetDirect
 printto() {
-    pdf2ps "$1" - | nc $2 9100
+    pdf2ps "$1" - | nc "$2" 9100
 }
 
 # Remove orphaned packages

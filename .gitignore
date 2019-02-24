@@ -1,7 +1,0 @@
-nvim/.config/nvim/bundle/*/
-nvim/.config/nvim/.netrwhist
-nvim/.config/nvim/autoload
-mpd/.config/mpd/log
-mpd/.config/mpd/database
-mpd/.config/mpd/pid
-mpd/.config/mpd/sticker.sql

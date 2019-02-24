@@ -26,28 +26,28 @@ set_from_resource $color15 i3wm.color15  #ff00ff
 
 # ----------------------- Style options -----------------------
 
-#Window_colors           border   backgr.  text     indicator
-client.focused           $color0  $color1  $color0  $color0
-client.focused_inactive  $color0  $color7  $color0  $color0
-client.unfocused         $color0  $color7  $color0  $color0
-client.urgent            $color0  $color0  $color0  $color0
-client.placeholder       $color0  $color0  $color0  $color0
+#Window_colors           backgr.  border   text     indicator
+client.focused           $color0  $color8  $color0   $color0
+client.focused_inactive  $color0  $color0  $color15  $color0
+client.unfocused         $color0  $color0  $color8   $color0
+client.urgent            $color0  $color0  $color8   $color0
+client.placeholder       $color0  $color0  $color8   $color0
 
 # Font config
-font pango:monospace 10
+font pango:Fantasque Sans Mono 11
 
 # Border options
 new_window none
 gaps inner 4 
 smart_gaps on
-#smart_borders on
+smart_borders on
 for_window [class="^.*"] border pixel 2
 
 # ----------------------- Program shortcut options -----------------------
 
 # Rofi
 bindsym $mod+s exec rofi -show ssh
-bindsym $mod+a exec rofi -show window
+#bindsym $mod+a exec rofi -show window
 bindsym $mod+d exec rofi -show run
 
 # Terminal
@@ -57,7 +57,7 @@ bindsym $mod+Return exec $terminal
 # Kill focused window
 bindsym $mod+Shift+q kill
 
-# ----------------------- Window movement/Workspace switching -----------------------
+# ----------------------- Navigation -----------------------
 
 # Next/prev workspaces
 bindsym $mod+Ctrl+h workspace prev
@@ -86,40 +86,40 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
-#bindsym $mod+a focus parent
+bindsym $mod+a focus parent
 
 # Switch workspaces
-bindsym $mod+1 workspace number 1
-bindsym $mod+2 workspace number 2
-bindsym $mod+3 workspace number 3
-bindsym $mod+4 workspace number 4
-bindsym $mod+5 workspace number 5
-bindsym $mod+6 workspace number 6
-bindsym $mod+7 workspace number 7
-bindsym $mod+8 workspace number 8
-bindsym $mod+9 workspace number 9
-bindsym $mod+0 workspace number 10
+bindsym $mod+1 workspace "1 "
+bindsym $mod+2 workspace "2 "
+bindsym $mod+3 workspace "3 "
+bindsym $mod+4 workspace "4 "
+bindsym $mod+5 workspace "5 "
+bindsym $mod+6 workspace "6 "
+bindsym $mod+7 workspace "7 "
+bindsym $mod+8 workspace "8 "
+bindsym $mod+9 workspace "9 "
+bindsym $mod+0 workspace "10 "
 
 # Move containers to workspaces
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace "1 "
+bindsym $mod+Shift+2 move container to workspace "2 "
+bindsym $mod+Shift+3 move container to workspace "3 "
+bindsym $mod+Shift+4 move container to workspace "4 "
+bindsym $mod+Shift+5 move container to workspace "5 "
+bindsym $mod+Shift+6 move container to workspace "6 "
+bindsym $mod+Shift+7 move container to workspace "7 "
+bindsym $mod+Shift+8 move container to workspace "8 "
+bindsym $mod+Shift+9 move container to workspace "9 "
+bindsym $mod+Shift+0 move container to workspace "10 "
 
 # Resize containers
 mode "resize" {
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
 
@@ -145,10 +145,28 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Sure?' -b 'Do it' 'i3-msg exit'"
 bindsym $mod+i exec i3lock-fancy -pf "Fantasque-Sans-Mono-Regular"
 
+# ----------------------- Status bar -----------------------
+bar {
+    colors {
+        background  $color0
+        statusline  $color15
+        separator   $color0
+
+        #block_colors       backgr.   border    text
+        focused_workspace   $color11  $color11  $color0
+        active_workspace    $color11  $color11  $color0
+        inactive_workspace  $color0   $color0   $color15
+        urgent_workspace    $color9   $color9   $color15
+    }
+    tray_output none
+    position top
+    font pango:Fantasque Sans Mono 11
+    status_command i3status
+}
+
 # ----------------------- Post-WM commands -----------------------
 exec redshift -l geoclue2
-exec xrandr --dpi 170
+exec xrandr --dpi 220
 exec --no-startup-id mpd
 exec --no-startup-id compton
-exec --no-startup-id polybar bar
-exec hsetroot -solid $color0
+exec hsetroot -solid "$color0"
