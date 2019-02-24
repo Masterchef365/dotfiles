@@ -1,40 +1,35 @@
 " Plugins
 call plug#begin('~/.config/nvim/bundle')
+
+" Syntax highlighting/UI colors
 Plug 'noahfrederick/vim-noctu'
-Plug 'lervag/vimtex'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rust-lang/rust.vim'
+
+" Completion engines/Compiler integration
+Plug 'lervag/vimtex'
 Plug 'autozimu/LanguageClient-neovim', {
 			\ 'branch': 'next',
 			\ 'do': 'bash install.sh',
 			\ }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
 call plug#end()
 
 " Misc
-filetype plugin indent on
-set nocompatible
-set rnu
-set nu
-syntax on
-set laststatus=2
-set nohlsearch 
-set foldmethod=syntax
-set nofoldenable
-set mouse=a
-set hidden
-set clipboard=unnamedplus
-inoremap <C-n> <C-x><C-o>
-
-" Wrap, but perserve indents. Move through the lines like they are not wrapped
-" but line broken instead.
-set wrap lbr
-set breakindent
-nnoremap <expr> j v:count ? 'j' : 'gj'
-nnoremap <expr> k v:count ? 'k' : 'gk'
-
-" Easy search-replace under cursor
-nnoremap <Leader>s :%s:\<<C-r><C-w>\>:
+filetype plugin indent on "Use new fancy vim stuff
+set nocompatible "Ditto
+set rnu "Relative line numbers
+set nu "But still show my current line number
+syntax on "Syntax highlighting!
+set laststatus=1 "Don't show the file name unless there's multiple windows
+set nohlsearch "Don't highlight everything while searching
+set mouse=a " Allow use of the mouse (Sometimes it's nice, okay?!)
+set hidden "Allow multiple buffers
+set clipboard=unnamedplus "Use the system clipboard
+set foldmethod=syntax "Allow folding
+set nofoldenable "But don't do it by default
+set noruler "Don't display extra ruler cruft by default
 
 " Use CTRL+HJKL keys to navigate buffers
 map <C-k> <C-w><Up>
@@ -42,46 +37,39 @@ map <C-j> <C-w><Down>
 map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
 
-" Cursor shape changes
+" Wrap, but perserve indents. Move through the lines 
+" as though they are not wrapped but line broken instead.
+set wrap lbr
+set breakindent
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
+
+" Easy search-replace under cursor when \s is hit
+nnoremap <Leader>s :%s:\<<C-r><C-w>\>:
+
+" Cursor shape changes based on mode
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 
-" Tabs
+" Indentation, tabs are now all 4 spaces wide; tab key inserts four spaces.
 set autoindent
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " Colorscheme
 colorscheme noctu
 
-" vim-cpp-enhanced-highlight
+" Vim C++ Enhanced Highlighting
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 
-" Fix latexmk
-let g:polyglot_disabled = ['latex']
-
-" latexmk
+" LaTeXmk
 let g:vimtex_latexmk_options = '-pdf -shell-escape -verbose -file-line-error -synctex=1 -interaction=nonstopmode'
 let g:vimtex_view_general_viewer = 'evince'
 
-" Language server
+" Language Client Neovim 
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
     \ 'cpp': ['clangd'],
     \ 'c': ['clangd'],
+    \ 'python': ['pyls'],
     \ }
 let g:deoplete#enable_at_startup = 1
-
-" use <tab> for trigger completion and navigate next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif

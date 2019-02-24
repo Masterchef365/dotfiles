@@ -4,18 +4,19 @@
 # Use .inputrc
 export INPUTRC=~/.inputrc
 
-# Better line editing
+# Vi style line editing
 set -o vi
 
 # Prompt
 GREEN="\[$(tput setaf 1)\]"
 RESET="\[$(tput sgr0)\]"
-export PROMPT_DIRTRIM=2
+export PROMPT_DIRTRIM=2  
 export PS1="${GREEN} \w ${RESET}> "
 
 # Use the best editor
-export EDITOR="nvim"
+export EDITOR='nvim'
 alias vim='nvim'
+alias emacs='nvim'
 
 # Bad habits
 alias ls='ls --color=auto'
@@ -26,10 +27,11 @@ function cd () {
 	command cd "$@" && ls
 }
 alias cd..='cd ..'
-alias pacman="sudo pacman"
+alias pacman='sudo pacman'
 
 # Directory pinning
-pin() {
+PIN_DIR=$HOME/.pins
+d() {
 	case "$1" in 
 		"") basename -a $(cat "$PIN_DIR") | cat -n ;;
 		[0-9]*) cd $(sed "$1q;d" "$PIN_DIR") ;;
@@ -39,19 +41,7 @@ pin() {
 	esac
 }
 
-# Normal pinning
-d() {
-    PIN_DIR=$HOME/.pins
-    pin "$@"
-}
-
-# Pinned stuff for long term
-dl() {
-    PIN_DIR=$HOME/.longtermpins
-    pin "$@"
-}
-
-# Find largest directories or files
+# Find largest files or directories 
 dus() {
     du -shc * | sort -h
 }
@@ -114,7 +104,3 @@ printto() {
 remove_orphans() {
     pacaur -Rns $(pacaur -Qtdq)
 }
-
-export GOPATH=/home/$USER/.go
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:/home/duncan/.gradle/toolchains/frc/2019/roborio/bin
