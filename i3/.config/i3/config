@@ -3,7 +3,7 @@
 # ----------------------- Defines/Variables -----------------------
 
 # Set the modifier key, set floating modifier to the same
-set $mod Mod4
+set $mod Mod1
 floating_modifier $mod
 
 # Xresources
@@ -34,13 +34,13 @@ client.urgent            $color0  $color0  $color8   $color0
 client.placeholder       $color0  $color0  $color8   $color0
 
 # Font config
-font pango:Fantasque Sans Mono 11
+font pango:Fantasque Sans Mono 13
 
 # Border options
 new_window none
-gaps inner 4 
-smart_gaps on
-smart_borders on
+#gaps inner 4 
+#smart_gaps on
+#smart_borders on
 for_window [class="^.*"] border pixel 2
 
 # ----------------------- Program shortcut options -----------------------
@@ -160,7 +160,7 @@ bar {
     }
     tray_output none
     position top
-    font pango:Fantasque Sans Mono 11
+    font pango:Fantasque Sans Mono 13
     status_command i3status
 }
 

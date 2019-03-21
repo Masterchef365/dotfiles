@@ -20,7 +20,7 @@
 #define S_color14   #63c9ff
 #define S_color15   #fffbff
 
-#define S_DPI 220
+#define S_DPI 96
 
 ! Rofi Settings
 rofi.color-enabled: true
@@ -29,7 +29,7 @@ rofi.color-window:  S_background,  S_color11
 rofi.color-normal:  S_color0,      S_foreground,  S_color0,      S_color11,     S_background
 rofi.color-active:  S_color0,      S_foreground,  S_color0,      S_background,  S_foreground
 rofi.color-urgent:  S_background,  S_foreground,  S_background,  S_background,  S_foreground
-rofi.font:          Fantasque Sans Mono 11             
+rofi.font:          Fantasque Sans Mono 13
 rofi.dpi:           S_DPI
 rofi.location:      0                                                           
 rofi.xoffset:       0                                                           
