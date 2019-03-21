@@ -63,8 +63,8 @@ font:
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
   offset:
-    x: 0.0
-    y: 0.0
+    x: 0
+    y: 0
 
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
@@ -74,37 +74,33 @@ font:
 # Should display the render timer
 render_timer: false
 
-# Use custom cursor colors. If true, display the cursor in the cursor.foreground
-# and cursor.background colors, otherwise invert the colors of the cursor.
-custom_cursor_colors: false
-
 colors:
   # Default colors
   primary:
-    foreground: '0xcccccc'
-    background: '0x161616'
+    background: '0x000000'
+    foreground: '0xfffbff'
 
   # Normal colors
   normal:
-    black:   '0x161616'
-    red:     '0xe84f4f'
-    green:   '0xb7ce42'
-    yellow:  '0xfea63c'
-    blue:    '0x66aabb'
-    magenta: '0xb7416e'
-    cyan:    '0x6d878d'
-    white:   '0xdddddd'
+    black:   '0x000000'
+    red:     '0xcd2f86'
+    green:   '0xc353af'
+    yellow:  '0x7da2f8'
+    blue:    '0x68b7ff'
+    magenta: '0xb071d0'
+    cyan:    '0x63c9ff'
+    white:   '0xeaeaea'
 
   # Bright colors
   bright:
-    black:   '0x666666'
-    red:     '0xd23d3d'
-    green:   '0xbde077'
-    yellow:  '0xffe863'
-    blue:    '0xaaccbb'
-    magenta: '0xe16a98'
-    cyan:    '0x42717b'
-    white:   '0xcccccc'
+    black:   '0x50538a'
+    red:     '0xcd2f86'
+    green:   '0xc353af'
+    yellow:  '0x7da2f8'
+    blue:    '0x68b7ff'
+    magenta: '0xb071d0'
+    cyan:    '0x63c9ff'
+    white:   '0xfffbff'
 
 # Visual Bell
 #
@@ -246,11 +242,11 @@ mouse_bindings:
 mouse:
   double_click: { threshold: 300 }
   triple_click: { threshold: 300 }
+  hide_when_typing: true
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
-hide_cursor_when_typing: true
 
 # Shell
 #

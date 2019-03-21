@@ -22,8 +22,8 @@ set nocompatible "Ditto
 set rnu "Relative line numbers
 set nu "But still show my current line number
 syntax on "Syntax highlighting!
-set laststatus=1 "Don't show the file name unless there's multiple windows
-set nohlsearch "Don't highlight everything while searching
+"set laststatus=1 "Don't show the file name unless there's multiple windows
+set hls! "Don't highlight everything while searching
 set mouse=a " Allow use of the mouse (Sometimes it's nice, okay?!)
 set hidden "Allow multiple buffers
 set clipboard=unnamedplus "Use the system clipboard
@@ -37,7 +37,11 @@ map <C-j> <C-w><Down>
 map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
 
-" Wrap, but perserve indents. Move through the lines 
+" Quicker buffer navigation
+map gb :bn<cr>
+map gB :bp<cr>
+
+" Wrap, but preserve indents. Move through the lines 
 " as though they are not wrapped but line broken instead.
 set wrap lbr
 set breakindent
@@ -72,4 +76,8 @@ let g:LanguageClient_serverCommands = {
     \ 'c': ['clangd'],
     \ 'python': ['pyls'],
     \ }
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 let g:deoplete#enable_at_startup = 1

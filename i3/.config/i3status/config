@@ -4,7 +4,7 @@ general {
 }
 
 battery all {
-    format = "%status %percentage %remaining"
+    format = "%percentage"
 }
 
 tztime local {
@@ -12,4 +12,5 @@ tztime local {
     separator_block_width = 1
 }
 
+order += "battery all"
 order += "tztime local"

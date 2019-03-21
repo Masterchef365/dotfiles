@@ -1,49 +1,46 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Prompt
+export PROMPT_DIRTRIM=2  
+export PS1="\e[31m \w \e(B\e[m> "
+
 # Use .inputrc
 export INPUTRC=~/.inputrc
+
+# Use the best editor
+export EDITOR='nvim'
+alias vim=$EDITOR
+alias emacs=$EDITOR
 
 # Vi style line editing
 set -o vi
 
-# Prompt
-GREEN="\[$(tput setaf 1)\]"
-RESET="\[$(tput sgr0)\]"
-export PROMPT_DIRTRIM=2  
-export PS1="${GREEN} \w ${RESET}> "
-
-# Use the best editor
-export EDITOR='nvim'
-alias vim='nvim'
-alias emacs='nvim'
-
-# Bad habits
+# Aliases
 alias ls='ls --color=auto'
 alias la='ls -a'
 alias ll='ls -lh'
-alias 'q'='exit'
+alias tree='tree -C'
+
+# Bad habits
+alias q='exit'
 function cd () {
 	command cd "$@" && ls
 }
 alias cd..='cd ..'
 alias pacman='sudo pacman'
+alias advice="echo Don\'t panic!"
 
 # Directory pinning
 PIN_DIR=$HOME/.pins
 d() {
 	case "$1" in 
-		"") basename -a $(cat "$PIN_DIR") | cat -n ;;
+		"") xargs --arg-file="$PIN_DIR" basename -a | cat -n ;;
 		[0-9]*) cd $(sed "$1q;d" "$PIN_DIR") ;;
 		"del") sed -i "$2d" "$PIN_DIR" ;;
 		"p") pwd >> $PIN_DIR ;;
 		*) echo "$@" >> $PIN_DIR ;;
 	esac
-}
-
-# Find largest files or directories 
-dus() {
-    du -shc * | sort -h
 }
 
 # Colored manual pages
@@ -64,7 +61,12 @@ man() {
 # Rust paths
 export PATH=$PATH:~/.cargo/bin
 export RUST_SRC_PATH=~/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
-export LD_LIBRARY_PATH=$(rustc --print sysroot)/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/lib:$LD_LIBRARY_PATH
+
+# Find largest directories at current working dir
+dus() {
+    du -shc * | sort -h
+}
 
 # Quick interface bridging
 bridge() {
@@ -83,7 +85,7 @@ bulkuninstall() {
     rm /tmp/installed /tmp/remaining
 }
 
-# Enable power saving
+# Power saving stuff
 powersave() {
 	sudo sh -c 'echo 1 >> /sys/devices/system/cpu/intel_pstate/no_turbo'
 	sudo cpupower frequency-set -u 800Mhz
@@ -95,7 +97,9 @@ txt2pdf() {
     enscript $1 -Bp - | ps2pdf - $(basename -s .txt $1).pdf
 }
 
-# Print pdfs using JetDirect
+# Print pdf to an arbitrary printer using JetDirect
+# Can be used to circumvent an on-campus pay-to-print system, provided
+# you can get the IP of the printer (often, they have a 'print config' option)
 printto() {
     pdf2ps "$1" - | nc "$2" 9100
 }
