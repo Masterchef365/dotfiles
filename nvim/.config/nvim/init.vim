@@ -1,4 +1,3 @@
-" Plugins
 call plug#begin('~/.config/nvim/bundle')
 
 " Syntax highlighting/UI colors
@@ -22,7 +21,7 @@ set nocompatible "Ditto
 set rnu "Relative line numbers
 set nu "But still show my current line number
 syntax on "Syntax highlighting!
-"set laststatus=1 "Don't show the file name unless there's multiple windows
+"set laststatus=1 "Don't show the file name unless there's multiple
 set hls! "Don't highlight everything while searching
 set mouse=a " Allow use of the mouse (Sometimes it's nice, okay?!)
 set hidden "Allow multiple buffers

@@ -3,7 +3,7 @@
 
 # Prompt
 export PROMPT_DIRTRIM=2  
-export PS1="\e[31m \w \e(B\e[m> "
+export PS1="\e[93m \w \e(B\e[m> "
 
 # Use .inputrc
 export INPUTRC=~/.inputrc
@@ -77,7 +77,7 @@ bridge() {
 }
 
 # Quickly uninstall several packages at once in Arch Linux
-bulkuninstall() {
+bulk_uninstall() {
 	comm -13 <(pacaur -Qqg base base-devel | sort) <(pacaur -Qqet | sort) > /tmp/installed
 	cp /tmp/installed /tmp/remaining	
 	$EDITOR /tmp/remaining

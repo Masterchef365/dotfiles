@@ -126,7 +126,7 @@ bindsym $mod+r mode "resize"
 # ----------------------- Multimedia Keys -----------------------
 bindsym XF86AudioRaiseVolume exec mpc volume +5
 bindsym XF86AudioLowerVolume exec mpc volume -5
-bindsym XF86LaunchA exec systemctl suspend
+bindsym XF86LaunchA exec "i3-nagbar -t warning -m 'Dude just close the lid lol'"
 bindsym XF86AudioMute exec mpc toggle
 
 bindsym XF86KbdBrightnessUp exec --no-startup-id kbdlight up 5
