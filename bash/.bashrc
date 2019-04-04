@@ -3,7 +3,7 @@
 
 # Prompt
 export PROMPT_DIRTRIM=2  
-export PS1="\e[93m \w \e(B\e[m> "
+export PS1="\[\e[93m\] \w \[\e[97m\]> "
 
 # Use .inputrc
 export INPUTRC=~/.inputrc
