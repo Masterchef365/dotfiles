@@ -7,6 +7,8 @@ set $mod Mod4
 floating_modifier $mod
 
 # Xresources
+set_from_resource $colorbg  i3wm.background   #ff00ff
+set_from_resource $colorfg  i3wm.foreground   #ff00ff
 set_from_resource $color0  i3wm.color0   #ff00ff
 set_from_resource $color1  i3wm.color1   #ff00ff
 set_from_resource $color2  i3wm.color2   #ff00ff
@@ -27,11 +29,11 @@ set_from_resource $color15 i3wm.color15  #ff00ff
 # ----------------------- Style options -----------------------
 
 #Window_colors           backgr.  border   text     indicator
-client.focused           $color0  $color8  $color0   $color0
-client.focused_inactive  $color0  $color0  $color15  $color0
-client.unfocused         $color0  $color0  $color8   $color0
-client.urgent            $color0  $color0  $color8   $color0
-client.placeholder       $color0  $color0  $color8   $color0
+client.focused           $colorbg  $color8  $colorbg   $colorbg
+client.focused_inactive  $colorbg  $colorbg  $color15  $colorbg
+client.unfocused         $colorbg  $colorbg  $color8   $colorbg
+client.urgent            $colorbg  $colorbg  $color8   $colorbg
+client.placeholder       $colorbg  $colorbg  $color8   $colorbg
 
 # Font config
 font pango:Fantasque Sans Mono 11
@@ -148,14 +150,14 @@ bindsym $mod+i exec i3lock-fancy -pf "Fantasque-Sans-Mono-Regular"
 # ----------------------- Status bar -----------------------
 bar {
     colors {
-        background  $color0
+        background  $colorbg
         statusline  $color15
-        separator   $color0
+        separator   $colorbg
 
         #block_colors       backgr.   border    text
-        focused_workspace   $color11  $color11  $color0
-        active_workspace    $color11  $color11  $color0
-        inactive_workspace  $color0   $color0   $color15
+        focused_workspace   $color11  $color11  $colorbg
+        active_workspace    $color11  $color11  $colorbg
+        inactive_workspace  $colorbg   $colorbg   $color15
         urgent_workspace    $color9   $color9   $color15
     }
     tray_output none
