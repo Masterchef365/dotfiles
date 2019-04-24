@@ -35,7 +35,7 @@ alias advice="echo Don\'t panic!"
 PIN_DIR=$HOME/.pins
 d() {
 	case "$1" in 
-		"") xargs --arg-file="$PIN_DIR" basename -a | cat -n ;;
+		"") xargs -a "$PIN_DIR" basename -a | cat -n ;;
 		[0-9]*) cd $(sed "$1q;d" "$PIN_DIR") ;;
 		"del") sed -i "$2d" "$PIN_DIR" ;;
 		"p") pwd >> $PIN_DIR ;;
@@ -107,4 +107,12 @@ printto() {
 # Remove orphaned packages
 remove_orphans() {
     pacaur -Rns $(pacaur -Qtdq)
+}
+
+# Python lint stuffs
+python_lints() {
+    pytest
+    pycodestyle --show-source --show-pep8 --statistics --max-line-length=100 !(test*).py
+    pydocstyle !(test*).py
+    pylint !(test*).py
 }

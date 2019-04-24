@@ -29,8 +29,8 @@ window.padding:
 # The FreeType rasterizer needs to know the device DPI for best results
 # (changes require restart)
 dpi:
-  x: 220
-  y: 220
+  x: 96
+  y: 96
 
 # Display tabs using this many cells (changes require restart)
 tabspaces: 8
@@ -42,24 +42,24 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Fantasque Sans Mono # should be "Menlo" or something on macOS.
+    family: Monospace # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     # style: Regular
 
   # The bold font face
   bold:
-    family: Fantasque Sans Mono # should be "Menlo" or something on macOS.
+    family: Monospace # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     # style: Bold
 
   # The italic font face
   italic:
-    family: Fantasque Sans Mono # should be "Menlo" or something on macOS.
+    family: Monospace # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     # style: Italic
 
   # Point size of the font
-  size: 10.5
+  size: 12
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
   offset:
@@ -77,30 +77,30 @@ render_timer: false
 colors:
   # Default colors
   primary:
-    background: '0x141210'
-    foreground: '0xffffff'
+    background: '0x1b191b'
+    foreground: '0xede9db'
 
   # Normal colors
   normal:
-    black:   '0x141210'
-    red:     '0x8ecc30'
-    green:   '0xfd9000'
-    yellow:  '0xffd100'
-    blue:    '0xef488b'
-    magenta: '0xe45f49'
-    cyan:    '0x8ecc30'
-    white:   '0xdbdbdb'
+    black:   '0x131413'
+    red:     '0xb87a50'
+    green:   '0x6ea5ab'
+    yellow:  '0xb88766'
+    blue:    '0x398f9d'
+    magenta: '0x398f9d'
+    cyan:    '0x52919a'
+    white:   '0xcfd3cf'
 
   # Bright colors
   bright:
-    black:   '0x645348'
-    red:     '0x8ecc30'
-    green:   '0xfd9000'
-    yellow:  '0xffd100'
-    blue:    '0xef9048'
-    magenta: '0xe45f49'
-    cyan:    '0x8ecc30'
-    white:   '0xffffff'
+    black:   '0x555755'
+    red:     '0xb87a50'
+    green:   '0x6ea5ab'
+    yellow:  '0xb88766'
+    blue:    '0x398f9d'
+    magenta: '0x398f9d'
+    cyan:    '0x52919a'
+    white:   '0xede9db'
 
 # Visual Bell
 #
@@ -129,7 +129,7 @@ visual_bell:
   duration: 0
 
 # Background opacity
-background_opacity: 0.7
+background_opacity: 1.0
 
 # Key bindings
 #
