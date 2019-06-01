@@ -29,6 +29,7 @@ set clipboard=unnamedplus "Use the system clipboard
 set foldmethod=syntax "Allow folding
 set nofoldenable "But don't do it by default
 set noruler "Don't display extra ruler cruft by default
+set cursorline
 
 " Use CTRL+HJKL keys to navigate buffers
 map <C-k> <C-w><Up>
@@ -69,8 +70,9 @@ let g:vimtex_latexmk_options = '-pdf -shell-escape -verbose -file-line-error -sy
 let g:vimtex_view_general_viewer = 'evince'
 
 " Language Client Neovim 
+" \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'rust': ['rls'],
     \ 'cpp': ['clangd'],
     \ 'c': ['clangd'],
     \ 'python': ['pyls'],

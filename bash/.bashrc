@@ -3,7 +3,7 @@
 
 # Prompt
 export PROMPT_DIRTRIM=2  
-export PS1="\[\e[93m\] \w \[\e[97m\]> "
+export PS1="\[\e[93m\] \w \[\e[39m\]> "
 
 # Use .inputrc
 export INPUTRC=~/.inputrc
@@ -87,7 +87,7 @@ bulk_uninstall() {
 
 # Power saving stuff
 powersave() {
-	sudo sh -c 'echo 1 >> /sys/devices/system/cpu/intel_pstate/no_turbo'
+	#sudo sh -c 'echo 1 >> /sys/devices/system/cpu/intel_pstate/no_turbo'
 	sudo cpupower frequency-set -u 800Mhz
 }
 

@@ -1,172 +1,75 @@
-# Configuration for Alacritty, the GPU enhanced terminal emulator
-
-# Any items in the `env` entry below will be added as
-# environment variables. Some entries may override variables
-# set by alacritty it self.
 env:
-  # TERM env customization.
-  #
-  # If this property is not set, alacritty will set it to xterm-256color.
-  #
-  # Note that some xterm terminfo databases don't declare support for italics.
-  # You can verify this by checking for the presence of `smso` and `sitm` in
-  # `infocmp xterm-256color`.
   TERM: xterm-256color
 
-# Window dimensions in character columns and lines
-# (changes require restart)
 window.dimensions:
   columns: 80
   lines: 24
 
-# Adds this many blank pixels of padding around the window
-# Units are physical pixels; this is not DPI aware.
-# (change requires restart)
 window.padding:
-  x: 2
-  y: 2
+  x: 20
+  y: 20
 
-# The FreeType rasterizer needs to know the device DPI for best results
-# (changes require restart)
 dpi:
   x: 220
   y: 220
 
-# Display tabs using this many cells (changes require restart)
 tabspaces: 8
 
-# When true, bold text is drawn using the bright variant of colors.
 draw_bold_text_with_bright_colors: true
 
-# Font configuration (changes require restart)
 font:
-  # The normal (roman) font face to use.
   normal:
     family: Fantasque Sans Mono # should be "Menlo" or something on macOS.
-    # Style can be specified to pick a specific face.
-    # style: Regular
 
-  # The bold font face
   bold:
     family: Fantasque Sans Mono # should be "Menlo" or something on macOS.
-    # Style can be specified to pick a specific face.
-    # style: Bold
 
-  # The italic font face
   italic:
     family: Fantasque Sans Mono # should be "Menlo" or something on macOS.
-    # Style can be specified to pick a specific face.
-    # style: Italic
 
-  # Point size of the font
   size: 10.5
-  # Offset is the extra space around each character. offset.y can be thought of
-  # as modifying the linespacing, and offset.x as modifying the letter spacing.
   offset:
     x: 0
     y: 0
 
-  # OS X only: use thin stroke font rendering. Thin strokes are suitable
-  # for retina displays, but for non-retina you probably want this set to
-  # false.
   use_thin_strokes: true
   
-# Should display the render timer
 render_timer: false
 
 colors:
   # Default colors
   primary:
-    background: '0x1b191b'
-    foreground: '0xede9db'
+    background: '0x1b1d1a'
+    foreground: '0xe5dad3'
 
   # Normal colors
   normal:
-    black:   '0x131413'
-    red:     '0xb87a50'
-    green:   '0x6ea5ab'
-    yellow:  '0xb88766'
-    blue:    '0x398f9d'
-    magenta: '0x398f9d'
-    cyan:    '0x52919a'
-    white:   '0xcfd3cf'
+    black:   '0x252824'
+    red:     '0xba4e4e'
+    green:   '0x8aa66e'
+    yellow:  '0xd3b265'
+    blue:    '0x61a9b4'
+    magenta: '0xc2865c'
+    cyan:    '0x6f8558'
+    white:   '0xe5dad3'
 
   # Bright colors
   bright:
-    black:   '0x555755'
-    red:     '0xb87a50'
-    green:   '0x6ea5ab'
-    yellow:  '0xb88766'
-    blue:    '0x398f9d'
-    magenta: '0x398f9d'
-    cyan:    '0x52919a'
-    white:   '0xede9db'
+    black:   '0x6e6859'
+    red:     '0xba4e4e'
+    green:   '0x8aa66e'
+    yellow:  '0xd3b265'
+    blue:    '0x61a9b4'
+    magenta: '0xc2865c'
+    cyan:    '0x6f8558'
+    white:   '0xe5dad3'
 
-# Visual Bell
-#
-# Any time the BEL code is received, Alacritty "rings" the visual bell. Once
-# rung, the terminal background will be set to white and transition back to the
-# default background color. You can control the rate of this transition by
-# setting the `duration` property (represented in milliseconds). You can also
-# configure the transition function by setting the `animation` property.
-#
-# Possible values for `animation`
-# `Ease`
-# `EaseOut`
-# `EaseOutSine`
-# `EaseOutQuad`
-# `EaseOutCubic`
-# `EaseOutQuart`
-# `EaseOutQuint`
-# `EaseOutExpo`
-# `EaseOutCirc`
-# `Linear`
-#
-# To completely disable the visual bell, set its duration to 0.
-#
 visual_bell:
   animation: EaseOutExpo
   duration: 0
 
-# Background opacity
 background_opacity: 1.0
 
-# Key bindings
-#
-# Each binding is defined as an object with some properties. Most of the
-# properties are optional. All of the alphabetical keys should have a letter for
-# the `key` value such as `V`. Function keys are probably what you would expect
-# as well (F1, F2, ..). The number keys above the main keyboard are encoded as
-# `Key1`, `Key2`, etc. Keys on the number pad are encoded `Number1`, `Number2`,
-# etc.  These all match the glutin::VirtualKeyCode variants.
-#
-# Possible values for `mods`
-# `Command`, `Super` refer to the super/command/windows key
-# `Control` for the control key
-# `Shift` for the Shift key
-# `Alt` and `Option` refer to alt/option
-#
-# mods may be combined with a `|`. For example, requiring control and shift
-# looks like:
-#
-# mods: Control|Shift
-#
-# The parser is currently quite sensitive to whitespace and capitalization -
-# capitalization must match exactly, and piped items must not have whitespace
-# around them.
-#
-# Either an `action`, `chars`, or `command` field must be present.
-#   `action` must be one of `Paste`, `PasteSelection`, `Copy`, or `Quit`.
-#   `chars` writes the specified string every time that binding is activated.
-#     These should generally be escape sequences, but they can be configured to
-#     send arbitrary strings of bytes.
-#   `command` must be a map containing a `program` string, and `args` array of
-#     strings. For example:
-#     - { ... , command: { program: "alacritty", args: ["-e", "vttest"] } }
-#
-# Want to add a binding (e.g. "PageUp") but are unsure what the X sequence
-# (e.g. "\x1b[5~") is? Open another terminal (like xterm) without tmux,
-# then run `showkey -a` to get the sequence associated to a key combination.
 key_bindings:
   - { key: V,        mods: Control|Shift,    action: Paste               }
   - { key: C,        mods: Control|Shift,    action: Copy                }
@@ -221,21 +124,6 @@ key_bindings:
   - { key: Insert,                  chars: "\x1b[2~"                     }
   - { key: Delete,                  chars: "\x1b[3~"                     }
 
-# Mouse bindings
-#
-# Currently doesn't support modifiers. Both the `mouse` and `action` fields must
-# be specified.
-#
-# Values for `mouse`:
-# - Middle
-# - Left
-# - Right
-# - Numeric identifier such as `5`
-#
-# Values for `action`:
-# - Paste
-# - PasteSelection
-# - Copy (TODO)
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
 
@@ -247,35 +135,11 @@ mouse:
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
-
-# Shell
-#
-# You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
-# Entries in shell.args are passed unmodified as arguments to the shell.
-#shell:
-#  program: /bin/bash
-#  args:
-#    - --login
-
 scrolling:
-  # How many lines of scrollback to keep,
-  # '0' will disable scrolling.
   history: 1000
 
-  # Number of lines the viewport will move for every line
-  # scrolled when scrollback is enabled (history > 0).
   multiplier: 3
 
-  # Faux Scrolling
-  #
-  # The `faux_multiplier` setting controls the number
-  # of lines the terminal should scroll when the alternate
-  # screen buffer is active. This is used to allow mouse
-  # scrolling for applications like `man`.
-  #
-  # To disable this completely, set `faux_multiplier` to 0.
   faux_multiplier: 3
 
-  # Automatically scroll to the bottom when new text is written
-  # to the terminal.
   auto_scroll: false
