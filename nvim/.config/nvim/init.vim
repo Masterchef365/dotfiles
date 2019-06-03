@@ -29,7 +29,7 @@ set clipboard=unnamedplus "Use the system clipboard
 set foldmethod=syntax "Allow folding
 set nofoldenable "But don't do it by default
 set noruler "Don't display extra ruler cruft by default
-set cursorline
+"set cursorline
 
 " Use CTRL+HJKL keys to navigate buffers
 map <C-k> <C-w><Up>
