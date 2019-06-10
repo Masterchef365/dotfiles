@@ -36,6 +36,15 @@ client.unfocused         $colorbg  $colorbg  $color8   $colorbg
 client.urgent            $colorbg  $colorbg  $color8   $colorbg
 client.placeholder       $colorbg  $colorbg  $color8   $colorbg
 
+# ----------------------- Style options -----------------------
+
+#Window_colors           backgr.   border    text      indicator
+client.focused           $colorbg  $color14  $colorbg  $colorbg
+client.focused_inactive  $colorbg  $colorbg  $colorfg  $colorbg
+client.unfocused         $colorbg  $colorbg  $color14  $colorbg
+client.urgent            $colorbg  $colorbg  $color14  $colorbg
+client.placeholder       $colorbg  $colorbg  $color14  $colorbg
+
 # Font config
 font pango:Monospace 12
 
@@ -129,6 +138,7 @@ bindsym $mod+r mode "resize"
 # ----------------------- Multimedia Keys -----------------------
 bindsym XF86AudioRaiseVolume exec mpc volume +5
 bindsym XF86AudioLowerVolume exec mpc volume -5
+
 bindsym XF86LaunchA exec "i3-nagbar -t warning -m 'Dude just close the lid lol'"
 bindsym XF86AudioMute exec mpc toggle
 
@@ -156,9 +166,9 @@ bar {
         separator   $colorbg
 
         #block_colors       backgr.   border    text
-        focused_workspace   $color11  $color11  $colorbg
-        active_workspace    $color11  $color11  $colorbg
-        inactive_workspace  $colorbg   $colorbg   $color15
+        focused_workspace   $color14  $color14  $colorbg
+        active_workspace    $color14  $color14  $colorbg
+        inactive_workspace  $colorbg  $colorbg  $color15
         urgent_workspace    $color9   $color9   $color15
     }
     tray_output none
@@ -169,7 +179,7 @@ bar {
 
 # ----------------------- Post-WM commands -----------------------
 exec redshift -l geoclue2
-exec xrandr --dpi 220
+exec xrandr --dpi 96
 exec --no-startup-id mpd
 exec --no-startup-id compton
 exec_always hsetroot -solid "$color0"
