@@ -29,7 +29,7 @@ set_from_resource $color15  i3wm.color15      #ff00ff
 # ----------------------- Style options -----------------------
 
 #Window_colors           backgr.   border    text      indicator
-client.focused           $colorbg  $color14  $colorbg  $colorbg
+client.focused           $colorbg  $color0  $colorbg  $colorbg
 client.focused_inactive  $colorbg  $colorbg  $colorfg  $colorbg
 client.unfocused         $colorbg  $colorbg  $color14  $colorbg
 client.urgent            $colorbg  $colorbg  $color14  $colorbg
@@ -44,7 +44,7 @@ gaps inner 6
 gaps outer 2 
 smart_gaps on
 smart_borders on
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 3
 
 # ----------------------- Program shortcut options -----------------------
 
@@ -172,5 +172,5 @@ bar {
 exec redshift -l geoclue2
 exec xrandr --dpi 220
 exec --no-startup-id mpd
-exec --no-startup-id compton
-exec_always hsetroot -solid "$color0"
+exec --no-startup-id compton --backend glx --vsync --config /dev/null
+exec_always hsetroot -solid "$colorbg"
