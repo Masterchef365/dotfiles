@@ -179,8 +179,7 @@ bar {
 
 # ----------------------- Post-WM commands -----------------------
 exec redshift -l geoclue2
-exec xrandr --dpi 96
 exec --no-startup-id mpd
-exec --no-startup-id compton
+exec --no-startup-id compton --config /dev/null --vsync opengl-swc --backend glx
 exec setxkbmap -option caps:escape
 exec_always hsetroot -solid "$colorbg"

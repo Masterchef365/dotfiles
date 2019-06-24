@@ -55,7 +55,7 @@ font:
   italic:
     family: Fantasque Sans Mono # should be "Menlo" or something on macOS.
 
-  size: 10.5
+  size: 13.5
 
   offset:
     x: 0

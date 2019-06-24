@@ -74,8 +74,9 @@ let g:vimtex_view_general_viewer = 'evince'
 " \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rls'],
-    \ 'cpp': ['clangd'],
-    \ 'c': ['clangd'],
+    \ 'cpp': ['clangd-6.0'],
+    \ 'c': ['clangd-6.0'],
+    \ 'cu': ['clangd-6.0'],
     \ 'python': ['pyls'],
     \ }
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
