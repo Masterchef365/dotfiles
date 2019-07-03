@@ -59,9 +59,7 @@ man() {
 	. /usr/share/bash-completion/bash_completion
 
 # Rust paths
-export PATH=$PATH:~/.cargo/bin
-export RUST_SRC_PATH=~/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
-export LD_LIBRARY_PATH=/usr/lib:$LD_LIBRARY_PATH
+source ~/.cargo/env
 
 # Find largest directories at current working dir
 dus() {

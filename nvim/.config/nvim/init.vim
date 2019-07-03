@@ -1,10 +1,8 @@
 call plug#begin('~/.config/nvim/bundle')
 
 " Syntax highlighting/UI colors
-"Plug 'noahfrederick/vim-noctu'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rust-lang/rust.vim'
-"Plug 'jeffkreeftmeijer/vim-dim'
 
 " Completion engines/Compiler integration
 Plug 'lervag/vimtex'
