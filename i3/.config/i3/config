@@ -39,7 +39,7 @@ client.placeholder       $colorbg  $colorbg  $color8   $colorbg
 # ----------------------- Style options -----------------------
 
 #Window_colors           backgr.   border    text      indicator
-client.focused           $colorbg  $color0  $colorbg  $colorbg
+client.focused           $colorbg  $color0   $colorbg  $colorbg
 client.focused_inactive  $colorbg  $colorbg  $colorfg  $colorbg
 client.unfocused         $colorbg  $colorbg  $color14  $colorbg
 client.urgent            $colorbg  $colorbg  $color14  $colorbg
@@ -161,14 +161,14 @@ bindsym $mod+i exec i3lock-fancy -pf "Fantasque-Sans-Mono-Regular"
 # ----------------------- Status bar -----------------------
 bar {
     colors {
-        background  $colorbg
+        background  $color0
         statusline  $color15
         separator   $colorbg
 
         #block_colors       backgr.   border    text
         focused_workspace   $color14  $color14  $colorbg
         active_workspace    $color14  $color14  $colorbg
-        inactive_workspace  $colorbg  $colorbg  $color15
+        inactive_workspace  $color0   $color0   $color15
         urgent_workspace    $color9   $color9   $color15
     }
     tray_output none

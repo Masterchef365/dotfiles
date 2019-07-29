@@ -119,3 +119,5 @@ python_lints() {
     pydocstyle !(test*).py
     pylint !(test*).py
 }
+
+export PATH=$PATH:/home/duncan/Projects/geoprofile/tools/target/release/
