@@ -73,7 +73,7 @@ let g:vimtex_view_general_viewer = 'evince'
 " Language Client Neovim 
 " \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rls'],
+    \ "rust": ["rustup", "run", "stable", "ra_lsp_server"],
     \ 'cpp': ['clangd-6.0'],
     \ 'c': ['clangd-6.0'],
     \ 'cu': ['clangd-6.0'],

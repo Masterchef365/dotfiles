@@ -161,7 +161,7 @@ bindsym $mod+i exec i3lock-fancy -pf "Fantasque-Sans-Mono-Regular"
 # ----------------------- Status bar -----------------------
 bar {
     colors {
-        background  $color0
+        background  $colorbg
         statusline  $color15
         separator   $colorbg
 
