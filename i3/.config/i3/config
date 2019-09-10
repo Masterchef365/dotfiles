@@ -168,7 +168,7 @@ bar {
         #block_colors       backgr.   border    text
         focused_workspace   $color14  $color14  $colorbg
         active_workspace    $color14  $color14  $colorbg
-        inactive_workspace  $color0   $color0   $color15
+        inactive_workspace  $colorbg  $colorbg  $color15
         urgent_workspace    $color9   $color9   $color15
     }
     tray_output none

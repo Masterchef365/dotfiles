@@ -1,10 +1,8 @@
 call plug#begin('~/.config/nvim/bundle')
 
 " Syntax highlighting/UI colors
-"Plug 'noahfrederick/vim-noctu'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rust-lang/rust.vim'
-"Plug 'jeffkreeftmeijer/vim-dim'
 
 " Completion engines/Compiler integration
 Plug 'lervag/vimtex'
@@ -71,9 +69,10 @@ let g:vimtex_latexmk_options = '-pdf -shell-escape -verbose -file-line-error -sy
 let g:vimtex_view_general_viewer = 'evince'
 
 " Language Client Neovim 
-" \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+"\ "rust": ["ra_lsp_server"],
+"\ "rust": ["rls"],
 let g:LanguageClient_serverCommands = {
-    \ "rust": ["rustup", "run", "stable", "ra_lsp_server"],
+    \ "rust": ["rustup", "run", "stable", "rls"],
     \ 'cpp': ['clangd-6.0'],
     \ 'c': ['clangd-6.0'],
     \ 'cu': ['clangd-6.0'],

@@ -39,6 +39,7 @@ d() {
 		[0-9]*) cd $(sed "$1q;d" "$PIN_DIR") ;;
 		"del") sed -i "$2d" "$PIN_DIR" ;;
 		"p") pwd >> $PIN_DIR ;;
+		"e") $EDITOR $PIN_DIR ;;
 		*) echo "$@" >> $PIN_DIR ;;
 	esac
 }
@@ -59,12 +60,18 @@ man() {
 	. /usr/share/bash-completion/bash_completion
 
 # Rust paths
-export PATH=$PATH:~/.cargo/bin
-export RUST_SRC_PATH=~/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
-export LD_LIBRARY_PATH=/usr/lib:$LD_LIBRARY_PATH
+source $HOME/.cargo/env
+export RUST_SRC_PATH=$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
 
 # Cuda path
 export PATH=$PATH:/usr/local/cuda-10.0/bin/
+
+# Go path
+export GOPATH=$HOME/.go
+
+# Source package paths
+export PATH=$PATH:/home/duncan/Projects/source_packages
+export PATH=$PATH:/home/duncan/Projects/geoprofile/tools/target/release/
 
 # Find largest directories at current working dir
 dus() {
@@ -119,5 +126,3 @@ python_lints() {
     pydocstyle !(test*).py
     pylint !(test*).py
 }
-
-export PATH=$PATH:/home/duncan/Projects/geoprofile/tools/target/release/
