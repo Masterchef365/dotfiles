@@ -1,32 +1,32 @@
 ! Color definitions
-#define S_background #000f13
-#define S_foreground #d9d9d9
+#define S_background #161616
+#define S_foreground #ffffff
 
-#define S_color0    #002b36
-#define S_color1    #dc322f
-#define S_color2    #859900
-#define S_color3    #b58900
-#define S_color4    #268bd2
-#define S_color5    #6c71c4
-#define S_color6    #2aa198
-#define S_color7    #d0d0d0
+#define S_color0    #222222
+#define S_color1    #e84f4f
+#define S_color2    #b7ce42
+#define S_color3    #fea63c
+#define S_color4    #66aabb
+#define S_color5    #c54e5c
+#define S_color6    #3ba7c0
+#define S_color7    #dddddd
 
-#define S_color8    #86a3ad
-#define S_color9    #dc322f
-#define S_color10   #859900
-#define S_color11   #b58900
-#define S_color12   #268bd2
-#define S_color13   #6c71c4
-#define S_color14   #2aa198
-#define S_color15   #fdf6e3
+#define S_color8    #666666
+#define S_color9    #d23d3d
+#define S_color10   #bde077
+#define S_color11   #ffe863
+#define S_color12   #aaccbb
+#define S_color13   #e16a98
+#define S_color14   #42717b
+#define S_color15   #cccccc
 
 #define S_DPI 220
 
 ! Rofi Settings
 rofi.color-enabled: true
 !State:             bg             fg             bgalt          hlbg           hlfg
-rofi.color-window:  S_background,  S_color11                                    
-rofi.color-normal:  S_color0,      S_foreground,  S_color0,      S_color11,     S_background
+rofi.color-window:  S_background,  S_color9                                    
+rofi.color-normal:  S_color0,      S_foreground,  S_color0,      S_color9,      S_background
 rofi.color-active:  S_color0,      S_foreground,  S_color0,      S_background,  S_foreground
 rofi.color-urgent:  S_background,  S_foreground,  S_background,  S_background,  S_foreground
 rofi.font:          Fantasque Sans Mono 11             
