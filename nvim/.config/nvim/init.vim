@@ -69,9 +69,9 @@ let g:vimtex_latexmk_options = '-pdf -shell-escape -verbose -file-line-error -sy
 let g:vimtex_view_general_viewer = 'evince'
 
 " Language Client Neovim 
-" \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+" \ 'rust': ['rls'],
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rls'],
+    \ 'rust': ['ra_lsp_server'],
     \ 'cpp': ['clangd'],
     \ 'c': ['clangd'],
     \ 'python': ['pyls'],

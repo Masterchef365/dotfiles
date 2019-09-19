@@ -61,6 +61,10 @@ man() {
 # Rust paths
 source ~/.cargo/env
 
+# Use terminal for GPG pin entry
+export GPG_TTY=$(tty)
+export PINENTRY_USER_DATA="USE_CURSES=1"
+
 # Find largest directories at current working dir
 dus() {
     du -shc * | sort -h
@@ -107,10 +111,6 @@ remove_orphans() {
     pacaur -Rns $(pacaur -Qtdq)
 }
 
-# Python lint stuffs
-python_lints() {
-    pytest
-    pycodestyle --show-source --show-pep8 --statistics --max-line-length=100 !(test*).py
-    pydocstyle !(test*).py
-    pylint !(test*).py
+no_dpms() {
+    xset -dpms
 }
