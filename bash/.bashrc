@@ -60,8 +60,7 @@ man() {
 	. /usr/share/bash-completion/bash_completion
 
 # Rust paths
-source $HOME/.cargo/env
-export RUST_SRC_PATH=$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
+source ~/.cargo/env
 
 # Cuda path
 export PATH=$PATH:/usr/local/cuda-10.0/bin/
@@ -72,6 +71,10 @@ export GOPATH=$HOME/.go
 # Source package paths
 export PATH=$PATH:/home/duncan/Projects/source_packages
 export PATH=$PATH:/home/duncan/Projects/geoprofile/tools/target/release/
+
+# Use terminal for GPG pin entry
+export GPG_TTY=$(tty)
+export PINENTRY_USER_DATA="USE_CURSES=1"
 
 # Find largest directories at current working dir
 dus() {
@@ -119,10 +122,6 @@ remove_orphans() {
     pacaur -Rns $(pacaur -Qtdq)
 }
 
-# Python lint stuffs
-python_lints() {
-    pytest
-    pycodestyle --show-source --show-pep8 --statistics --max-line-length=100 !(test*).py
-    pydocstyle !(test*).py
-    pylint !(test*).py
+no_dpms() {
+    xset -dpms
 }

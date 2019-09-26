@@ -18,7 +18,7 @@ hi  DiffDelete    ctermfg=0        ctermbg=1
 hi  DiffText      ctermfg=0        ctermbg=11    cterm=bold
 
 hi  Directory     ctermfg=4                      
-hi  Error         ctermfg=15       ctermbg=9     
+hi  Error         ctermfg=9       ctermbg=0
 hi  ErrorMsg      ctermfg=15       ctermbg=1     
 hi  FoldColumn    ctermfg=7        ctermbg=8     
 hi  Folded        ctermfg=7        ctermbg=8     
@@ -41,6 +41,7 @@ hi  PmenuThumb    ctermbg=0
 hi  PreProc       ctermfg=5                      
 hi  Question      ctermfg=2                      
 hi  Search        ctermfg=0        ctermbg=11    
+
 hi! link SignColumn    LineNr
 
 hi  Special       ctermfg=5                      
@@ -62,7 +63,8 @@ hi  TabLineSel    cterm=bold
 
 hi  TermCursor    cterm=reverse                  
 hi  Title         ctermfg=5                      
-hi  Todo          ctermfg=0        ctermbg=11    
+
+hi  Todo          ctermfg=11        ctermbg=0
 hi  Type          ctermfg=2                      
 hi  Underlined    cterm=underline  ctermfg=5     
 hi  VertSplit     ctermfg=7        ctermbg=8     cterm=NONE
