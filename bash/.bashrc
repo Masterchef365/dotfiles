@@ -14,7 +14,9 @@ alias vim=$EDITOR
 alias emacs=$EDITOR
 
 # Vi style line editing
-set -o vi
+if [ ! -n "$VIMRUNTIME" ]; then
+    set -o vi
+fi
 
 # Aliases
 alias ls='ls --color=auto'
