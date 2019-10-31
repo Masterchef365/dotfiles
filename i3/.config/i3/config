@@ -37,13 +37,13 @@ client.urgent            $colorbg  $colorbg  $color1  $colorbg
 client.placeholder       $colorbg  $colorbg  $color1  $colorbg
 
 # Font config
-font pango: Fantasque Sans Mono 12
+font pango: Fantasque Sans Mono 13
 
 # Border options
 new_window none
-#gaps inner 4 
-#smart_gaps on
-#smart_borders on
+gaps inner 4 
+smart_gaps on
+smart_borders on
 for_window [class="^.*"] border pixel 3
 
 # ----------------------- Program shortcut options -----------------------
@@ -173,4 +173,4 @@ exec redshift -l geoclue2
 exec --no-startup-id mpd
 exec --no-startup-id compton --config /dev/null --vsync opengl-swc --backend glx
 exec setxkbmap -option caps:escape
-exec_always hsetroot -solid "$colorbg"
+exec_always hsetroot -solid "$color0"

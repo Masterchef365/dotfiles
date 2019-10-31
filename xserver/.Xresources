@@ -29,11 +29,11 @@ rofi.color-window:   S_background,  S_color1
 rofi.color-normal:   S_background,  S_foreground,  S_background,  S_color1,      S_background
 rofi.color-active:   S_background,  S_foreground,  S_background,  S_background,  S_foreground
 rofi.color-urgent:   S_background,  S_foreground,  S_background,  S_background,  S_foreground
-rofi.font:           Fantasque      Sans           Mono           11             
+rofi.font:           Fantasque      Sans           Mono           13             
 rofi.dpi:            S_DPI                                                       
 rofi.location:       0                                                           
 rofi.xoffset:        0                                                           
-rofi.bw:             7
+rofi.bw:             3
 rofi.terminal:       alacritty                                                   
 
 ! URXVT/Xterm colors
