@@ -29,24 +29,15 @@ set_from_resource $color15 i3wm.color15  #ff00ff
 
 # ----------------------- Style options -----------------------
 
-#Window_colors           backgr.  border   text     indicator
-client.focused           $colorbg  $color8  $colorbg   $colorbg
-client.focused_inactive  $colorbg  $colorbg  $color15  $colorbg
-client.unfocused         $colorbg  $colorbg  $color8   $colorbg
-client.urgent            $colorbg  $colorbg  $color8   $colorbg
-client.placeholder       $colorbg  $colorbg  $color8   $colorbg
-
-# ----------------------- Style options -----------------------
-
 #Window_colors           backgr.   border    text      indicator
-client.focused           $colorbg  $color0   $colorbg  $colorbg
+client.focused           $colorbg  $color1  $colorbg  $colorbg
 client.focused_inactive  $colorbg  $colorbg  $colorfg  $colorbg
-client.unfocused         $colorbg  $colorbg  $color14  $colorbg
-client.urgent            $colorbg  $colorbg  $color14  $colorbg
-client.placeholder       $colorbg  $colorbg  $color14  $colorbg
+client.unfocused         $colorbg  $colorbg  $color1  $colorbg
+client.urgent            $colorbg  $colorbg  $color1  $colorbg
+client.placeholder       $colorbg  $colorbg  $color1  $colorbg
 
 # Font config
-font pango:Monospace 12
+font pango: Fantasque Sans Mono 12
 
 # Border options
 new_window none
@@ -166,14 +157,14 @@ bar {
         separator   $colorbg
 
         #block_colors       backgr.   border    text
-        focused_workspace   $color14  $color14  $colorbg
-        active_workspace    $color14  $color14  $colorbg
+        focused_workspace   $color1  $color1  $colorbg
+        active_workspace    $color1  $color1  $colorbg
         inactive_workspace  $colorbg  $colorbg  $color15
         urgent_workspace    $color9   $color9   $color15
     }
     tray_output none
     position top
-    font pango: Monospace 12
+    font pango: Fantasque Sans Mono 14
     status_command i3status
 }
 

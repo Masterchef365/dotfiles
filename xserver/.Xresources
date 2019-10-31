@@ -1,39 +1,40 @@
 ! Color definitions
-#define S_background #000f13
-#define S_foreground #d9d9d9
+#define S_background #13191c
+#define S_foreground #eceff1
 
-#define S_color0    #002b36
-#define S_color1    #dc322f
-#define S_color2    #859900
-#define S_color3    #b58900
-#define S_color4    #268bd2
-#define S_color5    #6c71c4
-#define S_color6    #2aa198
-#define S_color7    #8eacb7
+#define S_color0    #34454d
+#define S_color1    #ff9800
+#define S_color2    #8bc34a
+#define S_color3    #ffc107
+#define S_color4    #03a9f4
+#define S_color5    #e91e63
+#define S_color6    #009688
+#define S_color7    #cfd8dc
 
-#define S_color8    #2d6573
-#define S_color9    #dc322f
-#define S_color10   #859900
-#define S_color11   #b58900
-#define S_color12   #268bd2
-#define S_color13   #6c71c4
-#define S_color14   #2aa198
-#define S_color15   #fdf6e3
+#define S_color8    #688796
+#define S_color9    #ffa74d
+#define S_color10   #9ccc65
+#define S_color11   #ffa000
+#define S_color12   #81d4fa
+#define S_color13   #ad1457
+#define S_color14   #26a69a
+#define S_color15   #eceff1
 
 #define S_DPI 96
 
 ! Rofi Settings
-rofi.color-enabled: true
-!State:             bg             fg             bgalt          hlbg           hlfg
-rofi.color-window:  S_background,  S_color11                                    
-rofi.color-normal:  S_color0,      S_foreground,  S_color0,      S_color11,     S_background
-rofi.color-active:  S_color0,      S_foreground,  S_color0,      S_background,  S_foreground
-rofi.color-urgent:  S_background,  S_foreground,  S_background,  S_background,  S_foreground
-rofi.font:          Monospace 12             
-rofi.dpi:           S_DPI
-rofi.location:      0                                                           
-rofi.xoffset:       0                                                           
-rofi.terminal:      alacritty                                                   
+rofi.color-enabled:  true                                                        
+!State:              bg             fg             bgalt          hlbg           hlfg
+rofi.color-window:   S_background,  S_color1                                     
+rofi.color-normal:   S_background,  S_foreground,  S_background,  S_color1,      S_background
+rofi.color-active:   S_background,  S_foreground,  S_background,  S_background,  S_foreground
+rofi.color-urgent:   S_background,  S_foreground,  S_background,  S_background,  S_foreground
+rofi.font:           Fantasque      Sans           Mono           11             
+rofi.dpi:            S_DPI                                                       
+rofi.location:       0                                                           
+rofi.xoffset:        0                                                           
+rofi.bw:             7
+rofi.terminal:       alacritty                                                   
 
 ! URXVT/Xterm colors
 *foreground:   S_foreground
