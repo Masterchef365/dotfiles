@@ -76,6 +76,9 @@ export PATH=$PATH:/home/duncan/Projects/geoprofile/tools/target/release/
 export GPG_TTY=$(tty)
 export PINENTRY_USER_DATA="USE_CURSES=1"
 
+# Fuck you, microsoft
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
 # Find largest directories at current working dir
 dus() {
     du -shc * | sort -h
