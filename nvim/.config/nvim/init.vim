@@ -3,7 +3,6 @@ call plug#begin('~/.config/nvim/bundle')
 " Syntax highlighting/UI colors
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rust-lang/rust.vim'
-Plug 'OmniSharp/omnisharp-vim'
 
 " Completion engines/Compiler integration
 Plug 'lervag/vimtex'
@@ -70,20 +69,19 @@ let g:vimtex_latexmk_options = '-pdf -shell-escape -verbose -file-line-error -sy
 let g:vimtex_view_general_viewer = 'evince'
 
 " Language Client Neovim 
-"\ 'cs': ['mono', '/home/duncan/Downloads/omnisharp-roslyn/artifacts/publish/OmniSharp.Stdio.Driver/mono/OmniSharp.exe'],
 let g:LanguageClient_serverCommands = {
     \ "rust": ["rustup", "run", "nightly", "rls"],
     \ 'cpp': ['clangd-6.0'],
     \ 'c': ['clangd-6.0'],
     \ 'cu': ['clangd-6.0'],
     \ 'python': ['pyls'],
+    \ 'cs': ['mono', '/home/duncan/Downloads/omnisharp-roslyn/artifacts/publish/OmniSharp.Stdio.Driver/mono/OmniSharp.exe', '-lsp'],
     \ }
+
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> gu :call LanguageClient#textDocument_references()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
 let g:deoplete#enable_at_startup = 1
-let g:OmniSharp_server_stdio = 1
-let g:OmniSharp_server_use_mono = 1
-let g:OmniSharp_server_path = '/home/duncan/Downloads/omnisharp-roslyn/artifacts/publish/OmniSharp.Stdio.Driver/mono/OmniSharp.exe'

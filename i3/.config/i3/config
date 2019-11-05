@@ -41,7 +41,7 @@ font pango: Fantasque Sans Mono 13
 
 # Border options
 new_window none
-gaps inner 4 
+gaps inner 6 
 smart_gaps on
 smart_borders on
 for_window [class="^.*"] border pixel 3
