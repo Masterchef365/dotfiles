@@ -78,6 +78,7 @@ let g:LanguageClient_serverCommands = {
     \ 'cpp': ['clangd'],
     \ 'c': ['clangd'],
     \ 'python': ['pyls'],
+    \ 'javascript' : ['node', '/home/duncan/Downloads/javascript-typescript-langserver/lib/language-server-stdio'],
     \ }
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>

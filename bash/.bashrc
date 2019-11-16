@@ -62,6 +62,7 @@ man() {
 
 # Rust paths
 source ~/.cargo/env
+export RUST_SRC_PATH="/home/duncan/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 
 # Use terminal for GPG pin entry
 export GPG_TTY=$(tty)
