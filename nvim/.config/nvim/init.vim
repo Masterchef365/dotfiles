@@ -3,6 +3,7 @@ call plug#begin('~/.config/nvim/bundle')
 " Syntax highlighting/UI colors
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rust-lang/rust.vim'
+Plug 'cstrahan/vim-capnp'
 
 " Completion engines/Compiler integration
 Plug 'lervag/vimtex'
@@ -73,11 +74,11 @@ let g:vimtex_view_general_viewer = 'evince'
 
 " Language Client Neovim 
 " \ 'rust': ['rls'],
+"\ 'python': ['pyls'],
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['ra_lsp_server'],
     \ 'cpp': ['clangd'],
     \ 'c': ['clangd'],
-    \ 'python': ['pyls'],
     \ 'javascript' : ['node', '/home/duncan/Downloads/javascript-typescript-langserver/lib/language-server-stdio'],
     \ }
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
