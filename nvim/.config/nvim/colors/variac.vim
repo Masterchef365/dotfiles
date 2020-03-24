@@ -56,8 +56,8 @@ hi Statement     ctermfg=3
 hi StatusLine    ctermfg=15       ctermbg=0   cterm=bold
 hi StatusLineNC  ctermfg=7        ctermbg=8   cterm=NONE
 
-hi TabLine       cterm=bold       ctermfg=8   ctermbg=0
-hi TabLineFill   ctermfg=0
+hi TabLine       cterm=bold       ctermfg=8   ctermbg=Black
+hi TabLineFill   ctermfg=0        ctermbg=15
 hi TabLineSel    cterm=bold
 
 hi TermCursor    cterm=reverse

@@ -118,3 +118,7 @@ remove_orphans() {
 no_dpms() {
     xset -dpms
 }
+
+git-shortlog() {
+    git log --branches=* --graph --pretty=oneline --abbrev-commit
+}
