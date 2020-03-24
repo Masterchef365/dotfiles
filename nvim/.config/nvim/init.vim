@@ -70,7 +70,7 @@ let g:vimtex_view_general_viewer = 'evince'
 
 " Language Client Neovim 
 let g:LanguageClient_serverCommands = {
-    \ "rust": ["ra_lsp_server"],
+    \ "rust": ["rust-analyzer"],
     \ 'cpp': ['clangd-6.0'],
     \ 'c': ['clangd-6.0'],
     \ 'cu': ['clangd-6.0'],

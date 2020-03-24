@@ -1,4 +1,5 @@
 #vim:filetype=i3
+exec bash ~/.xdisplays.sh
 
 # ----------------------- Defines/Variables -----------------------
 exec xrdb -merge ~/.Xresources
