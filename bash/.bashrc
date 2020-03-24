@@ -14,22 +14,21 @@ alias vim=$EDITOR
 alias emacs=$EDITOR
 
 # Vi style line editing
-set -o vi
+if [ ! -n "$VIMRUNTIME" ]; then
+    set -o vi
+fi
 
 # Aliases
 alias ls='ls --color=auto'
 alias la='ls -a'
 alias ll='ls -lh'
 alias tree='tree -C'
+alias cd..='cd ..'
 
 # Bad habits
-alias q='exit'
 function cd () {
 	command cd "$@" && ls
 }
-alias cd..='cd ..'
-alias pacman='sudo pacman'
-alias advice="echo Don\'t panic!"
 
 # Directory pinning
 PIN_DIR=$HOME/.pins
@@ -39,8 +38,6 @@ d() {
 		[0-9]*) cd $(sed "$1q;d" "$PIN_DIR") ;;
 		"del") sed -i "$2d" "$PIN_DIR" ;;
 		"p") pwd >> $PIN_DIR ;;
-		"e") $EDITOR $PIN_DIR ;;
-		*) echo "$@" >> $PIN_DIR ;;
 	esac
 }
 
@@ -55,12 +52,16 @@ man() {
 	command man "$@"
 }
 
+# Pacman
+alias pacman='sudo pacman'
+
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
 	. /usr/share/bash-completion/bash_completion
 
 # Rust paths
 source ~/.cargo/env
+export RUST_SRC_PATH="/home/duncan/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 
 # Cuda path
 export PATH=$PATH:/usr/local/cuda-10.0/bin/

@@ -3,13 +3,14 @@ call plug#begin('~/.config/nvim/bundle')
 " Syntax highlighting/UI colors
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rust-lang/rust.vim'
+Plug 'cstrahan/vim-capnp'
 
 " Completion engines/Compiler integration
 Plug 'lervag/vimtex'
 Plug 'autozimu/LanguageClient-neovim', {
-			\ 'branch': 'next',
-			\ 'do': 'bash install.sh',
-			\ }
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
@@ -59,6 +60,9 @@ set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " Colorscheme
 colorscheme variac
+
+" Escape the terminal emulator with one <Esc>
+tnoremap <Esc> <C-\><C-n>
 
 " Vim C++ Enhanced Highlighting
 let g:cpp_member_variable_highlight = 1
