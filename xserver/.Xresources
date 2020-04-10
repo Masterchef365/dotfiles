@@ -2,7 +2,7 @@
 #define S_background #000000
 #define S_foreground #e8dac6
 
-#define S_color0    #000f26
+#define S_color0    #00283b
 #define S_color1    #f2777a
 #define S_color2    #99cc99
 #define S_color3    #ffcc66
