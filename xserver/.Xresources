@@ -25,8 +25,8 @@
 ! Rofi Settings
 rofi.color-enabled:  true                                                        
 !State:              bg             fg             bgalt          hlbg           hlfg
-rofi.color-window:   S_background,  S_color1                                     
-rofi.color-normal:   S_background,  S_foreground,  S_background,  S_color1,      S_background
+rofi.color-window:   S_background,  S_color6                                     
+rofi.color-normal:   S_background,  S_foreground,  S_background,  S_color6,      S_background
 rofi.color-active:   S_background,  S_foreground,  S_background,  S_background,  S_foreground
 rofi.color-urgent:   S_background,  S_foreground,  S_background,  S_background,  S_foreground
 rofi.font:           Fantasque      Sans           Mono           11             
