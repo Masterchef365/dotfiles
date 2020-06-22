@@ -45,7 +45,7 @@ new_window none
 gaps inner 6 
 smart_gaps on
 smart_borders on
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 2
 
 # ----------------------- Program shortcut options -----------------------
 

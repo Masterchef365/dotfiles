@@ -70,7 +70,7 @@ export PATH=$PATH:/usr/local/cuda-10.0/bin/
 export GOPATH=$HOME/.go
 
 # Source package paths
-export PATH=$PATH:/home/duncan/Projects/source_packages
+export PATH=$PATH:/home/duncan/source_packages
 export PATH=$PATH:/home/duncan/Projects/geoprofile/tools/target/release/
 
 # Use terminal for GPG pin entry
