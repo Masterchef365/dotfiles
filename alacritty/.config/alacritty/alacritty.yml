@@ -4,7 +4,7 @@ colors:
     foreground: "0xe3e1e4"
 
   normal:
-    black:   "0x1a181a"
+    black:   "0x2f2c2f"
     red:     "0xf85e84"
     green:   "0x9ecd6f"
     yellow:  "0xe5c463"

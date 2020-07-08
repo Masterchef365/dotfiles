@@ -4,14 +4,11 @@ call plug#begin('~/.config/nvim/bundle')
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rust-lang/rust.vim'
 Plug 'cstrahan/vim-capnp'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Completion engines/Compiler integration
 Plug 'lervag/vimtex'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'neovim/nvim-lsp'
 
 call plug#end()
 
@@ -72,20 +69,21 @@ let g:cpp_class_decl_highlight = 1
 let g:vimtex_latexmk_options = '-pdf -shell-escape -verbose -file-line-error -synctex=1 -interaction=nonstopmode'
 let g:vimtex_view_general_viewer = 'evince'
 
-" Language Client Neovim 
-let g:LanguageClient_serverCommands = {
-    \ "rust": ["rust-analyzer"],
-    \ 'cpp': ['clangd-6.0'],
-    \ 'c': ['clangd-6.0'],
-    \ 'cu': ['clangd-6.0'],
-    \ 'python': ['pyls'],
-    \ 'cs': ['mono', '/home/duncan/Downloads/omnisharp-roslyn/artifacts/publish/OmniSharp.Stdio.Driver/mono/OmniSharp.exe', '-lsp'],
-    \ }
-
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> gu :call LanguageClient#textDocument_references()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-
+" Deoplete
 let g:deoplete#enable_at_startup = 1
+
+" nvim-lsp
+lua require'nvim_lsp'.rust_analyzer.setup({})
+lua require'nvim_lsp'.pyls.setup({})
+autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
+
+nnoremap <silent> <F2>  <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+"nnoremap <silent> <c-k>     <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
+nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
