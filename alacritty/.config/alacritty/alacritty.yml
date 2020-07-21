@@ -1,27 +1,27 @@
 colors:
   primary:
-    background: "0x201e21"
-    foreground: "0xe3e1e4"
+    background: "0x1A2026"
+    foreground: "0xFFFFFF"
 
   normal:
-    black:   "0x2f2c2f"
-    red:     "0xf85e84"
-    green:   "0x9ecd6f"
-    yellow:  "0xe5c463"
-    blue:    "0x7accd7"
-    magenta: "0x877cc0"
-    cyan:    "0xef9062"
-    white:   "0xe3e1e4"
+    black:   "0x242D35"
+    red:     "0xFB6396"
+    green:   "0x94CF95"
+    yellow:  "0xF692B2"
+    blue:    "0x6EC1D6"
+    magenta: "0xCD84C8"
+    cyan:    "0x7FE4D2"
+    white:   "0xFFFFFF"
 
   bright:
-    black:   "0x676067"
-    red:     "0xf85e84"
-    green:   "0x9ecd6f"
-    yellow:  "0xe5c463"
-    blue:    "0x7accd7"
-    magenta: "0x877cc0"
-    cyan:    "0xef9062"
-    white:   "0xe3e1e4"
+    black:   "0x526170"
+    red:     "0xF92D72"
+    green:   "0x6CCB6E"
+    yellow:  "0xF26190"
+    blue:    "0x4CB9D6"
+    magenta: "0xC269BC"
+    cyan:    "0x58D6BF"
+    white:   "0xF4F5F2"
 
 env:
   TERM: xterm-256color

@@ -5,6 +5,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rust-lang/rust.vim'
 Plug 'cstrahan/vim-capnp'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete-lsp'
 
 " Completion engines/Compiler integration
 Plug 'lervag/vimtex'
@@ -76,6 +77,8 @@ let g:deoplete#enable_at_startup = 1
 lua require'nvim_lsp'.rust_analyzer.setup({})
 lua require'nvim_lsp'.pyls.setup({})
 autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
+autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
+"set completeopt=menu,preview,noinsert
 
 nnoremap <silent> <F2>  <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
