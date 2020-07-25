@@ -1,24 +1,24 @@
 ! Color definitions
-#define S_background #000000
-#define S_foreground #e8dac6
+#define S_background #0e131a
+#define S_foreground #e1e9cd
 
-#define S_color0    #00283b
-#define S_color1    #f2777a
-#define S_color2    #99cc99
-#define S_color3    #ffcc66
-#define S_color4    #036f95
-#define S_color5    #6eada2
-#define S_color6    #008b9a
-#define S_color7    #d3d0c8
+#define S_color0    #1c2734
+#define S_color1    #f06318
+#define S_color2    #d98d64
+#define S_color3    #f4d073
+#define S_color4    #f3b348
+#define S_color5    #5c8c7f
+#define S_color6    #22b9b0
+#define S_color7    #e5e5e5
 
-#define S_color8    #4a646a
-#define S_color9    #f2777a
-#define S_color10   #99cc99
-#define S_color11   #fca965
-#define S_color12   #036f95
-#define S_color13   #6eada2
-#define S_color14   #008b9a
-#define S_color15   #fdeed8
+#define S_color8    #4d4d4d
+#define S_color9    #f06318
+#define S_color10   #5c8c7f
+#define S_color11   #f4d073
+#define S_color12   #f3b348
+#define S_color13   #5c8c7f
+#define S_color14   #22b9b0
+#define S_color15   #e1e9cd
 
 #define S_DPI 220
 
