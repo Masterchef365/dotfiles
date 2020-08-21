@@ -126,6 +126,12 @@ git-shortlog() {
     git log --branches=* --graph --pretty=oneline --abbrev-commit
 }
 
-export LD_LIBRARY_PATH=$HOME/source_packages/1.2.141.2/x86_64/lib
-export VK_LAYER_PATH=$HOME/source_packages/1.2.141.2/x86_64/etc/vulkan/explicit_layer.d
+count_src() {
+    find src/ -type f -exec wc -l {} + | sort -h
+}
+
+#export LD_LIBRARY_PATH=$HOME/source_packages/1.2.141.2/x86_64/lib
+#export VK_LAYER_PATH=$HOME/source_packages/1.2.141.2/x86_64/etc/vulkan/explicit_layer.d
+#export PATH=$PATH:$HOME/source_packages/1.2.141.2/x86_64/bin/
 export PATH=$PATH:$HOME/source_packages/
+source $HOME/source_packages/1.2.141.2/setup-env.sh

@@ -40,7 +40,7 @@ font pango:Fantasque Sans Mono 11
 
 # Border options
 new_window none
-gaps inner 8 
+gaps inner 6 
 gaps outer 0 
 smart_gaps on
 smart_borders on

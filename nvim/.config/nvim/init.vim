@@ -69,20 +69,30 @@ let g:cpp_class_decl_highlight = 1
 " LaTeXmk
 let g:vimtex_latexmk_options = '-pdf -shell-escape -verbose -file-line-error -synctex=1 -interaction=nonstopmode'
 let g:vimtex_view_general_viewer = 'evince'
+let g:tex_flavor = 'latex'
+
+" Markdown
+let g:markdown_fenced_languages = ['rust', 'python']
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 
 " nvim-lsp
-lua require'nvim_lsp'.rust_analyzer.setup({})
+lua << EOF
+require'nvim_lsp'.rust_analyzer.setup{
+    settings = {
+    }
+}
+EOF
+
 lua require'nvim_lsp'.pyls.setup({})
 autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
 autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
 "set completeopt=menu,preview,noinsert
 
 nnoremap <silent> <F2>  <cmd>lua vim.lsp.buf.rename()<CR>
-nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> <c-]>    <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
 "nnoremap <silent> <c-k>     <cmd>lua vim.lsp.buf.signature_help()<CR>
