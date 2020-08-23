@@ -28,6 +28,8 @@ set foldmethod=syntax "Allow folding
 set nofoldenable "But don't do it by default
 set noruler "Don't display extra ruler cruft by default
 "set cursorline
+set inccommand=nosplit "Show matches while I'm writing a regex
+"set inccommand=split "Show matches while I'm writing a regex
 
 " Use CTRL+HJKL keys to navigate buffers
 map <C-k> <C-w><Up>
@@ -72,7 +74,7 @@ let g:vimtex_view_general_viewer = 'evince'
 let g:tex_flavor = 'latex'
 
 " Markdown
-let g:markdown_fenced_languages = ['rust', 'python']
+let g:markdown_fenced_languages = ['rust', 'python', 'glsl']
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
