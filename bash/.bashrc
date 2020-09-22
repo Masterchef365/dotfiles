@@ -126,8 +126,13 @@ git-shortlog() {
     git log --branches=* --graph --pretty=oneline --abbrev-commit
 }
 
-count_src() {
+count-src() {
     find src/ -type f -exec wc -l {} + | sort -h
+}
+
+git-clean() {
+    # git gc --aggressive --prune # Linus says no https://gcc.gnu.org/legacy-ml/gcc/2007-12/msg00165.html
+    git repack -a -d --depth=250 --window=250
 }
 
 #export LD_LIBRARY_PATH=$HOME/source_packages/1.2.141.2/x86_64/lib

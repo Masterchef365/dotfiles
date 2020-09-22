@@ -42,7 +42,7 @@ font pango:Fantasque Sans Mono 11
 new_window none
 gaps inner 6 
 gaps outer 0 
-smart_gaps on
+#smart_gaps on
 smart_borders on
 for_window [class="^.*"] border pixel 1
 
@@ -173,4 +173,5 @@ exec xrandr --dpi 220
 exec --no-startup-id mpd
 #exec --no-startup-id compton
 exec_always hsetroot -solid "$color0"
+#exec_always hsetroot -fill "/home/duncan/Media/gol_background.png"
 exec --no-startup-id redshift
