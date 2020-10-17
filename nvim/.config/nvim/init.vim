@@ -88,6 +88,8 @@ require'nvim_lsp'.rust_analyzer.setup{
 EOF
 
 lua require'nvim_lsp'.pyls.setup({})
+lua require'nvim_lsp'.clangd.setup({})
+
 autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
 autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
 "set completeopt=menu,preview,noinsert

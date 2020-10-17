@@ -61,7 +61,6 @@ alias pacman='sudo pacman'
 
 # Rust paths
 source ~/.cargo/env
-export RUST_SRC_PATH="/home/duncan/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 
 # Python startup script
 export PYTHONSTARTUP="$HOME/.config/pythonrc.py"
@@ -139,4 +138,5 @@ git-clean() {
 #export VK_LAYER_PATH=$HOME/source_packages/1.2.141.2/x86_64/etc/vulkan/explicit_layer.d
 #export PATH=$PATH:$HOME/source_packages/1.2.141.2/x86_64/bin/
 export PATH=$PATH:$HOME/source_packages/
+export PATH=$PATH:/home/duncan/source_packages/renderdoc_1.9/bin/
 source $HOME/source_packages/1.2.141.2/setup-env.sh
