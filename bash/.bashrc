@@ -134,6 +134,10 @@ git-clean() {
     git repack -a -d --depth=250 --window=250
 }
 
+clipcount() {
+    xclip -selection c -o | wc -w
+}
+
 #export LD_LIBRARY_PATH=$HOME/source_packages/1.2.141.2/x86_64/lib
 #export VK_LAYER_PATH=$HOME/source_packages/1.2.141.2/x86_64/etc/vulkan/explicit_layer.d
 #export PATH=$PATH:$HOME/source_packages/1.2.141.2/x86_64/bin/
