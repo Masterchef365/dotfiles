@@ -138,9 +138,16 @@ clipcount() {
     xclip -selection c -o | wc -w
 }
 
+mp42gif() {
+    ffmpeg -i $1 -vf "split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 $(basename -s .mp4 $1).gif
+}
+
+update_ra() {
+    curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-linux -o ~/.local/bin/rust-analyzer
+    chmod +x ~/.local/bin/rust-analyzer
+}
+
 #export LD_LIBRARY_PATH=$HOME/source_packages/1.2.141.2/x86_64/lib
 #export VK_LAYER_PATH=$HOME/source_packages/1.2.141.2/x86_64/etc/vulkan/explicit_layer.d
-#export PATH=$PATH:$HOME/source_packages/1.2.141.2/x86_64/bin/
 export PATH=$PATH:$HOME/source_packages/
-export PATH=$PATH:/home/duncan/source_packages/renderdoc_1.9/bin/
 source $HOME/source_packages/1.2.141.2/setup-env.sh

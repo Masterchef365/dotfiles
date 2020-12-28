@@ -8,8 +8,9 @@ Plug 'rust-lang/rust.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/deoplete-lsp'
 Plug 'lervag/vimtex'
-Plug 'neovim/nvim-lsp'
+Plug 'neovim/nvim-lspconfig'
 Plug 'tikhomirov/vim-glsl'
+Plug 'cespare/vim-toml'
 
 call plug#end()
 
@@ -80,19 +81,14 @@ let g:markdown_fenced_languages = ['rust', 'python', 'glsl', 'c', 'cpp']
 let g:deoplete#enable_at_startup = 1
 
 " nvim-lsp
-lua << EOF
-require'nvim_lsp'.rust_analyzer.setup{
-    settings = {
-    }
-}
-EOF
-
-lua require'nvim_lsp'.pyls.setup({})
-lua require'nvim_lsp'.clangd.setup({})
+lua require'lspconfig'.rust_analyzer.setup({})
+lua require'lspconfig'.pyls.setup({})
+lua require'lspconfig'.clangd.setup({})
 
 autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
 autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
-"set completeopt=menu,preview,noinsert
+
+set completeopt=menu,noinsert " Don't pop up the preview menu!
 
 nnoremap <silent> <F2>  <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <c-]>    <cmd>lua vim.lsp.buf.declaration()<CR>
@@ -104,3 +100,6 @@ nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
 nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+
+packadd termdebug "Enable terminal-debug
+let termdebugger = "rust-gdb" "Use rust-gdb instead of default gdb
