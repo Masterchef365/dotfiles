@@ -88,7 +88,7 @@ lua require'lspconfig'.clangd.setup({})
 autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
 autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
-set completeopt=menu,noinsert " Don't pop up the preview menu!
+set completeopt=menu " Don't pop up the preview menu!
 
 nnoremap <silent> <F2>  <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <c-]>    <cmd>lua vim.lsp.buf.declaration()<CR>
