@@ -35,7 +35,8 @@ PIN_DIR=$HOME/.pins
 d() {
 	case "$1" in 
 		"") xargs -a "$PIN_DIR" basename -a | cat -n ;;
-		[0-9]*) cd $(sed "$1q;d" "$PIN_DIR") ;;
+		"e") sed "$2q;d" "$PIN_DIR" ;;
+		[0-9]*) cd $(d e $1) ;;
 		"del") sed -i "$2d" "$PIN_DIR" ;;
 		"p") pwd >> $PIN_DIR ;;
 	esac
