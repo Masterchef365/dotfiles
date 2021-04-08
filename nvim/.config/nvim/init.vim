@@ -75,7 +75,7 @@ let g:vimtex_view_general_viewer = 'evince'
 let g:tex_flavor = 'latex'
 
 " Markdown
-let g:markdown_fenced_languages = ['rust', 'python', 'glsl', 'c', 'cpp']
+let g:markdown_fenced_languages = ['rust', 'python', 'glsl', 'c', 'cpp', 'toml']
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
