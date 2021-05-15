@@ -31,7 +31,6 @@ set noruler "Don't display extra ruler cruft by default
 "set cursorline
 set inccommand=nosplit "Show matches while I'm writing a regex
 "set inccommand=split "Show matches while I'm writing a regex
-set ft=markdown "Default file type is Markdown, because it's what I use for notes
 
 " Use CTRL+HJKL keys to navigate buffers
 map <C-k> <C-w><Up>
@@ -104,3 +103,5 @@ nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 
 packadd termdebug "Enable terminal-debug
 let termdebugger = "rust-gdb" "Use rust-gdb instead of default gdb
+
+set ft=markdown "Default file type is Markdown, because it's what I use for notes
