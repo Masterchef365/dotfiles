@@ -24,6 +24,7 @@ alias la='ls -a'
 alias ll='ls -lh'
 alias tree='tree -C'
 alias cd..='cd ..'
+alias mv='mv -i' # Let's not learn this the hard way
 
 # Bad habits
 function cd () {
@@ -153,4 +154,5 @@ update_ra() {
 #export LD_LIBRARY_PATH=$HOME/source_packages/1.2.141.2/x86_64/lib
 #export VK_LAYER_PATH=$HOME/source_packages/1.2.141.2/x86_64/etc/vulkan/explicit_layer.d
 export PATH=$PATH:$HOME/source_packages/
-source $HOME/source_packages/1.2.141.2/setup-env.sh
+#source $HOME/source_packages/1.2.141.2/setup-env.sh
+source $HOME/source_packages/1.2.182.0/setup-env.sh
