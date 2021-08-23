@@ -153,14 +153,14 @@ bindsym $mod+i exec i3lock-fancy -pf "Fantasque-Sans-Mono-Regular"
 bar {
     colors {
         background  $colorbg
-        statusline  $color15
+        statusline  $colorfg
         separator   $colorbg
 
         #block_colors       backgr.   border    text
         focused_workspace   $color4  $color4  $colorbg
-        active_workspace    $color4  $color4  $colorbg
-        inactive_workspace  $colorbg  $colorbg  $color15
-        urgent_workspace    $color9   $color9   $color15
+        active_workspace    $color4  $color4  $colorfg
+        inactive_workspace  $colorbg  $colorbg  $colorfg
+        urgent_workspace    $color9   $color9   $colorfg
     }
     tray_output none
     position top
@@ -172,6 +172,6 @@ bar {
 exec xrandr --dpi 220
 exec --no-startup-id mpd
 #exec --no-startup-id compton
-exec_always hsetroot -solid "$color0"
-exec_always hsetroot -fill ~/.local/share/background.jpg
+exec_always hsetroot -solid "$colorbg"
+#exec_always hsetroot -fill ~/.local/share/background.jpg
 exec --no-startup-id redshift
