@@ -151,6 +151,12 @@ update_ra() {
     chmod +x ~/.local/bin/rust-analyzer
 }
 
+backup() {
+    rsync -av --info=progress2 ~/Projects /media/extdisk/ $@
+    rsync -av --info=progress2 ~/Media /media/extdisk/ $@
+    rsync -av --info=progress2 ~/Notes /media/extdisk/ $@
+}
+
 #export LD_LIBRARY_PATH=$HOME/source_packages/1.2.141.2/x86_64/lib
 #export VK_LAYER_PATH=$HOME/source_packages/1.2.141.2/x86_64/etc/vulkan/explicit_layer.d
 export PATH=$PATH:$HOME/source_packages/

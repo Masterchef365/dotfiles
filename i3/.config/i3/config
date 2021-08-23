@@ -173,5 +173,5 @@ exec xrandr --dpi 220
 exec --no-startup-id mpd
 #exec --no-startup-id compton
 exec_always hsetroot -solid "$color0"
-#exec_always hsetroot -fill "/home/duncan/Media/gol_background.png"
+exec_always hsetroot -fill ~/.local/share/background.jpg
 exec --no-startup-id redshift
