@@ -162,7 +162,7 @@ bar {
         inactive_workspace  $colorbg  $colorbg  $color15
         urgent_workspace    $color9   $color9   $color15
     }
-    tray_output none
+    #tray_output none
     position top
     font pango:Fantasque Sans Mono 11
     status_command i3status
