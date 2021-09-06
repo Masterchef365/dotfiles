@@ -157,6 +157,11 @@ backup() {
     rsync -av --info=progress2 ~/Notes /media/extdisk/ $@
 }
 
+theme() {
+    xrdb ~/.Xresources
+    i3-msg restart
+}
+
 #export LD_LIBRARY_PATH=$HOME/source_packages/1.2.141.2/x86_64/lib
 #export VK_LAYER_PATH=$HOME/source_packages/1.2.141.2/x86_64/etc/vulkan/explicit_layer.d
 export PATH=$PATH:$HOME/source_packages/

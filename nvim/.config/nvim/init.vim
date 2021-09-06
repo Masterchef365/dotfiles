@@ -81,7 +81,7 @@ let g:markdown_fenced_languages = ['rust', 'python', 'glsl', 'c', 'cpp', 'toml',
 let g:deoplete#enable_at_startup = 1
 
 " nvim-lsp
-lua require'lspconfig'.pyls.setup({})
+lua require'lspconfig'.pylsp.setup({})
 lua require'lspconfig'.clangd.setup({})
 
 lua << EOF
