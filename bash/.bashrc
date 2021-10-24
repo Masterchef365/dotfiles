@@ -166,7 +166,10 @@ theme() {
 #export VK_LAYER_PATH=$HOME/source_packages/1.2.141.2/x86_64/etc/vulkan/explicit_layer.d
 export PATH=$PATH:$HOME/source_packages/
 #source $HOME/source_packages/1.2.141.2/setup-env.sh
-source $HOME/source_packages/1.2.182.0/setup-env.sh
+vk_setup="$HOME/source_packages/1.2.182.0/setup-env.sh"
+if [[ -f $vk_setup ]]; then
+    source $vk_setup
+fi
 
 export HISTSIZE=10000
 export HISTFILESIZE=10000
