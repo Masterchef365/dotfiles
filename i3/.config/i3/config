@@ -3,7 +3,7 @@
 # ----------------------- Defines/Variables -----------------------
 
 # Set the modifier key, set floating modifier to the same
-set $mod Mod4
+set $mod Mod1
 floating_modifier $mod
 
 # Xresources
@@ -136,8 +136,8 @@ bindsym XF86AudioMute exec mpc toggle
 bindsym XF86KbdBrightnessUp exec --no-startup-id kbdlight up 5
 bindsym XF86KbdBrightnessDown exec --no-startup-id kbdlight down 5
 
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 1
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 1
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 
 bindsym XF86AudioPrev exec mpc prev
 bindsym XF86AudioPlay exec mpc toggle
@@ -173,5 +173,6 @@ exec xrandr --dpi 220
 exec --no-startup-id mpd
 #exec --no-startup-id compton
 exec_always hsetroot -solid "$color0"
-exec_always hsetroot -fill ~/.local/share/background.jpg
-exec --no-startup-id redshift
+#exec_always hsetroot -fill ~/.local/share/background.jpg
+#exec --no-startup-id redshift
+exec bash -c "redshift -l $(cat $HOME/.location.txt)"

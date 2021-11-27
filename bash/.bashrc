@@ -64,7 +64,9 @@ alias pacaur='yay'
 	. /usr/share/bash-completion/bash_completion
 
 # Rust paths
-source ~/.cargo/env
+if [[ -f ~/.cargo/env ]]; then
+	source ~/.cargo/env
+fi
 
 # Python startup script
 export PYTHONSTARTUP="$HOME/.config/pythonrc.py"
@@ -173,3 +175,4 @@ fi
 
 export HISTSIZE=10000
 export HISTFILESIZE=10000
+. "$HOME/.cargo/env"
