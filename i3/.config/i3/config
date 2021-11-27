@@ -127,8 +127,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # ----------------------- Multimedia Keys -----------------------
-bindsym XF86AudioRaiseVolume exec mpc volume +5
-bindsym XF86AudioLowerVolume exec mpc volume -5
+bindsym XF86AudioRaiseVolume exec pamixer -i 5
+bindsym XF86AudioLowerVolume exec pamixer -d 5
 
 bindsym XF86LaunchA exec "i3-nagbar -t warning -m 'Dude just close the lid lol'"
 bindsym XF86AudioMute exec mpc toggle
@@ -176,3 +176,4 @@ exec_always hsetroot -solid "$color0"
 #exec_always hsetroot -fill ~/.local/share/background.jpg
 #exec --no-startup-id redshift
 exec bash -c "redshift -l $(cat $HOME/.location.txt)"
+exec pulseaudio
