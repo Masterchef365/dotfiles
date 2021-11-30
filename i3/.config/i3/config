@@ -31,11 +31,11 @@ set_from_resource $color15 i3wm.color15  #ff00ff
 # ----------------------- Style options -----------------------
 
 #Window_colors           backgr.   border    text      indicator
-client.focused           $colorbg  $color1  $colorbg  $colorbg
+client.focused           $colorbg  $color4  $colorbg  $colorbg
 client.focused_inactive  $colorbg  $colorbg  $colorfg  $colorbg
-client.unfocused         $colorbg  $colorbg  $color1  $colorbg
-client.urgent            $colorbg  $colorbg  $color1  $colorbg
-client.placeholder       $colorbg  $colorbg  $color1  $colorbg
+client.unfocused         $colorbg  $colorbg  $color4  $colorbg
+client.urgent            $colorbg  $colorbg  $color4  $colorbg
+client.placeholder       $colorbg  $colorbg  $color4  $colorbg
 
 # Font config
 font pango: Fantasque Sans Mono 13
@@ -158,8 +158,8 @@ bar {
         separator   $colorbg
 
         #block_colors       backgr.   border    text
-        focused_workspace   $color1  $color1  $colorbg
-        active_workspace    $color1  $color1  $colorbg
+        focused_workspace   $color4  $color4  $colorbg
+        active_workspace    $color4  $color4  $colorbg
         inactive_workspace  $colorbg  $colorbg  $color15
         urgent_workspace    $color9   $color9   $color15
     }
