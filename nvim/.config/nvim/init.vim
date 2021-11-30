@@ -4,12 +4,13 @@ call plug#begin('~/.config/nvim/bundle')
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rust-lang/rust.vim'
 Plug 'cstrahan/vim-capnp'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/deoplete-lsp'
+Plug 'tikhomirov/vim-glsl'
 
 " Completion engines/Compiler integration
 Plug 'lervag/vimtex'
 Plug 'neovim/nvim-lsp'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Shougo/deoplete-lsp'
 
 call plug#end()
 
@@ -25,6 +26,7 @@ set mouse=a " Allow use of the mouse (Sometimes it's nice, okay?!)
 set hidden "Allow multiple buffers
 set clipboard=unnamedplus "Use the system clipboard
 set foldmethod=syntax "Allow folding
+set inccommand=nosplit "Show matches while I'm writing a regex
 set nofoldenable "But don't do it by default
 set noruler "Don't display extra ruler cruft by default
 "set cursorline
@@ -69,23 +71,27 @@ let g:cpp_class_decl_highlight = 1
 " LaTeXmk
 let g:vimtex_latexmk_options = '-pdf -shell-escape -verbose -file-line-error -synctex=1 -interaction=nonstopmode'
 let g:vimtex_view_general_viewer = 'evince'
+let g:tex_flavor = 'latex'
+
+" Markdown
+let g:markdown_fenced_languages = ['rust', 'python', 'glsl', 'sh', 'cpp', 'c']
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 
 " nvim-lsp
-lua require'nvim_lsp'.rust_analyzer.setup({})
-lua require'nvim_lsp'.pyls.setup({})
+lua require'lspconfig'.rust_analyzer.setup({})
+lua require'lspconfig'.pyls.setup({})
 autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
 autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
-"set completeopt=menu,preview,noinsert
+set completeopt-=preview
 
+""nnoremap <silent> <c-k>     <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> <F2>  <cmd>lua vim.lsp.buf.rename()<CR>
-nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> <c-]>    <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
-"nnoremap <silent> <c-k>     <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
 nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>

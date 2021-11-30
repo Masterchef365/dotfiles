@@ -35,7 +35,8 @@ PIN_DIR=$HOME/.pins
 d() {
 	case "$1" in 
 		"") xargs -a "$PIN_DIR" basename -a | cat -n ;;
-		[0-9]*) cd $(sed "$1q;d" "$PIN_DIR") ;;
+		"e") sed "$2q;d" "$PIN_DIR" ;;
+		[0-9]*) cd $(d e $1) ;;
 		"del") sed -i "$2d" "$PIN_DIR" ;;
 		"p") pwd >> $PIN_DIR ;;
 	esac
@@ -55,13 +56,15 @@ man() {
 # Pacman
 alias pacman='sudo pacman'
 
+# Clipboard
+alias xc='xclip -selection c'
+
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
 	. /usr/share/bash-completion/bash_completion
 
 # Rust paths
 source ~/.cargo/env
-export RUST_SRC_PATH="/home/duncan/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 
 # Cuda path
 export PATH=$PATH:/usr/local/cuda-10.0/bin/
@@ -71,7 +74,7 @@ export GOPATH=$HOME/.go
 
 # Source package paths
 export PATH=$PATH:/home/duncan/source_packages
-export PATH=$PATH:/home/duncan/Projects/geoprofile/tools/target/release/
+export PATH=$PATH:$HOME/Projects/geoprofile/tools/target/release/
 
 # Use terminal for GPG pin entry
 export GPG_TTY=$(tty)
@@ -132,4 +135,40 @@ no_dpms() {
 
 git-shortlog() {
     git log --branches=* --graph --pretty=oneline --abbrev-commit
+}
+
+# https://unix.stackexchange.com/questions/291282/have-tree-hide-gitignored-files
+tree-git-ignore() {
+    local ignored=$(git ls-files -ci --others --directory --exclude-standard)
+    local ignored_filter=$(echo "$ignored" \
+                    | egrep -v "^#.*$|^[[:space:]]*$" \
+                    | sed 's~^/~~' \
+                    | sed 's~/$~~' \
+                    | tr "\\n" "|")
+    tree --prune -I ".git|${ignored_filter: : -1}" "$@"
+}
+
+export LD_LIBRARY_PATH=$HOME/source_packages/vulkan_sdk/x86_64/lib
+export VK_LAYER_PATH=$HOME/source_packages/vulkan_sdk/x86_64/etc/vulkan/explicit_layer.d
+export PATH=$PATH:$HOME/source_packages/vulkan_sdk/x86_64/bin/
+
+god() {
+    echo "sorry bud"
+}
+
+start_conda() {
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/home/duncan/.anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/home/duncan/.anaconda3/etc/profile.d/conda.sh" ]; then
+            . "/home/duncan/.anaconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/home/duncan/.anaconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
 }
