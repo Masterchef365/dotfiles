@@ -31,6 +31,7 @@ set noruler "Don't display extra ruler cruft by default
 "set cursorline
 set inccommand=nosplit "Show matches while I'm writing a regex
 "set inccommand=split "Show matches while I'm writing a regex
+nnoremap Y Y
 
 " Use CTRL+HJKL keys to navigate buffers
 map <C-k> <C-w><Up>
