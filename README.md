@@ -6,7 +6,7 @@ stow */
 How cool is that?
 
 ## Ideapad
-From [](https://wiki.archlinux.org/title/Laptop/Lenovo#IdeaPad)
+From https://wiki.archlinux.org/title/Laptop/Lenovo#IdeaPad
 
 Modify `/etc/default/grub`:
 ```
@@ -15,7 +15,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet i8042.direct i8042.dumbkbd i915.ena
 
 ## Connman
 ### Disallowing annoying hostname updates
-From [](https://wiki.archlinux.org/title/ConnMan#Avoid_changing_the_hostname)
+From https://wiki.archlinux.org/title/ConnMan#Avoid_changing_the_hostname
 
 Edit `/etc/connman/main.conf`:
 ```
@@ -24,7 +24,7 @@ AllowHostnameUpdates = false
 ```
 
 ### Eduroam
-From [](https://wiki.archlinux.org/title/ConnMan#Connecting_to_eduroam_(802.1X))
+From https://wiki.archlinux.org/title/ConnMan#Connecting_to_eduroam_(802.1X)
 
 Create `/var/lib/connman/eduroam.config`:
 ```
@@ -44,7 +44,7 @@ systemctl --user enable pulseaudio
 ```
 
 ## Intel graphics tearing
-From: [](https://wiki.archlinux.org/title/Intel_graphics#Tearing)
+From: https://wiki.archlinux.org/title/Intel_graphics#Tearing
 
 Create `/usr/share/X11/xorg.conf.d/20-intel.conf`:
 ```
