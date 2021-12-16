@@ -177,4 +177,3 @@ exec_always hsetroot -solid "$color0"
 #exec_always hsetroot -fill ~/.local/share/background.jpg
 #exec --no-startup-id redshift
 exec bash -c "redshift -l $(cat $HOME/.location.txt)"
-exec pulseaudio
