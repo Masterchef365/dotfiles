@@ -81,7 +81,7 @@ let g:deoplete#enable_at_startup = 1
 
 " nvim-lsp
 lua require'lspconfig'.rust_analyzer.setup({})
-lua require'lspconfig'.pyls.setup({})
+lua require'lspconfig'.pylsp.setup({})
 autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
 autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
 set completeopt-=preview
