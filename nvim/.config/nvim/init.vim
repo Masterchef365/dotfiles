@@ -3,14 +3,14 @@ call plug#begin('~/.config/nvim/bundle')
 " Syntax highlighting/UI colors
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rust-lang/rust.vim'
-Plug 'cstrahan/vim-capnp'
-Plug 'tikhomirov/vim-glsl'
 
 " Completion engines/Compiler integration
-Plug 'lervag/vimtex'
-Plug 'neovim/nvim-lsp'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'Shougo/deoplete-lsp'
+Plug 'Shougo/deoplete-lsp'
+Plug 'lervag/vimtex'
+Plug 'neovim/nvim-lspconfig'
+Plug 'tikhomirov/vim-glsl'
+Plug 'cespare/vim-toml'
 
 call plug#end()
 
@@ -26,10 +26,12 @@ set mouse=a " Allow use of the mouse (Sometimes it's nice, okay?!)
 set hidden "Allow multiple buffers
 set clipboard=unnamedplus "Use the system clipboard
 set foldmethod=syntax "Allow folding
-set inccommand=nosplit "Show matches while I'm writing a regex
 set nofoldenable "But don't do it by default
 set noruler "Don't display extra ruler cruft by default
 "set cursorline
+set inccommand=nosplit "Show matches while I'm writing a regex
+"set inccommand=split "Show matches while I'm writing a regex
+nnoremap Y Y
 
 " Use CTRL+HJKL keys to navigate buffers
 map <C-k> <C-w><Up>
@@ -69,30 +71,61 @@ let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 
 " LaTeXmk
-let g:vimtex_latexmk_options = '-pdf -shell-escape -verbose -file-line-error -synctex=1 -interaction=nonstopmode'
+"let g:vimtex_latexmk_options = '-pdf -shell-escape -verbose -file-line-error -synctex=1 -interaction=nonstopmode'
 let g:vimtex_view_general_viewer = 'evince'
 let g:tex_flavor = 'latex'
 
 " Markdown
-let g:markdown_fenced_languages = ['rust', 'python', 'glsl', 'sh', 'cpp', 'c']
+let g:markdown_fenced_languages = ['sh', 'rust', 'python', 'glsl', 'c', 'cpp', 'toml', 'lua']
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 
 " nvim-lsp
-lua require'lspconfig'.rust_analyzer.setup({})
 lua require'lspconfig'.pylsp.setup({})
+lua require'lspconfig'.clangd.setup({})
+
+lua << EOF
+local nvim_lsp = require'lspconfig'
+-- local on_attach = function(client)
+--     require'completion'.on_attach(client)
+-- end
+nvim_lsp.rust_analyzer.setup({
+    -- on_attach=on_attach,
+    settings = {
+        ["rust-analyzer"] = {
+            assist = {
+                importGranularity = "module",
+                importPrefix = "by_self",
+            },
+            cargo = {
+                loadOutDirsFromCheck = true
+            },
+            procMacro = {
+                enable = true
+            },
+        }
+    }
+})
+EOF
+
 autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
 autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
-set completeopt-=preview
 
-""nnoremap <silent> <c-k>     <cmd>lua vim.lsp.buf.signature_help()<CR>
+set completeopt=menu " Don't pop up the preview menu!
+
 nnoremap <silent> <F2>  <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <c-]>    <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+"nnoremap <silent> <c-k>     <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
 nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+
+packadd termdebug "Enable terminal-debug
+let termdebugger = "rust-gdb" "Use rust-gdb instead of default gdb
+
+set ft=markdown "Default file type is Markdown, because it's what I use for notes
