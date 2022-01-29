@@ -69,9 +69,24 @@ tnoremap <Esc> <C-\><C-n>
 " Vim C++ Enhanced Highlighting
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
+let g:vimtex_compiler_method = 'latexmk'
 
-" LaTeXmk
-"let g:vimtex_latexmk_options = '-pdf -shell-escape -verbose -file-line-error -synctex=1 -interaction=nonstopmode'
+let g:vimtex_compiler_latexmk = {
+    \ 'build_dir' : '',
+    \ 'callback' : 1,
+    \ 'continuous' : 1,
+    \ 'executable' : 'latexmk',
+    \ 'hooks' : [],
+    \ 'options' : [
+    \   '-shell-escape',
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
+
+" Vimtex
 let g:vimtex_view_general_viewer = 'evince'
 let g:tex_flavor = 'latex'
 
