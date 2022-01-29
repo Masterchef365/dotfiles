@@ -31,6 +31,7 @@ set noruler "Don't display extra ruler cruft by default
 "set cursorline
 set inccommand=nosplit "Show matches while I'm writing a regex
 "set inccommand=split "Show matches while I'm writing a regex
+nnoremap Y Y
 
 " Use CTRL+HJKL keys to navigate buffers
 map <C-k> <C-w><Up>
@@ -68,14 +69,29 @@ tnoremap <Esc> <C-\><C-n>
 " Vim C++ Enhanced Highlighting
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
+let g:vimtex_compiler_method = 'latexmk'
 
-" LaTeXmk
-let g:vimtex_latexmk_options = '-pdf -shell-escape -verbose -file-line-error -synctex=1 -interaction=nonstopmode'
+let g:vimtex_compiler_latexmk = {
+    \ 'build_dir' : '',
+    \ 'callback' : 1,
+    \ 'continuous' : 1,
+    \ 'executable' : 'latexmk',
+    \ 'hooks' : [],
+    \ 'options' : [
+    \   '-shell-escape',
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
+
+" Vimtex
 let g:vimtex_view_general_viewer = 'evince'
 let g:tex_flavor = 'latex'
 
 " Markdown
-let g:markdown_fenced_languages = ['rust', 'python', 'glsl', 'c', 'cpp', 'toml', 'lua']
+let g:markdown_fenced_languages = ['sh', 'rust', 'python', 'glsl', 'c', 'cpp', 'toml', 'lua']
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
