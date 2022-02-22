@@ -148,6 +148,10 @@ mp42gif() {
     ffmpeg -i $1 -vf "split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 $(basename -s .mp4 $1).gif
 }
 
+http() {
+    python -m http.server
+}
+
 update_ra() {
     curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
     chmod +x ~/.local/bin/rust-analyzer

@@ -53,6 +53,10 @@ nnoremap <expr> k v:count ? 'k' : 'gk'
 " Easy search-replace under cursor when \s is hit
 nnoremap <Leader>s :%s:\<<C-r><C-w>\>:
 
+" Open crate name under keycode
+nnoremap <Leader>d :!xdg-open 'https://docs.rs/<C-r><C-w>'
+nnoremap <Leader>c :!xdg-open 'https://crates.io/crates/<C-r><C-w>'
+
 " Cursor shape changes based on mode
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 
