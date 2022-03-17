@@ -8,6 +8,9 @@ export PS1="\[\e[93m\] \w \[\e[39m\]"
 # Use .inputrc
 export INPUTRC=~/.inputrc
 
+# Use a big history file. I don't want to have to remember!
+export HISTFILESIZE=25000
+
 # Use the best editor
 export EDITOR='nvim'
 alias vim=$EDITOR
@@ -146,6 +149,10 @@ tree-git-ignore() {
                     | sed 's~/$~~' \
                     | tr "\\n" "|")
     tree --prune -I ".git|${ignored_filter: : -1}" "$@"
+}
+
+boardnas() {
+    cd $(echo "$1" | sed -e 's:\\:/:g' -e 's:boardnas/Packages:/media/boardnas:')
 }
 
 export LD_LIBRARY_PATH=$HOME/source_packages/vulkan_sdk/x86_64/lib

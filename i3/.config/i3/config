@@ -172,7 +172,7 @@ bar {
 # ----------------------- Post-WM commands -----------------------
 exec redshift -l geoclue2
 exec --no-startup-id mpd
-exec --no-startup-id compton --config /dev/null --vsync opengl-swc --backend glx
+#exec --no-startup-id compton --config /dev/null --vsync opengl-swc --backend glx
 exec setxkbmap -option caps:escape
 exec sh /home/duncan/.screenlayout/layout.sh
-exec_always hsetroot -solid "$color0"
+#exec_always hsetroot -solid "$color0"
