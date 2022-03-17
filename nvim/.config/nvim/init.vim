@@ -5,12 +5,11 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rust-lang/rust.vim'
 
 " Completion engines/Compiler integration
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/deoplete-lsp'
-Plug 'lervag/vimtex'
-Plug 'neovim/nvim-lspconfig'
-Plug 'tikhomirov/vim-glsl'
-Plug 'cespare/vim-toml'
+Plug 'neovim/nvim-lspconfig' " Collection of configurations for built-in LSP client
+Plug 'hrsh7th/nvim-cmp' " Autocompletion plugin
+Plug 'hrsh7th/cmp-nvim-lsp' " LSP source for nvim-cmp
+Plug 'saadparwaiz1/cmp_luasnip' " Snippets source for nvim-cmp
+Plug 'L3MON4D3/LuaSnip' " Snippets plugin
 
 call plug#end()
 
@@ -32,6 +31,7 @@ set noruler "Don't display extra ruler cruft by default
 set inccommand=nosplit "Show matches while I'm writing a regex
 "set inccommand=split "Show matches while I'm writing a regex
 nnoremap Y Y
+set ft=markdown "Default file type is Markdown, because it's what I use for notes
 
 " Use CTRL+HJKL keys to navigate buffers
 map <C-k> <C-w><Up>
@@ -78,41 +78,103 @@ let g:tex_flavor = 'latex'
 " Markdown
 let g:markdown_fenced_languages = ['sh', 'rust', 'python', 'glsl', 'c', 'cpp', 'toml', 'lua']
 
-" Deoplete
-let g:deoplete#enable_at_startup = 1
+lua <<EOF
+-- Add additional capabilities supported by nvim-cmp
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-" nvim-lsp
-lua require'lspconfig'.pylsp.setup({})
-lua require'lspconfig'.clangd.setup({})
+local lspconfig = require('lspconfig')
 
-lua << EOF
-local nvim_lsp = require'lspconfig'
--- local on_attach = function(client)
---     require'completion'.on_attach(client)
--- end
-nvim_lsp.rust_analyzer.setup({
-    -- on_attach=on_attach,
-    settings = {
-        ["rust-analyzer"] = {
-            assist = {
-                importGranularity = "module",
-                importPrefix = "by_self",
-            },
-            cargo = {
-                loadOutDirsFromCheck = true
-            },
-            procMacro = {
-                enable = true
-            },
-        }
-    }
-})
+-- Enable some language servers with the additional completion capabilities offered by nvim-cmp
+local servers = { 'rust_analyzer', 'clangd', 'pylsp' }
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    -- on_attach = my_custom_on_attach,
+    capabilities = capabilities,
+  }
+end
+
+-- luasnip setup
+local luasnip = require 'luasnip'
+
+-- nvim-cmp setup
+local cmp = require 'cmp'
+local types = require('cmp.types')
+
+cmp.setup {
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end,
+  },
+  mapping = {
+    ['<C-p>'] = cmp.mapping.select_prev_item(),
+    ['<C-n>'] = cmp.mapping.select_next_item(),
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
+    ['<Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end,
+    ['<S-Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end,
+  },
+  sources = {
+    { name = 'nvim_lsp' },
+    -- { name = 'luasnip' },
+  },
+  -- https://github.com/hrsh7th/nvim-cmp/issues/381#issuecomment-981660945
+  -- Shows methods before snippets
+  sorting = {
+    comparators = {
+      cmp.config.compare.offset,
+      cmp.config.compare.exact,
+      cmp.config.compare.score,
+      function(entry1, entry2)
+          local kind1 = entry1:get_kind()
+          kind1 = kind1 == types.lsp.CompletionItemKind.Text and 100 or kind1
+          local kind2 = entry2:get_kind()
+          kind2 = kind2 == types.lsp.CompletionItemKind.Text and 100 or kind2
+          if kind1 ~= kind2 then
+              if kind1 == types.lsp.CompletionItemKind.Snippet then
+                  return false
+              end
+              if kind2 == types.lsp.CompletionItemKind.Snippet then
+                  return true
+              end
+              local diff = kind1 - kind2
+              if diff < 0 then
+                  return true
+              elseif diff > 0 then
+                  return false
+              end
+          end
+      end,
+      cmp.config.compare.sort_text,
+      cmp.config.compare.length,
+      cmp.config.compare.order,
+    },
+  },
+}
 EOF
-
-autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
-autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
-
-set completeopt=menu " Don't pop up the preview menu!
 
 nnoremap <silent> <F2>  <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <c-]>    <cmd>lua vim.lsp.buf.declaration()<CR>
@@ -127,5 +189,3 @@ nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 
 packadd termdebug "Enable terminal-debug
 let termdebugger = "rust-gdb" "Use rust-gdb instead of default gdb
-
-set ft=markdown "Default file type is Markdown, because it's what I use for notes
