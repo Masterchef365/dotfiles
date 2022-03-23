@@ -163,6 +163,10 @@ god() {
     echo "sorry bud"
 }
 
+clip() {
+    xclip -selection c $@
+}
+
 start_conda() {
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!

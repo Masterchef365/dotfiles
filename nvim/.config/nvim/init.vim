@@ -3,6 +3,11 @@ call plug#begin('~/.config/nvim/bundle')
 " Syntax highlighting/UI colors
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rust-lang/rust.vim'
+Plug 'tikhomirov/vim-glsl'
+Plug 'cespare/vim-toml'
+
+" LaTeX
+Plug 'lervag/vimtex'
 
 " Completion engines/Compiler integration
 Plug 'neovim/nvim-lspconfig' " Collection of configurations for built-in LSP client
