@@ -168,6 +168,10 @@ theme() {
     i3-msg restart
 }
 
+clip() {
+    xclip -selection c $@
+}
+
 #export LD_LIBRARY_PATH=$HOME/source_packages/1.2.141.2/x86_64/lib
 #export VK_LAYER_PATH=$HOME/source_packages/1.2.141.2/x86_64/etc/vulkan/explicit_layer.d
 export PATH=$PATH:$HOME/source_packages/
@@ -177,6 +181,6 @@ if [[ -f $vk_setup ]]; then
     source $vk_setup
 fi
 
-export HISTSIZE=10000
-export HISTFILESIZE=10000
+export HISTSIZE=100000
+export HISTFILESIZE=100000
 . "$HOME/.cargo/env"
