@@ -148,6 +148,10 @@ mp42gif() {
     ffmpeg -i $1 -vf "split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 $(basename -s .mp4 $1).gif
 }
 
+http() {
+    python -m http.server
+}
+
 update_ra() {
     curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
     chmod +x ~/.local/bin/rust-analyzer
@@ -164,6 +168,10 @@ theme() {
     i3-msg restart
 }
 
+clip() {
+    xclip -selection c $@
+}
+
 #export LD_LIBRARY_PATH=$HOME/source_packages/1.2.141.2/x86_64/lib
 #export VK_LAYER_PATH=$HOME/source_packages/1.2.141.2/x86_64/etc/vulkan/explicit_layer.d
 export PATH=$PATH:$HOME/source_packages/
@@ -173,6 +181,6 @@ if [[ -f $vk_setup ]]; then
     source $vk_setup
 fi
 
-export HISTSIZE=10000
-export HISTFILESIZE=10000
+export HISTSIZE=100000
+export HISTFILESIZE=100000
 . "$HOME/.cargo/env"
