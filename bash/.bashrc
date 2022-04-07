@@ -27,6 +27,7 @@ alias la='ls -a'
 alias ll='ls -lh'
 alias tree='tree -C'
 alias cd..='cd ..'
+alias mv='mv -i'
 
 # Bad habits
 function cd () {
@@ -167,6 +168,11 @@ clip() {
     xclip -selection c $@
 }
 
+update_ra() {
+    curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
+    chmod +x ~/.local/bin/rust-analyzer
+}
+
 start_conda() {
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
@@ -182,4 +188,12 @@ start_conda() {
     fi
     unset __conda_setup
     # <<< conda initialize <<<
+}
+
+count_mut() {
+    bc -l <<< "$(rg 'let mut ' | wc -l) / $(rg 'let ' | wc -l)"
+}
+
+free_port() {
+    fuser -k $1
 }
