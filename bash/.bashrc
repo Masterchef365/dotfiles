@@ -156,10 +156,6 @@ boardnas() {
     cd $(echo "$1" | sed -e 's:\\:/:g' -e 's:boardnas/Packages:/media/boardnas:')
 }
 
-export LD_LIBRARY_PATH=$HOME/source_packages/vulkan_sdk/x86_64/lib
-export VK_LAYER_PATH=$HOME/source_packages/vulkan_sdk/x86_64/etc/vulkan/explicit_layer.d
-export PATH=$PATH:$HOME/source_packages/vulkan_sdk/x86_64/bin/
-
 god() {
     echo "sorry bud"
 }
@@ -197,3 +193,11 @@ count_mut() {
 free_port() {
     fuser -k $1
 }
+
+cfc() {
+    cargo fmt && git commit $@
+}
+
+export LD_LIBRARY_PATH=$HOME/source_packages/vulkan_sdk/x86_64/lib
+export VK_LAYER_PATH=$HOME/source_packages/vulkan_sdk/x86_64/etc/vulkan/explicit_layer.d
+export PATH=$PATH:$HOME/source_packages/vulkan_sdk/x86_64/bin/
