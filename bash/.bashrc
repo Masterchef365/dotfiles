@@ -16,6 +16,10 @@ export EDITOR='nvim'
 alias vim=$EDITOR
 alias emacs=$EDITOR
 
+# Python is a calculator!
+export PYTHONSTARTUP=~/.config/pythonrc.py
+alias py3=python3
+
 # Vi style line editing
 if [ ! -n "$VIMRUNTIME" ]; then
     set -o vi
