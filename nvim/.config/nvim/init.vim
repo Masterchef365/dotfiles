@@ -13,6 +13,8 @@ Plug 'lervag/vimtex'
 Plug 'neovim/nvim-lspconfig' " Collection of configurations for built-in LSP client
 Plug 'hrsh7th/nvim-cmp' " Autocompletion plugin
 Plug 'hrsh7th/cmp-nvim-lsp' " LSP source for nvim-cmp
+Plug 'hrsh7th/cmp-buffer' " LSP source for nvim-cmp
+Plug 'hrsh7th/cmp-path' " LSP source for nvim-cmp
 Plug 'saadparwaiz1/cmp_luasnip' " Snippets source for nvim-cmp
 Plug 'L3MON4D3/LuaSnip' " Snippets plugin
 
@@ -91,7 +93,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'rust_analyzer', 'clangd', 'pylsp' }
+local servers = { 'rust_analyzer', 'clangd', 'pylsp', 'texlab' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     -- on_attach = my_custom_on_attach,
@@ -144,7 +146,8 @@ cmp.setup {
   },
   sources = {
     { name = 'nvim_lsp' },
-    -- { name = 'luasnip' },
+    { name = 'buffer' },
+    { name = 'path' },
   },
   -- https://github.com/hrsh7th/nvim-cmp/issues/381#issuecomment-981660945
   -- Shows methods before snippets
