@@ -14,6 +14,7 @@ Plug 'neovim/nvim-lspconfig' " Collection of configurations for built-in LSP cli
 Plug 'hrsh7th/nvim-cmp' " Autocompletion plugin
 Plug 'hrsh7th/cmp-nvim-lsp' " LSP source for nvim-cmp
 Plug 'hrsh7th/cmp-buffer' " LSP source for nvim-cmp
+Plug 'hrsh7th/cmp-path' " LSP source for nvim-cmp
 Plug 'saadparwaiz1/cmp_luasnip' " Snippets source for nvim-cmp
 Plug 'L3MON4D3/LuaSnip' " Snippets plugin
 
@@ -146,6 +147,7 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'buffer' },
+    { name = 'path' },
   },
   -- https://github.com/hrsh7th/nvim-cmp/issues/381#issuecomment-981660945
   -- Shows methods before snippets
