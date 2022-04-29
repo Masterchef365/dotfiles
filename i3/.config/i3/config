@@ -174,8 +174,8 @@ bar {
 exec xrandr --dpi 220
 exec --no-startup-id mpd
 #exec --no-startup-id compton
-#exec_always hsetroot -solid "$color0"
-exec_always hsetroot /home/duncan/Projects/brto/out.ppm
+exec_always hsetroot -solid "$color0"
+#exec_always hsetroot /home/duncan/Projects/brto/out.ppm
 #exec_always hsetroot -fill ~/.local/share/background.jpg
 #exec --no-startup-id redshift
 exec bash -c "redshift -l $(cat $HOME/.location.txt)"
