@@ -1,17 +1,17 @@
 ! Color definitions
-#define S_background #001a21
-#define S_foreground #d9d9d9
+#define S_background #fdf6e3
+#define S_foreground #586e75
 
-#define S_color0    #00323f
+#define S_color0    #002b36
 #define S_color1    #dc322f
 #define S_color2    #859900
 #define S_color3    #b58900
 #define S_color4    #268bd2
 #define S_color5    #6c71c4
 #define S_color6    #2aa198
-#define S_color7    #8eacb7
+#define S_color7    #93a1a1
 
-#define S_color8    #2d6573
+#define S_color8    #657b83
 #define S_color9    #dc322f
 #define S_color10   #859900
 #define S_color11   #b58900
@@ -20,7 +20,7 @@
 #define S_color14   #2aa198
 #define S_color15   #fdf6e3
 
-#define S_DPI 96
+#define S_DPI 120
 
 ! Rofi Settings
 rofi.color-enabled:  true                                                        

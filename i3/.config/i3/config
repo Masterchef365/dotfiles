@@ -137,8 +137,8 @@ bindsym XF86AudioMute exec mpc toggle
 bindsym XF86KbdBrightnessUp exec --no-startup-id kbdlight up 5
 bindsym XF86KbdBrightnessDown exec --no-startup-id kbdlight down 5
 
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 1
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 1
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 
 bindsym XF86AudioPrev exec mpc prev
 bindsym XF86AudioPlay exec mpc toggle
@@ -160,12 +160,12 @@ bar {
         #block_colors       backgr.   border    text
         focused_workspace   $color4  $color4  $colorbg
         active_workspace    $color4  $color4  $colorbg
-        inactive_workspace  $colorbg  $colorbg  $color15
+        inactive_workspace  $colorbg  $colorbg  $colorfg
         urgent_workspace    $color9   $color9   $color15
     }
     tray_output none
     position top
-    font pango: Fantasque Sans Mono 14
+    font pango: Fantasque Sans Mono 13
     status_command i3status
 }
 
@@ -175,4 +175,4 @@ exec --no-startup-id mpd
 #exec --no-startup-id compton --config /dev/null --vsync opengl-swc --backend glx
 exec setxkbmap -option caps:escape
 exec sh /home/duncan/.screenlayout/layout.sh
-#exec_always hsetroot -solid "$color0"
+exec_always hsetroot -solid "$color7"
