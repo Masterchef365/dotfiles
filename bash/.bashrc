@@ -83,6 +83,7 @@ export GOPATH=$HOME/.go
 # Source package paths
 export PATH=$PATH:/home/duncan/source_packages
 export PATH=$PATH:$HOME/Projects/geoprofile/tools/target/release/
+export PATH=$PATH:$HOME/.local/bin/
 
 # Use terminal for GPG pin entry
 export GPG_TTY=$(tty)
