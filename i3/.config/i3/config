@@ -154,7 +154,7 @@ bindsym $mod+i exec i3lock-fancy -pf "Fantasque-Sans-Mono-Regular"
 bar {
     colors {
         background  $colorbg
-        statusline  $color15
+        statusline  $colorfg
         separator   $colorbg
 
         #block_colors       backgr.   border    text
