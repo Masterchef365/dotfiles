@@ -3,7 +3,11 @@
 
 # Prompt
 export PROMPT_DIRTRIM=2  
-export PS1="\[\e[93m\] \w \[\e[39m\]"
+if [ -n "$SSH_TTY" ]; then
+    export PS1="\[\e[93m\]\h \w \[\e[39m\]"
+else
+    export PS1="\[\e[93m\] \w \[\e[39m\]"
+fi
 
 # Use .inputrc
 export INPUTRC=~/.inputrc
@@ -157,8 +161,13 @@ tree-git-ignore() {
 }
 
 boardnas() {
-    cd $(echo "$1" | sed -e 's:\\:/:g' -e 's:boardnas/Packages:/media/boardnas:')
+    cd $(sed -e 's:\\:/:g' -e 's:boardnas/Packages:/media/boardnas:' <<< "$1")
 }
+
+psnas() {
+    cd $(sed -e 's:\\:/:g' -e 's:psnas/PS:/media/psnas:' <<< "$1")
+}
+
 
 god() {
     echo "sorry bud"
