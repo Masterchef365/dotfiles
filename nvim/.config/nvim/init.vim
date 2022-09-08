@@ -79,7 +79,7 @@ let g:cpp_class_decl_highlight = 1
 
 " LaTeXmk
 "let g:vimtex_latexmk_options = '-pdf -shell-escape -verbose -file-line-error -synctex=1 -interaction=nonstopmode'
-let g:vimtex_view_general_viewer = 'evince'
+let g:vimtex_view_general_viewer = 'zathura'
 let g:tex_flavor = 'latex'
 
 " Markdown

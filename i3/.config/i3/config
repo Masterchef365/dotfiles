@@ -53,7 +53,8 @@ for_window [class="^.*"] border pixel 1
 bindsym $mod+s exec dmenu -show ssh
 #bindsym $mod+a exec rofi -show window
 #bindsym $mod+d exec dmenu_run -fn "Fantasque Sans Mono" -nb "$colorbg" -nf "$colorfg"
-bindsym $mod+d exec dmenu_run -fn "Fantasque Sans Mono" -l 4
+#bindsym $mod+d exec dmenu_run -fn "Fantasque Sans Mono" -l 4
+bindsym $mod+d exec rofi -show run
 
 # Terminal
 set $terminal alacritty

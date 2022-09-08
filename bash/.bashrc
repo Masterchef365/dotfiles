@@ -153,8 +153,9 @@ http() {
 }
 
 update_ra() {
-    curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
-    chmod +x ~/.local/bin/rust-analyzer
+    pacman -S rust-analyzer
+    #curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
+    #chmod +x ~/.local/bin/rust-analyzer
 }
 
 backup() {
