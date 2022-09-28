@@ -26,6 +26,8 @@ colors:
     cyan:    '0x2aa198'
     white:   '0xfdf6e3'
 
+opacity: 0.1
+
 env:
   TERM: xterm-256color
 

@@ -13,7 +13,7 @@ fi
 export INPUTRC=~/.inputrc
 
 # Use a big history file. I don't want to have to remember!
-export HISTFILESIZE=25000
+export HISTFILESIZE=250000
 
 # Use the best editor
 export EDITOR='nvim'
@@ -80,6 +80,7 @@ source ~/.cargo/env
 
 # Cuda path
 export PATH=$PATH:/usr/local/cuda-10.0/bin/
+export PATH=$PATH:$HOME/.local/bin
 
 # Go path
 export GOPATH=$HOME/.go

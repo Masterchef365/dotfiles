@@ -51,7 +51,7 @@ for_window [class="^.*"] border pixel 2
 
 # Rofi
 bindsym $mod+s exec rofi -show ssh
-#bindsym $mod+a exec rofi -show window
+bindsym $mod+c exec rofi -show window
 bindsym $mod+d exec rofi -show run
 
 # Terminal
