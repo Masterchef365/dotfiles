@@ -17,7 +17,10 @@ Plug 'hrsh7th/cmp-buffer' " LSP source for nvim-cmp
 Plug 'hrsh7th/cmp-path' " LSP source for nvim-cmp
 Plug 'saadparwaiz1/cmp_luasnip' " Snippets source for nvim-cmp
 Plug 'L3MON4D3/LuaSnip' " Snippets plugin
+" add this line to your .vimrc file
+Plug 'rhaiscript/vim-rhai'
 
+" Plug 'jbyuki/instant.nvim'
 call plug#end()
 
 " Misc
@@ -206,3 +209,5 @@ nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 
 packadd termdebug "Enable terminal-debug
 let termdebugger = "rust-gdb" "Use rust-gdb instead of default gdb
+
+let g:instant_username = "segseg69"
