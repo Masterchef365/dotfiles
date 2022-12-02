@@ -88,7 +88,7 @@ let g:markdown_fenced_languages = ['sh', 'rust', 'python', 'glsl', 'c', 'cpp', '
 lua <<EOF
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 local lspconfig = require('lspconfig')
 
