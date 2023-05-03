@@ -173,6 +173,10 @@ clip() {
     xclip -selection c $@
 }
 
+pipewire-gui () {
+    qpwgraph 
+}
+
 #export LD_LIBRARY_PATH=$HOME/source_packages/1.2.141.2/x86_64/lib
 #export VK_LAYER_PATH=$HOME/source_packages/1.2.141.2/x86_64/etc/vulkan/explicit_layer.d
 export PATH=$PATH:$HOME/source_packages/
@@ -185,3 +189,19 @@ fi
 export HISTSIZE=100000
 export HISTFILESIZE=100000
 . "$HOME/.cargo/env"
+
+function cimvr() {
+    $HOME/Projects/chatimprovr/cimvr.py $@
+}
+
+export CIMVR_PLUGINS="$HOME/Projects/fz"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/character-controller"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/galaga"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/verlet"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/Demo-Room"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/light2d"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/particle-life/particle-life-3d"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/particle-life/particle-life-2d"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/quantum_fdm_plugin"
+export CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse
+export RUST_LOG="debug,cranelift=OFF,wasmtime=OFF"
