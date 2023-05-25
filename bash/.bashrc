@@ -12,6 +12,7 @@ export INPUTRC=~/.inputrc
 export EDITOR='nvim'
 alias vim=$EDITOR
 alias emacs=$EDITOR
+alias ytp='yt-dlp'
 
 # Vi style line editing
 if [ ! -n "$VIMRUNTIME" ]; then
@@ -194,6 +195,9 @@ function cimvr() {
     $HOME/Projects/chatimprovr/cimvr.py $@
 }
 
+export CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse
+export RUST_LOG="debug,cranelift=OFF,wasmtime=OFF"
+
 export CIMVR_PLUGINS="$HOME/Projects/fz"
 export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/character-controller"
 export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/galaga"
@@ -203,5 +207,9 @@ export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/light2d"
 export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/particle-life/particle-life-3d"
 export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/particle-life/particle-life-2d"
 export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/quantum_fdm_plugin"
-export CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse
-export RUST_LOG="debug,cranelift=OFF,wasmtime=OFF"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;/home/duncan/Projects/mockup_mcmt_qm"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;/home/duncan/the-debuglin"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;/home/duncan/Projects/obj-sigh"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;/home/duncan/Projects/template"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;/home/duncan/Projects/lua_plugin"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;/home/duncan/plants"
