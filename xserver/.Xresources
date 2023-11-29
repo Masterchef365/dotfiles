@@ -20,7 +20,7 @@
 #define S_color14   #22b9b0
 #define S_color15   #e1e9cd
 
-#define S_DPI 90
+#define S_DPI 210
 
 ! Rofi Settings
 rofi.color-enabled:  true                                                        

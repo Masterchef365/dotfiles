@@ -179,4 +179,5 @@ exec_always hsetroot -solid "$color0"
 #exec_always hsetroot /home/duncan/Projects/brto/out.ppm
 #exec_always hsetroot -fill ~/.local/share/background.jpg
 #exec --no-startup-id redshift
+exec setxkbmap -option caps:escape
 exec bash -c "redshift -l $(cat $HOME/.location.txt)"
