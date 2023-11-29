@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Set caps lock to be another escape key
+Exec=setxkbmap -option caps:escape
+Terminal=false
