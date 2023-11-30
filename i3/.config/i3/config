@@ -172,12 +172,16 @@ bar {
 }
 
 # ----------------------- Post-WM commands -----------------------
+# DPI setting
 exec xrandr --dpi 220
-exec --no-startup-id mpd
-#exec --no-startup-id compton
+#exec --no-startup-id mpd
+
+# Background color
 exec_always hsetroot -solid "$color0"
-#exec_always hsetroot /home/duncan/Projects/brto/out.ppm
-#exec_always hsetroot -fill ~/.local/share/background.jpg
-#exec --no-startup-id redshift
+
+# Caps lock/escape shortcut
 exec setxkbmap -option caps:escape
-exec bash -c "redshift -l $(cat $HOME/.location.txt)"
+
+# Network manager
+exec nm-tray &
+exec --no-startup-id /usr/lib/x86_64-linux-gnu/libexec/polkit-kde-authentication-agent-1 &
