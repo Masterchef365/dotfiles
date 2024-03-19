@@ -218,3 +218,6 @@ export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/path-relaxer"
 export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/any_fdm"
 export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/mcmc-particle-life"
 export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/pic-fluids"
+# Entry point for Depthai demo app, enables to run <depthai_launcher> in terminal
+export PATH=$PATH:~/.depthai/depthai/entrypoint
+export PATH=$PATH:/home/duncan/Luxonis/depthai/entrypoint
