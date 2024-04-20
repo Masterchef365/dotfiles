@@ -6,6 +6,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'tikhomirov/vim-glsl'
 Plug 'cespare/vim-toml'
 Plug 'rhysd/vim-wasm'
+Plug 'kaarmu/typst.vim'
 
 " LaTeX
 Plug 'lervag/vimtex'
