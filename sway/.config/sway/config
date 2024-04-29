@@ -1,0 +1,189 @@
+#vim:filetype=i3
+
+# ----------------------- Defines/Variables -----------------------
+
+# Set the modifier key, set floating modifier to the same
+set $mod Mod1
+#set $mod Mod4
+floating_modifier $mod
+
+# Xresources
+set $colorbg  #0e131a
+set $colorfg  #e1e9cd
+set $color0   #4d4d4d
+set $color1   #f3b348
+set $color2   #22b9b0
+set $color3   #5c8c7f
+set $color4   #5c8c7f
+set $color5   #f06318
+set $color6   #e1e9cd
+set $color7   #f4d073
+set $color8   #1c2734
+set $color9   #f3b348
+set $color10  #22b9b0
+set $color11  #d98d64
+set $color12  #5c8c7f
+set $color13  #f06318
+set $color14  #e5e5e5
+set $color15  #f4d073
+
+# ----------------------- Style options -----------------------
+
+#Window_colors           backgr.   border    text      indicator
+client.focused           $colorbg  $color1  $colorbg  $colorbg
+client.focused_inactive  $colorbg  $colorbg  $colorfg  $colorbg
+client.unfocused         $colorbg  $colorbg  $color1  $colorbg
+client.urgent            $colorbg  $colorbg  $color1  $colorbg
+client.placeholder       $colorbg  $colorbg  $color1  $colorbg
+
+# Font config
+font pango:Fantasque Sans Mono 11
+
+# Border options
+# new_window none
+gaps inner 6 
+gaps outer 0 
+smart_gaps on
+smart_borders on
+for_window [class="^.*"] border pixel 1
+
+# ----------------------- Program shortcut options -----------------------
+
+# Rofi
+bindsym $mod+s exec dmenu -show ssh
+#bindsym $mod+a exec rofi -show window
+#bindsym $mod+d exec dmenu_run -fn "Fantasque Sans Mono" -nb "$colorbg" -nf "$colorfg"
+#bindsym $mod+d exec dmenu_run -fn "Fantasque Sans Mono" -l 4
+bindsym $mod+d exec rofi -show run
+
+# Terminal
+set $terminal alacritty
+bindsym $mod+Return exec $terminal
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# ----------------------- Navigation -----------------------
+
+# Next/prev workspaces
+bindsym $mod+Ctrl+h workspace prev
+bindsym $mod+Ctrl+l workspace next
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Split windows
+bindsym $mod+t split horizontal
+bindsym $mod+q split vertical
+
+# Misc. window options
+bindsym $mod+f fullscreen toggle
+bindsym $mod+z layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+
+# Switch workspaces
+bindsym $mod+1 workspace "1"
+bindsym $mod+2 workspace "2"
+bindsym $mod+3 workspace "3"
+bindsym $mod+4 workspace "4"
+bindsym $mod+5 workspace "5"
+bindsym $mod+6 workspace "6"
+bindsym $mod+7 workspace "7"
+bindsym $mod+8 workspace "8"
+bindsym $mod+9 workspace "9"
+bindsym $mod+0 workspace "10"
+
+# Move containers to workspaces
+bindsym $mod+Shift+1 move container to workspace "1"
+bindsym $mod+Shift+2 move container to workspace "2"
+bindsym $mod+Shift+3 move container to workspace "3"
+bindsym $mod+Shift+4 move container to workspace "4"
+bindsym $mod+Shift+5 move container to workspace "5"
+bindsym $mod+Shift+6 move container to workspace "6"
+bindsym $mod+Shift+7 move container to workspace "7"
+bindsym $mod+Shift+8 move container to workspace "8"
+bindsym $mod+Shift+9 move container to workspace "9"
+bindsym $mod+Shift+0 move container to workspace "10"
+
+# Resize containers
+mode "resize" {
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# ----------------------- Multimedia Keys -----------------------
+bindsym XF86AudioRaiseVolume exec pamixer -i 5
+bindsym XF86AudioLowerVolume exec pamixer -d 5
+
+bindsym XF86LaunchA exec "i3-nagbar -t warning -m 'Dude just close the lid lol'"
+bindsym XF86AudioMute exec mpc toggle
+
+bindsym XF86KbdBrightnessUp exec --no-startup-id kbdlight up 5
+bindsym XF86KbdBrightnessDown exec --no-startup-id kbdlight down 5
+
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 3
+
+bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioNext exec mpc next
+
+# ----------------------- i3-Specific commands -----------------------
+bindsym $mod+Shift+r reload
+#bindsym $mod+Shift+r restart
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Sure?' -b 'Do it' 'i3-msg exit'"
+bindsym $mod+Shift+e exit
+bindsym $mod+i exec i3lock-fancy -pf "Fantasque-Sans-Mono-Regular"
+
+# ----------------------- Status bar -----------------------
+bar {
+    colors {
+        background  $colorbg
+        statusline  $colorfg
+        separator   $colorbg
+
+        #block_colors       backgr.   border    text
+        focused_workspace   $color1  $color1  $colorbg
+        active_workspace    $color1  $color1  $colorbg
+        inactive_workspace  $colorbg  $colorbg  $colorfg
+        urgent_workspace    $color9   $color9   $colorfg
+    }
+    #tray_output none
+    position top
+    font pango:Fantasque Sans Mono 11
+    status_command i3status
+}
+
+input "type:keyboard" {
+    xkb_options caps:escape
+}
+
+# ----------------------- Post-WM commands -----------------------
+exec xrandr --dpi 220
+exec --no-startup-id mpd
+exec_always swaybg -c '#000000'
+output * bg #555555 solid_color
+#exec --no-startup-id compton
+#exec_always hsetroot -solid "$color0"
+#exec_always hsetroot /home/duncan/Projects/brto/out.ppm
+#exec_always hsetroot -fill ~/.local/share/background.jpg
+#exec --no-startup-id redshift
+#exec bash -c "redshift -l $(cat $HOME/.location.txt)"
