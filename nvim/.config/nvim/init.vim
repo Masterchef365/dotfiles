@@ -72,7 +72,8 @@ set autoindent
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " Colorscheme
-colorscheme variac
+"colorscheme variac
+colorscheme lunaperche
 
 " Escape the terminal emulator with one <Esc>
 tnoremap <Esc> <C-\><C-n>

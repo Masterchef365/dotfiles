@@ -61,6 +61,7 @@ alias pacman='sudo pacman'
 alias pacaur='yay'
 
 alias py=python3
+alias venv='python -m venv'
 
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
