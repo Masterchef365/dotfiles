@@ -60,6 +60,9 @@ alias pacman='sudo pacman'
 # The FuTuRe
 alias pacaur='yay'
 
+alias py=python3
+alias venv='python -m venv'
+
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
 	. /usr/share/bash-completion/bash_completion
@@ -199,17 +202,20 @@ export CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse
 export RUST_LOG="debug,cranelift=OFF,wasmtime=OFF"
 
 export CIMVR_PLUGINS="$HOME/Projects/fz"
-export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/character-controller"
 export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/galaga"
 export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/verlet"
 export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/Demo-Room"
 export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/light2d"
-export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/particle-life/particle-life-3d"
-export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/particle-life/particle-life-2d"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/particle-life"
 export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/quantum_fdm_plugin"
-export CIMVR_PLUGINS="$CIMVR_PLUGINS;/home/duncan/Projects/mockup_mcmt_qm"
-export CIMVR_PLUGINS="$CIMVR_PLUGINS;/home/duncan/the-debuglin"
-export CIMVR_PLUGINS="$CIMVR_PLUGINS;/home/duncan/Projects/obj-sigh"
-export CIMVR_PLUGINS="$CIMVR_PLUGINS;/home/duncan/Projects/template"
-export CIMVR_PLUGINS="$CIMVR_PLUGINS;/home/duncan/Projects/lua_plugin"
-export CIMVR_PLUGINS="$CIMVR_PLUGINS;/home/duncan/plants"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/mockup_mcmt_qm"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/obj-sigh"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/template"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/lua_plugin"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/fft_gravity"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/rhai-plugin-test"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/look_no_tris"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/path-relaxer"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/any_fdm"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/mcmc-particle-life"
+export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/pic-fluids"

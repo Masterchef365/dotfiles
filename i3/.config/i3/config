@@ -179,3 +179,4 @@ exec_always hsetroot -solid "$color7"
 #exec_always hsetroot -fill ~/.local/share/background.jpg
 #exec --no-startup-id redshift
 exec bash -c "redshift -l $(cat $HOME/.location.txt)"
+exec setxkbmap -option caps:escape

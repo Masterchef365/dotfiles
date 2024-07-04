@@ -5,6 +5,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rust-lang/rust.vim'
 Plug 'tikhomirov/vim-glsl'
 Plug 'cespare/vim-toml'
+Plug 'rhysd/vim-wasm'
 
 " LaTeX
 Plug 'lervag/vimtex'
@@ -17,7 +18,10 @@ Plug 'hrsh7th/cmp-buffer' " LSP source for nvim-cmp
 Plug 'hrsh7th/cmp-path' " LSP source for nvim-cmp
 Plug 'saadparwaiz1/cmp_luasnip' " Snippets source for nvim-cmp
 Plug 'L3MON4D3/LuaSnip' " Snippets plugin
+" add this line to your .vimrc file
+Plug 'rhaiscript/vim-rhai'
 
+" Plug 'jbyuki/instant.nvim'
 call plug#end()
 
 " Misc
@@ -68,7 +72,8 @@ set autoindent
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " Colorscheme
-colorscheme variac
+"colorscheme variac
+colorscheme lunaperche
 
 " Escape the terminal emulator with one <Esc>
 tnoremap <Esc> <C-\><C-n>
@@ -78,15 +83,16 @@ let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 
 " LaTeXmk
-let g:vimtex_compiler_latexmk = {
-    \ 'options' : [
-    \    '-shell-escape',
-    \    '-verbose',
-    \    '-file-line-error',
-    \    '-synctex=1',
-    \    '-interaction=nonstopmode',
-    \ ],
-    \}
+let g:vimtex_compiler_tectonic = {}
+"let g:vimtex_compiler_latexmk = {
+"    \ 'options' : [
+"    \    '-shell-escape',
+"    \    '-verbose',
+"    \    '-file-line-error',
+"    \    '-synctex=1',
+"    \    '-interaction=nonstopmode',
+"    \ ],
+"    \}
 "let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_view_general_viewer = 'evince'
 let g:tex_flavor = 'latex'
@@ -102,11 +108,22 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'rust_analyzer', 'clangd', 'pylsp', 'texlab' }
+local servers = { 'rust_analyzer', 'clangd', 'texlab', 'pylsp' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     -- on_attach = my_custom_on_attach,
     capabilities = capabilities,
+
+    -- No annoying PEP8 bullshit
+    settings = {
+      pylsp = {
+        plugins = {
+          pycodestyle = {
+              enable = False,
+          }
+        }
+      }
+    }
   }
 end
 
@@ -206,3 +223,5 @@ nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 
 packadd termdebug "Enable terminal-debug
 let termdebugger = "rust-gdb" "Use rust-gdb instead of default gdb
+
+let g:instant_username = "segseg69"
