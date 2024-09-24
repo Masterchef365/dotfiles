@@ -132,7 +132,7 @@ no_dpms() {
 }
 
 git-shortlog() {
-    git log --branches=* --graph --pretty=oneline --abbrev-commit
+    git log --branches=* --graph --pretty=oneline --abbrev-commit $@
 }
 
 count-src() {
