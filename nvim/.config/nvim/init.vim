@@ -6,7 +6,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'tikhomirov/vim-glsl'
 Plug 'cespare/vim-toml'
 Plug 'rhysd/vim-wasm'
-
+Plug 'preservim/nerdtree'
 " LaTeX
 Plug 'lervag/vimtex'
 
@@ -99,6 +99,9 @@ let g:tex_flavor = 'latex'
 
 " Markdown
 let g:markdown_fenced_languages = ['sh', 'rust', 'python', 'glsl', 'c', 'cpp', 'toml', 'lua']
+
+" NERDTree
+nnoremap <C-n> :NERDTree<CR>
 
 lua <<EOF
 -- Add additional capabilities supported by nvim-cmp
@@ -225,3 +228,4 @@ packadd termdebug "Enable terminal-debug
 let termdebugger = "rust-gdb" "Use rust-gdb instead of default gdb
 
 let g:instant_username = "segseg69"
+
