@@ -181,6 +181,10 @@ pipewire-gui () {
     qpwgraph 
 }
 
+cargo-git() {
+    git clone $(cargo info $1 | grep repository | sed -e 's/repository: //')
+}
+
 #export LD_LIBRARY_PATH=$HOME/source_packages/1.2.141.2/x86_64/lib
 #export VK_LAYER_PATH=$HOME/source_packages/1.2.141.2/x86_64/etc/vulkan/explicit_layer.d
 export PATH=$PATH:$HOME/source_packages/
