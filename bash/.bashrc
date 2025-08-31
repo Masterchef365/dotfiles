@@ -223,3 +223,5 @@ export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/path-relaxer"
 export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/any_fdm"
 export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/mcmc-particle-life"
 export CIMVR_PLUGINS="$CIMVR_PLUGINS;$HOME/Projects/pic-fluids"
+
+export ORT_DYLIB_PATH=~/.onnx_runtime_stuff/lib/libonnxruntime.so.1.21.0

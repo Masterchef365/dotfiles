@@ -181,3 +181,5 @@ exec_always hsetroot -solid "$color0"
 #exec --no-startup-id redshift
 exec bash -c "redshift -l $(cat $HOME/.location.txt)"
 exec setxkbmap -option caps:escape
+
+exec dbus-update-activation-environment --all

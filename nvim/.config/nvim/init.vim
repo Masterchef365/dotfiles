@@ -21,6 +21,8 @@ Plug 'L3MON4D3/LuaSnip' " Snippets plugin
 " add this line to your .vimrc file
 Plug 'rhaiscript/vim-rhai'
 
+Plug 'f-person/git-blame.nvim'
+
 " Plug 'jbyuki/instant.nvim'
 call plug#end()
 
@@ -224,8 +226,9 @@ nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 
-packadd termdebug "Enable terminal-debug
+"packadd termdebug "Enable terminal-debug
 let termdebugger = "rust-gdb" "Use rust-gdb instead of default gdb
 
 let g:instant_username = "segseg69"
 
+let NERDTreeMapHelp='<f1>'
