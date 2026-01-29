@@ -185,6 +185,18 @@ cargo-git() {
     git clone $(cargo info $1 | grep repository | sed -e 's/repository: //')
 }
 
+cargo-summary() {
+    # NOTE: Written by chatgpt
+    cargo check --message-format=json \
+        | jq -r '
+          select(.reason=="compiler-message")
+          | select(.message.level=="error")
+          | .message.spans[]
+          | select(.is_primary==true)
+          | .file_name
+        ' | sort -u
+}
+
 #export LD_LIBRARY_PATH=$HOME/source_packages/1.2.141.2/x86_64/lib
 #export VK_LAYER_PATH=$HOME/source_packages/1.2.141.2/x86_64/etc/vulkan/explicit_layer.d
 export PATH=$PATH:$HOME/source_packages/

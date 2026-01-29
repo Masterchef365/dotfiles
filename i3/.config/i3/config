@@ -50,11 +50,11 @@ for_window [class="^.*"] border pixel 1
 # ----------------------- Program shortcut options -----------------------
 
 # Rofi
-bindsym $mod+s exec dmenu -show ssh
+#bindsym $mod+s exec dmenu -show ssh
 #bindsym $mod+a exec rofi -show window
 #bindsym $mod+d exec dmenu_run -fn "Fantasque Sans Mono" -nb "$colorbg" -nf "$colorfg"
 #bindsym $mod+d exec dmenu_run -fn "Fantasque Sans Mono" -l 4
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec rofi -show run -dpi 0
 
 # Terminal
 set $terminal alacritty
