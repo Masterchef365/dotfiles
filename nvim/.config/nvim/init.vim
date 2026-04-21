@@ -44,7 +44,7 @@ set noruler "Don't display extra ruler cruft by default
 set inccommand=nosplit "Show matches while I'm writing a regex
 "set inccommand=split "Show matches while I'm writing a regex
 nnoremap Y Y
-set ft=markdown "Default file type is Markdown, because it's what I use for notes
+"set ft=markdown "Default file type is Markdown, because it's what I use for notes
 
 " Use CTRL+HJKL keys to navigate buffers
 map <C-k> <C-w><Up>
@@ -110,26 +110,27 @@ lua <<EOF
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-local lspconfig = require('lspconfig')
-
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local servers = { 'rust_analyzer', 'clangd', 'texlab', 'pylsp' }
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    -- on_attach = my_custom_on_attach,
-    capabilities = capabilities,
+  -- vim.lsp.config[lsp] = 
+  -- {
+  --   -- on_attach = my_custom_on_attach,
+  --   capabilities = capabilities,
 
-    -- No annoying PEP8 bullshit
-    settings = {
-      pylsp = {
-        plugins = {
-          pycodestyle = {
-              enable = False,
-          }
-        }
-      }
-    }
-  }
+  --   -- No annoying PEP8 bullshit
+  --   settings = {
+  --     pylsp = {
+  --       plugins = {
+  --         pycodestyle = {
+  --             enable = False,
+  --         }
+  --       }
+  --     }
+  --   }
+  -- }
+
+  vim.lsp.enable(lsp)
 end
 
 -- luasnip setup
